@@ -16,10 +16,10 @@ void screen_replay_screen_load()
 	engine_tile_manager_draw_bonus( 5, 11, 5, 1 );
 	engine_tile_manager_draw_bonus( 6, 15, 5, 1 );
 
-	engine_tile_manager_draw_bonus( 3, 3, 8, 2 );
-	engine_tile_manager_draw_bonus( 4, 7, 8, 2 );
-	engine_tile_manager_draw_bonus( 5, 11, 8, 2 );
-	engine_tile_manager_draw_bonus( 6, 15, 8, 2 );
+	//engine_tile_manager_draw_bonus( 3, 3, 8, 2 );
+	//engine_tile_manager_draw_bonus( 4, 7, 8, 2 );
+	//engine_tile_manager_draw_bonus( 5, 11, 8, 2 );
+	//engine_tile_manager_draw_bonus( 6, 15, 8, 2 );
 
 	engine_tile_manager_draw_oneup( 10, 10 );
 

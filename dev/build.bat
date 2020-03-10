@@ -42,7 +42,7 @@ cd engine
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 sprite_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 state_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 storage_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 tile_manager.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 tile_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 timer_manager.c
 cd ..
 
@@ -83,7 +83,7 @@ cd ..
 
 
 :: echo Build main
-sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
+::sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
 
 :: Time build -END-
