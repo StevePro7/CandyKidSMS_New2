@@ -10,7 +10,6 @@
 #include "state_manager.h"
 #include "..\devkit\_sms_manager.h"
 #include "..\object\board_object.h"
-#include "..\object\enemy_object.h"
 #include <stdlib.h>
 
 #define SPRITE_TILES_ENEMY	256 + 48

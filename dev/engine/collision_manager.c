@@ -1,5 +1,5 @@
 #include "collision_manager.h"
-#include "audio_manager.h"
+//#include "audio_manager.h"
 #include "board_manager.h"
 #include "enemy_manager.h"
 #include "enum_manager.h"
@@ -11,7 +11,6 @@
 #include "score_manager.h"
 #include "state_manager.h"
 #include "tile_manager.h"
-//#include "..\banks\databank.h"
 
 #define DISTNACE_EASY		8
 #define DISTNACE_HARD		10
@@ -102,7 +101,8 @@ unsigned char engine_collision_manager_tile_collision( unsigned char tile_type )
 	{
 		// TODO sound effect...
 		engine_score_manager_update_lives( 1 );
-		engine_audio_manager_sfx_play( sfx_type_power );
+		//engine_audio_manager_sfx_play( sfx_type_power );		// adriana
+		gamer_collision = coll_type_oneup;						// adriana
 	}
 
 	// Check gamer collision with bonus.

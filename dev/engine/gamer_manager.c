@@ -10,6 +10,7 @@
 #include "sprite_manager.h"
 #include "state_manager.h"
 #include "..\devkit\_sms_manager.h"
+#include "..\object\board_object.h"
 #include <stdlib.h>
 
 #define SPRITE_TILES_GAMER	256 + 96
@@ -24,20 +25,6 @@ void engine_gamer_manager_init()
 {
 	struct_gamer_object *go = &global_gamer_object;
 
-	// Kid images.
-	//unsigned char images[ NUM_ENTITY_IMAGE * NUM_ENTITY_FRAME + 2 ] = { 0, 2, 4, 12, 14, 16 };		// Allow extra image for death.
-	
-	//go->tileX = board_object_homeX[ actor_type_kid ];
-	//go->tileY = board_object_homeY[ actor_type_kid ];
-
-	// Speed:	1, 2, 4, 8
-	// Delay:	1, 2, 4, 8
-	//go->speeds[ 0 ] = 2;
-	//go->delays[ 0 ] = 1;
-	//go->speeds[ 1 ] = 4;
-	//go->delays[ 1 ] = 1;
-	//go->boost = pace_type_slow;
-	//engine_gamer_manager_pace( go->boost );
 	go->prev_boost = pace_type_slow;
 	go->curr_boost = pace_type_slow;
 	engine_gamer_manager_pace( go->curr_boost );
@@ -45,7 +32,6 @@ void engine_gamer_manager_init()
 	go->timer = 0;
 	go->delta = 0;
 	go->total = 0;
-	
 
 	go->lifecycle = lifecycle_type_idle;
 	go->direction = direction_type_none;
@@ -54,7 +40,6 @@ void engine_gamer_manager_init()
 	go->image = 0;
 	go->frame = frame_type_stance;
 
-//	devkit_SMS_mapROMBank( FIXED_BANK );
 	go->images[ 0 ][ 0 ] = gamer_object_image[ 0 ];
 	go->images[ 0 ][ 1 ] = gamer_object_image[ 1 ];
 	go->images[ 1 ][ 0 ] = gamer_object_image[ 2 ];
@@ -73,20 +58,14 @@ void engine_gamer_manager_load()
 
 	unsigned char index = st->state_object_pace_speed * 2;
 
-	devkit_SMS_mapROMBank( FIXED_BANK );
 	go->speeds[ 0 ] = gamer_object_speed[ index + 0 ];
 	go->delays[ 0 ] = gamer_object_delay[ index + 0 ];
 	go->speeds[ 1 ] = gamer_object_speed[ index + 1 ];
 	go->delays[ 1 ] = gamer_object_delay[ index + 1 ];
 
-	//go->velocity[ 0 ] = 4;
-	//go->velocity[ 1 ] = 6;
 	go->prev_boost = pace_type_slow;
 	go->curr_boost = pace_type_slow;
-	//go->curr_boost = pace_type_fast;
 	engine_gamer_manager_pace( go->curr_boost );
-	//go->boost = pace_type_slow;
-	//engine_gamer_manager_pace( go->boost );
 }
 
 void engine_gamer_manager_update()
@@ -234,14 +213,9 @@ void engine_gamer_manager_pace( unsigned char boost )
 {
 	struct_gamer_object *go = &global_gamer_object;
 	struct_state_object *st = &global_state_object;
-	//unsigned char index = go->velocity[ boost ];
 	go->prev_boost = go->curr_boost;
 	go->curr_boost = boost;
-	//go->boost = boost;
-	//go->speed = boost_object_speed[ index ];
-	//go->delay = boost_object_delay[ index ];
 
-	// TODO test this new version
 	go->speed = go->speeds[ boost ];
 	go->delay = go->delays[ boost ];
 
@@ -390,8 +364,6 @@ unsigned char engine_gamer_manager_find_direction( unsigned char gamer_direction
 
 	return direction_type_none;
 }
-
-
 
 
 unsigned char engine_gamer_manager_input_boost( unsigned char direction )
