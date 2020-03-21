@@ -6,6 +6,7 @@
 #include "..\screen\none_screen.h"
 #include "..\screen\splash_screen.h"
 #include "..\screen\begin_screen.h"
+#include "..\screen\title_screen.h"
 
 #include "..\screen\test_screen.h"
 
@@ -47,6 +48,9 @@ void engine_screen_manager_update()
 		case screen_type_begin:
 			screen_begin_screen_load();
 			break;
+		case screen_type_title:
+			screen_title_screen_load();
+			break;
 
 		case screen_type_test:
 			screen_test_screen_load();
@@ -66,6 +70,9 @@ void engine_screen_manager_update()
 		break;
 	case screen_type_begin:
 		screen_begin_screen_update( &next_screen_type );
+		break;
+	case screen_type_title:
+		screen_title_screen_update( &next_screen_type );
 		break;
 
 	case screen_type_test:

@@ -7,7 +7,6 @@
 #include "..\engine\global_manager.h"
 #include "..\engine\locale_manager.h"
 #include "..\engine\tile_manager.h"
-//#include "..\engine\timer_manager.h"
 #include "..\devkit\_sms_manager.h"
 
 static void draw_tiles();
