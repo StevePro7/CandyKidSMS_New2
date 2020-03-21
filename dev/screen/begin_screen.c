@@ -1,11 +1,10 @@
 #include "begin_screen.h"
 #include "..\engine\asm_manager.h"
-//#include "..\engine\board_manager.h"
+#include "..\engine\board_manager.h"
 #include "..\engine\content_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
 #include "..\engine\global_manager.h"
-//#include "..\engine\input_manager.h"
 #include "..\engine\locale_manager.h"
 #include "..\engine\tile_manager.h"
 //#include "..\engine\timer_manager.h"
@@ -21,8 +20,8 @@ void screen_begin_screen_load()
 	engine_content_manager_load_tiles_main();
 	engine_content_manager_load_sprites_game();
 
+	engine_board_manager_border( border_type_main );
 	engine_tile_manager_main_title( 2, 2 );
-	//engine_board_manager_border( border_type_main );
 
 	draw_tiles();
 
