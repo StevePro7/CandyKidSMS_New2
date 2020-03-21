@@ -5,7 +5,7 @@
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
 //#include "..\engine\memo_manager.h"
-//#include "..\engine\score_manager.h"
+#include "..\engine\score_manager.h"
 #include "..\devkit\_sms_manager.h"
 
 void screen_init_screen_load()
@@ -21,11 +21,11 @@ void screen_init_screen_load()
 	//engine_memo_manager_clear();
 
 	// Draw tree border with exits.
-	//engine_board_manager_border( border_type_game );
-	//engine_board_manager_side_tile();
+	engine_board_manager_border( border_type_game );
+	engine_board_manager_side_tile();
 
 	// Reset all score data.
-	//engine_score_manager_text();
+	engine_score_manager_text();
 	//engine_score_manager_init();
 	//engine_memo_manager_option();
 

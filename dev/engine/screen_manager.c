@@ -22,8 +22,8 @@
 static unsigned char curr_screen_type;
 static unsigned char next_screen_type;
 
-static void( *load_method[ MAX_SCREEENS ] )( );
-static void( *update_method[ MAX_SCREEENS ] )( unsigned char *screen_type );
+//static void( *load_method[ MAX_SCREEENS ] )( );
+//static void( *update_method[ MAX_SCREEENS ] )( unsigned char *screen_type );
 
 void engine_screen_manager_init( unsigned char open_screen_type )
 {

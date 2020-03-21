@@ -213,6 +213,12 @@
     <ClInclude Include="screen\init_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
+    <ClInclude Include="engine\level_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\score_manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -376,6 +382,12 @@
     </ClCompile>
     <ClCompile Include="screen\init_screen.c">
       <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\level_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\score_manager.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

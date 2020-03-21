@@ -18,7 +18,7 @@ S _screen_test_screen_update Ref0000
 A _CODE size CD flags 0 addr 0
 S _engine_screen_manager_init Def0000
 S _engine_screen_manager_update Def000E
-A _DATA size 42 flags 0 addr 0
+A _DATA size 2 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
@@ -33,14 +33,6 @@ R 00 00 01 00
 T 01 00
 R 00 00 01 00
 T 01 00
-R 00 00 01 00
-T 02 00
-R 00 00 01 00
-T 02 00
-R 00 00 01 00
-T 22 00
-R 00 00 01 00
-T 22 00
 R 00 00 01 00
 T 00 00
 R 00 00 00 00
