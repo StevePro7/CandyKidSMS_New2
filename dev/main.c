@@ -15,7 +15,6 @@ void main (void)
 	devkit_SMS_useFirstHalfTilesforSprites_False();
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
-	//engine_content_manager_load_tiles_font();
 
 	engine_main_manager_init();
 	engine_main_manager_load();
@@ -24,8 +23,9 @@ void main (void)
 	//open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_test;
 	//open_screen_type = screen_type_splash;
-	open_screen_type = screen_type_begin;
+	//open_screen_type = screen_type_begin;
 	//open_screen_type = screen_type_init;
+	open_screen_type = screen_type_load;
 	//open_screen_type = screen_type_test;
 
 

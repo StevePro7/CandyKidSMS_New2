@@ -11,14 +11,12 @@
 #include "..\engine\input_manager.h"
 #include "..\engine\level_manager.h"
 #include "..\engine\memo_manager.h"
-//#include "..\engine\score_manager.h"
+#include "..\engine\score_manager.h"
 #include "..\engine\state_manager.h"
 #include "..\engine\timer_manager.h"
 #include "..\devkit\_sms_manager.h"
 
 #define LOAD_SCREEN_DELAY	150
-//#define LOAD_SCREEN_DELAY	15
-//#define LOAD_SCREEN_DELAY	1
 
 static void print_level();
 static void print_enemy();		// TODO delete
@@ -38,32 +36,25 @@ void screen_load_screen_load()
 	engine_score_manager_load();
 
 	// Set all actor variables.
-	engine_enemy_manager_reset_home();
-	engine_gamer_manager_reset();
+	//engine_enemy_manager_reset_home();
+	//engine_gamer_manager_reset();
 
 	// TODO delete - used during debugging.
-	engine_enemy_manager_debug();
+	//engine_enemy_manager_debug();
 	// TODO delete - used during debugging.
 
 	// TODO do I want to put this after after level draw?
-	engine_gamer_manager_load();
-	engine_enemy_manager_load();
-	engine_actor_manager_get_data( actor_mover, actor_tileZ );
+	//engine_gamer_manager_load();
+	//engine_enemy_manager_load();
+	//engine_actor_manager_get_data( actor_mover, actor_tileZ );
 
-	// IMPORTANT do not display Off / On here as looks better to load level over border.
-	//devkit_SMS_displayOff();
 	engine_level_manager_load_level( st->state_object_world_data, st->state_object_round_data );
 	engine_level_manager_update_level( st->state_object_round_data, actor_mover, actor_tileZ );
 	engine_level_manager_draw_level();
-	//engine_level_manager_draw_level();		// stevepro - testing
-	//devkit_SMS_displayOn();
 
 	print_level();
 	print_enemy();
 	//engine_audio_manager_music_play( music_type_game03 );
-
-	//engine_gamer_manager_load();
-	//engine_enemy_manager_load();
 }
 
 // TODO - could split this into 2x sections
@@ -77,15 +68,15 @@ void screen_load_screen_update( unsigned char *screen_type )
 	unsigned char input;
 
 	// Draw sprites first.
-	engine_enemy_manager_draw();
-	engine_gamer_manager_draw();
+	//engine_enemy_manager_draw();
+	//engine_gamer_manager_draw();
 
 	delay = engine_delay_manager_update();
 	input = devkit_SMS_getKeysStatus();
 	if( delay || input )
 	{
 		engine_level_manager_draw_middle();
-		engine_audio_manager_music_play( music_type_game03 );
+		//engine_audio_manager_music_play( music_type_game03 );
 		//engine_audio_manager_music_play( music_type_beatgame );
 		*screen_type = st->state_object_next_screen;
 		return;
@@ -116,14 +107,13 @@ static void print_level()
 	engine_board_manager_midd_text();
 	engine_memo_manager_levels( 14, 11, 12 );
 
-	devkit_SMS_mapROMBank( FIXED_BANK );
-	engine_font_manager_draw_text( locale_object_texts[ 8 ], SCREEN_TILE_LEFT + 8, 11 );
-	engine_font_manager_draw_text( locale_object_texts[ 9 ], SCREEN_TILE_LEFT + 8, 12 );
+	//engine_font_manager_draw_text( locale_object_texts[ 8 ], SCREEN_TILE_LEFT + 8, 11 );
+	//engine_font_manager_draw_text( locale_object_texts[ 9 ], SCREEN_TILE_LEFT + 8, 12 );
 }
 
 static void print_enemy()
 {
-	struct_enemy_object *eo;
+	//struct_enemy_object *eo;
 
 	//eo = &global_enemy_objects[ actor_type_pro ];
 	////engine_font_manager_draw_data2( eo->speeds[ 0 ], 1, 0 );
@@ -135,7 +125,7 @@ static void print_enemy()
 	//engine_font_manager_draw_data2( eo->toggle[ 0 ], 1, 4 );
 	//engine_font_manager_draw_data2( eo->toggle[ 1 ], 1, 5 );
 
-	eo = &global_enemy_objects[ actor_type_adi ];
+	//eo = &global_enemy_objects[ actor_type_adi ];
 	//engine_font_manager_draw_data2( eo->speeds[ 0 ], 1, 9 );
 	//engine_font_manager_draw_data2( eo->speeds[ 1 ], 1, 10 );
 	//engine_font_manager_draw_data2( eo->delays[ 0 ], 1, 11 );

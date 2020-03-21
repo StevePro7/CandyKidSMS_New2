@@ -222,6 +222,9 @@
     <ClInclude Include="engine\memo_manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="screen\load_screen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -393,6 +396,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\memo_manager.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\load_screen.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
