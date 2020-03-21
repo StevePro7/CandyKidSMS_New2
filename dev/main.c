@@ -16,7 +16,7 @@ void main (void)
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
 
-	devkit_SMS_setSpritePaletteColor( 0, 3, 0, 0 );
+	devkit_SMS_setSpritePaletteColor( 0, 3, 0, 1 );
 
 	//engine_content_manager_load_tiles_font();
 	////engine_content_manager_load_tiles_game();

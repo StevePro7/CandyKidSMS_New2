@@ -3,8 +3,8 @@
 
 // Locale Manager.
 extern const unsigned char *locale_object_texts[];
-extern const unsigned char *locale_object_menus[];
-extern const unsigned char *locale_object_grants[];
+//extern const unsigned char *locale_object_menus[];
+//extern const unsigned char *locale_object_grants[];
 extern const unsigned char *locale_object_number[];
 extern const unsigned char locale_object_blank18[];
 
