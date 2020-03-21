@@ -4,9 +4,9 @@ void main (void)
 {
 	// Global variables.
 	static bool global_pause;
-	//unsigned char open_screen_type;
+	unsigned char open_screen_type;
 
-	//engine_asm_manager_clear_VRAM();
+	engine_asm_manager_clear_VRAM();
 	devkit_SMS_init();
 	devkit_SMS_displayOff();
 
@@ -16,38 +16,23 @@ void main (void)
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
 
-	devkit_SMS_setSpritePaletteColor( 0, 0, 0, 0 );
+	//devkit_SMS_setSpritePaletteColor( 0, 0, 0, 3 );
 
-	//engine_content_manager_load_tiles_font();
+	engine_content_manager_load_tiles_font();
 	////engine_content_manager_load_tiles_game();
 	//engine_content_manager_load_sprites_game();
 
-	//engine_state_manager_init();
-	//engine_state_manager_read();
+	engine_main_manager_init();
+	engine_main_manager_load();
 
-	//open_screen_type = screen_type_intro;
 	//open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_test;
-	//open_screen_type = screen_type_splash;
+	open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_begin;
 	//open_screen_type = screen_type_title;
-	//open_screen_type = screen_type_diff;
-	//open_screen_type = screen_type_init;
-	//open_screen_type = screen_type_load;
-	//open_screen_type = screen_type_ready;
-	//open_screen_type = screen_type_demo;
-	//open_screen_type = screen_type_test;
-	//open_screen_type = screen_type_save;
-	//open_screen_type = screen_type_option;
-	//open_screen_type = screen_type_select;
-	//open_screen_type = screen_type_play;
-	//open_screen_type = screen_type_dead;
-	//open_screen_type = screen_type_cont;
-	//open_screen_type = screen_type_over;
-	//open_screen_type = screen_type_pass;
-	//open_screen_type = screen_type_beat;
 
-	//engine_screen_manager_init( open_screen_type );
+
+	engine_screen_manager_init( open_screen_type );
 	devkit_SMS_displayOn();
 	for( ;; )
 	{
@@ -72,7 +57,7 @@ void main (void)
 
 		devkit_SMS_initSprites();
 		engine_input_manager_update();
-		//engine_screen_manager_update();
+		engine_screen_manager_update();
 
 		devkit_SMS_finalizeSprites();
 		devkit_SMS_waitForVBlank();
