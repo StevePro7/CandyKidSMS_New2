@@ -72,7 +72,7 @@ void engine_hack_manager_invert()
 
 	st->state_object_difficulty = 0;
 	st->state_object_pace_speed = 1;
-	st->state_object_trees_type = 0;
+	st->state_object_trees_type = 1;
 	st->state_object_exits_type = 0;
 
 

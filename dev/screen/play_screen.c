@@ -18,7 +18,6 @@
 #include "..\engine\tile_manager.h"
 #include "..\engine\timer_manager.h"
 #include "..\devkit\_sms_manager.h"
-//#include "..\banks\databank.h"
 
 // IMPORTANT disable compiler warning 110
 #ifdef _CONSOLE

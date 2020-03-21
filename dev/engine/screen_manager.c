@@ -12,7 +12,7 @@
 #include "..\screen\ready_screen.h"
 #include "..\screen\play_screen.h"
 //#include "..\screen\pass_screen.h"
-//#include "..\screen\dead_screen.h"
+#include "..\screen\dead_screen.h"
 //#include "..\screen\cont_screen.h"
 //#include "..\screen\over_screen.h"
 //#include "..\screen\beat_screen.h"
@@ -74,9 +74,9 @@ void engine_screen_manager_update()
 //		case screen_type_pass:
 //			screen_pass_screen_load();
 //			break;
-//		case screen_type_dead:
-//			screen_dead_screen_load();
-//			break;
+		case screen_type_dead:
+			screen_dead_screen_load();
+			break;
 //		case screen_type_cont:
 //			screen_cont_screen_load();
 //			break;
@@ -123,18 +123,9 @@ void engine_screen_manager_update()
 //	case screen_type_pass:
 //		screen_pass_screen_update( &next_screen_type );
 //		break;
-//	case screen_type_bonus:
-//		screen_bonus_screen_update( &next_screen_type );
-//		break;
-//	case screen_type_replay:
-//		screen_replay_screen_update( &next_screen_type );
-//		break;
-//	case screen_type_reset:
-//		screen_reset_screen_update( &next_screen_type );
-//		break;
-//	case screen_type_dead:
-//		screen_dead_screen_update( &next_screen_type );
-//		break;
+	case screen_type_dead:
+		screen_dead_screen_update( &next_screen_type );
+		break;
 //	case screen_type_cont:
 //		screen_cont_screen_update( &next_screen_type );
 //		break;
