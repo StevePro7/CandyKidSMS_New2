@@ -9,3 +9,10 @@ input		enum
 function	mask
 state		mask
 content		global		banks
+
+
+
+
+TODO
+tidy up audio
+factor out timer mgr

@@ -47,7 +47,10 @@
     <ClInclude Include="engine\hack_manager.h" />
     <ClInclude Include="engine\input_manager.h" />
     <ClInclude Include="engine\mask_manager.h" />
+    <ClInclude Include="engine\sprite_manager.h" />
     <ClInclude Include="engine\state_manager.h" />
+    <ClInclude Include="engine\storage_manager.h" />
+    <ClInclude Include="engine\timer_manager.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gfx.h" />
     <ClInclude Include="main.h" />
@@ -89,7 +92,10 @@
     <ClCompile Include="engine\hack_manager.c" />
     <ClCompile Include="engine\input_manager.c" />
     <ClCompile Include="engine\mask_manager.c" />
+    <ClCompile Include="engine\sprite_manager.c" />
     <ClCompile Include="engine\state_manager.c" />
+    <ClCompile Include="engine\storage_manager.c" />
+    <ClCompile Include="engine\timer_manager.c" />
     <ClCompile Include="game.c" />
     <ClCompile Include="gfx.c" />
     <ClCompile Include="main.c" />
