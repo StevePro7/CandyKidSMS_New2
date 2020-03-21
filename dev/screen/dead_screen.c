@@ -237,8 +237,12 @@ static void reset_death()
 	//	}
 	//}
 
-	// TODO test book reset...
-	engine_enemy_manager_reset_mode( st->state_object_actor_kill, enemymove_type_tour );
+	// Reset enemy that killed Kid to scatter mode only.
+	// Nasty bug : do NOT set when death tree kills Kid!
+	if( actor_type_pro == st->state_object_actor_kill || actor_type_adi == st->state_object_actor_kill || actor_type_suz == st->state_object_actor_kill )
+	{
+		engine_enemy_manager_reset_mode( st->state_object_actor_kill, enemymove_type_tour );
+	}
 
 	// IMPORTANT I've decided NOT to reset boost on loss of life.
 	// only reset boost if zero or pass level or continue game.
@@ -247,7 +251,7 @@ static void reset_death()
 	{
 		engine_score_manager_reset_boost();
 	}
-	
+
 
 	// If Kid collided with Mama then will be reset from dead to idle below...
 	// Reset all enemies back to scatter mode.

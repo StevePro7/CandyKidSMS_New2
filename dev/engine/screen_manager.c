@@ -118,7 +118,7 @@ void engine_screen_manager_update()
 		/**/
 	}
 
-	
+
 	//update_method[ curr_screen_type ]( &next_screen_type );
 
 	/**/

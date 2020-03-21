@@ -307,7 +307,7 @@ unsigned char engine_gamer_manager_find_direction( unsigned char gamer_direction
 	}
 
 	// Avoid trees.
-	if( st->state_object_trees_type == tree_type_avoid )
+	if( tree_type_avoid == st->state_object_trees_type )
 	{
 		collision = engine_level_manager_get_collision( go->tileX, go->tileY, gamer_direction, offset_type_one );
 		if( coll_type_empty == collision )
