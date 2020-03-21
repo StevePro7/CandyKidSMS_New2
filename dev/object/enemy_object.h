@@ -43,8 +43,20 @@ typedef struct tag_struct_enemy_object
 
 } struct_enemy_object;
 
+
 // DATA bank.
 // Enemy Manager.
 extern const unsigned char enemy_object_directions[];
+
+
+// FIXED bank.
+// Enemy Manager.
+extern const unsigned char enemy_object_image[];
+extern const unsigned char enemy_object_speed[];
+extern const unsigned char enemy_object_delay[];
+extern const unsigned char enemy_object_hands[];
+extern const unsigned char enemy_object_waits[];
+extern const unsigned char enemy_object_tours[];
+extern const unsigned char enemy_object_kills[];
 
 #endif//_ENEMY_OBJECT_H_

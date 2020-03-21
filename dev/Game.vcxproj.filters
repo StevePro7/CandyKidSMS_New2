@@ -99,25 +99,16 @@
     <ClInclude Include="banks\bank15.h">
       <Filter>Header Files\banks</Filter>
     </ClInclude>
-    <ClInclude Include="object\audio_object.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="object\board_object.h">
       <Filter>Header Files\object</Filter>
     </ClInclude>
     <ClInclude Include="object\enemy_object.h">
       <Filter>Header Files\object</Filter>
     </ClInclude>
-    <ClInclude Include="game.h">
-      <Filter>Header Files\object</Filter>
-    </ClInclude>
     <ClInclude Include="object\gamer_object.h">
       <Filter>Header Files\object</Filter>
     </ClInclude>
     <ClInclude Include="object\level_object.h">
-      <Filter>Header Files\object</Filter>
-    </ClInclude>
-    <ClInclude Include="main.h">
       <Filter>Header Files\object</Filter>
     </ClInclude>
     <ClInclude Include="object\score_object.h">
@@ -143,6 +134,18 @@
     </ClInclude>
     <ClInclude Include="engine\enum_manager.h">
       <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="object\locale_object.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="object\audio_object.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -238,6 +241,9 @@
     </ClCompile>
     <ClCompile Include="engine\enum_manager.c">
       <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="object\locale_object.c">
+      <Filter>Source Files\object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
