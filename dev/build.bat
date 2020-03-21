@@ -1,4 +1,4 @@
-@echo off
+::@echo off
 
 :: Time build START
 :: Reference: https://stackoverflow.com/questions/673523/how-do-i-measure-execution-time-of-a-command-on-the-windows-command-line
@@ -8,14 +8,9 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 
 :: Compile
-cd banks
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 databank.c
-::sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK15 fixedbank.c
-cd ..
-
 cd devkit
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _sms_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _snd_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _sms_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _snd_manager.c
 cd ..
 
 
@@ -68,7 +63,7 @@ cd screen
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 play_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 pass_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 bonus_screen.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 replay_screen.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 replay_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 reset_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 dead_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 cont_screen.c
@@ -83,7 +78,7 @@ cd ..
 
 
 :: echo Build main
-::sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
+sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
 
 :: Time build -END-
@@ -108,22 +103,8 @@ sdcc -o output.ihx -mz80 --no-std-crt0 --data-loc 0xC000 ^
 banks\bank2.rel  banks\bank3.rel  banks\bank4.rel  banks\bank5.rel ^
 banks\bank6.rel  banks\bank7.rel  banks\bank8.rel  banks\bank9.rel ^
 banks\bank10.rel banks\bank11.rel banks\bank12.rel banks\bank13.rel ^
-banks\bank14.rel banks\databank.rel banks\fixedbank.rel ^
+banks\bank14.rel banks\bank15.rel ^
 devkit\_sms_manager.rel devkit\_snd_manager.rel ^
-engine\asm_manager.rel engine\actor_manager.rel engine\audio_manager.rel engine\board_manager.rel ^
-engine\collision_manager.rel engine\command_manager.rel engine\content_manager.rel ^
-engine\enemy_manager.rel ^
-engine\font_manager.rel engine\function_manager.rel ^
-engine\gamer_manager.rel engine\hack_manager.rel engine\input_manager.rel ^
-engine\level_manager.rel engine\locale_manager.rel engine\memo_manager.rel engine\move_manager.rel ^
-engine\score_manager.rel engine\screen_manager.rel engine\sprite_manager.rel  engine\state_manager.rel ^
-engine\storage_manager.rel engine\tile_manager.rel engine\timer_manager.rel ^
-object\score_object.rel object\storage_object.rel object\timer_object.rel ^
-screen\none_screen.rel screen\splash_screen.rel screen\intro_screen.rel screen\title_screen.rel screen\demo_screen.rel ^
-screen\select_screen.rel screen\option_screen.rel screen\init_screen.rel screen\load_screen.rel screen\ready_screen.rel ^
-screen\play_screen.rel screen\pass_screen.rel screen\bonus_screen.rel screen\replay_screen.rel screen\reset_screen.rel ^
-screen\dead_screen.rel screen\cont_screen.rel screen\over_screen.rel screen\beat_screen.rel screen\boss_screen.rel ^
-screen\record_screen.rel screen\save_screen.rel screen\test_screen.rel screen\func_screen.rel ^
 gfx.rel
 
 :: Execute
@@ -154,6 +135,6 @@ if exist "*.lst" del "*.lst" > nul; if exist "*.noi" del "*.noi" > nul; if exist
 
 
 :: Run
-java -jar C:\SEGA\Emulicious\Emulicious.jar output.sms
+::java -jar C:\SEGA\Emulicious\Emulicious.jar output.sms
 ::C:\SEGA\meka\mekaw.exe output.sms
 ::output.sms
