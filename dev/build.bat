@@ -9,8 +9,8 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 :: Compile
 cd devkit
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _sms_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _snd_manager.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _sms_manager.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _snd_manager.c
 cd ..
 
 
@@ -121,7 +121,7 @@ object\gamer_object.rel ^
 object\level_object.rel ^
 object\locale_object.rel ^
 object\score_object.rel ^
-object\state_object.rel 
+object\state_object.rel ^
 object\storage_object.rel ^
 object\timer_object.rel ^
 gfx.rel ^
