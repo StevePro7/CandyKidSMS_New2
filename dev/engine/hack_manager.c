@@ -76,13 +76,13 @@ void engine_hack_manager_invert()
 	st->state_object_exits_type = 0;
 
 
-	//st->state_object_enemy_move[ actor_type_pro ] = 1;
-	//st->state_object_enemy_move[ actor_type_adi ] = 1;
-	//st->state_object_enemy_move[ actor_type_suz ] = 1;
+	st->state_object_enemy_move[ actor_type_pro ] = 1;
+	st->state_object_enemy_move[ actor_type_adi ] = 1;
+	st->state_object_enemy_move[ actor_type_suz ] = 1;
 
-	st->state_object_enemy_move[ actor_type_pro ] = 0;
-	st->state_object_enemy_move[ actor_type_adi ] = 0;
-	st->state_object_enemy_move[ actor_type_suz ] = 0;
+	//st->state_object_enemy_move[ actor_type_pro ] = 0;
+	//st->state_object_enemy_move[ actor_type_adi ] = 0;
+	//st->state_object_enemy_move[ actor_type_suz ] = 0;
 
 
 	st->state_object_mydebugger = 0;		// TODO don't forget to remove this!!
