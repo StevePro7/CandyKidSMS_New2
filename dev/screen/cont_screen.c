@@ -30,7 +30,7 @@ void screen_cont_screen_load()
 {
 //	engine_audio_manager_music_stop();				// adriana
 	engine_delay_manager_load( CONT_SCREEN_DELAY );
-	engine_memo_manager_draw( 22, 23 );
+	engine_memo_manager_draw( 17, 18 );
 	cursor = 0;
 
 	display_cursor();

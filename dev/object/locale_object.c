@@ -22,9 +22,8 @@ const unsigned char *locale_object_texts[] =
 	"LEVEL IS",
 	"COMPLETE",
 	"PERFECT!",
-
-	//"CONTINUE",
-	//" YES  NO",
+	"CONTINUE",
+	" YES  NO",
 
 	//"SELECT",
 
