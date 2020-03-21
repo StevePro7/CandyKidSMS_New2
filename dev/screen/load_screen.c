@@ -15,6 +15,7 @@
 #include "..\engine\state_manager.h"
 #include "..\engine\timer_manager.h"
 #include "..\devkit\_sms_manager.h"
+#include "..\object\locale_object.h"
 
 #define LOAD_SCREEN_DELAY	150
 
@@ -28,7 +29,8 @@ void screen_load_screen_load()
 	unsigned char actor_tileZ[ MAX_ACTORS ];
 
 	st->state_object_curr_screen = screen_type_load;
-	st->state_object_next_screen = screen_type_ready;
+	//st->state_object_next_screen = screen_type_ready;
+	st->state_object_next_screen = screen_type_load;
 
 	engine_delay_manager_load( LOAD_SCREEN_DELAY );
 
@@ -87,28 +89,11 @@ void screen_load_screen_update( unsigned char *screen_type )
 
 static void print_level()
 {
-	//struct_state_object *st = &global_state_object;
-	//unsigned char world = st->state_object_world_data + 1;
-	//unsigned char round = st->state_object_round_data + 1;
-
-	//engine_board_manager_midd_text();
-	//engine_font_manager_draw_data( world, SCREEN_TILE_LEFT + 15, 11 );
-	//engine_font_manager_draw_data( round, SCREEN_TILE_LEFT + 15, 12 );
-
-	//if( world < MAX_ROUNDS )
-	//{
-	//	engine_font_manager_draw_char( '0', SCREEN_TILE_LEFT + 14, 11 );
-	//}
-	//if( round < MAX_ROUNDS )
-	//{
-	//	engine_font_manager_draw_char( '0', SCREEN_TILE_LEFT + 14, 12 );
-	//}
-
 	engine_board_manager_midd_text();
 	engine_memo_manager_levels( 14, 11, 12 );
 
-	//engine_font_manager_draw_text( locale_object_texts[ 8 ], SCREEN_TILE_LEFT + 8, 11 );
-	//engine_font_manager_draw_text( locale_object_texts[ 9 ], SCREEN_TILE_LEFT + 8, 12 );
+	engine_font_manager_draw_text( locale_object_texts[ 12 ], SCREEN_TILE_LEFT + 8, 11 );
+	engine_font_manager_draw_text( locale_object_texts[ 13 ], SCREEN_TILE_LEFT + 8, 12 );
 }
 
 static void print_enemy()

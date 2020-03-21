@@ -17,8 +17,8 @@ const unsigned char *locale_object_texts[] =
 	"  HARD",
 	"  SLOW",
 	"  FAST",
-	//"WORLD",
-	//"ROUND",
+	"WORLD",
+	"ROUND",
 	//"SELECT",
 
 	//"LEVEL IS",
