@@ -10,7 +10,7 @@
 #include "..\screen\init_screen.h"
 #include "..\screen\load_screen.h"
 #include "..\screen\ready_screen.h"
-//#include "..\screen\play_screen.h"
+#include "..\screen\play_screen.h"
 //#include "..\screen\pass_screen.h"
 //#include "..\screen\dead_screen.h"
 //#include "..\screen\cont_screen.h"
@@ -68,9 +68,9 @@ void engine_screen_manager_update()
 		case screen_type_ready:
 			screen_ready_screen_load();
 			break;
-//		case screen_type_play:
-//			screen_play_screen_load();
-//			break;
+		case screen_type_play:
+			screen_play_screen_load();
+			break;
 //		case screen_type_pass:
 //			screen_pass_screen_load();
 //			break;
@@ -117,9 +117,9 @@ void engine_screen_manager_update()
 	case screen_type_ready:
 		screen_ready_screen_update( &next_screen_type );
 		break;
-//	case screen_type_play:
-//		screen_play_screen_update( &next_screen_type );
-//		break;
+	case screen_type_play:
+		screen_play_screen_update( &next_screen_type );
+		break;
 //	case screen_type_pass:
 //		screen_pass_screen_update( &next_screen_type );
 //		break;
