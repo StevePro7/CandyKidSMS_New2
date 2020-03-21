@@ -67,6 +67,7 @@
     <ClInclude Include="object\storage_object.h" />
     <ClInclude Include="object\timer_object.h" />
     <ClInclude Include="psg.h" />
+    <ClInclude Include="screen\begin_screen.h" />
     <ClInclude Include="screen\none_screen.h" />
     <ClInclude Include="screen\splash_screen.h" />
   </ItemGroup>
@@ -116,6 +117,7 @@
     <ClCompile Include="object\storage_object.c" />
     <ClCompile Include="object\timer_object.c" />
     <ClCompile Include="psg.c" />
+    <ClCompile Include="screen\begin_screen.c" />
     <ClCompile Include="screen\none_screen.c" />
     <ClCompile Include="screen\splash_screen.c" />
   </ItemGroup>

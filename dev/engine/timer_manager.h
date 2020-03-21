@@ -3,7 +3,9 @@
 
 #include "..\object\timer_object.h"
 
-#define TEXT_FLASH_DELAY	50
+
+// ADRIAANA - split out to 3x object files
+
 
 // Global variables.
 extern struct_delay_object global_delay_object;

@@ -28,6 +28,8 @@ void engine_storage_manager_read()
 	struct_state_object *st = &global_state_object;
 
 	devkit_SMS_enableSRAM();
+
+	// adriana
 	st->state_object_high_score = savegame->save_high_score;
 
 	st->state_object_difficulty = savegame->save_difficulty;

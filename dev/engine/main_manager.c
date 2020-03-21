@@ -20,6 +20,8 @@ void engine_main_manager_load()
 
 	// Set default global state.
 	engine_hack_manager_init();
+
+	// adriana
 	st->state_object_high_score = DEF_HI_SCORE;
 	st->state_object_actor_kill = actor_type_kid;
 

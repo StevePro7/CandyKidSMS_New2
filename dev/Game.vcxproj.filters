@@ -192,6 +192,9 @@
     <ClInclude Include="engine\main_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
+    <ClInclude Include="screen\begin_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -334,6 +337,9 @@
     </ClCompile>
     <ClCompile Include="engine\main_manager.c">
       <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\begin_screen.c">
+      <Filter>Source Files\screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

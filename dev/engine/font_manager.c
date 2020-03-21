@@ -63,6 +63,8 @@ void engine_font_manager_draw_data( unsigned int data, unsigned char x, unsigned
 	}
 }
 
+
+// adriana
 void engine_font_manager_draw_data2( unsigned char data, unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = font_tiles__tilemap__bin;
