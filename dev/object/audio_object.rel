@@ -1,29 +1,76 @@
 XL2
-H 9 areas 6 global symbols
+H 9 areas 17 global symbols
 M audio_object
 O -mz80
+S _sound_accept_psg Ref0000
+S _music_over_psg Ref0000
+S _music_game03_psg Ref0000
+S _sound_gem_psg Ref0000
+S _music_flicky_psg Ref0000
+S _music_candykid_psg Ref0000
+S _sound_death_psg Ref0000
 S _sfx_reset_psg Ref0000
 S .__.ABS. Def0000
+S _music_beat_psg Ref0000
 S _sfx_power_psg Ref0000
+S _sound_level_psg Ref0000
 S _sfx_accept_psg Ref0000
+S _music_title_psg Ref0000
+S _sound_reset_psg Ref0000
+S _sound_power_psg Ref0000
+S _music_beatgame_psg Ref0000
 S _sfx_death_psg Ref0000
-A _CODE size 0 flags 0 addr 0
+A _CODE size D flags 0 addr 0
+S _music_object_bank Def0000
+S _sound_object_bank Def0007
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 8 flags 0 addr 0
+A _INITIALIZED size 22 flags 0 addr 0
+S _music_object_data Def0008
+S _sound_object_data Def0016
 S _sfx_object_data Def0000
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _INITIALIZER size 8 flags 0 addr 0
+A _INITIALIZER size 22 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 02 00
 T 00 00
 R 00 00 02 00
+T 08 00
+R 00 00 02 00
+T 08 00
+R 00 00 02 00
+T 16 00
+R 00 00 02 00
+T 16 00
+R 00 00 02 00
+T 00 00
+R 00 00 00 00
+T 00 00 06 06 06 07 08 09 09
+R 00 00 00 00
+T 07 00
+R 00 00 00 00
+T 07 00 02 02 02 02 02 02
+R 00 00 00 00
 T 00 00
 R 00 00 07 00
 T 00 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 03 00 02 04 04 00 02 06 02 00
+R 00 00 07 00 02 02 0C 00 02 04 11 00 02 06 0A 00
 T 06 00 00 00
-R 00 00 07 00 02 02 00 00
+R 00 00 07 00 02 02 07 00
+T 08 00
+R 00 00 07 00
+T 08 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 09 00 02 04 01 00 02 06 0D 00
+T 0E 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 02 00 02 04 04 00 02 06 10 00
+T 14 00 00 00
+R 00 00 07 00 02 02 05 00
+T 16 00
+R 00 00 07 00
+T 16 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 00 00 02 04 06 00 02 06 03 00
+T 1C 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 0B 00 02 04 0F 00 02 06 0E 00
