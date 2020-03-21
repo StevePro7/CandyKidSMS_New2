@@ -135,13 +135,6 @@ void engine_score_manager_update_boost()
 		return;
 	}
 
-	//so->timer++;
-	//if( so->timer <= so->delay )
-	//{
-	//	return;
-	//}
-
-	//so->timer = 0;
 	so->values[ score_type_boost ] -= 1 + st->state_object_difficulty;
 
 	// TODO set enum or #define for this magic no.

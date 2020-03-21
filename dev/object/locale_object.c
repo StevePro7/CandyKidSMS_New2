@@ -13,13 +13,14 @@ const unsigned char *locale_object_texts[] =
 	" LIVES",
 	" LEVEL",
 	" BOOST",
+	"  EASY",
+	"  HARD",
+	"  SLOW",
+	"  FAST",
 	//"WORLD",
 	//"ROUND",
 	//"SELECT",
-	//"  EASY",
-	//"  HARD",
-	//"  SLOW",
-	//"  FAST",
+
 	//"LEVEL IS",
 	//"COMPLETE",
 	//"PERFECT!",
@@ -69,4 +70,5 @@ const unsigned char *locale_object_number[] =
 	"11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
 };
 
+//const unsigned char locale_object_blank18[] = "123456789A12345678";
 const unsigned char locale_object_blank18[] = "                  ";

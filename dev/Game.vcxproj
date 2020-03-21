@@ -51,6 +51,7 @@
     <ClInclude Include="engine\locale_manager.h" />
     <ClInclude Include="engine\main_manager.h" />
     <ClInclude Include="engine\mask_manager.h" />
+    <ClInclude Include="engine\memo_manager.h" />
     <ClInclude Include="engine\score_manager.h" />
     <ClInclude Include="engine\screen_manager.h" />
     <ClInclude Include="engine\sprite_manager.h" />
@@ -109,6 +110,7 @@
     <ClCompile Include="engine\locale_manager.c" />
     <ClCompile Include="engine\main_manager.c" />
     <ClCompile Include="engine\mask_manager.c" />
+    <ClCompile Include="engine\memo_manager.c" />
     <ClCompile Include="engine\score_manager.c" />
     <ClCompile Include="engine\screen_manager.c" />
     <ClCompile Include="engine\sprite_manager.c" />

@@ -4,7 +4,7 @@
 #include "..\engine\content_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
-//#include "..\engine\memo_manager.h"
+#include "..\engine\memo_manager.h"
 #include "..\engine\score_manager.h"
 #include "..\devkit\_sms_manager.h"
 
@@ -18,7 +18,7 @@ void screen_init_screen_load()
 	engine_content_manager_load_sprites_game();
 
 	// Manually clear any text artifacts.
-	//engine_memo_manager_clear();
+	engine_memo_manager_clear();
 
 	// Draw tree border with exits.
 	engine_board_manager_border( border_type_game );
@@ -26,8 +26,8 @@ void screen_init_screen_load()
 
 	// Reset all score data.
 	engine_score_manager_text();
-	//engine_score_manager_init();
-	//engine_memo_manager_option();
+	engine_score_manager_init();
+	engine_memo_manager_option();
 
 	devkit_SMS_displayOn();
 }

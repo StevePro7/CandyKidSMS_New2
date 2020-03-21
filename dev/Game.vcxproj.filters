@@ -219,6 +219,9 @@
     <ClInclude Include="engine\score_manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\memo_manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -387,6 +390,9 @@
       <Filter>Source Files\engine</Filter>
     </ClCompile>
     <ClCompile Include="engine\score_manager.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\memo_manager.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
