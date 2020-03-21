@@ -7,7 +7,15 @@
 #include "..\screen\splash_screen.h"
 #include "..\screen\begin_screen.h"
 #include "..\screen\title_screen.h"
-
+#include "..\screen\init_screen.h"
+//#include "..\screen\load_screen.h"
+//#include "..\screen\ready_screen.h"
+//#include "..\screen\play_screen.h"
+//#include "..\screen\pass_screen.h"
+//#include "..\screen\dead_screen.h"
+//#include "..\screen\cont_screen.h"
+//#include "..\screen\over_screen.h"
+//#include "..\screen\beat_screen.h"
 #include "..\screen\test_screen.h"
 
 
@@ -51,7 +59,33 @@ void engine_screen_manager_update()
 		case screen_type_title:
 			screen_title_screen_load();
 			break;
-
+		case screen_type_init:
+			screen_init_screen_load();
+			break;
+//		case screen_type_load:
+//			screen_load_screen_load();
+//			break;
+//		case screen_type_ready:
+//			screen_ready_screen_load();
+//			break;
+//		case screen_type_play:
+//			screen_play_screen_load();
+//			break;
+//		case screen_type_pass:
+//			screen_pass_screen_load();
+//			break;
+//		case screen_type_dead:
+//			screen_dead_screen_load();
+//			break;
+//		case screen_type_cont:
+//			screen_cont_screen_load();
+//			break;
+//		case screen_type_over:
+//			screen_over_screen_load();
+//			break;
+//		case screen_type_beat:
+//			screen_beat_screen_load();
+//			break;
 		case screen_type_test:
 			screen_test_screen_load();
 			break;
@@ -74,7 +108,51 @@ void engine_screen_manager_update()
 	case screen_type_title:
 		screen_title_screen_update( &next_screen_type );
 		break;
-
+	case screen_type_init:
+		screen_init_screen_update( &next_screen_type );
+		break;
+//	case screen_type_load:
+//		screen_load_screen_update( &next_screen_type );
+//		break;
+//	case screen_type_ready:
+//		screen_ready_screen_update( &next_screen_type );
+//		break;
+//	case screen_type_play:
+//		screen_play_screen_update( &next_screen_type );
+//		break;
+//	case screen_type_pass:
+//		screen_pass_screen_update( &next_screen_type );
+//		break;
+//	case screen_type_bonus:
+//		screen_bonus_screen_update( &next_screen_type );
+//		break;
+//	case screen_type_replay:
+//		screen_replay_screen_update( &next_screen_type );
+//		break;
+//	case screen_type_reset:
+//		screen_reset_screen_update( &next_screen_type );
+//		break;
+//	case screen_type_dead:
+//		screen_dead_screen_update( &next_screen_type );
+//		break;
+//	case screen_type_cont:
+//		screen_cont_screen_update( &next_screen_type );
+//		break;
+//	case screen_type_over:
+//		screen_over_screen_update( &next_screen_type );
+//		break;
+//	case screen_type_beat:
+//		screen_beat_screen_update( &next_screen_type );
+//		break;
+//	case screen_type_boss:
+//		screen_boss_screen_update( &next_screen_type );
+//		break;
+//	case screen_type_record:
+//		screen_record_screen_update( &next_screen_type );
+//		break;
+//	case screen_type_save:
+//		screen_save_screen_update( &next_screen_type );
+//		break;
 	case screen_type_test:
 		screen_test_screen_update( &next_screen_type );
 		break;
