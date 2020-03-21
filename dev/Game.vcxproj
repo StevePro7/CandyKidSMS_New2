@@ -84,6 +84,7 @@
     <ClInclude Include="screen\init_screen.h" />
     <ClInclude Include="screen\load_screen.h" />
     <ClInclude Include="screen\none_screen.h" />
+    <ClInclude Include="screen\over_screen.h" />
     <ClInclude Include="screen\pass_screen.h" />
     <ClInclude Include="screen\play_screen.h" />
     <ClInclude Include="screen\ready_screen.h" />
@@ -154,6 +155,7 @@
     <ClCompile Include="screen\init_screen.c" />
     <ClCompile Include="screen\load_screen.c" />
     <ClCompile Include="screen\none_screen.c" />
+    <ClCompile Include="screen\over_screen.c" />
     <ClCompile Include="screen\pass_screen.c" />
     <ClCompile Include="screen\play_screen.c" />
     <ClCompile Include="screen\ready_screen.c" />

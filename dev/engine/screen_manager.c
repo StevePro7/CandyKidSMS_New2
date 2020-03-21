@@ -14,7 +14,7 @@
 #include "..\screen\pass_screen.h"
 #include "..\screen\dead_screen.h"
 #include "..\screen\cont_screen.h"
-//#include "..\screen\over_screen.h"
+#include "..\screen\over_screen.h"
 //#include "..\screen\beat_screen.h"
 #include "..\screen\test_screen.h"
 
@@ -105,9 +105,9 @@ void engine_screen_manager_update()
 		case screen_type_cont:
 			screen_cont_screen_load();
 			break;
-//		case screen_type_over:
-//			screen_over_screen_load();
-//			break;
+		case screen_type_over:
+			screen_over_screen_load();
+			break;
 //		case screen_type_beat:
 //			screen_beat_screen_load();
 //			break;
@@ -157,20 +157,11 @@ void engine_screen_manager_update()
 	case screen_type_cont:
 		screen_cont_screen_update( &next_screen_type );
 		break;
-//	case screen_type_over:
-//		screen_over_screen_update( &next_screen_type );
-//		break;
+	case screen_type_over:
+		screen_over_screen_update( &next_screen_type );
+		break;
 //	case screen_type_beat:
 //		screen_beat_screen_update( &next_screen_type );
-//		break;
-//	case screen_type_boss:
-//		screen_boss_screen_update( &next_screen_type );
-//		break;
-//	case screen_type_record:
-//		screen_record_screen_update( &next_screen_type );
-//		break;
-//	case screen_type_save:
-//		screen_save_screen_update( &next_screen_type );
 //		break;
 	case screen_type_test:
 		screen_test_screen_update( &next_screen_type );

@@ -24,10 +24,12 @@ const unsigned char *locale_object_texts[] =
 	"PERFECT!",
 	"CONTINUE",
 	" YES  NO",
+	"  GAME  ",
+	"  OVER  ",
+	"CANDYKID",
+	"  WINS  ",
 
 	//"SELECT",
-
-
 	//"SORRY NO",
 	//" BONUS. ",
 	//"2000 PTS",
