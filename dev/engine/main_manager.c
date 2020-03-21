@@ -1,4 +1,5 @@
 #include "main_manager.h"
+#include "content_manager.h"
 #include "enum_manager.h"
 #include "global_manager.h"
 #include "hack_manager.h"
@@ -35,6 +36,19 @@ void engine_main_manager_load()
 	// Invert any hack overrides...
 	engine_hack_manager_load();
 	engine_hack_manager_invert();
+}
+
+void engine_main_manager_debug()
+{
+	struct_state_object *st = &global_state_object;
+	if( !st->state_object_mydebugger )
+	{
+		return;
+	}
+
+	engine_content_manager_load_tiles_font();
+	engine_content_manager_load_tiles_game();
+	engine_content_manager_load_sprites_game();
 }
 
 void engine_main_manager_save()

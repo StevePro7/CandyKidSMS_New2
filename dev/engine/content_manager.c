@@ -33,12 +33,12 @@ void engine_content_manager_load_tiles_main()
 	devkit_SMS_loadBGPalette( ( void * ) main_tiles__palette__bin );
 }
 
-void engine_content_manager_load_tiles_screen()
-{
-	devkit_SMS_mapROMBank( screen__tiles__psgcompr_bank );
-	devkit_SMS_loadPSGaidencompressedTiles( screen__tiles__psgcompr, SCREEN_TILES );
-	devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) screen__tilemap__stmcompr );
-}
+//void engine_content_manager_load_tiles_screen()
+//{
+//	devkit_SMS_mapROMBank( screen__tiles__psgcompr_bank );
+//	devkit_SMS_loadPSGaidencompressedTiles( screen__tiles__psgcompr, SCREEN_TILES );
+//	devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) screen__tilemap__stmcompr );
+//}
 
 void engine_content_manager_load_tiles_splash()
 {

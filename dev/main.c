@@ -15,21 +15,18 @@ void main (void)
 	devkit_SMS_useFirstHalfTilesforSprites_False();
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
-
-	//devkit_SMS_setSpritePaletteColor( 0, 0, 0, 3 );
-
-	engine_content_manager_load_tiles_font();
-	////engine_content_manager_load_tiles_game();
-	//engine_content_manager_load_sprites_game();
+	//engine_content_manager_load_tiles_font();
 
 	engine_main_manager_init();
 	engine_main_manager_load();
+	engine_main_manager_debug();
 
 	//open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_test;
-	open_screen_type = screen_type_splash;
-	//open_screen_type = screen_type_begin;
+	//open_screen_type = screen_type_splash;
+	open_screen_type = screen_type_begin;
 	//open_screen_type = screen_type_title;
+	//open_screen_type = screen_type_test;
 
 
 	engine_screen_manager_init( open_screen_type );

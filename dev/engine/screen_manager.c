@@ -5,6 +5,10 @@
 // Screens.
 #include "..\screen\none_screen.h"
 #include "..\screen\splash_screen.h"
+#include "..\screen\begin_screen.h"
+
+#include "..\screen\test_screen.h"
+
 
 static unsigned char curr_screen_type;
 static unsigned char next_screen_type;
@@ -40,6 +44,13 @@ void engine_screen_manager_update()
 		case screen_type_splash:
 			screen_splash_screen_load();
 			break;
+		case screen_type_begin:
+			screen_begin_screen_load();
+			break;
+
+		case screen_type_test:
+			screen_test_screen_load();
+			break;
 		}
 	}
 
@@ -52,6 +63,13 @@ void engine_screen_manager_update()
 		break;
 	case screen_type_splash:
 		screen_splash_screen_update( &next_screen_type );
+		break;
+	case screen_type_begin:
+		screen_begin_screen_update( &next_screen_type );
+		break;
+
+	case screen_type_test:
+		screen_test_screen_update( &next_screen_type );
 		break;
 	}
 }

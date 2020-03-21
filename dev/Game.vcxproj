@@ -46,12 +46,14 @@
     <ClInclude Include="engine\global_manager.h" />
     <ClInclude Include="engine\hack_manager.h" />
     <ClInclude Include="engine\input_manager.h" />
+    <ClInclude Include="engine\locale_manager.h" />
     <ClInclude Include="engine\main_manager.h" />
     <ClInclude Include="engine\mask_manager.h" />
     <ClInclude Include="engine\screen_manager.h" />
     <ClInclude Include="engine\sprite_manager.h" />
     <ClInclude Include="engine\state_manager.h" />
     <ClInclude Include="engine\storage_manager.h" />
+    <ClInclude Include="engine\tile_manager.h" />
     <ClInclude Include="engine\timer_manager.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gfx.h" />
@@ -70,6 +72,7 @@
     <ClInclude Include="screen\begin_screen.h" />
     <ClInclude Include="screen\none_screen.h" />
     <ClInclude Include="screen\splash_screen.h" />
+    <ClInclude Include="screen\test_screen.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="banks\bank10.c" />
@@ -96,12 +99,14 @@
     <ClCompile Include="engine\global_manager.c" />
     <ClCompile Include="engine\hack_manager.c" />
     <ClCompile Include="engine\input_manager.c" />
+    <ClCompile Include="engine\locale_manager.c" />
     <ClCompile Include="engine\main_manager.c" />
     <ClCompile Include="engine\mask_manager.c" />
     <ClCompile Include="engine\screen_manager.c" />
     <ClCompile Include="engine\sprite_manager.c" />
     <ClCompile Include="engine\state_manager.c" />
     <ClCompile Include="engine\storage_manager.c" />
+    <ClCompile Include="engine\tile_manager.c" />
     <ClCompile Include="engine\timer_manager.c" />
     <ClCompile Include="game.c" />
     <ClCompile Include="gfx.c" />
@@ -120,6 +125,7 @@
     <ClCompile Include="screen\begin_screen.c" />
     <ClCompile Include="screen\none_screen.c" />
     <ClCompile Include="screen\splash_screen.c" />
+    <ClCompile Include="screen\test_screen.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{1B06943A-5988-4DBA-A2D2-8F40F11EF7E6}</ProjectGuid>
