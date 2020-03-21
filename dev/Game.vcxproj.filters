@@ -204,9 +204,6 @@
     <ClInclude Include="screen\test_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
-    <ClInclude Include="engine\board_manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="screen\title_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
@@ -216,13 +213,25 @@
     <ClInclude Include="engine\level_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
-    <ClInclude Include="engine\score_manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="engine\memo_manager.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\move_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\score_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\actor_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\board_manager.h">
+      <Filter>Header Files\engine</Filter>
     </ClInclude>
     <ClInclude Include="screen\load_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\enemy_manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -380,9 +389,6 @@
     <ClCompile Include="screen\test_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
-    <ClCompile Include="engine\board_manager.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="screen\title_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
@@ -392,13 +398,25 @@
     <ClCompile Include="engine\level_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
-    <ClCompile Include="engine\score_manager.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="engine\memo_manager.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\move_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\score_manager.c">
+      <Filter>Source Files\engine</Filter>
     </ClCompile>
     <ClCompile Include="screen\load_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\actor_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\board_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\enemy_manager.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -38,9 +38,11 @@
     <ClInclude Include="banks\bank9.h" />
     <ClInclude Include="devkit\_sms_manager.h" />
     <ClInclude Include="devkit\_snd_manager.h" />
+    <ClInclude Include="engine\actor_manager.h" />
     <ClInclude Include="engine\asm_manager.h" />
     <ClInclude Include="engine\board_manager.h" />
     <ClInclude Include="engine\content_manager.h" />
+    <ClInclude Include="engine\enemy_manager.h" />
     <ClInclude Include="engine\enum_manager.h" />
     <ClInclude Include="engine\font_manager.h" />
     <ClInclude Include="engine\function_manager.h" />
@@ -52,6 +54,7 @@
     <ClInclude Include="engine\main_manager.h" />
     <ClInclude Include="engine\mask_manager.h" />
     <ClInclude Include="engine\memo_manager.h" />
+    <ClInclude Include="engine\move_manager.h" />
     <ClInclude Include="engine\score_manager.h" />
     <ClInclude Include="engine\screen_manager.h" />
     <ClInclude Include="engine\sprite_manager.h" />
@@ -98,9 +101,11 @@
     <ClCompile Include="banks\bank9.c" />
     <ClCompile Include="devkit\_sms_manager.c" />
     <ClCompile Include="devkit\_snd_manager.c" />
+    <ClCompile Include="engine\actor_manager.c" />
     <ClCompile Include="engine\asm_manager.c" />
     <ClCompile Include="engine\board_manager.c" />
     <ClCompile Include="engine\content_manager.c" />
+    <ClCompile Include="engine\enemy_manager.c" />
     <ClCompile Include="engine\enum_manager.c" />
     <ClCompile Include="engine\font_manager.c" />
     <ClCompile Include="engine\function_manager.c" />
@@ -112,6 +117,7 @@
     <ClCompile Include="engine\main_manager.c" />
     <ClCompile Include="engine\mask_manager.c" />
     <ClCompile Include="engine\memo_manager.c" />
+    <ClCompile Include="engine\move_manager.c" />
     <ClCompile Include="engine\score_manager.c" />
     <ClCompile Include="engine\screen_manager.c" />
     <ClCompile Include="engine\sprite_manager.c" />
