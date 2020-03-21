@@ -19,17 +19,21 @@ const unsigned char *locale_object_texts[] =
 	"  FAST",
 	"WORLD",
 	"ROUND",
+	"LEVEL IS",
+	"COMPLETE",
+	"PERFECT!",
+
+	//"CONTINUE",
+	//" YES  NO",
+
 	//"SELECT",
 
-	//"LEVEL IS",
-	//"COMPLETE",
-	//"PERFECT!",
+
 	//"SORRY NO",
 	//" BONUS. ",
 	//"2000 PTS",
 	//" BONUS! ",
-	//"CONTINUE",
-	//" YES  NO",
+
 	//"  GAME  ",
 	//"  OVER  ",
 	//"CANDYKID",

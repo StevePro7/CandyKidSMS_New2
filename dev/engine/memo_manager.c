@@ -31,12 +31,12 @@ void engine_memo_manager_draw( unsigned char topIndex, unsigned char botIndex )
 
 void engine_memo_manager_pass( unsigned char perfect )
 {
-	unsigned char topIndex = 15;
-	unsigned char botIndex = 16;
+	unsigned char topIndex = 14;
+	unsigned char botIndex = 15;
 
 	if( perfect )
 	{
-		botIndex = 17;
+		botIndex = 16;
 	}
 
 	engine_memo_manager_draw( topIndex, botIndex );

@@ -249,6 +249,12 @@
     <ClInclude Include="screen\dead_screen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="screen\cont_screen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\pass_screen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -447,6 +453,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="screen\dead_screen.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\cont_screen.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\pass_screen.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
