@@ -31,7 +31,7 @@ void screen_title_screen_load()
 	st->state_object_localcheat = 0;
 	if( st->state_object_invincibie )
 	{
-		engine_locale_manager_draw_text( 29, SCREEN_TILE_LEFT + 2, BOTT_TEXT_Y );
+		engine_locale_manager_draw_text( 2, SCREEN_TILE_LEFT + 2, BOTT_TEXT_Y );
 		st->state_object_localcheat = 1;
 	}
 
@@ -83,7 +83,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 			if( cheat_count >= LOCAL_CHEAT_TOTAL )
 			{
 				//engine_audio_manager_sfx_play( sfx_type_power );
-				engine_locale_manager_draw_text( 29, SCREEN_TILE_LEFT + 2, BOTT_TEXT_Y );
+				engine_locale_manager_draw_text( 2, SCREEN_TILE_LEFT + 2, BOTT_TEXT_Y );
 				st->state_object_localcheat = 1;
 			}
 		}

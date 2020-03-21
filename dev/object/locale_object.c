@@ -7,6 +7,7 @@ const unsigned char *locale_object_texts[] =
 {
 	"V1.0",
 	"  INSERT COIN(S)  ",
+	"CHEAT!",
 	//"=CANDY",
 	//" =KID=",
 	//"  HIGH",
