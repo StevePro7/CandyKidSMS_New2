@@ -1,0 +1,43 @@
+XL2
+H 9 areas 4 global symbols
+M actor_manager
+O -mz80
+S _global_gamer_object Ref0000
+S _global_enemy_objects Ref0000
+S .__.ABS. Def0000
+A _CODE size 83 flags 0 addr 0
+S _engine_actor_manager_get_data Def0000
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 DD E5 DD 21 00 00 DD 39 21 FA FF 39 F9 DD
+R 00 00 00 00
+T 0E 00 7E 04 DD 77 FE DD 7E 05 DD 77 FF DD 6E FE
+R 00 00 00 00
+T 1C 00 DD 66 FF 36 01 DD 5E 06 DD 56 07 3A 04 00
+R 00 00 00 00 02 0E 00 00
+T 2A 00 12 0E 00
+R 00 00 00 00
+T 2D 00
+R 00 00 00 00
+T 2D 00 06 00 69 60 29 29 09 29 29 29 09 3E 00 00
+R 00 00 00 00 0B 0E 01 00
+T 3A 00 85 6F 3E 00 00 8C 67 33 33 E5 0C 41 78 DD
+R 00 00 00 00 8B 05 01 00
+T 47 00 86 FE DD 77 FC 3E 00 DD 8E FF DD 77 FD E1
+R 00 00 00 00
+T 55 00 E5 C5 01 19 00 09 C1 7E DD 6E FC DD 66 FD
+R 00 00 00 00
+T 63 00 77 E5 68 26 00 E5 FD E1 E1 FD 19 E1 E5 23
+R 00 00 00 00
+T 71 00 23 23 23 23 46 FD 70 00 79 D6 03 38 AF DD
+R 00 00 00 00
+T 7F 00 F9 DD E1 C9
+R 00 00 00 00

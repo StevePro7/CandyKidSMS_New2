@@ -1,13 +1,13 @@
 #include "load_screen.h"
 #include "..\engine\asm_manager.h"
-//#include "..\engine\actor_manager.h"
+#include "..\engine\actor_manager.h"
 //#include "..\engine\audio_manager.h"
 #include "..\engine\board_manager.h"
 #include "..\engine\content_manager.h"
-//#include "..\engine\enemy_manager.h"
+#include "..\engine\enemy_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
-//#include "..\engine\gamer_manager.h"
+#include "..\engine\gamer_manager.h"
 #include "..\engine\input_manager.h"
 #include "..\engine\level_manager.h"
 #include "..\engine\memo_manager.h"
@@ -29,8 +29,7 @@ void screen_load_screen_load()
 	unsigned char actor_tileZ[ MAX_ACTORS ];
 
 	st->state_object_curr_screen = screen_type_load;
-	//st->state_object_next_screen = screen_type_ready;
-	st->state_object_next_screen = screen_type_load;
+	st->state_object_next_screen = screen_type_ready;
 
 	engine_delay_manager_load( LOAD_SCREEN_DELAY );
 
@@ -38,17 +37,17 @@ void screen_load_screen_load()
 	engine_score_manager_load();
 
 	// Set all actor variables.
-	//engine_enemy_manager_reset_home();
-	//engine_gamer_manager_reset();
+	engine_enemy_manager_reset_home();
+	engine_gamer_manager_reset();
 
 	// TODO delete - used during debugging.
-	//engine_enemy_manager_debug();
+	engine_enemy_manager_debug();
 	// TODO delete - used during debugging.
 
 	// TODO do I want to put this after after level draw?
-	//engine_gamer_manager_load();
-	//engine_enemy_manager_load();
-	//engine_actor_manager_get_data( actor_mover, actor_tileZ );
+	engine_gamer_manager_load();
+	engine_enemy_manager_load();
+	engine_actor_manager_get_data( actor_mover, actor_tileZ );
 
 	engine_level_manager_load_level( st->state_object_world_data, st->state_object_round_data );
 	engine_level_manager_update_level( st->state_object_round_data, actor_mover, actor_tileZ );
@@ -65,13 +64,12 @@ void screen_load_screen_load()
 void screen_load_screen_update( unsigned char *screen_type )
 {
 	struct_state_object *st = &global_state_object;
-//	engine_memo_manager_draw
 	unsigned char delay;
 	unsigned char input;
 
 	// Draw sprites first.
-	//engine_enemy_manager_draw();
-	//engine_gamer_manager_draw();
+	engine_enemy_manager_draw();
+	engine_gamer_manager_draw();
 
 	delay = engine_delay_manager_update();
 	input = devkit_SMS_getKeysStatus();
