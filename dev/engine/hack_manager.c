@@ -87,7 +87,7 @@ void engine_hack_manager_invert()
 
 	st->state_object_mydebugger = 0;		// TODO don't forget to remove this!!
 	st->state_object_full_boost = 0;
-	st->state_object_delay_test = 0;
+	st->state_object_delay_test = 1;
 	// TODO delete this hard coded
 
 	// Trees.
