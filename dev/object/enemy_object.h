@@ -34,6 +34,7 @@ typedef struct tag_struct_enemy_object
 	unsigned char direction;	// Current  direction moved.
 	unsigned char dir_count;
 	unsigned char dir_total;
+	unsigned char dir_total2;
 	unsigned char image;
 	unsigned char frame;
 	unsigned int calcd;

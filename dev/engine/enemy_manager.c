@@ -46,7 +46,8 @@ void engine_enemy_manager_init()
 		eo->prev_move = direction_type_none;
 		eo->direction = direction_type_none;
 		eo->dir_count = 0;
-		eo->dir_total = 0; 
+		eo->dir_total = 0;
+		eo->dir_total2 = 0;
 
 		eo->image = 0;
 		eo->frame = frame_type_stance;
@@ -144,6 +145,9 @@ void engine_enemy_manager_load()
 		eo->toggle[ enemymove_type_kill ] += delta;
 
 		eo->ticker = 0;
+		eo->dir_count = 0;
+		eo->dir_total = 0;
+		eo->dir_total2 = 0;
 		eo->action = enemymove_type_wait;
 
 		// Mix up the order depending on Mama enemy.
@@ -365,6 +369,9 @@ void engine_enemy_manager_reset_mode( unsigned char enemy, unsigned char mode )
 	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
 	eo->action = mode;
 	eo->ticker = 0;
+	eo->dir_count = 0;
+	eo->dir_total = 0;
+	eo->dir_total2 = 0;
 
 	// Reset speed and delay to the correct mode.
 	eo->speed = eo->speeds[ mode ];
@@ -480,9 +487,9 @@ unsigned char engine_enemy_manager_attack_direction( unsigned char enemy, unsign
 	unsigned char enemy_direction = direction_type_none;
 
 	// Attempt to prevent looping.
-	// If looping trying to attack Kid then "attack" followed enemy.
 	if( NUM_DIRECTIONS == eo->dir_count && DIRECTION_LOOPING == eo->dir_total )
 	{
+		eo->dir_total2++;
 	}
 
 	if( NUM_DIRECTIONS == eo->dir_count )
@@ -618,6 +625,9 @@ unsigned char engine_enemy_manager_input_boost( unsigned char enemy )
 
 	//eo->action = 1 - eo->action;		// stevepro disable for testing.		ADRIANA
 	eo->ticker = 0;
+	eo->dir_count = 0;
+	eo->dir_total = 0;
+	eo->dir_total2 = 0;
 	boost = eo->action;
 
 	// IMPORTANT - this will alternate the images during game play - useful for debugging Scatter vs. Attack mode
