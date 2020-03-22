@@ -99,6 +99,11 @@ void engine_storage_manager_erase()
 	savegame->save_music_data = 0;
 	savegame->save_sound_data = 0;
 
+	savegame->save_image_kid = 0;
+	savegame->save_image_pro = 0;
+	savegame->save_image_adi = 0;
+	savegame->save_image_suz = 0;
+
 	savegame->terminal = FINAL;
 	devkit_SMS_disableSRAM();
 }

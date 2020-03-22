@@ -1,5 +1,5 @@
 #include "title_screen.h"
-//#include "..\engine\audio_manager.h"
+#include "..\engine\audio_manager.h"
 #include "..\engine\board_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
@@ -80,7 +80,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 			cheat_count++;
 			if( cheat_count >= LOCAL_CHEAT_TOTAL )
 			{
-				//engine_audio_manager_sfx_play( sfx_type_power );
+				engine_audio_manager_sfx_play( sfx_type_power );
 				engine_locale_manager_draw_text( 2, SCREEN_TILE_LEFT + 2, BOTT_TEXT_Y );
 				st->state_object_localcheat = 1;
 			}
