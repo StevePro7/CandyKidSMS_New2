@@ -1,5 +1,5 @@
 #include "cont_screen.h"
-//#include "..\engine\audio_manager.h"
+#include "..\engine\audio_manager.h"
 #include "..\engine\collision_manager.h"
 #include "..\engine\enemy_manager.h"
 #include "..\engine\enum_manager.h"
@@ -28,7 +28,7 @@ static unsigned char cursor;
 
 void screen_cont_screen_load()
 {
-//	engine_audio_manager_music_stop();				// adriana
+	engine_audio_manager_music_stop();
 	engine_delay_manager_load( CONT_SCREEN_DELAY );
 	engine_memo_manager_draw( 17, 18 );
 	cursor = 0;
@@ -95,7 +95,7 @@ void screen_cont_screen_update( unsigned char *screen_type )
 	if( input[ 2 ] )
 	{
 		// TODO play sound FX
-		//engine_audio_manager_sound_accept();
+		//engine_audio_manager_sound_accept();		// adriana
 		event_stage = event_stage_pause;
 		return;
 	}

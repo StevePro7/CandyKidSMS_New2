@@ -18,7 +18,6 @@ extern const unsigned char enemy_object_directions[] =
 
 // FIXED bank.
 // Enemy Manager.
-// Enemy Manager.
 const unsigned char enemy_object_image[] =
 {
 	0, 2, 4, 12,		// Pro images.

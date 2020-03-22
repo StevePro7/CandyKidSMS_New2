@@ -1,8 +1,8 @@
 #include "audio_manager.h"
 #include "state_manager.h"
+#include "..\object\audio_object.h"
 #include "..\devkit\_sms_manager.h"
 #include "..\devkit\_snd_manager.h"
-#include "..\object\audio_object.h"
 
 static unsigned char music_bank;
 

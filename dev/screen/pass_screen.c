@@ -1,5 +1,5 @@
 #include "pass_screen.h"
-//#include "..\engine\audio_manager.h"
+#include "..\engine\audio_manager.h"
 #include "..\engine\board_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\enemy_manager.h"
@@ -35,12 +35,10 @@ void screen_pass_screen_load()
 	st->state_object_next_screen = screen_type_load;
 
 	engine_delay_manager_load( PASS_SCREEN_DELAY1 );
-	//engine_audio_manager_music_stop();				// adriana
+	engine_audio_manager_music_stop();
 
 	perfect = ( lo->level_object_bonus_count + lo->level_object_candy_count == so->bonus + so->candy );
 	event_stage = event_stage_start;
-
-	//engine_audio_manager_sound_play( sound_type_level );
 }
 
 // TODO combine pass + bonus screen
@@ -79,7 +77,6 @@ void screen_pass_screen_update( unsigned char *screen_type )
 	if( delay )
 	{
 		engine_delay_manager_load( PASS_SCREEN_DELAY2 );
-		//engine_memo_manager_bonus( perfect );
 		engine_memo_manager_pass( perfect );
 		if( perfect )
 		{
@@ -88,8 +85,7 @@ void screen_pass_screen_update( unsigned char *screen_type )
 
 		if( !st->state_object_mydebugger )
 		{
-			// adriana
-			//engine_audio_manager_sound_play( sound_type_level );
+			engine_audio_manager_music_play_norepeat( mus_type_level );
 		}
 
 		event_stage = event_stage_pause;

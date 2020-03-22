@@ -1,7 +1,7 @@
 #include "load_screen.h"
 #include "..\engine\asm_manager.h"
 #include "..\engine\actor_manager.h"
-//#include "..\engine\audio_manager.h"
+#include "..\engine\audio_manager.h"
 #include "..\engine\board_manager.h"
 #include "..\engine\content_manager.h"
 #include "..\engine\enemy_manager.h"
@@ -55,7 +55,6 @@ void screen_load_screen_load()
 
 	print_level();
 	print_enemy();
-	//engine_audio_manager_music_play( music_type_game03 );
 }
 
 // TODO - could split this into 2x sections
@@ -76,8 +75,8 @@ void screen_load_screen_update( unsigned char *screen_type )
 	if( delay || input )
 	{
 		engine_level_manager_draw_middle();
-		//engine_audio_manager_music_play( music_type_game03 );
-		//engine_audio_manager_music_play( music_type_beat );
+		engine_audio_manager_music_play( mus_type_game03 );
+		//engine_audio_manager_music_play( mus_type_beat );
 		*screen_type = st->state_object_next_screen;
 		return;
 	}
