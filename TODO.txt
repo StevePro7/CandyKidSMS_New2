@@ -8,7 +8,10 @@ play screen enemy wait => tour		DONE
 
 rand()	in title screen!!
 
-Save	all data changes to SRAM
+SRAM
+hack mgr load()
+enhance such that if st property == 0 from prev read in SRAM then attempt to overwrite from ROM hack
+
 
 
 Tweak actor numbers for Easy + Hard
@@ -44,6 +47,9 @@ mydebugger MUST be zero for final build
 
 Cont	time how long to complete w/ no repeat and if get to the end then game over
 CANT do this as want to resume org. game play music when cont == yes
+
+Save	all data changes to SRAM
+Erase	all data changes to SRAM
 
 
 EASY	HARD
