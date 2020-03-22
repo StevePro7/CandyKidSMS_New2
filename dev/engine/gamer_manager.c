@@ -66,10 +66,6 @@ void engine_gamer_manager_load()
 	go->prev_boost = pace_type_slow;
 	go->curr_boost = pace_type_slow;
 	engine_gamer_manager_pace( go->curr_boost );
-
-
-	// todo delete
-	go->image = 1;
 }
 
 void engine_gamer_manager_update()

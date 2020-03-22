@@ -7,6 +7,7 @@
 #include "..\engine\input_manager.h"
 #include "..\engine\locale_manager.h"
 #include "..\engine\memo_manager.h"
+#include "..\engine\storage_manager.h"
 #include "..\engine\timer_manager.h"
 #include "..\object\audio_object.h"
 
@@ -23,6 +24,9 @@ void screen_over_screen_load()
 
 	engine_locale_manager_draw_text( 19, x, y + 1 );
 	engine_locale_manager_draw_text( 20, x, y + 2 );
+
+	// Save game state to SRAM when game over.
+	engine_storage_manager_write();
 
 	engine_audio_manager_music_play_norepeat( mus_type_over );
 }
