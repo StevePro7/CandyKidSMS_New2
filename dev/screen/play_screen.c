@@ -248,6 +248,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 				if( pace_type_none != enemy_boost )
 				{
 //					engine_command_manager_add( frame, command_type_enemy_speed, ( enemy | ( enemy_boost << 4 ) ) );
+					engine_enemy_manager_pace( enemy, enemy_boost );
 				}
 
 				if( enemymove_type_tour == eo->action )
