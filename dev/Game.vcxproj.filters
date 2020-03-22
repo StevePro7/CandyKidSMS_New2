@@ -261,6 +261,9 @@
     <ClInclude Include="screen\play_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
+    <ClInclude Include="screen\beat_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -471,6 +474,9 @@
       <Filter>Source Files\screen</Filter>
     </ClCompile>
     <ClCompile Include="screen\cont_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\beat_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
   </ItemGroup>

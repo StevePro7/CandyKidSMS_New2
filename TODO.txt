@@ -7,15 +7,19 @@ Cont	time how long to complete w/ no repeat and if get to the end then game over
 21/03/2020
 Looping - enemy looping => will I ever solve that w/o impacting perf??
 
-Audio
 
-Enemy go home on dead screen
-
-Boost gamer + enemy
 
 Beat screen w/o command pattern
 
 Revert Fixed Bank stuff			do I need to?	i.e. enough space
+
+DONE
+Audio
+
+Enemy go home on dead screen		
+
+Boost gamer + enemy
+
 
 Title screen
 
