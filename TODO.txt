@@ -1,11 +1,18 @@
 TODO 01
 
 22/03/2020
+DON'T FORGET:
+remove the enemy memo debugging
+enable scatter mode to attack 
+play screen enemy wait => tour
+
+
 rand()	in title screen!!
 
-Cont	time how long to complete w/ no repeat and if get to the end then game over
+Pass screen play music
 
-Collision MGR	play power sound fx [and candy?] outside in Play screen
+Save	all data changes to SRAM
+
 
 Tweak actor numbers for Easy + Hard
 
@@ -32,6 +39,12 @@ Beat screen w/o command pattern
 Looping - enemy looping => will I ever solve that w/o impacting perf??
 Scatter		is better but do I want 8x scatter tiles??
 Attack		is "better" hopefully as just switch to scatter
+
+Collision MGR	play power sound fx [and candy?] outside in Play screen
+
+
+Cont	time how long to complete w/ no repeat and if get to the end then game over
+CANT do this as want to resume org. game play music when cont == yes
 
 
 EASY	HARD

@@ -4,7 +4,7 @@ M hack_manager
 O -mz80
 S .__.ABS. Def0000
 S _global_state_object Ref0000
-A _CODE size 147 flags 0 addr 0
+A _CODE size 146 flags 0 addr 0
 S _engine_hack_manager_load Def0047
 S _engine_hack_manager_init Def0000
 S _engine_hack_manager_invert Def009D
@@ -96,7 +96,7 @@ T 28 01
 R 00 00 00 00
 T 28 01 3A 0C 00 D6 01 3E 00 17 32 0C 00 3A 0D 00
 R 00 00 00 00 02 03 01 00 02 0B 01 00 02 0E 01 00
-T 36 01 D6 01 3E 00 17 32 0D 00 21 0A 00 36 01 3E
+T 36 01 D6 01 3E 00 17 32 0D 00 21 0A 00 36 00 AF
 R 00 00 00 00 02 08 01 00 02 0B 01 00
-T 44 01 04 12 C9
+T 44 01 12 C9
 R 00 00 00 00
