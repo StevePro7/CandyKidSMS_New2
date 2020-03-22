@@ -8,6 +8,9 @@
 #include "..\engine\score_manager.h"
 #include "..\devkit\_sms_manager.h"
 
+
+#include "..\engine\storage_manager.h"
+
 void screen_init_screen_load()
 {
 	devkit_SMS_displayOff();
@@ -30,6 +33,8 @@ void screen_init_screen_load()
 	engine_memo_manager_option();
 
 	devkit_SMS_displayOn();
+
+	engine_storage_manager_write();
 }
 
 void screen_init_screen_update( unsigned char *screen_type )

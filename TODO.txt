@@ -2,14 +2,11 @@ TODO 01
 
 22/03/2020
 DON'T FORGET:
-remove the enemy memo debugging
-enable scatter mode to attack 
-play screen enemy wait => tour
-
+remove the enemy memo debugging		todo
+enable scatter mode to attack 		DONE
+play screen enemy wait => tour		DONE
 
 rand()	in title screen!!
-
-
 
 Save	all data changes to SRAM
 

@@ -21,6 +21,7 @@ void engine_gamer_manager_stop();
 void engine_gamer_manager_dead();
 void engine_gamer_manager_reset();
 void engine_gamer_manager_image();
+void engine_gamer_manager_images( unsigned char image_kid );
 
 unsigned char engine_gamer_manager_find_direction( unsigned char gamer_direction );
 unsigned char engine_gamer_manager_input_boost( unsigned char direction );

@@ -19,6 +19,7 @@ struct_enemy_object global_enemy_objects[ MAX_ENEMIES ];
 
 static void calcd_frame( unsigned char enemy );
 static void calcd_spots( unsigned char enemy );
+static void calcd_image( unsigned char enemy, unsigned char image );
 
 // Methods.
 void engine_enemy_manager_init()
@@ -389,6 +390,14 @@ void engine_enemy_manager_image( unsigned char enemy )
 	calcd_frame( enemy );
 }
 
+void engine_enemy_manager_images( unsigned char image_pro, unsigned char image_adi, unsigned char image_suz )
+{
+	calcd_image( actor_type_pro, image_pro );
+	calcd_image( actor_type_adi, image_adi );
+	calcd_image( actor_type_suz, image_suz );
+}
+
+
 // TODO delete!!
 void engine_enemy_manager_debug()
 {
@@ -657,6 +666,7 @@ unsigned char engine_enemy_manager_input_boost( unsigned char enemy )
 	return boost;
 }
 
+
 static void calcd_frame( unsigned char enemy )
 {
 	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
@@ -668,4 +678,10 @@ static void calcd_spots( unsigned char enemy )
 	eo->posnX = board_object_posnX[ eo->tileX ];
 	eo->posnY = board_object_posnY[ eo->tileY ];
 	engine_function_manager_convertXYtoZ( MAZE_ROWS, eo->tileX, eo->tileY, &eo->tileZ );
+}
+static void calcd_image( unsigned char enemy, unsigned char image )
+{
+	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
+	eo->image = image;
+	calcd_frame( enemy );
 }

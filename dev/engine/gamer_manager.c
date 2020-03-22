@@ -293,6 +293,12 @@ void engine_gamer_manager_image()
 	go->image = 1 - go->image;
 	calcd_frame();
 }
+void engine_gamer_manager_images( unsigned char image_kid )
+{
+	struct_gamer_object *go = &global_gamer_object;
+	go->image = image_kid;
+	calcd_frame();
+}
 
 unsigned char engine_gamer_manager_find_direction( unsigned char gamer_direction )
 {
