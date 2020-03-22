@@ -12,7 +12,6 @@
 #include <stdlib.h>
 
 #define SPRITE_TILES_ENEMY	256 + 48
-#define DIRECTION_LOOPING	15
 
 // Global variables.
 struct_enemy_object global_enemy_objects[ MAX_ENEMIES ];
@@ -88,7 +87,7 @@ void engine_enemy_manager_load()
 
 		// Determine scatter tiles.
 		check = enemy;
-		for( index = 0; index < NUM_DIRECTIONS; index++ )
+		for( index = 0; index < NUM_SCATTERING; index++ )
 		{
 			while( 1 )
 			{
@@ -416,7 +415,7 @@ unsigned char engine_enemy_manager_scatter_direction( unsigned char enemy )
 
 	// Attempt to prevent looping.
 	advance = 0;
-	if( NUM_DIRECTIONS == eo->dir_count && DIRECTION_LOOPING == eo->dir_total )
+	if( NUM_DIRECTIONS == eo->dir_count && 15 == eo->dir_total )
 	{
 		advance = 1;
 	}
@@ -436,7 +435,7 @@ unsigned char engine_enemy_manager_scatter_direction( unsigned char enemy )
 	if( advance )
 	{
 		eo->paths++;
-		if( eo->paths >= NUM_DIRECTIONS )
+		if( eo->paths >= NUM_SCATTERING )
 		{
 			eo->paths = 0;
 		}
@@ -479,29 +478,19 @@ unsigned char engine_enemy_manager_attack_direction( unsigned char enemy, unsign
 
 	unsigned char enemy_direction = direction_type_none;
 
-	// Attempt to prevent looping.
-	// If looping trying to attack Kid then "attack" followed enemy.
-	if( NUM_DIRECTIONS == eo->dir_count && DIRECTION_LOOPING == eo->dir_total )
-	{
-	}
-
-	if( NUM_DIRECTIONS == eo->dir_count )
-	{
-		eo->dir_count = 0;
-		eo->dir_total = 0;
-	}
-
-	// ATTACK.
+	//// ATTACK.
 	if( actor_type_pro == enemy )
 	{
 		enemy_direction = engine_enemy_manager_what_direction( enemy, targetX, targetY );
 	}
+	//else 
 	else if( actor_type_adi == enemy )
 	{
 		// Look two tiles in front on Candy Kid.
 		engine_level_manager_get_next_index( &targetX, &targetY, eo->prev_move, offset_type_two );
 		enemy_direction = engine_enemy_manager_what_direction( enemy, targetX, targetY );
 	}
+	//else
 	else if( actor_type_suz == enemy )
 	{
 		// Try Pacman algorithm based off Blinky [Pro]

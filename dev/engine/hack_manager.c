@@ -71,8 +71,8 @@ void engine_hack_manager_invert()
 	st->state_object_invincibie = 0;
 	st->state_object_localcheat = 0;
 
-	st->state_object_difficulty = 0;
-	st->state_object_pace_speed = 0;
+	st->state_object_difficulty = 1;
+	st->state_object_pace_speed = 1;
 	st->state_object_trees_type = 1;
 	st->state_object_exits_type = 0;
 
@@ -88,7 +88,7 @@ void engine_hack_manager_invert()
 
 	st->state_object_mydebugger = 1;		// TODO don't forget to remove this!!
 	st->state_object_full_boost = 0;
-	st->state_object_delay_test = 0;
+	st->state_object_delay_test = 1;
 	st->state_object_load_asset = 0;
 	// TODO delete this hard coded
 

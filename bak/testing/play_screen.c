@@ -5,7 +5,7 @@
 //#include "..\engine\command_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\enemy_manager.h"
-#include "..\engine\font_manager.h"
+//#include "..\engine\font_manager.h"
 #include "..\engine\gamer_manager.h"
 #include "..\engine\input_manager.h"
 #include "..\engine\level_manager.h"
@@ -35,7 +35,7 @@ void screen_play_screen_load()
 {
 	struct_state_object *st = &global_state_object;
 
-	//struct_enemy_object *eo;
+	struct_enemy_object *eo;
 	engine_delay_manager_load( 0 );
 
 //	engine_command_manager_load();
@@ -44,8 +44,7 @@ void screen_play_screen_load()
 	//engine_frame_manager_draw();
 	//engine_delay_manager_draw();
 
-	//engine_font_manager_draw_text( "SCATTR", 26, 21 );
-	//eo = &global_enemy_objects[ actor_type_pro ];	engine_memo_manager_debugging( actor_type_pro, eo->action );
+	eo = &global_enemy_objects[ actor_type_pro ];	engine_memo_manager_debugging( actor_type_pro, eo->action );
 	//eo = &global_enemy_objects[ actor_type_adi ];	engine_memo_manager_debugging( actor_type_adi, eo->action );
 	//eo = &global_enemy_objects[ actor_type_suz ];	engine_memo_manager_debugging( actor_type_suz, eo->action );
 	first_time = 1;
@@ -158,14 +157,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 			}
 		}
 
-		// IMPORTANT - commenting this out 19/03/2020 as surely doesn't make difference??
-		//input_direction = engine_input_manager_direction();
-		//if( direction_type_none != input_direction && gamer_direction != input_direction )
-		//{
-		//	nextr_direction = gamer_direction;
-		//	//engine_font_manager_draw_data( nextr_direction, 30, 20 );		// stevepro pre-empt direction
-		//}
-
 		engine_gamer_manager_stop();
 	}
 	// For continuity we want to check if actor can move immediately after stopping.
@@ -201,7 +192,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 
 	// Move enemies.
-	//for( enemy = 0; enemy < 1; enemy++ )
 	for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
 	{
 		eo = &global_enemy_objects[ enemy ];
@@ -232,7 +222,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 		// For continuity we want to check if actor can move immediately after stopping.
 		if( direction_type_none == eo->direction && lifecycle_type_idle == eo->lifecycle )
 		{
-			//engine_font_manager_draw_data( eo->action, 30, 21 );
 			if( enemymove_type_wait == eo->action )
 			{
 				if( frame >= eo->waiter )

@@ -27,6 +27,7 @@ void engine_enemy_manager_init()
 
 	unsigned char frame;
 	unsigned char enemy;
+	unsigned char follow;
 
 	for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
 	{
@@ -58,6 +59,14 @@ void engine_enemy_manager_init()
 		eo->images[ 1 ][ 1 ] = enemy_object_image[ frame + 3 ];
 		eo->scatter[ 0 ] = enemy; eo->scatter[ 1 ] = enemy; eo->scatter[ 2 ] = enemy; eo->scatter[ 3 ] = enemy;
 
+		follow = enemy + 1;
+		if( follow >= MAX_ENEMIES )
+		{
+			follow = 0;
+		}
+		eo->follow = follow;
+
+
 		calcd_frame( enemy );
 		calcd_spots( enemy );
 	}
@@ -88,7 +97,7 @@ void engine_enemy_manager_load()
 
 		// Determine scatter tiles.
 		check = enemy;
-		for( index = 0; index < NUM_DIRECTIONS; index++ )
+		for( index = 0; index < NUM_SCATTERING; index++ )
 		{
 			while( 1 )
 			{
@@ -436,7 +445,7 @@ unsigned char engine_enemy_manager_scatter_direction( unsigned char enemy )
 	if( advance )
 	{
 		eo->paths++;
-		if( eo->paths >= NUM_DIRECTIONS )
+		if( eo->paths >= NUM_SCATTERING )
 		{
 			eo->paths = 0;
 		}
@@ -478,11 +487,14 @@ unsigned char engine_enemy_manager_attack_direction( unsigned char enemy, unsign
 	struct_enemy_object *eo0;
 
 	unsigned char enemy_direction = direction_type_none;
+	eo0 = &global_enemy_objects[ eo->follow ];
 
 	// Attempt to prevent looping.
 	// If looping trying to attack Kid then "attack" followed enemy.
 	if( NUM_DIRECTIONS == eo->dir_count && DIRECTION_LOOPING == eo->dir_total )
 	{
+		targetX = MAZE_ROWS - eo0->tileX;
+		targetY = MAZE_COLS - eo0->tileY;
 	}
 
 	if( NUM_DIRECTIONS == eo->dir_count )
@@ -490,6 +502,7 @@ unsigned char engine_enemy_manager_attack_direction( unsigned char enemy, unsign
 		eo->dir_count = 0;
 		eo->dir_total = 0;
 	}
+
 
 	// ATTACK.
 	if( actor_type_pro == enemy )
@@ -505,7 +518,7 @@ unsigned char engine_enemy_manager_attack_direction( unsigned char enemy, unsign
 	else if( actor_type_suz == enemy )
 	{
 		// Try Pacman algorithm based off Blinky [Pro]
-		eo0 = &global_enemy_objects[ actor_type_pro ];
+		eo0 = &global_enemy_objects[ eo->follow ];
 
 		targetX = eo0->tileX;
 		targetY = eo0->tileY;
@@ -518,6 +531,42 @@ unsigned char engine_enemy_manager_attack_direction( unsigned char enemy, unsign
 	return enemy_direction;
 }
 
+// TODO delete
+//unsigned char engine_enemy_manager_attack_direction_BAK( unsigned char enemy, unsigned char targetX, unsigned char targetY )
+//{
+//	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
+//	struct_enemy_object *eo0;
+//
+//	unsigned char enemy_direction = direction_type_none;
+//
+//	//// ATTACK.
+//	if( actor_type_pro == enemy )
+//	{
+//		enemy_direction = engine_enemy_manager_what_direction( enemy, targetX, targetY );
+//	}
+//	//else 
+//	else if( actor_type_adi == enemy )
+//	{
+//		// Look two tiles in front on Candy Kid.
+//		engine_level_manager_get_next_index( &targetX, &targetY, eo->prev_move, offset_type_two );
+//		enemy_direction = engine_enemy_manager_what_direction( enemy, targetX, targetY );
+//	}
+//	//else
+//	else if( actor_type_suz == enemy )
+//	{
+//		// Try Pacman algorithm based off Blinky [Pro]
+//		eo0 = &global_enemy_objects[ actor_type_pro ];
+//
+//		targetX = eo0->tileX;
+//		targetY = eo0->tileY;
+//
+//		// Look four tiles in front on Candy Kid.
+//		engine_level_manager_get_next_index( &targetX, &targetY, direction_type_none, offset_type_none );
+//		enemy_direction = engine_enemy_manager_what_direction( enemy, ( offset_type_four - 1 ) - targetX, ( offset_type_four - 1 ) - targetY );
+//	}
+//
+//	return enemy_direction;
+//}
 
 unsigned char engine_enemy_manager_what_direction( unsigned char enemy, unsigned char targetX, unsigned char targetY )
 {
@@ -537,6 +586,7 @@ unsigned char engine_enemy_manager_what_direction( unsigned char enemy, unsigned
 	unsigned char list = 0;
 	unsigned char half = 0;
 	unsigned char flip = 0;
+
 
 	// Get the list of 4x possible directions in the order depending on tiles.
 	engine_move_manager_get_directions( sourceX, sourceY, targetX, targetY, &list, &half );

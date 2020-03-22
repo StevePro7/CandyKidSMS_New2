@@ -1,6 +1,8 @@
 TODO 01
 
 22/03/2020
+rand()	in title screen!!
+
 Cont	time how long to complete w/ no repeat and if get to the end then game over
 
 Collision MGR	play power sound fx [and candy?] outside in Play screen
@@ -8,7 +10,8 @@ Collision MGR	play power sound fx [and candy?] outside in Play screen
 
 21/03/2020
 Looping - enemy looping => will I ever solve that w/o impacting perf??
-
+Scatter		is better but do I want 8x scatter tiles??
+Attack
 
 
 
