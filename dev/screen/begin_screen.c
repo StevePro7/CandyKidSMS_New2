@@ -7,6 +7,7 @@
 #include "..\engine\global_manager.h"
 #include "..\engine\input_manager.h"
 #include "..\engine\locale_manager.h"
+#include "..\engine\main_manager.h"
 #include "..\engine\tile_manager.h"
 #include "..\devkit\_sms_manager.h"
 
@@ -27,6 +28,8 @@ void screen_begin_screen_load()
 
 	engine_locale_manager_draw_text( 0, SCREEN_TILE_LEFT + 24, BOTT_TEXT_Y );
 	devkit_SMS_displayOn();
+
+	engine_main_manager_load();
 }
 
 void screen_begin_screen_update( unsigned char *screen_type )

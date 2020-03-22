@@ -17,8 +17,8 @@ void main (void)
 
 
 	engine_main_manager_init();
-	engine_main_manager_load();
-	engine_main_manager_debug();
+	//engine_main_manager_load();
+	//engine_main_manager_debug();
 
 	//open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_test;
