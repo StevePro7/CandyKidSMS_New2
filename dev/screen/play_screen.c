@@ -74,6 +74,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	unsigned char input_direction = direction_type_none;
 	unsigned char gamer_collision = coll_type_empty;
 	unsigned char gamer_tile_type = tile_type_blank;
+	unsigned char candy_count = 0;
 
 	unsigned char proceed;
 	unsigned char input;
@@ -275,16 +276,19 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 
 
-	// Check candy collision before sprite collision as we want to test if all candy eaten = level complete
+	// Check candy collision before sprite collision as we want to test if all candy eaten = level complete.
 	if( coll_type_candy == gamer_collision )
 	{
-		// TODO update correct screen.
-		unsigned char candy_count = engine_score_manager_get_candy();
+		candy_count = engine_score_manager_get_candy();
 		if( lo->level_object_candy_count == candy_count )
 		{
 			*screen_type = screen_type_pass;
 			return;
 		}
+	}
+	else if( coll_type_oneup == gamer_collision )
+	{
+		engine_audio_manager_sfx_play( sfx_type_power );
 	}
 
 	// Kid invincible thus don't check for death collisions.

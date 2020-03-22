@@ -7,12 +7,17 @@ Cont	time how long to complete w/ no repeat and if get to the end then game over
 
 Collision MGR	play power sound fx [and candy?] outside in Play screen
 
+Tweak actor numbers for Easy + Hard
+
+Sound FX when dead	e.g. explosion
+Sound FX + delay on start screens
+
+Command pattern cut on branch and regression test all commands
+Screen Mgr function pointers compare binary size and regress test
+
 
 21/03/2020
-Looping - enemy looping => will I ever solve that w/o impacting perf??
-Scatter		is better but do I want 8x scatter tiles??
-Attack
-
+T itle screen
 
 
 Revert Fixed Bank stuff			do I need to?	i.e. enough space
@@ -24,7 +29,10 @@ Enemy go home on dead screen
 Boost gamer + enemy
 Beat screen w/o command pattern
 
-Title screen
+Looping - enemy looping => will I ever solve that w/o impacting perf??
+Scatter		is better but do I want 8x scatter tiles??
+Attack		is "better" hopefully as just switch to scatter
+
 
 EASY	HARD
 MODE	MODE
