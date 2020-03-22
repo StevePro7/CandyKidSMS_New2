@@ -19,7 +19,7 @@ void engine_main_manager_init()
 void engine_main_manager_load()
 {
 	struct_state_object *st = &global_state_object;
-	unsigned char test;
+	unsigned char storage;
 
 	// Set default global state.
 	engine_hack_manager_init();
@@ -29,8 +29,8 @@ void engine_main_manager_load()
 	st->state_object_actor_kill = actor_type_kid;
 
 	// Check if global state previously stored.
-	test = engine_storage_manager_available();
-	if( test )
+	storage = engine_storage_manager_available();
+	if( storage )
 	{
 		engine_storage_manager_read();
 	}

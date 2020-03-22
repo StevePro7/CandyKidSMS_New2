@@ -17,6 +17,11 @@ typedef struct tag_struct_storage_object
 	unsigned char save_music_data;
 	unsigned char save_sound_data;
 
+	unsigned char save_image_kid;
+	unsigned char save_image_pro;
+	unsigned char save_image_adi;
+	unsigned char save_image_suz;
+
 	unsigned char terminal;
 
 } struct_storage_object;

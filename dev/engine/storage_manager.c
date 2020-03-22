@@ -1,5 +1,7 @@
 #include "storage_manager.h"
+#include "enemy_manager.h"
 #include "enum_manager.h"
+#include "gamer_manager.h"
 #include "global_manager.h"
 #include "state_manager.h"
 #include "storage_manager.h"
@@ -41,6 +43,10 @@ void engine_storage_manager_read()
 	st->state_object_round_data = savegame->save_round_data;
 	st->state_object_music_data = savegame->save_music_data;
 	st->state_object_sound_data = savegame->save_sound_data;
+
+	engine_gamer_manager_images( savegame->save_image_kid );
+	engine_enemy_manager_images( savegame->save_image_pro, savegame->save_image_adi, savegame->save_image_suz );
+
 	devkit_SMS_disableSRAM();
 }
 
@@ -48,6 +54,9 @@ void engine_storage_manager_write()
 {
 	struct_storage_object *savegame = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
 	struct_state_object *st = &global_state_object;
+
+	struct_gamer_object *go = &global_gamer_object;
+	struct_enemy_object *eo;
 
 	devkit_SMS_enableSRAM();
 	savegame->Magic = MAGIC;
@@ -62,6 +71,11 @@ void engine_storage_manager_write()
 	savegame->save_round_data = st->state_object_round_data;
 	savegame->save_music_data = st->state_object_music_data;
 	savegame->save_sound_data = st->state_object_sound_data;
+
+	savegame->save_image_kid = go->image;
+	eo = &global_enemy_objects[ actor_type_pro ]; savegame->save_image_pro = eo->image;
+	eo = &global_enemy_objects[ actor_type_adi ]; savegame->save_image_adi = eo->image;
+	eo = &global_enemy_objects[ actor_type_suz ]; savegame->save_image_suz = eo->image;
 
 	savegame->terminal = FINAL;
 	devkit_SMS_disableSRAM();
