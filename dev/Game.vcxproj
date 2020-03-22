@@ -40,6 +40,7 @@
     <ClInclude Include="devkit\_snd_manager.h" />
     <ClInclude Include="engine\actor_manager.h" />
     <ClInclude Include="engine\asm_manager.h" />
+    <ClInclude Include="engine\audio_manager.h" />
     <ClInclude Include="engine\board_manager.h" />
     <ClInclude Include="engine\collision_manager.h" />
     <ClInclude Include="engine\content_manager.h" />
@@ -111,6 +112,7 @@
     <ClCompile Include="devkit\_snd_manager.c" />
     <ClCompile Include="engine\actor_manager.c" />
     <ClCompile Include="engine\asm_manager.c" />
+    <ClCompile Include="engine\audio_manager.c" />
     <ClCompile Include="engine\board_manager.c" />
     <ClCompile Include="engine\collision_manager.c" />
     <ClCompile Include="engine\content_manager.c" />

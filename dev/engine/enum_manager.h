@@ -182,6 +182,13 @@ typedef enum tag_enum_offset_type
 
 } enum_offset_type;
 
+//typedef enum tag_enum_play_type
+//{
+//	play_type_discrete = 0,
+//	play_type_continuous = 1,
+//
+//} enum_play_type;
+
 typedef enum tag_enum_music_type
 {
 	music_type_beat = 0,
@@ -194,21 +201,9 @@ typedef enum tag_enum_music_type
 
 } enum_music_type;
 
-typedef enum tag_enum_sound_type
-{
-	//sound_type_accept = 0,
-	sound_type_death = 1,
-	sound_type_gem = 2,
-	sound_type_level = 3,
-	sound_type_power = 4,
-	//sound_type_reset = 5,
-
-} enum_sound_type;
-
 typedef enum tag_enum_sfx_type
 {
 	sfx_type_accept = 0,
-	sfx_type_death = 1,
 	sfx_type_power = 2,
 	sfx_type_reset = 3,
 
@@ -228,11 +223,11 @@ typedef enum tag_enum_border_type
 
 } enum_border_type;
 
-typedef enum tag_enum_menu_type
-{
-	menu_type_option = 0,
-	menu_type_select = 1,
-
-} enum_menu_type;
+//typedef enum tag_enum_menu_type
+//{
+//	menu_type_option = 0,
+//	menu_type_select = 1,
+//
+//} enum_menu_type;
 
 #endif//_ENUM_MANAGER_H_
