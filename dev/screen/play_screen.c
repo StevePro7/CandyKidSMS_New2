@@ -238,8 +238,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 			{
 				if( frame >= eo->waiter )
 				{
-					//engine_enemy_manager_reset_mode( enemy, enemymove_type_tour );
-					engine_enemy_manager_reset_mode( enemy, enemymove_type_kill );		// adriana
+					engine_enemy_manager_reset_mode( enemy, enemymove_type_tour );
+					//engine_enemy_manager_reset_mode( enemy, enemymove_type_kill );		// adriana - remove in final build - just used for testing!!
 				}
 			}
 

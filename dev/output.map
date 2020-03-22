@@ -66,14 +66,14 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00002EE0  l__BANK4                        
      00002EE0  l__BANK5                        
-     00002EE2  l__BANK4                        
      000034F4  l__BANK3                        
-     000060DB  l__CODE                         
-     000062DB  s__HOME                         
-     000062DB  s__INITIALIZER                  
-     000065C8  s__GSINIT                       
-     000065D7  s__GSFINAL                      
+     000060F2  l__CODE                         
+     000062F2  s__HOME                         
+     000062F2  s__INITIALIZER                  
+     000065DF  s__GSINIT                       
+     000065EE  s__GSFINAL                      
      00008000  _SMS_SRAM                          SMSlib_PSGaiden
      00008000  s__BANK10                       
      00008000  s__BANK11                       
@@ -102,7 +102,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    000060DB =       24795. bytes (REL,CON)
+_CODE                               00000200    000060F2 =       24818. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -161,7 +161,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    000060DB =       24795. bytes (REL,CON)
+_CODE                               00000200    000060F2 =       24818. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -221,7 +221,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    000060DB =       24795. bytes (REL,CON)
+_CODE                               00000200    000060F2 =       24818. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -281,7 +281,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    000060DB =       24795. bytes (REL,CON)
+_CODE                               00000200    000060F2 =       24818. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -341,7 +341,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    000060DB =       24795. bytes (REL,CON)
+_CODE                               00000200    000060F2 =       24818. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -401,101 +401,101 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    000060DB =       24795. bytes (REL,CON)
+_CODE                               00000200    000060F2 =       24818. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      00004387  _screen_ready_screen_update        ready_screen
      000043B4  _screen_play_screen_load           play_screen
      000043D7  _screen_play_screen_update         play_screen
-     000046CE  _screen_pass_screen_load           pass_screen
-     0000471F  _screen_pass_screen_update         pass_screen
-     000047EB  _screen_dead_screen_load           dead_screen
-     00004826  _screen_dead_screen_update         dead_screen
-     000049A8  _screen_cont_screen_load           cont_screen
-     000049C8  _screen_cont_screen_update         cont_screen
-     00004AD7  _screen_over_screen_load           over_screen
-     00004B03  _screen_over_screen_update         over_screen
-     00004B7F  _screen_beat_screen_load           beat_screen
-     00004BCE  _screen_beat_screen_update         beat_screen
-     00004CAD  _screen_test_screen_load           test_screen
-     00004CC9  _screen_test_screen_update         test_screen
-     00004D01  _font_tiles__palette__bin          gfx
-     00004D11  _font_tiles__tilemap__bin          gfx
-     00004D91  _font_tiles__tiles__psgcompr       gfx
-     00005028  _game_tiles__palette__bin          gfx
-     00005038  _game_tiles__tilemap__bin          gfx
-     00005108  _game_tiles__tiles__psgcompr       gfx
-     00005668  _sprites__palette__bin             gfx
-     00005678  _sprites__tiles__psgcompr          gfx
-     00005ABA  _sfx_accept_psg                    psg
-     00005ADA  _sfx_candy_psg                     psg
-     00005AF6  _sfx_power_psg                     psg
-     00005B19  _sfx_reset_psg                     psg
-     00005B3C  __divuint                          
-     00005B44  __divuchar                         
-     00005B4B  __divu8                            
-     00005B4E  __divu16                           
-     00005B7D  _UNSAFE_SMS_copySpritestoSAT       SMSlib_UNSAFE
-     00005B95  _UNSAFE_SMS_VRAMmemcpy32           SMSlib_UNSAFE
-     00005BB2  _UNSAFE_SMS_VRAMmemcpy64           SMSlib_UNSAFE
-     00005BCF  _UNSAFE_SMS_VRAMmemcpy128          SMSlib_UNSAFE
-     00005BEC  _SMS_init                          SMSlib
-     00005C40  _VDPReg_init                       SMSlib
-     00005C4B  _SMS_VDPType                       SMSlib
-     00005C53  _SMS_VDPturnOnFeature              SMSlib
-     00005C6A  _SMS_VDPturnOffFeature             SMSlib
-     00005C83  _SMS_setBGScrollX                  SMSlib
-     00005C8D  _SMS_setBGScrollY                  SMSlib
-     00005C97  _SMS_setBackdropColor              SMSlib
-     00005CA1  _SMS_useFirstHalfTilesforSprites   SMSlib
-     00005CB5  _SMS_setSpriteMode                 SMSlib
-     00005CFA  _SMS_setBGPaletteColor             SMSlib
-     00005D0E  _SMS_setSpritePaletteColor         SMSlib
-     00005D22  _SMS_loadBGPalette                 SMSlib
-     00005D36  _SMS_loadSpritePalette             SMSlib
-     00005D4A  _SMS_setColor                      SMSlib
-     00005D4E  _SMS_initSprites                   SMSlib
+     000046E5  _screen_pass_screen_load           pass_screen
+     00004736  _screen_pass_screen_update         pass_screen
+     00004802  _screen_dead_screen_load           dead_screen
+     0000483D  _screen_dead_screen_update         dead_screen
+     000049BF  _screen_cont_screen_load           cont_screen
+     000049DF  _screen_cont_screen_update         cont_screen
+     00004AEE  _screen_over_screen_load           over_screen
+     00004B1A  _screen_over_screen_update         over_screen
+     00004B96  _screen_beat_screen_load           beat_screen
+     00004BE5  _screen_beat_screen_update         beat_screen
+     00004CC4  _screen_test_screen_load           test_screen
+     00004CE0  _screen_test_screen_update         test_screen
+     00004D18  _font_tiles__palette__bin          gfx
+     00004D28  _font_tiles__tilemap__bin          gfx
+     00004DA8  _font_tiles__tiles__psgcompr       gfx
+     0000503F  _game_tiles__palette__bin          gfx
+     0000504F  _game_tiles__tilemap__bin          gfx
+     0000511F  _game_tiles__tiles__psgcompr       gfx
+     0000567F  _sprites__palette__bin             gfx
+     0000568F  _sprites__tiles__psgcompr          gfx
+     00005AD1  _sfx_accept_psg                    psg
+     00005AF1  _sfx_candy_psg                     psg
+     00005B0D  _sfx_power_psg                     psg
+     00005B30  _sfx_reset_psg                     psg
+     00005B53  __divuint                          
+     00005B5B  __divuchar                         
+     00005B62  __divu8                            
+     00005B65  __divu16                           
+     00005B94  _UNSAFE_SMS_copySpritestoSAT       SMSlib_UNSAFE
+     00005BAC  _UNSAFE_SMS_VRAMmemcpy32           SMSlib_UNSAFE
+     00005BC9  _UNSAFE_SMS_VRAMmemcpy64           SMSlib_UNSAFE
+     00005BE6  _UNSAFE_SMS_VRAMmemcpy128          SMSlib_UNSAFE
+     00005C03  _SMS_init                          SMSlib
+     00005C57  _VDPReg_init                       SMSlib
+     00005C62  _SMS_VDPType                       SMSlib
+     00005C6A  _SMS_VDPturnOnFeature              SMSlib
+     00005C81  _SMS_VDPturnOffFeature             SMSlib
+     00005C9A  _SMS_setBGScrollX                  SMSlib
+     00005CA4  _SMS_setBGScrollY                  SMSlib
+     00005CAE  _SMS_setBackdropColor              SMSlib
+     00005CB8  _SMS_useFirstHalfTilesforSprites   SMSlib
+     00005CCC  _SMS_setSpriteMode                 SMSlib
+     00005D11  _SMS_setBGPaletteColor             SMSlib
+     00005D25  _SMS_setSpritePaletteColor         SMSlib
+     00005D39  _SMS_loadBGPalette                 SMSlib
+     00005D4D  _SMS_loadSpritePalette             SMSlib
+     00005D61  _SMS_setColor                      SMSlib
+     00005D65  _SMS_initSprites                   SMSlib
 ASxxxx Linker V03.00 + NoICE + sdld,  page 9.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    000060DB =       24795. bytes (REL,CON)
+_CODE                               00000200    000060F2 =       24818. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00005D54  _SMS_addSprite                     SMSlib
-     00005DA9  _SMS_finalizeSprites               SMSlib
-     00005DBB  _SMS_copySpritestoSAT              SMSlib
-     00005DE4  _SMS_waitForVBlank                 SMSlib
-     00005DF1  _SMS_getKeysStatus                 SMSlib
-     00005DF5  _SMS_getKeysPressed                SMSlib
-     00005E12  _SMS_getKeysHeld                   SMSlib
-     00005E29  _SMS_getKeysReleased               SMSlib
-     00005E46  _SMS_queryPauseRequested           SMSlib
-     00005E4E  _SMS_resetPauseRequest             SMSlib
-     00005E54  _SMS_setLineInterruptHandler       SMSlib
-     00005E65  _SMS_setLineCounter                SMSlib
-     00005E74  _SMS_getVCount                     SMSlib
-     00005E78  _SMS_getHCount                     SMSlib
-     00005E7C  _SMS_isr                           SMSlib
-     00005EB2  _SMS_nmi_isr                       SMSlib
-     00005EC5  _rand                              rand
-     00005F81  _srand                             rand
-     00005F9F  __moduchar                         
-     00005FAB  __moduint                          
-     00005FB6  _SMS_loadSTMcompressedTileMapAre   SMSlib_STMcomp
-     00006197  ___sdcc_call_hl                    
-     00006198  _SMS_loadPSGaidencompressedTiles   SMSlib_PSGaiden
-     0000627A  __modschar                         
-     00006287  __modsint                          
-     00006293  __divsint                          
-     0000629C  __divschar                         
-     000062A3  __div8                             
-     000062A7  __div_signexte                     
-     000062AB  __div16                            
-     000062D1  __get_remainder                    
+     00005D6B  _SMS_addSprite                     SMSlib
+     00005DC0  _SMS_finalizeSprites               SMSlib
+     00005DD2  _SMS_copySpritestoSAT              SMSlib
+     00005DFB  _SMS_waitForVBlank                 SMSlib
+     00005E08  _SMS_getKeysStatus                 SMSlib
+     00005E0C  _SMS_getKeysPressed                SMSlib
+     00005E29  _SMS_getKeysHeld                   SMSlib
+     00005E40  _SMS_getKeysReleased               SMSlib
+     00005E5D  _SMS_queryPauseRequested           SMSlib
+     00005E65  _SMS_resetPauseRequest             SMSlib
+     00005E6B  _SMS_setLineInterruptHandler       SMSlib
+     00005E7C  _SMS_setLineCounter                SMSlib
+     00005E8B  _SMS_getVCount                     SMSlib
+     00005E8F  _SMS_getHCount                     SMSlib
+     00005E93  _SMS_isr                           SMSlib
+     00005EC9  _SMS_nmi_isr                       SMSlib
+     00005EDC  _rand                              rand
+     00005F98  _srand                             rand
+     00005FB6  __moduchar                         
+     00005FC2  __moduint                          
+     00005FCD  _SMS_loadSTMcompressedTileMapAre   SMSlib_STMcomp
+     000061AE  ___sdcc_call_hl                    
+     000061AF  _SMS_loadPSGaidencompressedTiles   SMSlib_PSGaiden
+     00006291  __modschar                         
+     0000629E  __modsint                          
+     000062AA  __divsint                          
+     000062B3  __divschar                         
+     000062BA  __div8                             
+     000062BE  __div_signexte                     
+     000062C2  __div16                            
+     000062E8  __get_remainder                    
 ASxxxx Linker V03.00 + NoICE + sdld,  page 10.
 Hexadecimal  [32-Bits]
 
@@ -564,7 +564,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZER                        000062DB    000002ED =         749. bytes (REL,CON)
+_INITIALIZER                        000062F2    000002ED =         749. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -573,18 +573,18 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             000065C8    0000000F =          15. bytes (REL,CON)
+_GSINIT                             000065DF    0000000F =          15. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     000065C8  gsinit                             crt0
+     000065DF  gsinit                             crt0
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 18.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            000065D7    00000001 =           1. bytes (REL,CON)
+_GSFINAL                            000065EE    00000001 =           1. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -715,119 +715,119 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK4                              00008000    00002EE2 =       12002. bytes (REL,CON)
+_BANK4                              00008000    00002EE0 =       12000. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      00008000  _level0101_txt                     bank4
-     0000807A  _level0102_txt                     bank4
-     000080F2  _level0103_txt                     bank4
-     0000816A  _level0104_txt                     bank4
-     000081E2  _level0105_txt                     bank4
-     0000825A  _level0106_txt                     bank4
-     000082D2  _level0107_txt                     bank4
-     0000834A  _level0108_txt                     bank4
-     000083C2  _level0109_txt                     bank4
-     0000843A  _level0110_txt                     bank4
-     000084B2  _level0201_txt                     bank4
-     0000852A  _level0202_txt                     bank4
-     000085A2  _level0203_txt                     bank4
-     0000861A  _level0204_txt                     bank4
-     00008692  _level0205_txt                     bank4
-     0000870A  _level0206_txt                     bank4
-     00008782  _level0207_txt                     bank4
-     000087FA  _level0208_txt                     bank4
-     00008872  _level0209_txt                     bank4
-     000088EA  _level0210_txt                     bank4
-     00008962  _level0301_txt                     bank4
-     000089DA  _level0302_txt                     bank4
-     00008A52  _level0303_txt                     bank4
-     00008ACA  _level0304_txt                     bank4
-     00008B42  _level0305_txt                     bank4
-     00008BBA  _level0306_txt                     bank4
-     00008C32  _level0307_txt                     bank4
-     00008CAA  _level0308_txt                     bank4
-     00008D22  _level0309_txt                     bank4
-     00008D9A  _level0310_txt                     bank4
-     00008E12  _level0401_txt                     bank4
-     00008E8A  _level0402_txt                     bank4
-     00008F02  _level0403_txt                     bank4
-     00008F7A  _level0404_txt                     bank4
-     00008FF2  _level0405_txt                     bank4
-     0000906A  _level0406_txt                     bank4
-     000090E2  _level0407_txt                     bank4
-     0000915A  _level0408_txt                     bank4
-     000091D2  _level0409_txt                     bank4
-     0000924A  _level0410_txt                     bank4
-     000092C2  _level0501_txt                     bank4
-     0000933A  _level0502_txt                     bank4
-     000093B2  _level0503_txt                     bank4
-     0000942A  _level0504_txt                     bank4
-     000094A2  _level0505_txt                     bank4
-     0000951A  _level0506_txt                     bank4
-     00009592  _level0507_txt                     bank4
-     0000960A  _level0508_txt                     bank4
-     00009682  _level0509_txt                     bank4
-     000096FA  _level0510_txt                     bank4
+     00008078  _level0102_txt                     bank4
+     000080F0  _level0103_txt                     bank4
+     00008168  _level0104_txt                     bank4
+     000081E0  _level0105_txt                     bank4
+     00008258  _level0106_txt                     bank4
+     000082D0  _level0107_txt                     bank4
+     00008348  _level0108_txt                     bank4
+     000083C0  _level0109_txt                     bank4
+     00008438  _level0110_txt                     bank4
+     000084B0  _level0201_txt                     bank4
+     00008528  _level0202_txt                     bank4
+     000085A0  _level0203_txt                     bank4
+     00008618  _level0204_txt                     bank4
+     00008690  _level0205_txt                     bank4
+     00008708  _level0206_txt                     bank4
+     00008780  _level0207_txt                     bank4
+     000087F8  _level0208_txt                     bank4
+     00008870  _level0209_txt                     bank4
+     000088E8  _level0210_txt                     bank4
+     00008960  _level0301_txt                     bank4
+     000089D8  _level0302_txt                     bank4
+     00008A50  _level0303_txt                     bank4
+     00008AC8  _level0304_txt                     bank4
+     00008B40  _level0305_txt                     bank4
+     00008BB8  _level0306_txt                     bank4
+     00008C30  _level0307_txt                     bank4
+     00008CA8  _level0308_txt                     bank4
+     00008D20  _level0309_txt                     bank4
+     00008D98  _level0310_txt                     bank4
+     00008E10  _level0401_txt                     bank4
+     00008E88  _level0402_txt                     bank4
+     00008F00  _level0403_txt                     bank4
+     00008F78  _level0404_txt                     bank4
+     00008FF0  _level0405_txt                     bank4
+     00009068  _level0406_txt                     bank4
+     000090E0  _level0407_txt                     bank4
+     00009158  _level0408_txt                     bank4
+     000091D0  _level0409_txt                     bank4
+     00009248  _level0410_txt                     bank4
+     000092C0  _level0501_txt                     bank4
+     00009338  _level0502_txt                     bank4
+     000093B0  _level0503_txt                     bank4
+     00009428  _level0504_txt                     bank4
+     000094A0  _level0505_txt                     bank4
+     00009518  _level0506_txt                     bank4
+     00009590  _level0507_txt                     bank4
+     00009608  _level0508_txt                     bank4
+     00009680  _level0509_txt                     bank4
+     000096F8  _level0510_txt                     bank4
 ASxxxx Linker V03.00 + NoICE + sdld,  page 24.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK4                              00008000    00002EE2 =       12002. bytes (REL,CON)
+_BANK4                              00008000    00002EE0 =       12000. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00009772  _level0601_txt                     bank4
-     000097EA  _level0602_txt                     bank4
-     00009862  _level0603_txt                     bank4
-     000098DA  _level0604_txt                     bank4
-     00009952  _level0605_txt                     bank4
-     000099CA  _level0606_txt                     bank4
-     00009A42  _level0607_txt                     bank4
-     00009ABA  _level0608_txt                     bank4
-     00009B32  _level0609_txt                     bank4
-     00009BAA  _level0610_txt                     bank4
-     00009C22  _level0701_txt                     bank4
-     00009C9A  _level0702_txt                     bank4
-     00009D12  _level0703_txt                     bank4
-     00009D8A  _level0704_txt                     bank4
-     00009E02  _level0705_txt                     bank4
-     00009E7A  _level0706_txt                     bank4
-     00009EF2  _level0707_txt                     bank4
-     00009F6A  _level0708_txt                     bank4
-     00009FE2  _level0709_txt                     bank4
-     0000A05A  _level0710_txt                     bank4
-     0000A0D2  _level0801_txt                     bank4
-     0000A14A  _level0802_txt                     bank4
-     0000A1C2  _level0803_txt                     bank4
-     0000A23A  _level0804_txt                     bank4
-     0000A2B2  _level0805_txt                     bank4
-     0000A32A  _level0806_txt                     bank4
-     0000A3A2  _level0807_txt                     bank4
-     0000A41A  _level0808_txt                     bank4
-     0000A492  _level0809_txt                     bank4
-     0000A50A  _level0810_txt                     bank4
-     0000A582  _level0901_txt                     bank4
-     0000A5FA  _level0902_txt                     bank4
-     0000A672  _level0903_txt                     bank4
-     0000A6EA  _level0904_txt                     bank4
-     0000A762  _level0905_txt                     bank4
-     0000A7DA  _level0906_txt                     bank4
-     0000A852  _level0907_txt                     bank4
-     0000A8CA  _level0908_txt                     bank4
-     0000A942  _level0909_txt                     bank4
-     0000A9BA  _level0910_txt                     bank4
-     0000AA32  _level1001_txt                     bank4
-     0000AAAA  _level1002_txt                     bank4
-     0000AB22  _level1003_txt                     bank4
-     0000AB9A  _level1004_txt                     bank4
-     0000AC12  _level1005_txt                     bank4
-     0000AC8A  _level1006_txt                     bank4
-     0000AD02  _level1007_txt                     bank4
-     0000AD7A  _level1008_txt                     bank4
-     0000ADF2  _level1009_txt                     bank4
-     0000AE6A  _level1010_txt                     bank4
+     00009770  _level0601_txt                     bank4
+     000097E8  _level0602_txt                     bank4
+     00009860  _level0603_txt                     bank4
+     000098D8  _level0604_txt                     bank4
+     00009950  _level0605_txt                     bank4
+     000099C8  _level0606_txt                     bank4
+     00009A40  _level0607_txt                     bank4
+     00009AB8  _level0608_txt                     bank4
+     00009B30  _level0609_txt                     bank4
+     00009BA8  _level0610_txt                     bank4
+     00009C20  _level0701_txt                     bank4
+     00009C98  _level0702_txt                     bank4
+     00009D10  _level0703_txt                     bank4
+     00009D88  _level0704_txt                     bank4
+     00009E00  _level0705_txt                     bank4
+     00009E78  _level0706_txt                     bank4
+     00009EF0  _level0707_txt                     bank4
+     00009F68  _level0708_txt                     bank4
+     00009FE0  _level0709_txt                     bank4
+     0000A058  _level0710_txt                     bank4
+     0000A0D0  _level0801_txt                     bank4
+     0000A148  _level0802_txt                     bank4
+     0000A1C0  _level0803_txt                     bank4
+     0000A238  _level0804_txt                     bank4
+     0000A2B0  _level0805_txt                     bank4
+     0000A328  _level0806_txt                     bank4
+     0000A3A0  _level0807_txt                     bank4
+     0000A418  _level0808_txt                     bank4
+     0000A490  _level0809_txt                     bank4
+     0000A508  _level0810_txt                     bank4
+     0000A580  _level0901_txt                     bank4
+     0000A5F8  _level0902_txt                     bank4
+     0000A670  _level0903_txt                     bank4
+     0000A6E8  _level0904_txt                     bank4
+     0000A760  _level0905_txt                     bank4
+     0000A7D8  _level0906_txt                     bank4
+     0000A850  _level0907_txt                     bank4
+     0000A8C8  _level0908_txt                     bank4
+     0000A940  _level0909_txt                     bank4
+     0000A9B8  _level0910_txt                     bank4
+     0000AA30  _level1001_txt                     bank4
+     0000AAA8  _level1002_txt                     bank4
+     0000AB20  _level1003_txt                     bank4
+     0000AB98  _level1004_txt                     bank4
+     0000AC10  _level1005_txt                     bank4
+     0000AC88  _level1006_txt                     bank4
+     0000AD00  _level1007_txt                     bank4
+     0000AD78  _level1008_txt                     bank4
+     0000ADF0  _level1009_txt                     bank4
+     0000AE68  _level1010_txt                     bank4
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 25.
 Hexadecimal  [32-Bits]

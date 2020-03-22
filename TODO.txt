@@ -9,7 +9,7 @@ play screen enemy wait => tour
 
 rand()	in title screen!!
 
-Pass screen play music
+
 
 Save	all data changes to SRAM
 
@@ -42,6 +42,8 @@ Attack		is "better" hopefully as just switch to scatter
 
 Collision MGR	play power sound fx [and candy?] outside in Play screen
 
+Pass screen play music	WIRED up but is wrapped w/ mydebugger
+mydebugger MUST be zero for final build
 
 Cont	time how long to complete w/ no repeat and if get to the end then game over
 CANT do this as want to resume org. game play music when cont == yes
