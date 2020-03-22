@@ -21,6 +21,7 @@ const unsigned char *sfx_object_data[] =
 const unsigned char *music_object_data[] =
 {
 	mus_level_psg,
+	mus_cont_psg,
 	mus_over_psg,
 	mus_game01_psg,
 	mus_game02_psg,
@@ -31,6 +32,7 @@ const unsigned char *music_object_data[] =
 const unsigned char music_object_bank[] =
 {
 	mus_level_psg_bank,
+	mus_cont_psg_bank,
 	mus_over_psg_bank,
 	mus_game01_psg_bank,
 	mus_game02_psg_bank,

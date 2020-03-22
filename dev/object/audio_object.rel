@@ -1,5 +1,5 @@
 XL2
-H 9 areas E global symbols
+H 9 areas F global symbols
 M audio_object
 O -mz80
 S _mus_candykid_psg Ref0000
@@ -9,21 +9,22 @@ S _sfx_reset_psg Ref0000
 S .__.ABS. Def0000
 S _sfx_power_psg Ref0000
 S _sfx_accept_psg Ref0000
+S _mus_cont_psg Ref0000
 S _mus_game01_psg Ref0000
 S _mus_game02_psg Ref0000
 S _mus_over_psg Ref0000
 S _mus_game03_psg Ref0000
-A _CODE size 7 flags 0 addr 0
+A _CODE size 8 flags 0 addr 0
 S _music_object_bank Def0000
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 14 flags 0 addr 0
+A _INITIALIZED size 16 flags 0 addr 0
 S _music_object_data Def0006
 S _sfx_object_data Def0000
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _INITIALIZER size 14 flags 0 addr 0
+A _INITIALIZER size 16 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 02 00
@@ -35,7 +36,7 @@ T 06 00
 R 00 00 02 00
 T 00 00
 R 00 00 00 00
-T 00 00 06 06 07 08 09 06 0A
+T 00 00 06 06 06 07 08 09 06 0A
 R 00 00 00 00
 T 00 00
 R 00 00 07 00
@@ -44,8 +45,8 @@ R 00 00 07 00 02 02 06 00 02 04 03 00 02 06 05 00
 T 06 00
 R 00 00 07 00
 T 06 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 01 00 02 04 09 00 02 06 07 00
+R 00 00 07 00 02 02 01 00 02 04 07 00 02 06 0A 00
 T 0C 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 08 00 02 04 0A 00 02 06 02 00
-T 12 00 00 00
-R 00 00 07 00 02 02 00 00
+R 00 00 07 00 02 02 08 00 02 04 09 00 02 06 0B 00
+T 12 00 00 00 00 00
+R 00 00 07 00 02 02 02 00 02 04 00 00

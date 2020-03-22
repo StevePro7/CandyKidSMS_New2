@@ -192,12 +192,13 @@ typedef enum tag_enum_offset_type
 typedef enum tag_enum_music_type
 {
 	mus_type_level = 0,
-	mus_type_over = 1,
-	mus_type_game01 = 2,
-	mus_type_game02 = 3,
-	mus_type_game03 = 4,
-	mus_type_beat = 5,
-	mus_type_candykid = 6,
+	mus_type_cont = 1,
+	mus_type_over = 2,
+	mus_type_game01 = 3,
+	mus_type_game02 = 4,
+	mus_type_game03 = 5,
+	mus_type_beat = 6,
+	mus_type_candykid = 7,
 
 } enum_music_type;
 
@@ -206,6 +207,7 @@ typedef enum tag_enum_sfx_type
 	sfx_type_accept = 0,
 	sfx_type_reset = 1,
 	sfx_type_power = 2,
+	sfx_type_explode = 3,
 
 } enum_sfx_type;
 
