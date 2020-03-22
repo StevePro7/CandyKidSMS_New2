@@ -8,7 +8,6 @@
 #include "move_manager.h"
 #include "sprite_manager.h"
 #include "state_manager.h"
-#include "..\devkit\_sms_manager.h"
 #include "..\object\board_object.h"
 #include <stdlib.h>
 
@@ -46,12 +45,12 @@ void engine_enemy_manager_init()
 		eo->prev_move = direction_type_none;
 		eo->direction = direction_type_none;
 		eo->dir_count = 0;
+		eo->dir_total = 0; 
 
 		eo->image = 0;
 		eo->frame = frame_type_stance;
 
 		frame = enemy * NUM_ENTITY_IMAGE * NUM_ENTITY_FRAME + 0;
-		//devkit_SMS_mapROMBank( FIXED_BANK );
 		eo->images[ 0 ][ 0 ] = enemy_object_image[ frame + 0 ];
 		eo->images[ 0 ][ 1 ] = enemy_object_image[ frame + 1 ];
 		eo->images[ 1 ][ 0 ] = enemy_object_image[ frame + 2 ];
@@ -88,7 +87,7 @@ void engine_enemy_manager_load()
 
 		// Determine scatter tiles.
 		check = enemy;
-		for( index = 0; index < NUM_DIRECTIONS; index++ )
+		for( index = 0; index < NUM_SCATTERING; index++ )
 		{
 			while( 1 )
 			{
@@ -120,23 +119,16 @@ void engine_enemy_manager_load()
 		//eo->scatter[ 2 ] = 2;
 		//eo->scatter[ 3 ] = 0;
 
-		// TODO look up frame swaps from array in data bank that gets faster as the levels progress...!
-		index = 4 * enemy + st->state_object_difficulty * 2 + st->state_object_pace_speed;
-
 		// Determine interval that Mama hands swap.
+		index = 4 * enemy + st->state_object_difficulty * 2 + st->state_object_pace_speed;
 		eo->hands = 0;
 		eo->swaps = enemy_object_hands[ index ];
 		delta = rand() % random;
 		eo->swaps -= delta;
 
-		index = 4 * enemy + st->state_object_difficulty * 2 + st->state_object_pace_speed;
-		//eo->waiter = 64;		// 50 frames
-		//eo->waiter = 80;		// 50 frames
-		//eo->waiter = 0;		// 50 frames
-		//eo->toggle[ 0 ] = 16;
-		//eo->toggle[ 1 ] = 04;// 48;
 
 		// Determine interval at start of level Mama waits.
+		index = 4 * enemy + st->state_object_difficulty * 2 + st->state_object_pace_speed;
 		eo->waiter = enemy_object_waits[ index ];
 		delta = rand() % random;
 		eo->waiter -= delta;
@@ -152,11 +144,6 @@ void engine_enemy_manager_load()
 
 		eo->ticker = 0;
 		eo->action = enemymove_type_wait;
-
-		
-		// TODO - delete hard coded values used for testing.
-		//eo->speed = 2;
-		//eo->delay = 1;
 
 		// Mix up the order depending on Mama enemy.
 		index = 8 * enemy + st->state_object_difficulty * 2 + st->state_object_pace_speed;
@@ -331,10 +318,11 @@ void engine_enemy_manager_stop( unsigned char enemy )
 	//eo->prev_move[ 2 ] = eo->prev_move[ 1 ];
 	//eo->prev_move[ 1 ] = eo->prev_move[ 0 ];
 	//eo->prev_move[ 0 ] = eo->direction;
+	eo->dir_count++;
+	eo->dir_total += eo->direction;
 	eo->prev_move = eo->direction;
 	eo->direction = direction_type_none;
 	eo->ticker++;
-	//eo->frame = 0;		// TODO remove as this is done in gohands()
 	calcd_frame( enemy );
 }
 
@@ -382,7 +370,7 @@ void engine_enemy_manager_reset_mode( unsigned char enemy, unsigned char mode )
 	eo->delay = eo->delays[ mode ];
 
 	// TODO delete used for debugging
-	//engine_memo_manager_debugging( enemy, eo->action );
+	engine_memo_manager_debugging( enemy, eo->action );
 	// TODO delete used for debugging
 }
 
@@ -416,23 +404,38 @@ unsigned char engine_enemy_manager_scatter_direction( unsigned char enemy )
 	unsigned char enemy_direction = direction_type_none;
 	unsigned char targetX;
 	unsigned char targetY;
+	unsigned char advance;
 	unsigned char actor;
-
-	// This enemy does not move!
-	//if( !eo->mover )
-	//{
-	//	return direction_type_none;
-	//}
 
 	// SCATTER.
 	actor = eo->scatter[ eo->paths ];
 	targetX = board_object_homeX[ actor ];
 	targetY = board_object_homeY[ actor ];
 
-	if( targetX == eo->tileX && targetY == eo->tileY )
+
+	// Attempt to prevent looping.
+	advance = 0;
+	if( NUM_DIRECTIONS == eo->dir_count && 15 == eo->dir_total )
+	{
+		advance = 1;
+	}
+	else
+	{
+		advance = targetX == eo->tileX && targetY == eo->tileY;
+	}
+
+	if( NUM_DIRECTIONS == eo->dir_count )
+	{
+		eo->dir_count = 0;
+		eo->dir_total = 0;
+	}
+
+
+	//if( targetX == eo->tileX && targetY == eo->tileY )
+	if( advance )
 	{
 		eo->paths++;
-		if( eo->paths >= NUM_DIRECTIONS )
+		if( eo->paths >= NUM_SCATTERING )
 		{
 			eo->paths = 0;
 		}
@@ -453,12 +456,6 @@ unsigned char engine_enemy_manager_gohome_direction( unsigned char enemy )
 
 	unsigned char targetX;
 	unsigned char targetY;
-
-	// This enemy does not move!
-	//if( !eo->mover )
-	//{
-	//	return direction_type_none;
-	//}
 
 	// GO HOME.
 	targetX = board_object_homeX[ enemy ];
@@ -489,50 +486,26 @@ unsigned char engine_enemy_manager_attack_direction( unsigned char enemy, unsign
 	//else 
 	else if( actor_type_adi == enemy )
 	{
-		//enemy_direction = engine_enemy_manager_what_direction( enemy, targetX, targetY );
-
-		// Like Pinky
-		//gamer_direction = engine_move_manager_actor_direction( gamer_direction );
-		//gamer_direction = engine_move_manager_actor_direction( eo->prev_move );
-
 		// Look two tiles in front on Candy Kid.
-		//engine_level_manager_get_next_index( &targetX, &targetY, gamer_direction, offset_type_two );
 		engine_level_manager_get_next_index( &targetX, &targetY, eo->prev_move, offset_type_two );
 		enemy_direction = engine_enemy_manager_what_direction( enemy, targetX, targetY );
 	}
 	//else
 	else if( actor_type_suz == enemy )
 	{
-		// TODO delete - this is just used for testing...!!
-		//enemy_direction = engine_enemy_manager_what_direction( enemy, targetX, targetY );
-
-		//enemy_direction = engine_enemy_manager_what_direction( enemy, targetX, targetY );
-		//unsigned char coin = rand() % 3;
-		////unsigned char coin = 2;
-
-		//// Try Pacman algorithm based off Blinky [Pro]
+		// Try Pacman algorithm based off Blinky [Pro]
 		eo0 = &global_enemy_objects[ actor_type_pro ];
 
-		//// TODO while loop if Pro not moving then don't add AND if Adi not moving then don't add
-		//if( 2 != coin )
-		//{
 		targetX = eo0->tileX;
 		targetY = eo0->tileY;
-		//}
 
-		//// Look two tiles in front on Candy Kid.
-		//// TODO - maybe make value 2 variable for Eash vs. Hard?
-		////engine_level_manager_get_next_index( &targetX, &targetY, eo0->prev_move[0], 0 );
+		// Look four tiles in front on Candy Kid.
 		engine_level_manager_get_next_index( &targetX, &targetY, direction_type_none, offset_type_none );
-		//enemy_direction = engine_enemy_manager_what_direction( enemy, targetX, targetY );
 		enemy_direction = engine_enemy_manager_what_direction( enemy, ( offset_type_four - 1 ) - targetX, ( offset_type_four - 1 ) - targetY );
 	}
 
 	return enemy_direction;
 }
-
-
-
 
 
 unsigned char engine_enemy_manager_what_direction( unsigned char enemy, unsigned char targetX, unsigned char targetY )
@@ -557,24 +530,6 @@ unsigned char engine_enemy_manager_what_direction( unsigned char enemy, unsigned
 	// Get the list of 4x possible directions in the order depending on tiles.
 	engine_move_manager_get_directions( sourceX, sourceY, targetX, targetY, &list, &half );
 
-	//if( 10 == sourceX && 3 == sourceY )
-	//{
-	//	flip = 2;
-	//}
-	// TODO randomly flip the half = 1 - half??
-	//if( 15 == dir_fours )
-	//{
-	//	list = rand() % NUM_DIRECTIONS;	// 0 or 1
-	//	//half = 1 - half;
-	//}
-	// IMPORTANT - this will never trigger		//flip = rand() % 0
-	//flip = rand() % 2;	// 0 or 1
-	//if( 0 == flip )
-	//{
-	//	half = 1 - half;
-	//}
-	// TODO randomly flip the half = 1 - half??
-
 	index = list * 2 * NUM_DIRECTIONS + half * NUM_DIRECTIONS;
 
 	// TODO fixed bank - change to data bank!!
@@ -587,19 +542,6 @@ unsigned char engine_enemy_manager_what_direction( unsigned char enemy, unsigned
 	//oppX_direction = engine_move_manager_opposite_direction( eo->prev_move[ 0 ] );
 	oppX_direction = engine_move_manager_opposite_direction( eo->prev_move );
 	available = engine_level_manager_get_direction( sourceX, sourceY, direction_type_none, offset_type_none );
-
-
-	// TODO - fully regression test potential infinite looping.
-	//test_direction = eo->prev_move;
-	//if( oppX_direction != test_direction )
-	//{
-	//	if( test_direction == ( available & test_direction ) )
-	//	{
-	//		move_direction = test_direction;
-	//		return move_direction;
-	//	}
-	//}
-
 
 	for( index = 0; index < NUM_DIRECTIONS; index++ )
 	{
@@ -645,11 +587,7 @@ unsigned char engine_enemy_manager_what_direction( unsigned char enemy, unsigned
 	// Enemy in cul de sac so must be able to go in opposite direction!
 	if( direction_type_none == move_direction )
 	{
-		//collision = engine_level_manager_get_collision( sourceX, sourceY, oppX_direction, offset_type_one );
-		//if( coll_type_empty == collision )
-		//{
 		move_direction = oppX_direction;
-		//}
 	}
 
 	return move_direction;
@@ -667,7 +605,7 @@ unsigned char engine_enemy_manager_input_boost( unsigned char enemy )
 		return pace_type_none;
 	}
 
-	eo->action = 1 - eo->action;		// stevepro disable for testing.
+	//eo->action = 1 - eo->action;		// stevepro disable for testing.		ADRIANA
 	eo->ticker = 0;
 	boost = eo->action;
 
@@ -682,10 +620,9 @@ unsigned char engine_enemy_manager_input_boost( unsigned char enemy )
 
 
 	//TODO delete
-	//engine_memo_manager_debugging( enemy, eo->action );
+	engine_memo_manager_debugging( enemy, eo->action );
 	//TODO delete
 
-	//return pace_type_none;
 	return boost;
 }
 
