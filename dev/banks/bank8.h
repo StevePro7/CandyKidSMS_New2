@@ -1,4 +1,4 @@
-extern const unsigned char	bank8_txt[];
-#define				bank8_txt_size 5
-#define				bank8_txt_bank 8
+extern const unsigned char	mus_game02_psg[];
+#define				mus_game02_psg_size 7953
+#define				mus_game02_psg_bank 8
 

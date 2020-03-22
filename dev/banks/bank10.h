@@ -1,4 +1,4 @@
-extern const unsigned char	bank10_txt[];
-#define				bank10_txt_size 6
-#define				bank10_txt_bank 10
+extern const unsigned char	mus_candykid_psg[];
+#define				mus_candykid_psg_size 4728
+#define				mus_candykid_psg_bank 10
 

@@ -5,7 +5,9 @@
 
 void screen_test_screen_load()
 {
-	engine_audio_manager_sfx_play( sfx_type_power );
+	//engine_audio_manager_sfx_play( sfx_type_level );
+	//engine_audio_manager_music_play_norepeat( mus_type_level );
+	engine_audio_manager_music_play_norepeat( mus_type_candykid );
 	engine_font_manager_draw_text( "TEST SCREEN!!", 10, 14 );
 }
 

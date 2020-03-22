@@ -1,4 +1,4 @@
-extern const unsigned char	music_game03_psg[];
-#define				music_game03_psg_size 9940
-#define				music_game03_psg_bank 7
+extern const unsigned char	mus_game01_psg[];
+#define				mus_game01_psg_size 8233
+#define				mus_game01_psg_bank 7
 

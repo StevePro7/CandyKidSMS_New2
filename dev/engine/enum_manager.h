@@ -191,13 +191,13 @@ typedef enum tag_enum_offset_type
 
 typedef enum tag_enum_music_type
 {
-	music_type_beat = 0,
-	music_type_over = 1,
-	music_type_title = 2,
-	music_type_game03 = 3,
-	music_type_flicky = 4,
-	music_type_beatgame = 5,
-	music_type_candykid = 6,
+	mus_type_level = 0,
+	mus_type_over = 1,
+	mus_type_game01 = 2,
+	mus_type_game02 = 3,
+	mus_type_game03 = 4,
+	mus_type_beat = 5,
+	mus_type_candykid = 6,
 
 } enum_music_type;
 

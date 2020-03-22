@@ -1,4 +1,4 @@
-extern const unsigned char	music_candykid_psg[];
-#define				music_candykid_psg_size 4728
-#define				music_candykid_psg_bank 9
+extern const unsigned char	mus_game03_psg[];
+#define				mus_game03_psg_size 9940
+#define				mus_game03_psg_bank 9
 

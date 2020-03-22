@@ -1,11 +1,9 @@
 #include "audio_object.h"
-#include "..\banks\bank2.h"
-#include "..\banks\bank4.h"
-#include "..\banks\bank5.h"
 #include "..\banks\bank6.h"
 #include "..\banks\bank7.h"
 #include "..\banks\bank8.h"
 #include "..\banks\bank9.h"
+#include "..\banks\bank10.h"
 #include "..\psg.h"
 
 // DATA bank.
@@ -22,15 +20,21 @@ const unsigned char *sfx_object_data[] =
 // Audio Manager.
 const unsigned char *music_object_data[] =
 {
-	music_beat_psg,
-	music_over_psg,
-	music_game03_psg,
-	music_candykid_psg,
+	mus_level_psg,
+	mus_over_psg,
+	mus_game01_psg,
+	mus_game02_psg,
+	mus_game03_psg,
+	mus_beat_psg,
+	mus_candykid_psg,
 };
 const unsigned char music_object_bank[] =
 {
-	music_beat_psg_bank,
-	music_over_psg_bank,
-	music_game03_psg_bank,
-	music_candykid_psg_bank,
+	mus_level_psg_bank,
+	mus_over_psg_bank,
+	mus_game01_psg_bank,
+	mus_game02_psg_bank,
+	mus_game03_psg_bank,
+	mus_beat_psg_bank,
+	mus_candykid_psg_bank,
 };
