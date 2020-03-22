@@ -55,6 +55,9 @@ void screen_cont_screen_update( unsigned char *screen_type )
 			if( 0 == cursor )
 			{
 				engine_collision_manager_reset_death();
+
+				// Reset enemy that killed Kid to scatter mode only.
+				// Nasty bug : do NOT set when death tree kills Kid!
 				if( actor_type_pro == st->state_object_actor_kill || actor_type_adi == st->state_object_actor_kill || actor_type_suz == st->state_object_actor_kill )
 				{
 					engine_enemy_manager_reset_mode( st->state_object_actor_kill, enemymove_type_tour );

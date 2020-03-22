@@ -251,11 +251,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 					engine_enemy_manager_pace( enemy, enemy_boost );
 				}
 
-				// Attempt to prevent infinite looping esp. on Attack mode.
-				if( enemymove_type_kill == eo->action && eo->dir_total2 >= 5 )
-				{
-					engine_enemy_manager_reset_mode( enemy, enemymove_type_tour );
-				}
 				if( enemymove_type_tour == eo->action )
 				{
 					enemy_direction = engine_enemy_manager_scatter_direction( enemy );

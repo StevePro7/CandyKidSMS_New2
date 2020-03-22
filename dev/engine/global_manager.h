@@ -22,7 +22,7 @@
 #define TREE_COLS				12
 
 #define MAZE_ROWS				14
-#define MAZE_COLS				14
+#define MAZE_COLS				14	
 
 #define TILE_WIDE				16
 #define TILE_HIGH				16
@@ -78,6 +78,7 @@
 #define TYPE1_OPT1_X			TYPE1_TEXT_X + 0
 #define TYPE1_OPT2_X			TYPE1_TEXT_X + 11
 
+#define ENEMY_LOOPS				5
 #define SCORE_VALUES			5
 #define SOUND_SCREEN_DELAY		30
 

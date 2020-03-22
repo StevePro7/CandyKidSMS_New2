@@ -616,14 +616,24 @@ unsigned char engine_enemy_manager_input_boost( unsigned char enemy )
 	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
 	unsigned char toggle = eo->toggle[ eo->action ];
 	unsigned char boost = 0;
+	unsigned char reset = 0;
 
-	// Not ready to swap modes.
-	if( eo->ticker < toggle  )
+	// Attempt to prevent infinite looping esp. on Attack mode.
+	if( enemymove_type_kill == eo->action && eo->dir_total2 >= ENEMY_LOOPS )
 	{
-		return pace_type_none;
+		reset = 1;
 	}
 
-	//eo->action = 1 - eo->action;		// stevepro disable for testing.		ADRIANA
+	// Not ready to swap modes.
+	if( !reset )
+	{
+		if( eo->ticker < toggle )
+		{
+			return pace_type_none;
+		}
+	}
+
+	eo->action = 1 - eo->action;		// stevepro disable for testing.		ADRIANA
 	eo->ticker = 0;
 	eo->dir_count = 0;
 	eo->dir_total = 0;
