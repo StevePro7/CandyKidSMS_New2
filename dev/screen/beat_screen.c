@@ -42,13 +42,14 @@ void screen_beat_screen_load()
 	engine_level_manager_beat_level( data, size, bank );
 	engine_level_manager_draw_level();
 	
-	engine_memo_manager_draw( 26, 27 );
+	engine_memo_manager_draw( 21, 22 );
 	command_index = 0;
 	command_count = 4;
 	walking_delta = 0;
 	walking_count = 0;
 	//first_time = 1;
 
+	engine_gamer_manager_load();
 	engine_gamer_manager_reset();
 	engine_audio_manager_music_play_norepeat( mus_type_beat );
 }
@@ -113,6 +114,7 @@ void screen_beat_screen_update( unsigned char *screen_type )
 		}
 
 //		engine_command_manager_add( frame, command_type_gamer_mover, the_direction );
+		engine_gamer_manager_move( the_direction );
 	}
 
 
