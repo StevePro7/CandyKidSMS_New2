@@ -25,38 +25,13 @@ const unsigned char *music_object_data[] =
 {
 	music_beat_psg,
 	music_over_psg,
-	music_title_psg,
 	music_game03_psg,
-	music_flicky_psg,
-	music_beatgame_psg,
 	music_candykid_psg,
 };
 const unsigned char music_object_bank[] =
 {
 	music_beat_psg_bank,
 	music_over_psg_bank,
-	music_title_psg_bank,
 	music_game03_psg_bank,
-	music_flicky_psg_bank,
-	music_beatgame_psg_bank,
 	music_candykid_psg_bank,
-};
-
-const unsigned char *sound_object_data[] =
-{
-	sound_accept_psg,
-	sound_death_psg,
-	sound_gem_psg,
-	sound_level_psg,
-	sound_power_psg,
-	sound_reset_psg,
-};
-const unsigned char sound_object_bank[] =
-{
-	sound_accept_psg_bank,
-	sound_death_psg_bank,
-	sound_gem_psg_bank,
-	sound_level_psg_bank,
-	sound_power_psg_bank,
-	sound_reset_psg_bank,
 };
