@@ -24,10 +24,10 @@ void main (void)
 	//open_screen_type = screen_type_test;
 	//open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_begin;
-	//open_screen_type = screen_type_init;
+	open_screen_type = screen_type_init;
 	//open_screen_type = screen_type_pass;
 	//open_screen_type = screen_type_over;
-	open_screen_type = screen_type_test;
+	//open_screen_type = screen_type_test;
 
 
 	engine_screen_manager_init( open_screen_type );

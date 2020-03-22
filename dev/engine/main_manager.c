@@ -48,9 +48,9 @@ void engine_main_manager_debug()
 		return;
 	}
 
-	engine_content_manager_load_tiles_font();
-	engine_content_manager_load_tiles_game();
-	engine_content_manager_load_sprites_game();
+	//engine_content_manager_load_tiles_font();
+	//engine_content_manager_load_tiles_game();
+	//engine_content_manager_load_sprites_game();
 }
 
 void engine_main_manager_save()

@@ -48,15 +48,8 @@ void screen_dead_screen_load()
 	death_frame = 0;
 	flash_count = 0;
 
-	//if( state_object_mydebugger )
-	//{
-	//	engine_enemy_manager_load();
-	//	engine_score_manager_load();
-	//}
-
 	engine_score_manager_update_lives( -1 );
-	lives = engine_score_manager_get_value( score_type_lives );			// TODO test the
-	//screen = ( 0 == engine_score_manager_get_lives() ) ? screen_type_cont : screen_type_ready;
+	lives = engine_score_manager_get_value( score_type_lives );
 	screen = ( 0 == lives ) ? screen_type_cont : screen_type_ready;
 	//screen = screen_type_cont;
 	//screen = screen_type_ready;
@@ -78,19 +71,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	unsigned char input;
 	unsigned char enemy;
 	unsigned char delay;
-	//unsigned int frame;
-	//unsigned char reset;
 	unsigned int frame = fo->frame_count;
-
-	//enemy_direction = direction_type_none;
-	//frame = fo->frame_count;
-
-	//unsigned char lives = engine_score_manager_get_value( score_type_lives );
-	//if( 0 == lives )
-	//{
-	//	*screen_type = screen;
-	//	return;
-	//}
 
 	// Draw sprites first.
 	engine_enemy_manager_draw();
@@ -196,6 +177,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 			if( direction_type_none != enemy_direction )
 			{
 //				engine_command_manager_add( frame, command_type_enemy_mover, ( enemy | ( enemy_direction << 4 ) ) );
+				engine_enemy_manager_move( enemy, enemy_direction );
 			}
 		}
 	}

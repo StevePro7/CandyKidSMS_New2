@@ -30,7 +30,6 @@
 // PLAY screen - is the main command add + execute driver
 static unsigned char first_time;
 static unsigned char frame_spot;
-//static unsigned char invincible;
 static unsigned char nextr_direction;
 
 void screen_play_screen_load()
@@ -81,7 +80,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 	unsigned char input;
 	unsigned char enemy;
 	unsigned char check;
-	//unsigned char input;
 	unsigned int frame = fo->frame_count;
 	st->state_object_actor_kill = actor_type_kid;
 
@@ -130,12 +128,10 @@ void screen_play_screen_update( unsigned char *screen_type )
 	if( direction_type_none != go->direction && lifecycle_type_move == go->lifecycle )
 	{
 		//  warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
-		//input_direction = engine_gamer_manager_input_direction();
 		input_direction = engine_input_manager_direction();
 		if( direction_type_none != input_direction && gamer_direction != input_direction )
 		{
 			nextr_direction = gamer_direction;
-			//engine_font_manager_draw_data( nextr_direction, 30, 20 );		// stevepro pre-empt direction
 		}
 
 		engine_gamer_manager_update();
@@ -144,15 +140,13 @@ void screen_play_screen_update( unsigned char *screen_type )
 		gamer_boost = engine_gamer_manager_input_boost( go->direction );
 		if( pace_type_none != gamer_boost )
 		{
-			//engine_font_manager_draw_data( gamer_boost, 10, 18 );
 //			engine_command_manager_add( frame, command_type_gamer_speed, gamer_boost );
+			engine_gamer_manager_pace( gamer_boost );
 		}
 	}
 	if( direction_type_none != go->direction && lifecycle_type_idle == go->lifecycle )
 	{
 		// Check gamer collision.
-		//engine_font_manager_draw_data( frame, 11, 16 );
-
 		gamer_tile_type = engine_level_manager_get_tile_type( go->tileX, go->tileY, go->direction, offset_type_none );
 		if( tile_type_blank != gamer_tile_type )
 		{
@@ -166,7 +160,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 		}
 
 		// IMPORTANT - commenting this out 19/03/2020 as surely doesn't make difference??
-		//input_direction = engine_gamer_manager_input_direction();
 		//input_direction = engine_input_manager_direction();
 		//if( direction_type_none != input_direction && gamer_direction != input_direction )
 		//{
@@ -184,22 +177,14 @@ void screen_play_screen_update( unsigned char *screen_type )
 			if( direction_type_none != nextr_direction )
 			{
 				gamer_direction = nextr_direction;
-				//engine_font_manager_draw_data( gamer_direction, 30, 21 );		// stevepro pre-empt direction
 				nextr_direction = direction_type_none;
-				//engine_font_manager_draw_data( nextr_direction, 30, 20 );		// stevepro pre-empt direction
 			}
 			else
 			{
-				//gamer_direction = engine_gamer_manager_input_direction();
 				gamer_direction = engine_input_manager_direction();
-				//engine_font_manager_draw_data( gamer_direction, 30, 21 );		// stevepro pre-empt direction
 			}
 
-			//engine_font_manager_draw_data( nextr_direction, 30, 20 );
-			//engine_font_manager_draw_data( gamer_direction, 30, 22 );			// stevepro pre-empt direction
 			gamer_direction = engine_gamer_manager_find_direction( gamer_direction );
-			//engine_font_manager_draw_data( gamer_direction, 30, 23 );			// stevepro pre-empt direction
-
 			if( direction_type_none != gamer_direction )
 			{
 				//engine_command_manager_add( frame, command_type_gamer_mover, gamer_direction );
@@ -208,8 +193,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 				gamer_boost = engine_gamer_manager_input_boost( gamer_direction );
 				if( pace_type_none != gamer_boost )
 				{
-					//engine_font_manager_draw_data( gamer_boost, 10, 17 );
 //					engine_command_manager_add( frame, command_type_gamer_speed, gamer_boost );
+					engine_gamer_manager_pace( gamer_boost );
 				}
 			}
 		}
@@ -254,7 +239,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 				if( frame >= eo->waiter )
 				{
 					engine_enemy_manager_reset_mode( enemy, enemymove_type_tour );
-					//engine_enemy_manager_reset_mode( enemy, enemymove_type_kill );		// stevepro
 				}
 			}
 
@@ -278,7 +262,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 				if( direction_type_none != enemy_direction )
 				{
 //					engine_command_manager_add( frame, command_type_enemy_mover, ( enemy | ( enemy_direction << 4 ) ) );
-					//engine_actor_manager_exec_enemy_mover( enemy | ( enemy_direction << 4 ) );
 					engine_enemy_manager_move( enemy, enemy_direction );
 				}
 			}
