@@ -204,8 +204,8 @@ typedef enum tag_enum_music_type
 typedef enum tag_enum_sfx_type
 {
 	sfx_type_accept = 0,
+	sfx_type_reset = 1,
 	sfx_type_power = 2,
-	sfx_type_reset = 3,
 
 } enum_sfx_type;
 

@@ -5,7 +5,7 @@
 
 void screen_test_screen_load()
 {
-	engine_audio_manager_sfx_play( sfx_type_accept );
+	engine_audio_manager_sfx_play( sfx_type_power );
 	engine_font_manager_draw_text( "TEST SCREEN!!", 10, 14 );
 }
 
