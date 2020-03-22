@@ -42,7 +42,7 @@ void screen_beat_screen_load()
 	engine_level_manager_beat_level( data, size, bank );
 	engine_level_manager_draw_level();
 	
-	engine_memo_manager_draw( 21, 22 );
+	engine_memo_manager_draw( 21, 22 );	
 	command_index = 0;
 	command_count = 4;
 	walking_delta = 0;
