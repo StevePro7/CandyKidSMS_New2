@@ -28,6 +28,7 @@ const unsigned char *locale_object_texts[] =
 	"  OVER  ",
 	"CANDYKID",
 	"  WINS  ",
+	"ERASE!",
 
 	//"SELECT",
 	//"SORRY NO",
