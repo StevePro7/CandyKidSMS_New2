@@ -6,7 +6,7 @@
 #include "..\engine\font_manager.h"
 #include "..\engine\input_manager.h"
 #include "..\engine\locale_manager.h"
-#include "..\engine\storage_manager.h"
+//#include "..\engine\storage_manager.h"
 #include "..\engine\timer_manager.h"
 #include "..\object\locale_object.h"
 
@@ -39,7 +39,7 @@ void screen_splash_screen_update( unsigned char *screen_type )
 		check = engine_reset_manager_update();
 		if( check )
 		{
-			engine_storage_manager_erase();
+			//engine_storage_manager_erase();
 			engine_reset_manager_reset();
 			engine_locale_manager_draw_text( 23, 24, 23 );
 		}

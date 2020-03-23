@@ -28,28 +28,19 @@ void screen_over_screen_load()
 	// Save game state to SRAM when game over.
 	engine_storage_manager_write();
 
-	engine_audio_manager_music_play_norepeat( mus_type_over );
+	//engine_audio_manager_music_play_norepeat( mus_type_over );
 }
 
 void screen_over_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
 	unsigned char delay;
-	unsigned char index;
-	unsigned char sides[] = { 6, 7, 16, 17 };
 
 	input = engine_input_manager_hold( input_type_fire1 );
 	delay = engine_delay_manager_update();
 	if( delay || input )
 	{
 		engine_audio_manager_music_stop();
-
-		// Not sure why have to do this here but ensures Title screen works!
-		for( index = 0; index < 4; index++ )
-		{
-			engine_font_manager_draw_text( LOCALE_SELECT_SPACE, SCREEN_TILE_LEFT - 1, sides[ index ] );
-		}
-
 		*screen_type = screen_type_begin;
 		return;
 	}
