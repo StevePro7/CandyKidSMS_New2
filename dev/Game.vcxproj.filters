@@ -268,16 +268,16 @@
       <Filter>Header Files\object</Filter>
     </ClInclude>
     <ClInclude Include="screen\credit_screen.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\option_screen.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\start_screen.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\screen</Filter>
     </ClInclude>
     <ClInclude Include="screen\intro_screen.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\start_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\option_screen.h">
+      <Filter>Header Files\screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -498,16 +498,16 @@
       <Filter>Source Files\object</Filter>
     </ClCompile>
     <ClCompile Include="screen\credit_screen.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="screen\option_screen.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="screen\start_screen.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\screen</Filter>
     </ClCompile>
     <ClCompile Include="screen\intro_screen.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\option_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\start_screen.c">
+      <Filter>Source Files\screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

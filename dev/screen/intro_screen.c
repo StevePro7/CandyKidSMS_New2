@@ -70,19 +70,21 @@ static void draw_tiles()
 	engine_tile_manager_main_candy( 4, x / 8 + d, y / 8 + 6 );
 
 	engine_font_manager_draw_text( "CANDY", x / 8 + d + 3, y / 8 + 0 );
-	engine_font_manager_draw_text( "KID.", x / 8 + d + 4, y / 8 + 1 );
+	engine_font_manager_draw_text( "KID", x / 8 + d + 4, y / 8 + 1 );
 
-	engine_font_manager_draw_text( "200 PTS", x / 8 + d + 3, y / 8 + 4 );
-	//engine_font_manager_draw_text( "200", x / 8 + d + 3, y / 8 + 3 );
-	//engine_font_manager_draw_text( "PTS", x / 8 + d + 3, y / 8 + 4 );
-	engine_font_manager_draw_text( " 10 PTS", x / 8 + d + 3, y / 8 + 7 );
+	//engine_font_manager_draw_text( "200 PTS", x / 8 + d + 3, y / 8 + 4 );
+	engine_font_manager_draw_text( "200", x / 8 + d + 4, y / 8 + 3 );
+	engine_font_manager_draw_text( "PTS", x / 8 + d + 4, y / 8 + 4 );
+	//engine_font_manager_draw_text( " 10 PTS", x / 8 + d + 3, y / 8 + 7 );
+	engine_font_manager_draw_text( "10", x / 8 + d + 4, y / 8 + 6 );
+	engine_font_manager_draw_text( "PTS", x / 8 + d + 4, y / 8 + 7 );
 
 	engine_font_manager_draw_text( "ENEMY", ( x + e ) / 8 + d + 4, y / 8 + 0 );
-	engine_font_manager_draw_text( "PRO.", ( x + e ) / 8 + d + 5, y / 8 + 1 );
+	engine_font_manager_draw_text( "PRO", ( x + e ) / 8 + d + 5, y / 8 + 1 );
 	engine_font_manager_draw_text( "ENEMY", ( x + e ) / 8 + d + 4, y / 8 + 3 );
-	engine_font_manager_draw_text( "ADI.", ( x + e ) / 8 + d + 5, y / 8 + 4 );
+	engine_font_manager_draw_text( "ADI", ( x + e ) / 8 + d + 5, y / 8 + 4 );
 	engine_font_manager_draw_text( "ENEMY", ( x + e ) / 8 + d + 4, y / 8 + 6 );
-	engine_font_manager_draw_text( "SUZ.", ( x + e ) / 8 + d + 5, y / 8 + 7 );
+	engine_font_manager_draw_text( "SUZ", ( x + e ) / 8 + d + 5, y / 8 + 7 );
 
 	// CHEAT!
 	engine_font_manager_draw_text( "CHEAT", SCREEN_TILE_LEFT + 2, BOTT_TEXT_Y );
