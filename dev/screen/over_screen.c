@@ -28,7 +28,7 @@ void screen_over_screen_load()
 	// Save game state to SRAM when game over.
 	engine_storage_manager_write();
 
-	//engine_audio_manager_music_play_norepeat( mus_type_over );
+	engine_audio_manager_music_play_norepeat( mus_type_over );
 }
 
 void screen_over_screen_update( unsigned char *screen_type )
