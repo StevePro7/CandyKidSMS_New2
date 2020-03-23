@@ -46,8 +46,8 @@ void engine_storage_manager_read()
 	st->state_object_world_data = savegame->save_world_data;
 	st->state_object_round_data = savegame->save_round_data;
 
-	//engine_gamer_manager_images( savegame->save_image_kid );
-	//engine_enemy_manager_images( savegame->save_image_pro, savegame->save_image_adi, savegame->save_image_suz );
+	engine_gamer_manager_images( savegame->save_image_kid );
+	engine_enemy_manager_images( savegame->save_image_pro, savegame->save_image_adi, savegame->save_image_suz );
 
 	devkit_SMS_disableSRAM();
 }
@@ -58,7 +58,7 @@ void engine_storage_manager_write()
 
 	struct_state_object *st = &global_state_object;
 	struct_gamer_object *go = &global_gamer_object;
-	//struct_enemy_object *eo;
+	struct_enemy_object *eo;
 
 
 	// TODO delete
@@ -89,10 +89,10 @@ void engine_storage_manager_write()
 	savegame->save_world_data = st->state_object_world_data;
 	savegame->save_round_data = st->state_object_round_data;
 
-	//savegame->save_image_kid = go->image;
-	//eo = &global_enemy_objects[ actor_type_pro ]; savegame->save_image_pro = eo->image;
-	//eo = &global_enemy_objects[ actor_type_adi ]; savegame->save_image_adi = eo->image;
-	//eo = &global_enemy_objects[ actor_type_suz ]; savegame->save_image_suz = eo->image;
+	savegame->save_image_kid = go->image;
+	eo = &global_enemy_objects[ actor_type_pro ]; savegame->save_image_pro = eo->image;
+	eo = &global_enemy_objects[ actor_type_adi ]; savegame->save_image_adi = eo->image;
+	eo = &global_enemy_objects[ actor_type_suz ]; savegame->save_image_suz = eo->image;
 
 	savegame->terminal = FINAL;
 	devkit_SMS_disableSRAM();

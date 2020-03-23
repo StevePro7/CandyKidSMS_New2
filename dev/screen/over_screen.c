@@ -26,7 +26,7 @@ void screen_over_screen_load()
 	engine_locale_manager_draw_text( 20, x, y + 2 );
 
 	// Save game state to SRAM when game over.
-	//engine_storage_manager_write();
+	engine_storage_manager_write();
 
 	//engine_audio_manager_music_play_norepeat( mus_type_over );
 }
