@@ -75,7 +75,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 	if( delay || input )
 	{
 		engine_level_manager_draw_middle();
-		engine_audio_manager_music_play( mus_type_game02 );
+		engine_audio_manager_music_play( mus_type_game01 );
 		//engine_audio_manager_music_play( mus_type_beat );
 		*screen_type = st->state_object_next_screen;
 		return;

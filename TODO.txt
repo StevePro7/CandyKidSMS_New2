@@ -1,6 +1,13 @@
 TODO 01
 
 22/03/2020
+
+SRAM corrupting music
+Play
+Game Over
+Play	music half way thru resumed
+
+
 DON'T FORGET:
 remove the enemy memo debugging		todo
 enable scatter mode to attack 		DONE
