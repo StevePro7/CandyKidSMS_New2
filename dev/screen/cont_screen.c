@@ -66,6 +66,7 @@ void screen_cont_screen_update( unsigned char *screen_type )
 				engine_score_manager_reset_boost();
 				engine_score_manager_reset_lives();
 				engine_level_manager_draw_middle();
+				engine_audio_manager_music_resume();
 				*screen_type = screen_type_ready;
 				return;
 			}
