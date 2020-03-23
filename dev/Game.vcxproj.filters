@@ -264,6 +264,9 @@
     <ClInclude Include="screen\beat_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
+    <ClInclude Include="object\hack_object.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -478,6 +481,9 @@
     </ClCompile>
     <ClCompile Include="screen\beat_screen.c">
       <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="object\hack_object.c">
+      <Filter>Source Files\object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -47,8 +47,8 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000010  l__CABS4                        
      00000033  l__CABS3                        
      0000012A  l__HEADER5                      
-     000001FD  l__DATA                         
      00000200  s__CODE                         
+     00000210  l__DATA                         
      000002EF  l__INITIALIZED                  
      000002EF  l__INITIALIZER                  
      00001278  l__BANK10                       
@@ -90,10 +90,10 @@ Area                                    Addr        Size        Decimal Bytes (A
      00008000  s__BANK8                        
      00008000  s__BANK9                        
      0000C000  s__DATA                         
-     0000C1FD  s__INITIALIZED                  
-     0000C4EC  s__BSEG                         
-     0000C4EC  s__BSS                          
-     0000C4EC  s__HEAP                         
+     0000C210  s__INITIALIZED                  
+     0000C4FF  s__BSEG                         
+     0000C4FF  s__BSS                          
+     0000C4FF  s__HEAP                         
      0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_PSGaiden
      0000FFFF  _ROM_bank_to_be_mapped_on_slot2    SMSlib_PSGaiden
 
@@ -596,7 +596,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_DATA                               0000C000    000001FD =         509. bytes (REL,CON)
+_DATA                               0000C000    00000210 =         528. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -631,46 +631,47 @@ _DATA                               0000C000    000001FD =         509. bytes (R
      0000C024  _PSGSFXSubstringRetAddr            PSGlib
      0000C027  _global_enemy_objects              enemy_manager
      0000C0A8  _global_gamer_object               gamer_manager
-     0000C0C5  _global_level_object               level_manager
-     0000C0C8  _global_score_object               score_manager
-     0000C0D3  _global_state_object               state_manager
-     0000C0E6  _global_savegame_object            storage_manager
-     0000C0F9  _global_delay_object               timer_manager
-     0000C0FD  _global_frame_object               timer_manager
-     0000C0FF  _global_reset_object               timer_manager
-     0000C112  _VDPBlank                          SMSlib
-     0000C113  _SMS_VDPFlags                      SMSlib
-     0000C114  _PauseRequested                    SMSlib
-     0000C115  _VDPType                           SMSlib
-     0000C116  _KeysStatus                        SMSlib
-     0000C118  _PreviousKeysStatus                SMSlib
-     0000C11A  _SpriteTableY                      SMSlib
-     0000C15A  _SpriteTableXN                     SMSlib
-     0000C1DA  _SpriteNextFree                    SMSlib
-     0000C1DB  _SMS_theLineInterruptHandler       SMSlib
-     0000C1DD  _decompBuffer                      SMSlib_PSGaiden
+     0000C0C5  _global_hack_object                hack_manager
+     0000C0D8  _global_level_object               level_manager
+     0000C0DB  _global_score_object               score_manager
+     0000C0E6  _global_state_object               state_manager
+     0000C0F9  _global_savegame_object            storage_manager
+     0000C10C  _global_delay_object               timer_manager
+     0000C110  _global_frame_object               timer_manager
+     0000C112  _global_reset_object               timer_manager
+     0000C125  _VDPBlank                          SMSlib
+     0000C126  _SMS_VDPFlags                      SMSlib
+     0000C127  _PauseRequested                    SMSlib
+     0000C128  _VDPType                           SMSlib
+     0000C129  _KeysStatus                        SMSlib
+     0000C12B  _PreviousKeysStatus                SMSlib
+     0000C12D  _SpriteTableY                      SMSlib
+     0000C16D  _SpriteTableXN                     SMSlib
+     0000C1ED  _SpriteNextFree                    SMSlib
+     0000C1EE  _SMS_theLineInterruptHandler       SMSlib
+     0000C1F0  _decompBuffer                      SMSlib_PSGaiden
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 20.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZED                        0000C1FD    000002EF =         751. bytes (REL,CON)
+_INITIALIZED                        0000C210    000002EF =         751. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000C218  _sfx_object_data                   audio_object
-     0000C21E  _music_object_data                 audio_object
-     0000C22E  _level_object_tiles_array          level_object
-     0000C2F2  _level_object_AAdata               level_object
-     0000C3BA  _level_object_BBdata               level_object
-     0000C482  _locale_object_texts               locale_object
-     0000C4B2  _locale_object_number              locale_object
-     0000C4DC  _beat_walking_cmds                 beat_screen
-     0000C4E0  _beat_walking_move                 beat_screen
-     0000C4E4  _VDPReg                            SMSlib
-     0000C4E6  _spritesHeight                     SMSlib
-     0000C4E7  _spritesWidth                      SMSlib
+     0000C22B  _sfx_object_data                   audio_object
+     0000C231  _music_object_data                 audio_object
+     0000C241  _level_object_tiles_array          level_object
+     0000C305  _level_object_AAdata               level_object
+     0000C3CD  _level_object_BBdata               level_object
+     0000C495  _locale_object_texts               locale_object
+     0000C4C5  _locale_object_number              locale_object
+     0000C4EF  _beat_walking_cmds                 beat_screen
+     0000C4F3  _beat_walking_move                 beat_screen
+     0000C4F7  _VDPReg                            SMSlib
+     0000C4F9  _spritesHeight                     SMSlib
+     0000C4FA  _spritesWidth                      SMSlib
 ASxxxx Linker V03.00 + NoICE + sdld,  page 21.
 Hexadecimal  [32-Bits]
 
@@ -1175,6 +1176,7 @@ object\audio_object.rel                   [ audio_object ]
 object\board_object.rel                   [ board_object ]
 object\enemy_object.rel                   [ enemy_object ]
 object\gamer_object.rel                   [ gamer_object ]
+object\hack_object.rel                    [ hack_object ]
 object\level_object.rel                   [ level_object ]
 object\locale_object.rel                  [ locale_object ]
 object\score_object.rel                   [ score_object ]

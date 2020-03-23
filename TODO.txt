@@ -1,7 +1,22 @@
 TODO 01
 
-22/03/2020
+23/03/2020
+Re-arrange resume music and update SRAM and music seems to be OK now
 
+Title screen layout
+Options screen
+
+sound fx on death + music [boss]
+
+no oneup
+no candy on home
+
+2000pts default high
+
+Hack manager overwrite values when non-zero
+
+
+22/03/2020
 SRAM corrupting music
 Play
 Game Over

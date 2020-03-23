@@ -3,6 +3,9 @@
 #include "enum_manager.h"
 #include "state_manager.h"
 
+// Global variable.
+//struct_hack_object global_hack_object;
+
 #define PEEK( addr)			(* ( unsigned char *)( addr ) )
 #define POKE( addr, data )	(* ( unsigned char *)( addr ) = ( data ) )
 
