@@ -10,7 +10,6 @@
 #include "..\engine\input_manager.h"
 #include "..\engine\score_manager.h"
 #include "..\engine\state_manager.h"
-#include "..\engine\storage_manager.h"
 #include "..\engine\tile_manager.h"
 #include "..\engine\timer_manager.h"
 
@@ -31,7 +30,6 @@ static unsigned char screen;
 void screen_dead_screen_load()
 {
 	struct_state_object *st = &global_state_object;
-	unsigned char storage;
 	unsigned char lives;
 	engine_audio_manager_music_stop();
 
@@ -54,13 +52,6 @@ void screen_dead_screen_load()
 	screen = ( 0 == lives ) ? screen_type_cont : screen_type_ready;
 	//screen = screen_type_cont;
 	//screen = screen_type_ready;
-
-	// Save game state to SRAM on each death.
-	storage = engine_storage_manager_available();
-	if( storage )
-	{
-		engine_storage_manager_write();
-	}
 
 	if( !st->state_object_mydebugger )
 	{
@@ -93,6 +84,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 		{
 			if( screen_type_ready == screen )
 			{
+				engine_audio_manager_music_resume();
 				reset_death();
 			}
 
@@ -120,6 +112,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 			{
 				if( screen_type_ready == screen )
 				{
+					engine_audio_manager_music_resume();
 					reset_death();
 				}
 
