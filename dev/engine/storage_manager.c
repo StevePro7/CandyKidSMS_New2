@@ -100,27 +100,25 @@ void engine_storage_manager_write()
 
 void engine_storage_manager_erase()
 {
-	//struct_storage_object *savegame = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
+	struct_storage_object *savegame = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
 
-	//devkit_SMS_enableSRAM();
-	//savegame->Magic = MAGIC;
-	//savegame->save_high_score = DEF_HI_SCORE;
+	devkit_SMS_enableSRAM();
+	savegame->Magic = MAGIC;
+	savegame->save_high_score = DEF_HI_SCORE;
 
-	//savegame->save_trees_type = tree_type_avoid;
-	//savegame->save_exits_type = exit_type_public;
-	//savegame->save_difficulty = diff_type_easy;
-	//savegame->save_game_speed = pace_type_slow;
+	savegame->save_trees_type = tree_type_avoid;
+	savegame->save_exits_type = exit_type_public;
+	savegame->save_difficulty = diff_type_easy;
+	savegame->save_game_speed = pace_type_slow;
 
-	//savegame->save_world_data = 0;
-	//savegame->save_round_data = 0;
-	//savegame->save_music_data = 0;
-	//savegame->save_sound_data = 0;
+	savegame->save_world_data = 0;
+	savegame->save_round_data = 0;
 
-	////savegame->save_image_kid = 0;
-	////savegame->save_image_pro = 0;
-	////savegame->save_image_adi = 0;
-	////savegame->save_image_suz = 0;
+	savegame->save_image_kid = 0;
+	savegame->save_image_pro = 0;
+	savegame->save_image_adi = 0;
+	savegame->save_image_suz = 0;
 
-	//savegame->terminal = FINAL;
-	//devkit_SMS_disableSRAM();
+	savegame->terminal = FINAL;
+	devkit_SMS_disableSRAM();
 }

@@ -11,7 +11,7 @@ S .__.ABS. Def0000
 S _engine_enemy_manager_images Ref0000
 S _global_state_object Ref0000
 S _devkit_SMS_enableSRAM Ref0000
-A _CODE size 191 flags 0 addr 0
+A _CODE size 1F8 flags 0 addr 0
 S _engine_storage_manager_erase Def0190
 S _engine_storage_manager_read Def002F
 S _engine_storage_manager_available Def0000
@@ -107,5 +107,19 @@ T 83 01 3A 79 00 12 21 12 00 09 36 FE C3 00 00
 R 00 00 00 00 02 03 03 00 02 0D 04 00
 T 90 01
 R 00 00 00 00
-T 90 01 C9
+T 90 01 CD 00 00 E5 CD 00 00 C1 69 60 36 04 23 36
+R 00 00 00 00 02 03 00 00 02 07 08 00
+T 9E 01 B0 23 36 E0 23 36 AC 21 04 00 09 36 88 23
 R 00 00 00 00
+T AC 01 36 13 23 AF 77 23 77 21 08 00 09 36 00 21
+R 00 00 00 00
+T BA 01 09 00 09 36 00 21 0A 00 09 36 00 21 0B 00
+R 00 00 00 00
+T C8 01 09 36 00 21 0C 00 09 36 00 21 0D 00 09 36
+R 00 00 00 00
+T D6 01 00 21 0E 00 09 36 00 21 0F 00 09 36 00 21
+R 00 00 00 00
+T E4 01 10 00 09 36 00 21 11 00 09 36 00 21 12 00
+R 00 00 00 00
+T F2 01 09 36 FE C3 00 00
+R 00 00 00 00 02 06 04 00
