@@ -112,7 +112,6 @@ void engine_tile_manager_draw_blank( unsigned char x, unsigned char y )
 	engine_font_manager_draw_text( LOCALE_SELECT_SPACES, x + 0, y + 1 );
 }
 
-//void engine_tile_manager_draw_candy( unsigned char type, unsigned char x, unsigned char y )
 void engine_tile_manager_draw_candy( unsigned char x, unsigned char y )
 {
 	unsigned char type = rand() % MAX_BLOCK_TILES;
@@ -172,8 +171,9 @@ void engine_tile_manager_main_title( unsigned char x, unsigned char y )
 	}
 }
 
-void engine_tile_manager_main_candy( unsigned char type, unsigned char x, unsigned char y )
+void engine_tile_manager_main_candy( unsigned char x, unsigned char y )
 {
+	unsigned char type = rand() % ( MAX_BLOCK_TILES / 2 );
 	unsigned char offset = type * 2 + MAIN_CANDY_OFFSET;
 	draw_tile( offset, x, y );
 }

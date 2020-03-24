@@ -95,7 +95,7 @@ static void draw_tiles01()
 
 	// LHS #1
 	engine_tile_manager_draw_bonus( tile_type_bonusB, l1, b1 + 3, 1 );
-	engine_tile_manager_main_candy( 2, l1, b1 + 6 );
+	engine_tile_manager_main_candy( l1, b1 + 6 );
 	//engine_tile_manager_draw_trees( tree_type_avoid, l1, b1 + 3 );
 	//engine_font_manager_draw_text( "EX", l1, b1 + 6 );
 	//engine_font_manager_draw_text( "IT", l1, b1 + 7 );

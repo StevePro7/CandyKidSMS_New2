@@ -87,7 +87,7 @@ void engine_option_manager_draw_bonus()
 
 void engine_option_manager_draw_candy()
 {
-	engine_tile_manager_main_candy( 2, value_x[ 0 ] + 0, value_y[ 2 ] + 0 );
+	engine_tile_manager_main_candy( 6, value_x[ 0 ] + 0, value_y[ 2 ] + 0 );
 }
 
 void engine_option_manager_option_exit()
