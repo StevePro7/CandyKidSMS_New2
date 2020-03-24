@@ -284,6 +284,12 @@ void engine_enemy_manager_draw()
 	}
 }
 
+void engine_enemy_manager_draws( unsigned char enemy, unsigned char x, unsigned char y )
+{
+	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
+	engine_sprite_manager_draw_entity( x, y, eo->calcd );
+}
+
 void engine_enemy_manager_hide()
 {
 	struct_enemy_object *eo;

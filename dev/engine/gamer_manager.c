@@ -146,6 +146,12 @@ void engine_gamer_manager_draw()
 	engine_sprite_manager_draw_entity( go->posnX, go->posnY, go->calcd );
 }
 
+void engine_gamer_manager_draws( unsigned char x, unsigned char y )
+{
+	struct_gamer_object *go = &global_gamer_object;
+	engine_sprite_manager_draw_entity( x, y,  go->calcd );
+}
+
 void engine_gamer_manager_hide()
 {
 	struct_gamer_object *go = &global_gamer_object;

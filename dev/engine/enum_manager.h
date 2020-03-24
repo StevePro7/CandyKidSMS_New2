@@ -227,11 +227,11 @@ typedef enum tag_enum_border_type
 
 } enum_border_type;
 
-//typedef enum tag_enum_menu_type
-//{
-//	menu_type_option = 0,
-//	menu_type_select = 1,
-//
-//} enum_menu_type;
+typedef enum tag_enum_menu_type
+{
+	menu_type_inside = 0,
+	menu_type_outside = 1,
+
+} enum_menu_type;
 
 #endif//_ENUM_MANAGER_H_

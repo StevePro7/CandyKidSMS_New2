@@ -24,7 +24,7 @@ void screen_title_screen_load()
 {
 	struct_state_object *st = &global_state_object;
 
-	engine_locale_manager_draw_text( 1, SCREEN_TILE_LEFT + COIN_TEXT_X, TEXT4_Y );
+	engine_locale_manager_draw_text( 1, SCREEN_TILE_LEFT + COIN_TEXT_X + 2, TEXT4_Y );
 	engine_font_manager_draw_text( locale_object_blank18, SCREEN_TILE_LEFT + COIN_TEXT_X, TEXT4_Y + 1 );
 	engine_font_manager_draw_text( locale_object_blank18, SCREEN_TILE_LEFT + 2, BOTT_TEXT_Y );
 
@@ -39,6 +39,7 @@ void screen_title_screen_load()
 	flash_count = 0;
 	cheat_count = 0;
 
+	// TODO delete
 	engine_font_manager_draw_text( "TS", SCREEN_TILE_LEFT, 6 );
 }
 
@@ -75,7 +76,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 		}
 		else
 		{
-			engine_locale_manager_draw_text( 1, SCREEN_TILE_LEFT + COIN_TEXT_X, TEXT4_Y );
+			engine_locale_manager_draw_text( 1, SCREEN_TILE_LEFT + COIN_TEXT_X + 2, TEXT4_Y );
 		}
 	}
 

@@ -279,6 +279,9 @@
     <ClInclude Include="screen\option_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
+    <ClInclude Include="engine\option_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -508,6 +511,9 @@
     </ClCompile>
     <ClCompile Include="screen\start_screen.c">
       <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\option_manager.c">
+      <Filter>Source Files\engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
