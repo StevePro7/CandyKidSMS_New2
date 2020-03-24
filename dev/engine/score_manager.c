@@ -37,7 +37,7 @@ void engine_score_manager_text()
 	for( index = 0; index < SCORE_VALUES; index++ )
 	{
 		text = locale_object_texts[ index + 3 ];
-		engine_font_manager_draw_text( text, TEXT_X, title_Y[ index ] );
+		engine_font_manager_draw_text( text, TEXT_X + 1, title_Y[ index ] );
 	}
 }
 

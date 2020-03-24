@@ -69,23 +69,35 @@ void engine_memo_manager_option()
 {
 	struct_state_object *st = &global_state_object;
 	const unsigned char *text;
-	const unsigned char dataY = 22;
+	unsigned char x = TEXT_X + 2;
 
-	if( diff_type_hard == st->state_object_difficulty && pace_type_fast == st->state_object_pace_speed )
+	if( pace_type_slow == st->state_object_pace_speed )
 	{
-		text = locale_object_texts[ st->state_object_difficulty + 8];
-		engine_font_manager_draw_text( text, TEXT_X, dataY + 0 );
-
-		text = locale_object_texts[ st->state_object_pace_speed + 10 ];
-		engine_font_manager_draw_text( text, TEXT_X, dataY + 1 );
+		text = locale_object_texts[ st->state_object_difficulty + 8 ];
+		engine_font_manager_draw_text( text, x, BOTT_TEXT_Y + 1 );
+		text = locale_object_texts[ 24 ];
+		engine_font_manager_draw_text( text, x, BOTT_TEXT_Y + 2 );
 	}
 	else
 	{
-		text = locale_object_texts[ st->state_object_pace_speed + 10 ];
-		engine_font_manager_draw_text( text, TEXT_X, dataY + 0 );
+		// TODO do I want to delete this code?
+		// extra bytes for ROM hack mode
+		if( diff_type_hard == st->state_object_difficulty && pace_type_fast == st->state_object_pace_speed )
+		{
+			text = locale_object_texts[ st->state_object_difficulty + 8 ];
+			engine_font_manager_draw_text( text, x, BOTT_TEXT_Y + 1 );
 
-		text = locale_object_texts[ st->state_object_difficulty + 8 ];
-		engine_font_manager_draw_text( text, TEXT_X, dataY + 1 );
+			text = locale_object_texts[ st->state_object_pace_speed + 10 ];
+			engine_font_manager_draw_text( text, x, BOTT_TEXT_Y + 2 );
+		}
+		else
+		{
+			text = locale_object_texts[ st->state_object_pace_speed + 10 ];
+			engine_font_manager_draw_text( text, x, BOTT_TEXT_Y + 1 );
+
+			text = locale_object_texts[ st->state_object_difficulty + 8 ];
+			engine_font_manager_draw_text( text, x, BOTT_TEXT_Y + 2 );
+		}
 	}
 }
 
