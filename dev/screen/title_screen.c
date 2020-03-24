@@ -38,6 +38,8 @@ void screen_title_screen_load()
 	engine_delay_manager_load( TITLE_FLASH_DELAY );
 	flash_count = 0;
 	cheat_count = 0;
+
+	engine_font_manager_draw_text( "TS", SCREEN_TILE_LEFT, 6 );
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
@@ -81,7 +83,8 @@ void screen_title_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		//engine_audio_manager_sfx_play( sfx_type_accept );
-		*screen_type = screen_type_init;
+		//*screen_type = screen_type_init;
+		*screen_type = screen_type_intro;
 		return;
 	}
 

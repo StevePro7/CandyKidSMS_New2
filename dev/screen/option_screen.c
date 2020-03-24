@@ -26,7 +26,7 @@ void screen_option_screen_load()
 	// Load from SRAM first.
 	//engine_main_manager_load();
 
-	devkit_SMS_displayOff();
+	//devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_load_tiles_font();
 	engine_content_manager_load_tiles_main();
@@ -38,9 +38,9 @@ void screen_option_screen_load()
 	draw_tiles();
 
 	engine_locale_manager_draw_text( 0, SCREEN_TILE_LEFT + 24, BOTT_TEXT_Y );
-	devkit_SMS_displayOn();
+	//devkit_SMS_displayOn();
 
-	engine_font_manager_draw_text( "OPTION SCREEN!!", 4, 6 );
+	engine_font_manager_draw_text( "OS", SCREEN_TILE_LEFT, 6 );
 }
 
 void screen_option_screen_update( unsigned char *screen_type )
@@ -69,6 +69,8 @@ static void draw_tiles()
 	unsigned char r3 = SCREEN_TILE_LEFT + 21;		// 23
 
 	unsigned char b1 = 8;
+
+	engine_font_manager_draw_text( LOCALE_SELECT_ARROWS, l2, b1 + 1 );
 
 	// LHS #1
 	engine_tile_manager_draw_trees( tree_type_avoid, l1, b1 + 3 );

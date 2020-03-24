@@ -24,27 +24,29 @@ static void draw_tiles();
 void screen_intro_screen_load()
 {
 	// Load from SRAM first.
-	engine_main_manager_load();
+	//engine_main_manager_load();
 
-	devkit_SMS_displayOff();
-	engine_asm_manager_clear_VRAM();
-	engine_content_manager_load_tiles_font();
-	engine_content_manager_load_tiles_main();
-	engine_content_manager_load_sprites_game();
+	//devkit_SMS_displayOff();
+	//engine_asm_manager_clear_VRAM();
+	//engine_content_manager_load_tiles_font();
+	//engine_content_manager_load_tiles_main();
+	//engine_content_manager_load_sprites_game();
 
-	engine_board_manager_border( border_type_main );
-	engine_tile_manager_main_title( 2, 2 );
+	//engine_board_manager_border( border_type_main );
+	//engine_tile_manager_main_title( 2, 2 );
 
 	draw_tiles();
 
 	engine_locale_manager_draw_text( 0, SCREEN_TILE_LEFT + 24, BOTT_TEXT_Y );
-	devkit_SMS_displayOn();
+	//devkit_SMS_displayOn();
 
-	engine_font_manager_draw_text( "IS", 2, 6 );
+	engine_font_manager_draw_text( "IS", SCREEN_TILE_LEFT, 6 );
 }
 
 void screen_intro_screen_update( unsigned char *screen_type )
 {
+	unsigned char input;
+
 	// NEW
 	unsigned char x = 48;
 	unsigned char y = 64;
@@ -64,6 +66,14 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	//engine_sprite_manager_draw_entity( x + e, y + 0, 304 );
 	//engine_sprite_manager_draw_entity( x + e, y + 24, 318 );
 	//engine_sprite_manager_draw_entity( x + e, y + 48, 332 );
+
+	input = engine_input_manager_hold( input_type_fire1 );
+	if( input )
+	{
+		//engine_audio_manager_sfx_play( sfx_type_accept );
+		*screen_type = screen_type_option;
+		return;
+	}
 
 	*screen_type = screen_type_intro;
 }
@@ -128,12 +138,11 @@ static void draw_tiles()
 
 
 	// BOTTOM
-	//engine_font_manager_draw_text( "CONTINUE", m1, b1 + 10 );
-	//engine_font_manager_draw_text( "OPTIONS", m1, b1 + 11 );
+	engine_font_manager_draw_text( "CONTINUE", m1, b1 + 10 );
+	engine_font_manager_draw_text( "OPTIONS", m1, b1 + 11 );
 
-
-	engine_locale_manager_draw_text( 1, SCREEN_TILE_LEFT + 6, TEXT4_Y );
+	engine_font_manager_draw_text( LOCALE_SELECT_ARROWS, m1 - 3, b1 + 11 );
 
 	// cheat
-	engine_locale_manager_draw_text( 2, SCREEN_TILE_LEFT + 2, BOTT_TEXT_Y );
+	//engine_locale_manager_draw_text( 2, SCREEN_TILE_LEFT + 2, BOTT_TEXT_Y );
 }
