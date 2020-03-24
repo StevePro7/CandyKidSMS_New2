@@ -1,0 +1,45 @@
+Layout
+24/03/2020
+
+LHS	6, 8, 11	arrow	 8	6
+RHS	23		arrow	20
+
+
+Sprites
+Kid	 48,  64
+Pro	144,  64
+Adi	144,  88
+Suz	144, 112
+
+IMAGE
+Trees	6, 11
+
+Candy	11, 8
+ Kid1	12, 9
+
+Enemy	23, 8
+ Pro1	24, 9
+
+Enemy	23, 11
+ Adi1	24, 12
+
+Enemy	23, 14
+ Suz1	24, 15
+
+
+AVOID	11, 11
+trees	11, 12
+
+EX	6, 14
+IT	6, 15
+
+EXITS	11, 14
+ SHUT	11, 15
+
+WORLD	8, 18
+ROUND	8, 19
+
+arrow	6, 19
+
+difficulty	18, 18
+EASY		24, 19
