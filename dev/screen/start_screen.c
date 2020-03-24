@@ -19,7 +19,10 @@
 #pragma disable_warning 110
 #endif
 
-static void draw_tiles();
+static void draw_tiles01();
+static void draw_tiles02();
+static void draw_sprit01();
+static void draw_sprit02();
 
 void screen_start_screen_load()
 {
@@ -35,7 +38,7 @@ void screen_start_screen_load()
 	engine_board_manager_border( border_type_main );
 	engine_tile_manager_main_title( 2, 2 );
 
-	draw_tiles();
+	draw_tiles01();
 
 	engine_locale_manager_draw_text( 0, SCREEN_TILE_LEFT + 24, BOTT_TEXT_Y );
 	devkit_SMS_displayOn();
@@ -45,6 +48,14 @@ void screen_start_screen_load()
 
 void screen_start_screen_update( unsigned char *screen_type )
 {
+	//draw_sprit01();
+	draw_sprit02();
+
+	*screen_type = screen_type_start;
+}
+
+static void draw_sprit01()
+{
 	unsigned char x = 48;
 	unsigned char y = 64;
 	unsigned char e = 112;
@@ -53,11 +64,21 @@ void screen_start_screen_update( unsigned char *screen_type )
 	engine_sprite_manager_draw_entity( x + e - 16, y + 0, 304 );
 	engine_sprite_manager_draw_entity( x + e - 16, y + 24, 318 );
 	engine_sprite_manager_draw_entity( x + e - 16, y + 48, 332 );
-
-	*screen_type = screen_type_start;
 }
 
-static void draw_tiles()
+static void draw_sprit02()
+{
+	unsigned char x = 48;
+	unsigned char y = 64;
+	unsigned char e = 112;
+	engine_sprite_manager_draw_entity( x, y + 0, 352 );
+
+	engine_sprite_manager_draw_entity( x + e - 8, y + 0, 304 );
+	engine_sprite_manager_draw_entity( x + e - 8, y + 24, 318 );
+	engine_sprite_manager_draw_entity( x + e - 8, y + 48, 332 );
+}
+
+static void draw_tiles01()
 {
 	unsigned char l1 = SCREEN_TILE_LEFT + 4;		// 6
 	unsigned char l2 = SCREEN_TILE_LEFT + 6;		// 8
@@ -68,54 +89,68 @@ static void draw_tiles()
 	unsigned char r2 = SCREEN_TILE_LEFT + 18;		// 20
 	unsigned char r3 = SCREEN_TILE_LEFT + 21;		// 23
 
+	unsigned char m1 = SCREEN_TILE_LEFT + 11;		// 13
+
 	unsigned char b1 = 8;
 
-	engine_font_manager_draw_text( LOCALE_SELECT_ARROWS, l2, b1 + 1 );
-
 	// LHS #1
-	engine_tile_manager_draw_trees( tree_type_avoid, l1, b1 + 3 );
-	engine_font_manager_draw_text( "EX", l1, b1 + 6 );
-	engine_font_manager_draw_text( "IT", l1, b1 + 7 );
+	engine_tile_manager_draw_bonus( tile_type_bonusB, l1, b1 + 3, 1 );
+	engine_tile_manager_main_candy( 2, l1, b1 + 6 );
+	//engine_tile_manager_draw_trees( tree_type_avoid, l1, b1 + 3 );
+	//engine_font_manager_draw_text( "EX", l1, b1 + 6 );
+	//engine_font_manager_draw_text( "IT", l1, b1 + 7 );
 
 
 	// LHS #2.	arrow
-	engine_font_manager_draw_text( "WORLD", l2, b1 + 10 );
-	engine_font_manager_draw_text( "ROUND", l2, b1 + 11 );
+	//engine_font_manager_draw_text( "WORLD", l2, b1 + 10 );
+	//engine_font_manager_draw_text( "ROUND", l2, b1 + 11 );
 
 
 	// LHS #3
-	engine_font_manager_draw_text( "CANDY", l3, b1 + 0 );
-	engine_font_manager_draw_text( " KID1", l3, b1 + 1 );
+	engine_font_manager_draw_text( "67", 4, b1 + 0 );
+	engine_font_manager_draw_text( "12", l3 - 3, b1 + 0 );
 
-	engine_font_manager_draw_text( "AVOID", l3, b1 + 3 );
-	//engine_font_manager_draw_text( "DEATH", l3, b1 + 4 );
-	engine_font_manager_draw_text( "TREES", l3, b1 + 4 );
+	engine_font_manager_draw_text( "CANDY1234", l3 - 1, b1 + 0 );
+	engine_font_manager_draw_text( "KID ", l3 + 0, b1 + 1 );
 
-	engine_font_manager_draw_text( "EXITS", l3, b1 + 6 );
-	//engine_font_manager_draw_text( " OPEN", l3, b1 + 7 );
-	engine_font_manager_draw_text( " SHUT", l3, b1 + 7 );
+	engine_font_manager_draw_text( "200", l3 + 0, b1 + 3 );
+	engine_font_manager_draw_text( "PTS", l3 + 0, b1 + 4 );
+
+	engine_font_manager_draw_text( "10", l3 + 0, b1 + 6 );
+	engine_font_manager_draw_text( "PTS", l3 + 0, b1 + 7 );
 
 
 	// LHS #3
-	engine_font_manager_draw_text( "01", l4, b1 + 10 );
-	engine_font_manager_draw_text( "02", l4, b1 + 11 );
+	//engine_font_manager_draw_text( "01", l4, b1 + 10 );
+	//engine_font_manager_draw_text( "02", l4, b1 + 11 );
 
 
 	// RHS #1
-	engine_font_manager_draw_text( "DIFFICULTY", r1, b1 + 10 );
+	//engine_font_manager_draw_text( "DIFFICULTY", r1, b1 + 10 );
 
 	// RHS #2.	arrow
 	//engine_font_manager_draw_text( LOCALE_SELECT_ARROWS, r2, b1 + 11 );
 
 	// RHS #3.
-	engine_font_manager_draw_text( "ENEMY", r3, b1 + 0 );
-	engine_font_manager_draw_text( " PRO1", r3, b1 + 1 );
-	engine_font_manager_draw_text( "ENEMY", r3, b1 + 3 );
-	engine_font_manager_draw_text( " ADI1", r3, b1 + 4 );
-	engine_font_manager_draw_text( "ENEMY", r3, b1 + 6 );
-	engine_font_manager_draw_text( " SUZ1", r3, b1 + 7 );
+	engine_font_manager_draw_text( "34", r3 - 2, b1 + 0 );
 
-	engine_font_manager_draw_text( " HARD", r3, b1 + 11 );
+	engine_font_manager_draw_text( "ENEMY89", r3, b1 + 0 );
+	engine_font_manager_draw_text( " PRO ", r3, b1 + 1 );
+	engine_font_manager_draw_text( "ENEMY", r3, b1 + 3 );
+	engine_font_manager_draw_text( " ADI ", r3, b1 + 4 );
+	engine_font_manager_draw_text( "ENEMY", r3, b1 + 6 );
+	engine_font_manager_draw_text( " SUZ ", r3, b1 + 7 );
+
+
+	// BOTTOM
+	engine_font_manager_draw_text( "CONTINUE", m1, b1 + 10 );
+	engine_font_manager_draw_text( "OPTIONS", m1, b1 + 11 );
+
+	engine_font_manager_draw_text( LOCALE_SELECT_ARROWS, m1 - 3, b1 + 11 );
+
+
+	// cheat
+	engine_locale_manager_draw_text( 2, SCREEN_TILE_LEFT + 2, BOTT_TEXT_Y );
 }
 
 static void draw_tiles_bak()

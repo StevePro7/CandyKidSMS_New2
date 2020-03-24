@@ -36,6 +36,7 @@ sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 hack_mana
 ::::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 mask_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 memo_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 move_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 option_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 score_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 screen_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 sprite_manager.c
@@ -126,10 +127,8 @@ engine\hack_manager.rel ^
 engine\input_manager.rel ^
 engine\level_manager.rel ^
 engine\locale_manager.rel ^
-engine\main_manager.rel ^
-engine\mask_manager.rel ^
-engine\memo_manager.rel ^
-engine\move_manager.rel ^
+engine\main_manager.rel engine\mask_manager.rel engine\memo_manager.rel engine\move_manager.rel ^
+engine\option_manager.rel ^
 engine\score_manager.rel ^
 engine\screen_manager.rel ^
 engine\sprite_manager.rel ^

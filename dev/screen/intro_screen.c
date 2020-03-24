@@ -27,13 +27,13 @@ void screen_intro_screen_load()
 	//engine_main_manager_load();
 
 	//devkit_SMS_displayOff();
-	//engine_asm_manager_clear_VRAM();
-	//engine_content_manager_load_tiles_font();
-	//engine_content_manager_load_tiles_main();
-	//engine_content_manager_load_sprites_game();
+	engine_asm_manager_clear_VRAM();
+	engine_content_manager_load_tiles_font();
+	engine_content_manager_load_tiles_main();
+	engine_content_manager_load_sprites_game();
 
-	//engine_board_manager_border( border_type_main );
-	//engine_tile_manager_main_title( 2, 2 );
+	engine_board_manager_border( border_type_main );
+	engine_tile_manager_main_title( 2, 2 );
 
 	draw_tiles();
 
