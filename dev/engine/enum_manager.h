@@ -229,8 +229,8 @@ typedef enum tag_enum_border_type
 
 typedef enum tag_enum_menu_type
 {
-	menu_type_inside = 0,
-	menu_type_outside = 1,
+	menu_type_single = 0,
+	menu_type_double = 1,
 
 } enum_menu_type;
 
