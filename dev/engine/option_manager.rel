@@ -1,16 +1,17 @@
 XL2
-H 9 areas 8 global symbols
+H 9 areas 9 global symbols
 M option_manager
 O -mz80
 S _engine_enemy_manager_draws Ref0000
 S _engine_locale_manager_draw_text Ref0000
 S .__.ABS. Def0000
 S _engine_gamer_manager_draws Ref0000
-A _CODE size A9 flags 0 addr 0
+A _CODE size DB flags 0 addr 0
 S _engine_option_manager_draw_actor Def0002
 S _engine_option_manager_init Def0000
-S _engine_option_manager_text_right Def006A
+S _engine_option_manager_text_right Def009C
 S _engine_option_manager_update Def0001
+S _engine_option_manager_text_left Def006A
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 8 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -57,19 +58,29 @@ T 5C 00 03 79 D6 03 78 DE 00 38 DB DD F9 DD E1 C9
 R 00 00 00 00
 T 6A 00
 R 00 00 00 00
-T 6A 00 0E 00
+T 6A 00 21 01 00 4E 21 02 00 39 46 79 90 47 21
+R 00 00 00 00 00 03 02 00
+T 77 00 04 00 56 C5 58 D5 3E 1D F5 33 CD 00 00 F1
+R 00 00 00 00 00 02 02 00 02 0D 01 00
+T 85 00 33 C1 21 04 00 4E 0C 04 79 F5 33 C5 33 3E
+R 00 00 00 00 00 05 02 00
+T 93 00 1E F5 33 CD 00 00 F1 33 C9
+R 00 00 00 00 02 06 01 00
+T 9C 00
 R 00 00 00 00
-T 6C 00
+T 9C 00 0E 00
 R 00 00 00 00
-T 6C 00 3E 04 00 81 5F 3E 04 00 CE 00 57 1A 21
+T 9E 00
+R 00 00 00 00
+T 9E 00 3E 04 00 81 5F 3E 04 00 CE 00 57 1A 21
 R 00 00 00 00 09 03 02 00 89 08 02 00
-T 77 00 03 00 46 C5 D5 F5 33 C5 33 3E 19 F5 33 CD
+T A9 00 03 00 46 C5 D5 F5 33 C5 33 3E 19 F5 33 CD
 R 00 00 00 00 00 02 02 00
-T 85 00 00 00 F1 33 D1 C1 1A 57 14 21 03 00 5E 1C
+T B7 00 00 00 F1 33 D1 C1 1A 57 14 21 03 00 5E 1C
 R 00 00 00 00 02 02 01 00 00 0C 02 00
-T 93 00 79 C6 19 47 04 C5 D5 C5 33 CD 00 00 F1 33
+T C5 00 79 C6 19 47 04 C5 D5 C5 33 CD 00 00 F1 33
 R 00 00 00 00 02 0C 01 00
-T A1 00 C1 0C 79 D6 03 38 C4 C9
+T D3 00 C1 0C 79 D6 03 38 C4 C9
 R 00 00 00 00
 T 00 00
 R 00 00 07 00

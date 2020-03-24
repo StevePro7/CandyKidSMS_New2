@@ -30,10 +30,13 @@ const unsigned char *locale_object_texts[] =
 	"  WINS  ",
 	"(C)1984",
 	"MODE",
-	"ENEMY",
+	"ENEMY",		// 25
 	"PRO ",
 	"ADI ",
 	"SUZ ",
+	"CANDY",
+	"KID ",
+	"PTS",
 
 	//"SELECT",
 	//"SORRY NO",

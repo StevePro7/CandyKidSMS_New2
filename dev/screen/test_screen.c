@@ -15,6 +15,8 @@
 #include "..\engine\tile_manager.h"
 #include "..\devkit\_sms_manager.h"
 
+static unsigned char distance;
+
 void screen_test_screen_load()
 {
 	engine_asm_manager_clear_VRAM();
@@ -25,7 +27,9 @@ void screen_test_screen_load()
 	engine_board_manager_border( border_type_main );
 	engine_tile_manager_main_title( 2, 2 );
 
-
+	distance = menu_type_single;
+	distance = menu_type_double;
+	engine_option_manager_text_left( distance );
 	engine_option_manager_text_right();
 
 
@@ -35,8 +39,7 @@ void screen_test_screen_load()
 
 void screen_test_screen_update( unsigned char *screen_type )
 {
-	//engine_option_manager_draw_actor( menu_type_single );
-	engine_option_manager_draw_actor( menu_type_double );
+	engine_option_manager_draw_actor( distance );
 
 	/*unsigned char input = engine_input_manager_hold( input_type_fire1 );
 	if( input )

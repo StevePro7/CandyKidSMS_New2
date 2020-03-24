@@ -41,6 +41,15 @@ void engine_option_manager_draw_actor( unsigned index )
 	}
 }
 
+void engine_option_manager_text_left( unsigned index )
+{
+	unsigned char loc = 29;
+	unsigned char x = value_x[ 1 ] - index;
+	engine_locale_manager_draw_text( loc + 0, x + 0, value_y[ 0 ] + 0 );
+	engine_locale_manager_draw_text( loc + 1, x + 1, value_y[ 0 ] + 1 );
+}
+
+
 void engine_option_manager_text_right()
 {
 	unsigned char idx;
