@@ -45,14 +45,14 @@ void screen_option_screen_load()
 
 void screen_option_screen_update( unsigned char *screen_type )
 {
-	/*unsigned char x = 48;
+	unsigned char x = 48;
 	unsigned char y = 64;
 	unsigned char e = 112;
 	engine_sprite_manager_draw_entity( x, y + 0, 352 );
 
 	engine_sprite_manager_draw_entity( x + e - 16, y + 0, 304 );
 	engine_sprite_manager_draw_entity( x + e - 16, y + 24, 318 );
-	engine_sprite_manager_draw_entity( x + e - 16, y + 48, 332 );*/
+	engine_sprite_manager_draw_entity( x + e - 16, y + 48, 332 );
 
 	*screen_type = screen_type_option;
 }
