@@ -76,6 +76,10 @@ unsigned char engine_score_manager_get_candy()
 	struct_score_object *so = &global_score_object;
 	return so->candy;
 }
+unsigned char engine_score_manager_get_bonus( unsigned char index )
+{
+	return bonuses[ index - 3 ];
+}
 unsigned char engine_score_manager_get_value( unsigned char index )
 {
 	struct_score_object *so = &global_score_object;

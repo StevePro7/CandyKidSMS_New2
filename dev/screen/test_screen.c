@@ -27,14 +27,23 @@ void screen_test_screen_load()
 	engine_board_manager_border( border_type_main );
 	engine_tile_manager_main_title( 2, 2 );
 
-	distance = menu_type_single;
+	//distance = menu_type_single;
 	distance = menu_type_double;
 	engine_option_manager_text_left( distance );
 	engine_option_manager_text_right();
 
 
+	// Title screen
+	engine_option_manager_draw_bonus();
+	engine_option_manager_draw_candy();
+
+	// Option screen
+	//engine_option_manager_option_tree( 1 );
+	//engine_option_manager_option_exit();
+
+
 	// TODO delete
-	engine_font_manager_draw_text( "TEST SCREEN!!", 2, 6 );
+	engine_font_manager_draw_text( "TS", 2, 6 );
 }
 
 void screen_test_screen_update( unsigned char *screen_type )

@@ -98,17 +98,7 @@ void engine_tile_manager_draw_tile( unsigned char tile, unsigned char x, unsigne
 	}
 	else if( tile_type_candy == tile_type )
 	{
-		unsigned char type = 0;
-		//while( 1 )
-		//{
-		type = rand() % MAX_BLOCK_TILES;				// TODO pre-calc this then render
-														//if( type == 0 )
-														//{
-														//	break;
-														//}
-														//}
-
-		engine_tile_manager_draw_candy( type, x, y );
+		engine_tile_manager_draw_candy( x, y );
 	}
 	else if( tile_type_oneup == tile_type )
 	{
@@ -122,15 +112,17 @@ void engine_tile_manager_draw_blank( unsigned char x, unsigned char y )
 	engine_font_manager_draw_text( LOCALE_SELECT_SPACES, x + 0, y + 1 );
 }
 
-void engine_tile_manager_draw_trees( unsigned char type, unsigned char x, unsigned char y )
+//void engine_tile_manager_draw_candy( unsigned char type, unsigned char x, unsigned char y )
+void engine_tile_manager_draw_candy( unsigned char x, unsigned char y )
 {
-	unsigned char offset = type * 2;
+	unsigned char type = rand() % MAX_BLOCK_TILES;
+	unsigned char offset = type * 2 + BASE_CANDY_OFFSET;
 	draw_tile( offset, x, y );
 }
 
-void engine_tile_manager_draw_candy( unsigned char type, unsigned char x, unsigned char y )
+void engine_tile_manager_draw_trees( unsigned char type, unsigned char x, unsigned char y )
 {
-	unsigned char offset = type * 2 + BASE_CANDY_OFFSET;
+	unsigned char offset = type * 2;
 	draw_tile( offset, x, y );
 }
 
