@@ -54,7 +54,11 @@ void screen_title_screen_update( unsigned char *screen_type )
 	unsigned char delay;
 
 	engine_option_manager_draw_actor( distance );
-	engine_option_manager_update( st->state_object_curr_screen );
+
+	if( st->state_object_delay_test )
+	{
+		engine_option_manager_update( st->state_object_curr_screen );
+	}
 
 	delay = engine_delay_manager_update();
 	if( delay )
