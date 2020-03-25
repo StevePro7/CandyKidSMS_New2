@@ -53,7 +53,7 @@ cd object
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 gamer_object.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 hack_object.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_object.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 locale_object.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 locale_object.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 score_object.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 state_object.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 storage_object.c
