@@ -10,32 +10,33 @@
 #include "..\engine\input_manager.h"
 #include "..\engine\locale_manager.h"
 #include "..\engine\main_manager.h"
-#include "..\engine\sprite_manager.h"
-#include "..\engine\tile_manager.h"
+#include "..\engine\option_manager.h"
+#include "..\engine\state_manager.h"
 #include "..\devkit\_sms_manager.h"
+
+static unsigned char distance;
 
 void screen_start_screen_load()
 {
-	// Load from SRAM first.
-	//engine_main_manager_load();
+	struct_state_object *st = &global_state_object;
+	engine_option_manager_clear();
 
-	devkit_SMS_displayOff();
-	engine_asm_manager_clear_VRAM();
-	engine_content_manager_load_tiles_font();
-	engine_content_manager_load_tiles_main();
-	engine_content_manager_load_sprites_game();
+	distance = menu_type_double;
 
-	engine_board_manager_border( border_type_main );
-	engine_tile_manager_main_title( 2, 2 );
+	engine_option_manager_text_start( st->state_object_availables );
 
-
-	engine_locale_manager_draw_text( 0, SCREEN_TILE_LEFT + 24, BOTT_TEXT_Y );
-	devkit_SMS_displayOn();
-
-	engine_font_manager_draw_text( "SS", SCREEN_TILE_LEFT, 6 );
+	engine_font_manager_draw_text( "AA", SCREEN_TILE_LEFT, 6 );
 }
 
 void screen_start_screen_update( unsigned char *screen_type )
 {
+	struct_state_object *st = &global_state_object;
+
+	engine_option_manager_draw_actor( distance );
+	if( !st->state_object_delay_test )
+	{
+		engine_option_manager_update( st->state_object_curr_screen );
+	}
+
 	*screen_type = screen_type_start;
 }

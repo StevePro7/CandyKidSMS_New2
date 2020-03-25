@@ -34,14 +34,49 @@ const unsigned char *locale_object_texts[] =
 	"PRO ",
 	"ADI ",
 	"SUZ ",
-	"CANDY",		// 29
+	"CANDY",
 	"KID ",
 	"PTS",
-	"NEW GAME",
-	"CONTINUE",
-	"OPTIONS",
+
+	//"SELECT",
+	//"SORRY NO",
+	//" BONUS. ",
+	//"2000 PTS",
+	//" BONUS! ",
+
+	//"  GAME  ",
+	//"  OVER  ",
+	//"CANDYKID",
+	//"  WINS  ",
+	//"  INSERT COIN(S)  ",
+	//"CHEAT!",
 };
 
+//const unsigned char *locale_object_menus[] =
+//{
+//	"SELECT DIFFICULTY",
+//	"EASY",
+//	"HARD",
+//	"SELECT GAME SPEED",
+//	"SLOW",
+//	"FAST",
+//};
+
+//const unsigned char *locale_object_grants[] =
+//{
+//	"SELECT",
+//	"ACTORS",
+//	" KID#", "KID1", "KID2",
+//	" PRO#", "PRO1", "PRO2",
+//	" ADI#", "ADI1", "ADI2",
+//	" SUZ#", "SUZ1", "SUZ2",
+//	"SELECT",
+//	" LEVEL",
+//	"WORLD", "    ", "",
+//	"ROUND", "    ", "",
+//	"TREES", "STOP", "KILL",
+//	"EXITS", "OPEN", "SHUT",
+//};
 
 const unsigned char *locale_object_number[] =
 {

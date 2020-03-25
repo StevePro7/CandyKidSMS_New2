@@ -134,6 +134,12 @@ void engine_option_manager_text_enemy()
 	engine_locale_manager_draw_text( 0, SCREEN_TILE_LEFT + 24, BOTT_TEXT_Y );
 }
 
+void engine_option_manager_text_start( unsigned char mode )
+{
+	engine_locale_manager_draw_text( location + 3 + mode, value_x[ 1 ] + 2, TEXT4_Y + 0 );
+	engine_locale_manager_draw_text( location + 5, value_x[ 1 ] + 2, TEXT4_Y + 1 );
+}
+
 void engine_option_manager_draw_bonus( unsigned index )
 {
 	unsigned char value_data = engine_score_manager_get_bonus( bonus_tile );
