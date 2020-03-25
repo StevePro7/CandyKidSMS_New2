@@ -6,10 +6,10 @@
 #include "..\engine\global_manager.h"
 #include "..\engine\input_manager.h"
 #include "..\engine\locale_manager.h"
+#include "..\engine\option_manager.h"
 #include "..\engine\state_manager.h"
 #include "..\engine\tile_manager.h"
 #include "..\engine\timer_manager.h"
-#include "..\engine\sprite_manager.h"
 #include "..\devkit\_sms_manager.h"
 #include "..\object\locale_object.h"
 
@@ -40,6 +40,7 @@ void screen_title_screen_load()
 	engine_delay_manager_load( TITLE_FLASH_DELAY );
 	flash_count = 0;
 	cheat_count = 0;
+	distance = menu_type_double;
 
 	// TODO delete
 	engine_font_manager_draw_text( "TS", SCREEN_TILE_LEFT, 6 );
@@ -62,6 +63,8 @@ void screen_title_screen_update( unsigned char *screen_type )
 	//engine_sprite_manager_draw_entity( x + e - 16, y + 24, 318 );
 	//engine_sprite_manager_draw_entity( x + e - 16, y + 48, 332 );
 	//// NEW
+
+	engine_option_manager_draw_actor( distance );
 
 
 	delay = engine_delay_manager_update();
