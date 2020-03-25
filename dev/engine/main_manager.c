@@ -34,6 +34,7 @@ void engine_main_manager_load()
 	if( storage )
 	{
 		engine_storage_manager_read();
+        st->state_object_availables = 1;
 	}
 
 	// Invert any hack overrides...

@@ -16,11 +16,11 @@ S _global_state_object Ref0000
 S _engine_storage_manager_write Ref0000
 S _engine_hack_manager_invert Ref0000
 S _engine_content_manager_load_tiles_font Ref0000
-A _CODE size 39 flags 0 addr 0
+A _CODE size 3E flags 0 addr 0
 S _engine_main_manager_load Def0009
-S _engine_main_manager_save Def0036
+S _engine_main_manager_save Def003B
 S _engine_main_manager_init Def0000
-S _engine_main_manager_debug Def0028
+S _engine_main_manager_debug Def002D
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -35,19 +35,19 @@ T 00 00 CD 00 00 CD 00 00 C3 00 00
 R 00 00 00 00 02 03 08 00 02 06 02 00 02 09 06 00
 T 09 00
 R 00 00 00 00
-T 09 00 CD 00 00 CD 00 00 21 88 13 22 04 00 21
+T 09 00 CD 00 00 CD 00 00 21 D0 07 22 05 00 21
 R 00 00 00 00 02 03 03 00 02 06 00 00 02 0C 0A 00
-T 16 00 0E 00 36 03 CD 00 00 7D B7 CA 00 00 CD
+T 16 00 0F 00 36 03 CD 00 00 7D B7 CA 00 00 CD
 R 00 00 00 00 02 02 0A 00 02 07 09 00 02 0C 0C 00
-T 23 00 00 00 C3 00 00
-R 00 00 00 00 02 02 04 00 02 05 0C 00
-T 28 00
+T 23 00 00 00 21 00 00 36 01 C3 00 00
+R 00 00 00 00 02 02 04 00 02 05 0A 00 02 0A 0C 00
+T 2D 00
 R 00 00 00 00
-T 28 00 3A 10 00 B7 C8 CD 00 00 CD 00 00 C3
+T 2D 00 3A 11 00 B7 C8 CD 00 00 CD 00 00 C3
 R 00 00 00 00 02 03 0A 00 02 08 0D 00 02 0B 07 00
-T 34 00 00 00
+T 39 00 00 00
 R 00 00 00 00 02 02 01 00
-T 36 00
+T 3B 00
 R 00 00 00 00
-T 36 00 C3 00 00
+T 3B 00 C3 00 00
 R 00 00 00 00 02 03 0B 00
