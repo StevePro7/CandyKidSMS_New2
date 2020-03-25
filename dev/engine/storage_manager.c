@@ -104,7 +104,7 @@ void engine_storage_manager_erase()
 	struct_storage_object *savegame = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
 
 	devkit_SMS_enableSRAM();
-	savegame->Magic = MAGIC;
+	savegame->Magic = 0x00000000;
 	savegame->save_high_score = DEF_HI_SCORE;
 
 	savegame->save_trees_type = tree_type_avoid;
