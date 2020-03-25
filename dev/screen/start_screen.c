@@ -32,13 +32,13 @@ void screen_start_screen_load()
 	distance = menu_type_double;
 
 	engine_option_manager_text_start( st->state_object_availables );
-
-	engine_font_manager_draw_text( "AA", SCREEN_TILE_LEFT, 6 );
+	display_cursor();
 }
 
 void screen_start_screen_update( unsigned char *screen_type )
 {
 	struct_state_object *st = &global_state_object;
+	unsigned char input[ 2 ] = { 0, 0 };
 
 	engine_option_manager_draw_actor( distance );
 	if( !st->state_object_delay_test )
@@ -46,5 +46,40 @@ void screen_start_screen_update( unsigned char *screen_type )
 		engine_option_manager_update( st->state_object_curr_screen );
 	}
 
+	input[ 0 ] = engine_input_manager_hold( input_type_up );
+	input[ 1 ] = engine_input_manager_hold( input_type_down );
+	if( input[ 0 ] || input[ 1 ] )
+	{
+		cursor = 1 - cursor;
+		display_cursor();
+	}
+
+	// TODO go forward and go back.
+	input[ 0 ] = engine_input_manager_hold( input_type_fire1 );
+	if( input[ 0 ] )
+	{
+		// TODO sound FX
+		//engine_audio_manager_sfx_play( sfx_type_accept );
+		*screen_type = screen_type_init;
+		//*screen_type = screen_type_intro;
+		return;
+	}
+
+	input[ 1 ] = engine_input_manager_hold( input_type_fire2 );
+	if( input[ 1 ] )
+	{
+		// TODO sound FX
+		//engine_audio_manager_sfx_play( sfx_type_accept );
+		*screen_type = screen_type_title;
+		return;
+	}
+
 	*screen_type = screen_type_start;
+}
+
+static void display_cursor()
+{
+	engine_font_manager_draw_text( LOCALE_SELECT_SPACES, SCREEN_TILE_LEFT + 8, cursorY[ 0 ] );
+	engine_font_manager_draw_text( LOCALE_SELECT_SPACES, SCREEN_TILE_LEFT + 8, cursorY[ 1 ] );
+	engine_font_manager_draw_text( LOCALE_SELECT_ARROWS, SCREEN_TILE_LEFT + 8, cursorY[ cursor ] );
 }

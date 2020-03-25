@@ -84,8 +84,8 @@ void screen_title_screen_update( unsigned char *screen_type )
 	{
 		// TODO sound FX
 		//engine_audio_manager_sfx_play( sfx_type_accept );
-		*screen_type = screen_type_init;
-		//*screen_type = screen_type_intro;
+		//*screen_type = screen_type_init;
+		*screen_type = screen_type_start;
 		return;
 	}
 
