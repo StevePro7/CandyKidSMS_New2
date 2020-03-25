@@ -10,8 +10,8 @@ extern struct_enemy_object global_enemy_objects[ MAX_ENEMIES ];
 // Methods.
 void engine_enemy_manager_init();
 void engine_enemy_manager_load();
+void engine_enemy_manager_stance();
 void engine_enemy_manager_dohand( unsigned char enemy );
-void engine_enemy_manager_stance( unsigned char enemy );
 void engine_enemy_manager_update( unsigned char enemy );
 void engine_enemy_manager_draw();
 void engine_enemy_manager_draws( unsigned char enemy, unsigned char x, unsigned char y );

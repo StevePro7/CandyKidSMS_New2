@@ -19,10 +19,12 @@
 
 static unsigned char flash_count;
 static unsigned char cheat_count;
+static unsigned char distance;
 
 void screen_title_screen_load()
 {
 	struct_state_object *st = &global_state_object;
+	distance = menu_type_double;
 
 	engine_locale_manager_draw_text( 1, SCREEN_TILE_LEFT + COIN_TEXT_X + 2, TEXT4_Y );
 	engine_font_manager_draw_text( locale_object_blank18, SCREEN_TILE_LEFT + COIN_TEXT_X, TEXT4_Y + 1 );
@@ -50,16 +52,16 @@ void screen_title_screen_update( unsigned char *screen_type )
 	unsigned char delay;
 
 
-	// NEW
-	unsigned char x = 48;
-	unsigned char y = 64;
-	unsigned char e = 112;
-	engine_sprite_manager_draw_entity( x, y + 0, 352 );
+	//// NEW
+	//unsigned char x = 48;
+	//unsigned char y = 64;
+	//unsigned char e = 112;
+	//engine_sprite_manager_draw_entity( x, y + 0, 352 );
 
-	engine_sprite_manager_draw_entity( x + e - 16, y + 0, 304 );
-	engine_sprite_manager_draw_entity( x + e - 16, y + 24, 318 );
-	engine_sprite_manager_draw_entity( x + e - 16, y + 48, 332 );
-	// NEW
+	//engine_sprite_manager_draw_entity( x + e - 16, y + 0, 304 );
+	//engine_sprite_manager_draw_entity( x + e - 16, y + 24, 318 );
+	//engine_sprite_manager_draw_entity( x + e - 16, y + 48, 332 );
+	//// NEW
 
 
 	delay = engine_delay_manager_update();

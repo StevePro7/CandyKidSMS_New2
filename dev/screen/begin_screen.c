@@ -2,8 +2,10 @@
 #include "..\engine\asm_manager.h"
 #include "..\engine\board_manager.h"
 #include "..\engine\content_manager.h"
+#include "..\engine\enemy_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
+#include "..\engine\gamer_manager.h"
 #include "..\engine\locale_manager.h"
 #include "..\engine\main_manager.h"
 #include "..\engine\option_manager.h"
@@ -16,6 +18,7 @@ void screen_begin_screen_load()
 {
 	// Load from SRAM first.
 	engine_main_manager_load();
+	engine_option_manager_init();
 
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
@@ -27,22 +30,26 @@ void screen_begin_screen_load()
 	engine_tile_manager_main_title( 2, 2 );
 
 
-	//engine_locale_manager_draw_text( 0, SCREEN_TILE_LEFT + 24, BOTT_TEXT_Y );
-
+	
 	//distance = menu_type_single;
 	distance = menu_type_double;
-	engine_option_manager_text_left( distance );
+	engine_option_manager_text_candy( distance );
 	engine_option_manager_text_right();
 
 	// Title screen
-	engine_option_manager_draw_bonus();
-	engine_option_manager_draw_candy();
+	//engine_option_manager_draw_bonus();
+	//engine_option_manager_draw_candy();
 
 	devkit_SMS_displayOn();
+
+	// Reset actors stance.
+	engine_gamer_manager_stance();
+	engine_enemy_manager_stance();
 }
 
 void screen_begin_screen_update( unsigned char *screen_type )
 {
+	engine_option_manager_draw_actor( distance );
 	*screen_type = screen_type_begin;
 	//*screen_type = screen_type_title;
 }

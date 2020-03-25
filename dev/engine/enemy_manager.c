@@ -78,11 +78,10 @@ void engine_enemy_manager_load()
 	unsigned char offset;
 	unsigned char random = st->state_object_round_data + 2;
 
+	engine_enemy_manager_stance();
 	for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
 	{
-		engine_enemy_manager_stance( enemy );
 		eo = &global_enemy_objects[ enemy ];
-
 		if( !eo->mover )
 		{
 			continue;
@@ -196,6 +195,20 @@ void engine_enemy_manager_load()
 	}
 }
 
+void engine_enemy_manager_stance()
+{
+	struct_enemy_object *eo;
+	unsigned char enemy;
+
+	for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
+	{
+		eo = &global_enemy_objects[ enemy ];
+		eo->frame = frame_type_stance;
+		calcd_frame( enemy );
+	}
+}
+
+
 void engine_enemy_manager_dohand( unsigned char enemy )
 {
 	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
@@ -210,12 +223,6 @@ void engine_enemy_manager_dohand( unsigned char enemy )
 	calcd_frame( enemy );
 }
 
-void engine_enemy_manager_stance( unsigned char enemy )
-{
-	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
-	eo->frame = frame_type_stance;
-	calcd_frame( enemy );
-}
 
 void engine_enemy_manager_update( unsigned char enemy )
 {
