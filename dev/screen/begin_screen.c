@@ -33,8 +33,8 @@ void screen_begin_screen_load()
 	
 	//distance = menu_type_single;
 	distance = menu_type_double;
-	engine_option_manager_text_candy( distance );
-	engine_option_manager_text_right();
+	engine_option_manager_text_kid( distance );
+	engine_option_manager_text_enemy();
 
 	// Title screen
 	//engine_option_manager_draw_bonus();

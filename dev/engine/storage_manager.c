@@ -70,10 +70,11 @@ void engine_storage_manager_write()
 	{
 		st->state_object_round_data = 0;
 	}
-	go->image = 1 - go->image;
-	eo = &global_enemy_objects[ actor_type_pro ]; eo->image = 1 - eo->image;
-	eo = &global_enemy_objects[ actor_type_adi ]; eo->image = 1 - eo->image;
-	eo = &global_enemy_objects[ actor_type_suz ]; eo->image = 1 - eo->image;
+
+	//go->image = 1 - go->image;
+	//eo = &global_enemy_objects[ actor_type_pro ]; eo->image = 1 - eo->image;
+	//eo = &global_enemy_objects[ actor_type_adi ]; eo->image = 1 - eo->image;
+	//eo = &global_enemy_objects[ actor_type_suz ]; eo->image = 1 - eo->image;
 	// TODO delete
 
 

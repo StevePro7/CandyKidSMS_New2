@@ -15,9 +15,11 @@
 static unsigned char value_x[] = { OPTION_X + 0, OPTION_X + 5, OPTION_X + 12, OPTION_X + 17 };
 static unsigned char value_y[] = { OPTION_Y + 0, OPTION_Y + 3, OPTION_Y + 6,  OPTION_Y + 10 };
 
+static unsigned char bonus_tile;
+
 void engine_option_manager_init()
 {
-
+	bonus_tile = tile_type_bonusA;
 }
 
 //void engine_option_manager_load( unsigned char type )
@@ -47,7 +49,7 @@ void engine_option_manager_draw_actor( unsigned index )
 	}
 }
 
-void engine_option_manager_text_candy( unsigned index )
+void engine_option_manager_text_kid( unsigned index )
 {
 	unsigned char loc = 29;
 	unsigned char x = value_x[ 1 ] - index;
@@ -74,7 +76,7 @@ void engine_option_manager_text_left( unsigned index )
 	engine_locale_manager_draw_text( loc + 2, x + 1, value_y[ 2 ] + 1 );
 }
 
-void engine_option_manager_text_right()
+void engine_option_manager_text_enemy()
 {
 	unsigned char idx;
 	unsigned char loc = 25;

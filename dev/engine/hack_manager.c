@@ -129,11 +129,11 @@ void engine_hack_manager_invert()
 	// Invert default values.
 	// TODO revert this code to play music + sound FX.
 
-	//st->state_object_music_data = !st->state_object_music_data;
-	//st->state_object_sound_data = !st->state_object_sound_data;
+	st->state_object_music_data = !st->state_object_music_data;
+	st->state_object_sound_data = !st->state_object_sound_data;
 
-	st->state_object_music_data = 0;
-	st->state_object_sound_data = 0;
+	//st->state_object_music_data = 0;
+	//st->state_object_sound_data = 0;
 
 	// TODO revert this code to play music + sound FX.
 
