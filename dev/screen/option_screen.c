@@ -11,6 +11,7 @@
 #include "..\engine\locale_manager.h"
 #include "..\engine\main_manager.h"
 #include "..\engine\sprite_manager.h"
+#include "..\engine\state_manager.h"
 #include "..\engine\tile_manager.h"
 #include "..\devkit\_sms_manager.h"
 
@@ -21,12 +22,22 @@
 
 static void draw_tiles();
 
+// TODO - correct cursor locations
+static unsigned char cursorX[ 2 ] = { 7, 8 };
+static unsigned char cursorY[ 5 ] = { 1, 2,3, 4, 5 };
+static unsigned char cursor;
+
 void screen_option_screen_init()
 {
+	cursor = 0;
 }
 
 void screen_option_screen_load()
 {
+	// Important: reset New Game as options changed.
+	struct_state_object *st = &global_state_object;
+	st->state_object_availables = 0;
+
 	// Load from SRAM first.
 	//engine_main_manager_load();
 

@@ -58,9 +58,18 @@ void screen_start_screen_update( unsigned char *screen_type )
 	input[ 0 ] = engine_input_manager_hold( input_type_fire1 );
 	if( input[ 0 ] )
 	{
+		if( 0 == cursor )
+		{
+			*screen_type = screen_type_init;
+		}
+		else if( 1 == cursor )
+		{
+			*screen_type = screen_type_option;
+		}
+
 		// TODO sound FX
 		//engine_audio_manager_sfx_play( sfx_type_accept );
-		*screen_type = screen_type_init;
+		//*screen_type = screen_type_init;
 		//*screen_type = screen_type_intro;
 		return;
 	}
