@@ -19,8 +19,8 @@ static unsigned char distance;
 
 void screen_test_screen_load()
 {
-    // Load from SRAM first.
-    engine_main_manager_load();
+	// Load from SRAM first.
+	engine_main_manager_load();
 
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_load_tiles_font();

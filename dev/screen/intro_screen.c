@@ -4,12 +4,12 @@
 
 void screen_intro_screen_load()
 {
-    // Load from SRAM first.
-    engine_main_manager_load();
+	// Load from SRAM first.
+	engine_main_manager_load();
 }
 
 void screen_intro_screen_update( unsigned char *screen_type )
 {
-    //*screen_type = screen_type_begin;
-    *screen_type = screen_type_intro;
+	//*screen_type = screen_type_begin;
+	*screen_type = screen_type_intro;
 }

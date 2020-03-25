@@ -51,6 +51,13 @@ void engine_gamer_manager_init()
 	calcd_spots();
 }
 
+void engine_gamer_manager_stance()
+{
+	struct_gamer_object *go = &global_gamer_object;
+	go->frame = frame_type_stance;
+	calcd_frame();
+}
+
 void engine_gamer_manager_load()
 {
 	struct_gamer_object *go = &global_gamer_object;
@@ -66,6 +73,7 @@ void engine_gamer_manager_load()
 	go->prev_boost = pace_type_slow;
 	go->curr_boost = pace_type_slow;
 	engine_gamer_manager_pace( go->curr_boost );
+	engine_gamer_manager_stance();
 }
 
 void engine_gamer_manager_update()

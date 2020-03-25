@@ -80,7 +80,9 @@ void engine_enemy_manager_load()
 
 	for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
 	{
+		engine_enemy_manager_stance( enemy );
 		eo = &global_enemy_objects[ enemy ];
+
 		if( !eo->mover )
 		{
 			continue;
@@ -205,6 +207,13 @@ void engine_enemy_manager_dohand( unsigned char enemy )
 
 	eo->hands = 0;
 	eo->frame = 1 - eo->frame;
+	calcd_frame( enemy );
+}
+
+void engine_enemy_manager_stance( unsigned char enemy )
+{
+	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
+	eo->frame = frame_type_stance;
 	calcd_frame( enemy );
 }
 

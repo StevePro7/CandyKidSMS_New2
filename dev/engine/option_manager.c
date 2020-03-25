@@ -75,6 +75,9 @@ void engine_option_manager_text_right()
 		engine_locale_manager_draw_text( loc, value_x[ 3 ] + 0, value_y[ idx ] + 0 );
 		engine_locale_manager_draw_text( loc + idx + 1, value_x[ 3 ] + 1, value_y[ idx ] + 1 );
 	}
+
+	// Build version is on each "intro" screen so draw it here!
+	engine_locale_manager_draw_text( 0, SCREEN_TILE_LEFT + 24, BOTT_TEXT_Y );
 }
 
 void engine_option_manager_draw_bonus()

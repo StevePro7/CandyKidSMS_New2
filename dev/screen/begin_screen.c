@@ -28,11 +28,21 @@ void screen_begin_screen_load()
 
 
 	//engine_locale_manager_draw_text( 0, SCREEN_TILE_LEFT + 24, BOTT_TEXT_Y );
+
+	//distance = menu_type_single;
+	distance = menu_type_double;
+	engine_option_manager_text_left( distance );
+	engine_option_manager_text_right();
+
+	// Title screen
+	engine_option_manager_draw_bonus();
+	engine_option_manager_draw_candy();
+
 	devkit_SMS_displayOn();
 }
 
 void screen_begin_screen_update( unsigned char *screen_type )
 {
-    *screen_type = screen_type_begin;
+	*screen_type = screen_type_begin;
 	//*screen_type = screen_type_title;
 }
