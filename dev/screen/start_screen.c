@@ -14,7 +14,15 @@
 #include "..\engine\state_manager.h"
 #include "..\devkit\_sms_manager.h"
 
+static void display_cursor();
 static unsigned char distance;
+static unsigned char cursorY[ 2 ] = { TEXT4_Y + 0, TEXT4_Y + 1 };
+static unsigned char cursor;
+
+void screen_start_screen_init()
+{
+	cursor = 0;
+}
 
 void screen_start_screen_load()
 {

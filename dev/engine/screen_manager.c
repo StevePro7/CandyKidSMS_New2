@@ -72,6 +72,9 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	//update_method[ screen_type_option ] = screen_option_screen_update;
 	//update_method[ screen_type_credit ] = screen_credit_screen_update;
 	//update_method[ screen_type_test ] = screen_test_screen_update;
+
+	screen_start_screen_init();
+	screen_option_screen_init();
 }
 
 void engine_screen_manager_update()

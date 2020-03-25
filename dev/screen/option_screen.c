@@ -21,6 +21,10 @@
 
 static void draw_tiles();
 
+void screen_option_screen_init()
+{
+}
+
 void screen_option_screen_load()
 {
 	// Load from SRAM first.
