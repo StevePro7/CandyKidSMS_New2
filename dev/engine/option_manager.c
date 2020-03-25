@@ -82,6 +82,14 @@ void engine_option_manager_update( unsigned char screen )
 	}
 }
 
+void engine_option_manager_clear()
+{
+	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + 2,  TEXT4_Y + 0 );
+	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + 14, TEXT4_Y + 0 );
+	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + 2,  TEXT4_Y + 1 );
+	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + 14, TEXT4_Y + 1 );
+}
+
 void engine_option_manager_draw_actor( unsigned index )
 {
 	unsigned x, y;

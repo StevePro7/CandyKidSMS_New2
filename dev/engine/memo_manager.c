@@ -9,15 +9,15 @@
 #include "..\devkit\_sms_manager.h"
 #include "..\object\locale_object.h"
 
-void engine_memo_manager_clear()
-{
-	unsigned char row;
-	for( row = 0; row < 24; row++ )
-	{
-		engine_font_manager_draw_text( locale_object_blank18, 0, row );
-		engine_font_manager_draw_text( locale_object_blank18, 14, row );
-	}
-}
+//void engine_memo_manager_clear()
+//{
+//	unsigned char row;
+//	for( row = 0; row < 24; row++ )
+//	{
+//		engine_font_manager_draw_text( locale_object_blank18, 0, row );
+//		engine_font_manager_draw_text( locale_object_blank18, 14, row );
+//	}
+//}
 
 void engine_memo_manager_draw( unsigned char topIndex, unsigned char botIndex )
 {

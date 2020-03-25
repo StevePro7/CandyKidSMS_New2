@@ -24,9 +24,9 @@ void screen_title_screen_load()
 	struct_state_object *st = &global_state_object;
 	distance = menu_type_double;
 
+	engine_option_manager_clear();
 	engine_locale_manager_draw_text( 1, SCREEN_TILE_LEFT + COIN_TEXT_X + 2, TEXT4_Y );
-	engine_font_manager_draw_text( locale_object_blank18, SCREEN_TILE_LEFT + COIN_TEXT_X, TEXT4_Y + 1 );
-	engine_font_manager_draw_text( locale_object_blank18, SCREEN_TILE_LEFT + 2, BOTT_TEXT_Y );
+	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + 2, BOTT_TEXT_Y );
 
 	st->state_object_localcheat = 0;
 	if( st->state_object_invincibie )
@@ -55,7 +55,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 
 	engine_option_manager_draw_actor( distance );
 
-	if( st->state_object_delay_test )
+	if( !st->state_object_delay_test )
 	{
 		engine_option_manager_update( st->state_object_curr_screen );
 	}
@@ -70,7 +70,8 @@ void screen_title_screen_update( unsigned char *screen_type )
 
 		if( flash_count )
 		{
-			engine_font_manager_draw_text( locale_object_blank18, SCREEN_TILE_LEFT + COIN_TEXT_X, TEXT4_Y );
+			engine_option_manager_clear(); 
+			//engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + 2, TEXT4_Y + 1 );
 		}
 		else
 		{

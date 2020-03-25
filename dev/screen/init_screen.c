@@ -18,7 +18,7 @@ void screen_init_screen_load()
 	engine_content_manager_load_sprites_game();
 
 	// Manually clear any text artifacts.
-	engine_memo_manager_clear();
+	//engine_memo_manager_clear();
 
 	// Draw tree border with exits.
 	engine_board_manager_border( border_type_game );

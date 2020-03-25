@@ -84,5 +84,5 @@ const unsigned char *locale_object_number[] =
 	"11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
 };
 
-//const unsigned char locale_object_blank18[] = "123456789A12345678";
-const unsigned char locale_object_blank18[] = "                  ";
+//const unsigned char locale_object_blank14[] = "123456789A1234";
+const unsigned char locale_object_blank14[] = "              ";

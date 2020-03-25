@@ -92,6 +92,8 @@ void engine_hack_manager_invert()
 	st->state_object_mydebugger = 1;		// TODO don't forget to remove this!!		MUST be zero for final build as pass music will NOT play!!
 	st->state_object_full_boost = 0;
 	st->state_object_delay_test = 0;
+
+	// TODO delete this hard coded
 	st->state_object_load_asset = 0;
 	// TODO delete this hard coded
 
