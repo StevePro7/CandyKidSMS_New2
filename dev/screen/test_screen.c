@@ -37,8 +37,8 @@ void screen_test_screen_load()
 	engine_option_manager_text_enemy();
 
 	// Title screen
-	engine_option_manager_draw_bonus();
-	engine_option_manager_draw_candy();
+	engine_option_manager_draw_bonus( distance );
+	engine_option_manager_draw_candy( distance );
 
 	// Option screen
 	//engine_option_manager_option_tree( 1 );

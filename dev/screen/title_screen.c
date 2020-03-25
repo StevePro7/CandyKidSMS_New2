@@ -1,6 +1,5 @@
 #include "title_screen.h"
 #include "..\engine\audio_manager.h"
-#include "..\engine\board_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
 #include "..\engine\global_manager.h"
@@ -8,10 +7,9 @@
 #include "..\engine\locale_manager.h"
 #include "..\engine\option_manager.h"
 #include "..\engine\state_manager.h"
-#include "..\engine\tile_manager.h"
 #include "..\engine\timer_manager.h"
-#include "..\devkit\_sms_manager.h"
 #include "..\object\locale_object.h"
+#include "..\devkit\_sms_manager.h"
 
 #define TITLE_FLASH_DELAY	50
 #define LOCAL_CHEAT_TOTAL	5
@@ -40,10 +38,10 @@ void screen_title_screen_load()
 	engine_delay_manager_load( TITLE_FLASH_DELAY );
 	flash_count = 0;
 	cheat_count = 0;
-	distance = menu_type_double;
 
-	// TODO delete
-	engine_font_manager_draw_text( "TS", SCREEN_TILE_LEFT, 6 );
+	distance = menu_type_double;
+	engine_option_manager_draw_bonus( distance );
+	engine_option_manager_draw_candy( distance );
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
@@ -52,21 +50,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 	unsigned char input;
 	unsigned char delay;
 
-
-	//// NEW
-	//unsigned char x = 48;
-	//unsigned char y = 64;
-	//unsigned char e = 112;
-	//engine_sprite_manager_draw_entity( x, y + 0, 352 );
-
-	//engine_sprite_manager_draw_entity( x + e - 16, y + 0, 304 );
-	//engine_sprite_manager_draw_entity( x + e - 16, y + 24, 318 );
-	//engine_sprite_manager_draw_entity( x + e - 16, y + 48, 332 );
-	//// NEW
-
 	engine_option_manager_draw_actor( distance );
-
-
 	delay = engine_delay_manager_update();
 	if( delay )
 	{
@@ -88,6 +72,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_fire1 );
 	if( input )
 	{
+		// TODO sound FX
 		//engine_audio_manager_sfx_play( sfx_type_accept );
 		*screen_type = screen_type_init;
 		//*screen_type = screen_type_intro;

@@ -16,10 +16,14 @@ static unsigned char value_x[] = { OPTION_X + 0, OPTION_X + 5, OPTION_X + 12, OP
 static unsigned char value_y[] = { OPTION_Y + 0, OPTION_Y + 3, OPTION_Y + 6,  OPTION_Y + 10 };
 
 static unsigned char bonus_tile;
+static unsigned char location;
+static unsigned char leftside;
 
 void engine_option_manager_init()
 {
 	bonus_tile = tile_type_bonusA;
+	location = 29;
+	leftside = value_x[ 1 ];
 }
 
 //void engine_option_manager_load( unsigned char type )
@@ -51,30 +55,27 @@ void engine_option_manager_draw_actor( unsigned index )
 
 void engine_option_manager_text_kid( unsigned index )
 {
-	unsigned char loc = 29;
-	unsigned char x = value_x[ 1 ] - index;
+	unsigned char x =leftside - index;
 
 	// Candy Kid.
-	engine_locale_manager_draw_text( loc + 0, x + 0, value_y[ 0 ] + 0 );
-	engine_locale_manager_draw_text( loc + 1, x + 1, value_y[ 0 ] + 1 );
+	engine_locale_manager_draw_text( location + 0, x + 0, value_y[ 0 ] + 0 );
+	engine_locale_manager_draw_text( location + 1, x + 1, value_y[ 0 ] + 1 );
 }
 
-void engine_option_manager_text_left( unsigned index )
-{
-	unsigned char loc = 29;
-	unsigned char x = value_x[ 1 ] - index;
-
-	// Candy Kid.
-	engine_locale_manager_draw_text( loc + 0, x + 0, value_y[ 0 ] + 0 );
-	engine_locale_manager_draw_text( loc + 1, x + 1, value_y[ 0 ] + 1 );
-
-	// PTS.
-	engine_font_manager_draw_char( '0', x + 3, value_y[ 1 ] + 0 );
-	engine_locale_manager_draw_text( loc + 2, x + 1, value_y[ 1 ] + 1 );
-
-	engine_font_manager_draw_data( 10, x + 2, value_y[ 2 ] + 0 );
-	engine_locale_manager_draw_text( loc + 2, x + 1, value_y[ 2 ] + 1 );
-}
+////void engine_option_manager_text_left( unsigned index )
+////{
+////	//unsigned char x = leftside - index;
+////
+////	//// Candy Kid.
+////	//engine_locale_manager_draw_text( location + 0, x + 0, value_y[ 0 ] + 0 );
+////	//engine_locale_manager_draw_text( location + 1, x + 1, value_y[ 0 ] + 1 );
+////
+////	//// PTS.
+////	//engine_font_manager_draw_char( '0', x + 3, value_y[ 1 ] + 0 );
+////	//engine_locale_manager_draw_text( location + 2, x + 1, value_y[ 1 ] + 1 );
+////
+////	
+////}
 
 void engine_option_manager_text_enemy()
 {
@@ -92,18 +93,27 @@ void engine_option_manager_text_enemy()
 	engine_locale_manager_draw_text( 0, SCREEN_TILE_LEFT + 24, BOTT_TEXT_Y );
 }
 
-void engine_option_manager_draw_bonus()
+void engine_option_manager_draw_bonus( unsigned index )
 {
-	unsigned char bonus = tile_type_bonusD;
-	unsigned char value = engine_score_manager_get_bonus( bonus );
+	unsigned char value_data = engine_score_manager_get_bonus( bonus_tile );
+	unsigned char x = leftside - index;
 
-	engine_tile_manager_draw_bonus( bonus, value_x[ 0 ] + 0, value_y[ 1 ] + 0, 1 );
-	engine_font_manager_draw_data( value, value_x[ 1 ] + 1, value_y[ 1 ] + 0 );
+	engine_tile_manager_draw_bonus( bonus_tile, value_x[ 0 ] + 0, value_y[ 1 ] + 0, 1 );
+	engine_font_manager_draw_data( value_data, value_x[ 1 ] + 1, value_y[ 1 ] + 0 );
+
+	// PTS.
+	engine_font_manager_draw_char( '0', x + 3, value_y[ 1 ] + 0 );
+	engine_locale_manager_draw_text( location + 2, x + 1, value_y[ 1 ] + 1 );
 }
 
-void engine_option_manager_draw_candy()
+void engine_option_manager_draw_candy( unsigned index )
 {
+	unsigned char x = leftside - index;
 	engine_tile_manager_main_candy( value_x[ 0 ] + 0, value_y[ 2 ] + 0 );
+
+	// PTS.
+	engine_font_manager_draw_data( 10, x + 2, value_y[ 2 ] + 0 );
+	engine_locale_manager_draw_text( location + 2, x + 1, value_y[ 2 ] + 1 );
 }
 
 void engine_option_manager_option_exit()
