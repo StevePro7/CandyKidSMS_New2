@@ -42,6 +42,9 @@ void screen_title_screen_load()
 	distance = menu_type_double;
 	engine_option_manager_draw_bonus( distance );
 	engine_option_manager_draw_candy( distance );
+
+	//st->state_object_curr_screen = screen_type_init;
+	st->state_object_curr_screen = screen_type_title;
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
@@ -51,6 +54,8 @@ void screen_title_screen_update( unsigned char *screen_type )
 	unsigned char delay;
 
 	engine_option_manager_draw_actor( distance );
+	engine_option_manager_update( st->state_object_curr_screen );
+
 	delay = engine_delay_manager_update();
 	if( delay )
 	{
@@ -94,6 +99,5 @@ void screen_title_screen_update( unsigned char *screen_type )
 		}
 	}
 
-	//*screen_type = screen_type_init;
-	*screen_type = screen_type_title;
+	*screen_type = st->state_object_curr_screen;
 }

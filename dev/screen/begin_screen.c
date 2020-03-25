@@ -18,7 +18,9 @@ void screen_begin_screen_load()
 {
 	// Load from SRAM first.
 	engine_main_manager_load();
-	engine_option_manager_init();
+
+	distance = menu_type_double;
+	engine_option_manager_init( distance );
 
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
@@ -30,7 +32,6 @@ void screen_begin_screen_load()
 	engine_tile_manager_main_title( 2, 2 );
 
 
-	
 	//distance = menu_type_single;
 	distance = menu_type_double;
 	engine_option_manager_text_kid( distance );
