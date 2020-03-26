@@ -21,4 +21,8 @@ void engine_option_manager_text_exit( unsigned char index, unsigned char type );
 void engine_option_manager_option_tree( unsigned char type );
 void engine_option_manager_option_exit();
 
+void engine_option_manager_text_other();
+void engine_option_manager_option_level( unsigned char world, unsigned char round );
+void engine_option_manager_option_diff( unsigned char diff );
+
 #endif//_OPTION_MANAGER_H_

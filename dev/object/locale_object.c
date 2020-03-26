@@ -54,6 +54,7 @@ const unsigned char *locale_object_texts[] =
 	"EXITS",
 	" OPEN",
 	" SHUT",
+	"DIFFICULTY",
 };
 
 

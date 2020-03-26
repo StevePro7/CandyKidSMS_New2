@@ -200,3 +200,18 @@ void engine_option_manager_option_exit()
 	engine_font_manager_draw_text( "EX", value_x[ 0 ], value_y[ 2 ] + 0 );
 	engine_font_manager_draw_text( "IT", value_x[ 0 ], value_y[ 2 ] + 1 );
 }
+
+void engine_option_manager_text_other()
+{
+	engine_locale_manager_draw_text( 12, value_x[ 0 ] + 2, value_y[ 3 ] + 0 );
+	engine_locale_manager_draw_text( 13, value_x[ 0 ] + 2, value_y[ 3 ] + 1 );
+
+	engine_locale_manager_draw_text( location + 20, value_x[ 2 ], value_y[ 3 ] + 0 );
+}
+
+void engine_option_manager_option_level( unsigned char world, unsigned char round )
+{
+}
+void engine_option_manager_option_diff( unsigned char diff )
+{
+}

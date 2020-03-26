@@ -57,6 +57,8 @@ void screen_option_screen_load()
 	// Draw exit options.
 	engine_option_manager_text_exit( distance, st->state_object_exits_type );
 
+	// Draw level text + difficulty.
+	engine_option_manager_text_other();
 
 	st->state_object_curr_screen = screen_type_option;
 	st->state_object_next_screen = screen_type_start;
