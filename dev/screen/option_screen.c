@@ -51,6 +51,12 @@ void screen_option_screen_load()
 		engine_option_manager_text_enemy_no( enemy, eo->image );
 	}
 
+	// Draw tree options.
+	engine_option_manager_text_tree( distance, st->state_object_trees_type );
+
+	// Draw exit options.
+	engine_option_manager_text_exit( distance, st->state_object_exits_type );
+
 
 	st->state_object_curr_screen = screen_type_option;
 	st->state_object_next_screen = screen_type_start;

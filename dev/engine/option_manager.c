@@ -118,12 +118,12 @@ void engine_option_manager_text_kid( unsigned index )
 	engine_locale_manager_draw_text( location + 1, x + 1, value_y[ 0 ] + 1 );
 }
 
-void engine_option_manager_text_kid_no( unsigned index, unsigned char value )
+void engine_option_manager_text_kid_no( unsigned index, unsigned char image )
 {
 	unsigned char x = leftside - index;
 
 	// Kid #.
-	engine_locale_manager_draw_text( location + 6 + value, x + 1, value_y[ 0 ] + 1 );
+	engine_locale_manager_draw_text( location + 6 + image, x + 1, value_y[ 0 ] + 1 );
 }
 
 void engine_option_manager_text_enemy()
@@ -142,9 +142,9 @@ void engine_option_manager_text_enemy()
 	engine_locale_manager_draw_text( 0, SCREEN_TILE_LEFT + 24, BOTT_TEXT_Y );
 }
 
-void engine_option_manager_text_enemy_no( unsigned enemy, unsigned char value )
+void engine_option_manager_text_enemy_no( unsigned enemy, unsigned char image )
 {
-	engine_locale_manager_draw_text( location + 8 + ( enemy * 2 ) + value, value_x[ 3 ] + 1, value_y[ enemy ] + 1 );
+	engine_locale_manager_draw_text( location + 8 + ( enemy * 2 ) + image, value_x[ 3 ] + 1, value_y[ enemy ] + 1 );
 }
 
 void engine_option_manager_text_start( unsigned char mode )
@@ -176,13 +176,27 @@ void engine_option_manager_draw_candy( unsigned index )
 	engine_locale_manager_draw_text( location + 2, x + 1, value_y[ 2 ] + 1 );
 }
 
-void engine_option_manager_option_exit()
+
+void engine_option_manager_text_tree( unsigned char index, unsigned char type )
 {
-	engine_font_manager_draw_text( "EX", value_x[ 0 ], value_y[ 2 ] + 0 );
-	engine_font_manager_draw_text( "IT", value_x[ 0 ], value_y[ 2 ] + 1 );
+	unsigned char x = leftside - index;
+	engine_locale_manager_draw_text( location + 14 + type + 1, x + 0, value_y[ 1 ] + 0 );
+	engine_locale_manager_draw_text( location + 14, x + 0, value_y[ 1 ] + 1 );
 }
+void engine_option_manager_text_exit( unsigned char index, unsigned char type )
+{
+	unsigned char x = leftside - index;
+	engine_locale_manager_draw_text( location + 17, x + 0, value_y[ 2 ] + 0 );
+	engine_locale_manager_draw_text( location + 17 + type + 1, x + 0, value_y[ 2 ] + 1 );
+}
+
 
 void engine_option_manager_option_tree( unsigned char type )
 {
 	engine_tile_manager_draw_trees( type, value_x[ 0 ], value_y[ 1 ] );
+}
+void engine_option_manager_option_exit()
+{
+	engine_font_manager_draw_text( "EX", value_x[ 0 ], value_y[ 2 ] + 0 );
+	engine_font_manager_draw_text( "IT", value_x[ 0 ], value_y[ 2 ] + 1 );
 }
