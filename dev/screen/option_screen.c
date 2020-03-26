@@ -32,11 +32,13 @@ static unsigned char cursorsX[ 2 ] = { OPTION_X + 2, OPTION_X + 15 };
 static unsigned char cursorsY[ 5 ] = { OPTION_Y + 1, OPTION_Y + 4, OPTION_Y + 7, OPTION_Y + 10, OPTION_Y + 11 };
 static unsigned char cursorX;
 static unsigned char cursorY;
+static unsigned char beforeY;
 
 void screen_option_screen_init()
 {
 	cursorX = 0;
 	cursorY = 0;
+	beforeY = 0;
 }
 
 void screen_option_screen_load()
@@ -90,6 +92,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 	struct_state_object *st = &global_state_object;
 	//unsigned char direction = direction_type_none;
 	unsigned char input[ 2 ] = { 0, 0 };
+	unsigned char skip = 0;
 
 	engine_option_manager_draw_actor( distance );
 	if( !st->state_object_delay_test )
@@ -102,40 +105,67 @@ void screen_option_screen_update( unsigned char *screen_type )
 	input[ 1 ] = engine_input_manager_hold( input_type_down	 );
 	if( input[ 0 ] || input[ 1 ] )
 	{
+		skip = 1 == cursorX;
+		beforeY = cursorY;
 		display_cursor( cursor_type_spaces );
-		if( 0 == cursorX )
+		if( input[ 0 ] )
 		{
-			if( input[ 0 ] )
+			if( 0 == cursorY )
 			{
-				if( 0 == cursorY )
-				{
-					cursorY = 4;
-				}
-				else
+				cursorY = 4;
+			}
+			else
+			{
+				if( skip && 4 == cursorY )
 				{
 					cursorY--;
 				}
+
+				cursorY--;
 			}
-			if( input[ 1 ] )
+		}
+		if( input[ 1 ] )
+		{
+			if( 4 == cursorY )
 			{
-				if( 4 == cursorY )
-				{
-					cursorY = 0;
-				}
-				else
+				cursorY = 0;
+			}
+			else
+			{
+				if (skip && 2 == cursorY )
 				{
 					cursorY++;
 				}
+				
+				cursorY++;
 			}
 		}
 
 		display_cursor( cursor_type_arrows );
 	}
-	//else
-	//{
-	//	input[ 0 ] = engine_input_manager_hold( input_type_left );
-	//	input[ 1 ] = engine_input_manager_hold( input_type_right );
-	//}
+	else
+	{
+		input[ 0 ] = engine_input_manager_hold( input_type_left );
+		input[ 1 ] = engine_input_manager_hold( input_type_right );
+		if( input[ 0 ] || input[ 1 ] )
+		{
+			display_cursor( cursor_type_spaces );
+			/*if( 0 == cursorX )
+			{
+				if( 3 == beforeY )
+				{
+					cursorY = 4;
+				}
+			}
+			else if( 1 == cursorX )
+			{
+
+			}*/
+
+			cursorX = 1 - cursorX;
+			display_cursor( cursor_type_arrows );
+		}
+	}
 
 
 
