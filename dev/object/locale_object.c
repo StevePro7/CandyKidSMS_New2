@@ -40,6 +40,14 @@ const unsigned char *locale_object_texts[] =
 	"NEW GAME",
 	"CONTINUE",
 	"OPTIONS",
+	"KID1",
+	"KID2",
+	"PRO1",
+	"PRO2",
+	"ADI1",
+	"ADI2",
+	"SUZ1",
+	"SUZ2",
 };
 
 
