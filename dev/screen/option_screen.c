@@ -32,13 +32,13 @@ static unsigned char cursorsX[ 2 ] = { OPTION_X + 2, OPTION_X + 15 };
 static unsigned char cursorsY[ 5 ] = { OPTION_Y + 1, OPTION_Y + 4, OPTION_Y + 7, OPTION_Y + 10, OPTION_Y + 11 };
 static unsigned char cursorX;
 static unsigned char cursorY;
-static unsigned char beforeY;
+static unsigned char lastVert;
 
 void screen_option_screen_init()
 {
 	cursorX = 0;
 	cursorY = 0;
-	beforeY = 0;
+	lastVert = 0;
 }
 
 void screen_option_screen_load()
@@ -106,10 +106,10 @@ void screen_option_screen_update( unsigned char *screen_type )
 	if( input[ 0 ] || input[ 1 ] )
 	{
 		skip = 1 == cursorX;
-		beforeY = cursorY;
 		display_cursor( cursor_type_spaces );
 		if( input[ 0 ] )
 		{
+			lastVert = 0;
 			if( 0 == cursorY )
 			{
 				cursorY = 4;
@@ -126,6 +126,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 		}
 		if( input[ 1 ] )
 		{
+			lastVert = 1;
 			if( 4 == cursorY )
 			{
 				cursorY = 0;
@@ -150,17 +151,19 @@ void screen_option_screen_update( unsigned char *screen_type )
 		if( input[ 0 ] || input[ 1 ] )
 		{
 			display_cursor( cursor_type_spaces );
-			/*if( 0 == cursorX )
+
+			// Special case
+			if( 0 == cursorX && 3 == cursorY )
 			{
-				if( 3 == beforeY )
+				if( 0 == lastVert )
 				{
-					cursorY = 4;
+					cursorY--;
+				}
+				else
+				{
+					cursorY++;
 				}
 			}
-			else if( 1 == cursorX )
-			{
-
-			}*/
 
 			cursorX = 1 - cursorX;
 			display_cursor( cursor_type_arrows );
