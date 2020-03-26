@@ -12,6 +12,7 @@
 #include "..\engine\main_manager.h"
 #include "..\engine\option_manager.h"
 #include "..\engine\state_manager.h"
+#include "..\engine\storage_manager.h"
 #include "..\engine\tile_manager.h"
 #include "..\devkit\_sms_manager.h"
 
@@ -110,6 +111,9 @@ void screen_option_screen_update( unsigned char *screen_type )
 	input[ 1 ] = engine_input_manager_hold( input_type_fire2 );
 	if( input[ 1 ] )
 	{
+		// Save game state to SRAM when game over.
+		engine_main_manager_save();
+
 		// TODO sound FX
 		//engine_audio_manager_sfx_play( sfx_type_reset );
 		*screen_type = screen_type_start;

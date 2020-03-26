@@ -62,14 +62,14 @@ void engine_storage_manager_write()
 
 
 	// TODO delete
-	st->state_object_high_score += 20;
-	//st->state_object_trees_type = 1 - st->state_object_trees_type;
-	st->state_object_exits_type = 1 - st->state_object_exits_type;
-	st->state_object_round_data += 1;
-	if( 10 == st->state_object_round_data )
-	{
-		st->state_object_round_data = 0;
-	}
+	//st->state_object_high_score += 20;
+	////st->state_object_trees_type = 1 - st->state_object_trees_type;
+	//st->state_object_exits_type = 1 - st->state_object_exits_type;
+	//st->state_object_round_data += 1;
+	//if( 10 == st->state_object_round_data )
+	//{
+	//	st->state_object_round_data = 0;
+	//}
 
 	//go->image = 1 - go->image;
 	//eo = &global_enemy_objects[ actor_type_pro ]; eo->image = 1 - eo->image;
