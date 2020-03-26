@@ -170,6 +170,9 @@ void screen_option_screen_update( unsigned char *screen_type )
 		}
 	}
 
+	engine_font_manager_draw_data( cursorX, 15, 6 );
+	engine_font_manager_draw_data( cursorY, 15, 7 );
+
 
 	input[ 0 ] = engine_input_manager_hold( input_type_fire1 );
 	if( input[ 0 ] )
@@ -197,9 +200,9 @@ void screen_option_screen_update( unsigned char *screen_type )
 				toggle_round();
 			}
 		}
-		else if( 1 == cursorX )
+		if( 1 == cursorX )
 		{
-			if( 3 == cursorY )
+			if( 4 == cursorY )
 			{
 				toggle_diff();
 			}
