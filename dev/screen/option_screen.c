@@ -171,20 +171,43 @@ void screen_option_screen_update( unsigned char *screen_type )
 	}
 
 
-
-
-
 	input[ 0 ] = engine_input_manager_hold( input_type_fire1 );
 	if( input[ 0 ] )
 	{
-		//toggle_world();
-		//toggle_round();
-		//toggle_diff();
-
-		//toggle_kid();
-		toggle_enemy( 2 );
-		//toggle_trees();
-		//toggle_exits();
+		if( 0 == cursorX )
+		{
+			if( 0 == cursorY )
+			{
+				toggle_kid();
+			}
+			else if( 1 == cursorY )
+			{
+				toggle_trees();
+			}
+			else if( 2 == cursorY )
+			{
+				toggle_exits();
+			}
+			else if( 3 == cursorY )
+			{
+				toggle_world();
+			}
+			else if( 4 == cursorY )
+			{
+				toggle_round();
+			}
+		}
+		else if( 1 == cursorX )
+		{
+			if( 3 == cursorY )
+			{
+				toggle_diff();
+			}
+			else
+			{
+				toggle_enemy( cursorY );
+			}
+		}
 	}
 
 
