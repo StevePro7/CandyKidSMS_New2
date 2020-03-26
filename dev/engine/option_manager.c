@@ -9,8 +9,8 @@
 #include "tile_manager.h"
 #include "..\object\locale_object.h"
 
-#define OPTION_X		SCREEN_TILE_LEFT + 4
-#define OPTION_Y		TEXT1_Y + TEXT1_Y
+//#define OPTION_X		SCREEN_TILE_LEFT + 4
+//#define OPTION_Y		TEXT1_Y + TEXT1_Y
 #define SWAP_DELAY1		60
 #define SWAP_DELAY2		3 * SWAP_DELAY1 / 2
 

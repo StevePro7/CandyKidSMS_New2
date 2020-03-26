@@ -28,8 +28,8 @@ static void toggle_diff();
 
 // TODO - correct cursor locations
 static unsigned char distance;
-static unsigned char cursorX[ 2 ] = { 7, 8 };
-static unsigned char cursorY[ 5 ] = { 1, 2,3, 4, 5 };
+static unsigned char cursorX[ 2 ] = { OPTION_X + 2, OPTION_X + 15 };
+static unsigned char cursorY[ 5 ] = { OPTION_Y + 1, OPTION_Y + 4, OPTION_Y + 7, OPTION_Y + 10, OPTION_Y + 11 };
 static unsigned char cursor;
 
 void screen_option_screen_init()

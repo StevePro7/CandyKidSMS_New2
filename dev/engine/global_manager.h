@@ -71,12 +71,8 @@
 #define TEXT3_Y					13
 #define TEXT4_Y					18
 #define BOTT_TEXT_Y				21
-
-// Type1 cursor
-//#define TYPE1_TEXT_X			SCREEN_TILE_LEFT + 7
-//#define TYPE1_TEXT_Y			18
-//#define TYPE1_OPT1_X			TYPE1_TEXT_X + 0
-//#define TYPE1_OPT2_X			TYPE1_TEXT_X + 11
+#define OPTION_X				SCREEN_TILE_LEFT + 4
+#define OPTION_Y				TEXT1_Y + TEXT1_Y
 
 #define ENEMY_LOOPS				5
 #define SCORE_VALUES			5
