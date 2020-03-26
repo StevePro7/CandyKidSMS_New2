@@ -36,7 +36,7 @@ const unsigned char *locale_object_texts[] =
 	"SUZ ",
 	"CANDY",		// 29
 	"KID ",
-	"PTS",
+	" PTS ",
 	"NEW GAME",
 	"CONTINUE",
 	"OPTIONS",

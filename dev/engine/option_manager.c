@@ -162,8 +162,8 @@ void engine_option_manager_draw_bonus( unsigned index )
 	engine_font_manager_draw_data( value_data, value_x[ 1 ] + 1, value_y[ 1 ] + 0 );
 
 	// PTS.
-	engine_font_manager_draw_char( '0', x + 3, value_y[ 1 ] + 0 );
-	engine_locale_manager_draw_text( location + 2, x + 1, value_y[ 1 ] + 1 );
+	engine_font_manager_draw_text( "0 ", x + 3, value_y[ 1 ] + 0 );
+	engine_locale_manager_draw_text( location + 2, x, value_y[ 1 ] + 1 );
 }
 
 void engine_option_manager_draw_candy( unsigned index )
@@ -172,8 +172,8 @@ void engine_option_manager_draw_candy( unsigned index )
 	engine_tile_manager_main_candy( value_x[ 0 ] + 0, value_y[ 2 ] + 0 );
 
 	// PTS.
-	engine_font_manager_draw_data( 10, x + 2, value_y[ 2 ] + 0 );
-	engine_locale_manager_draw_text( location + 2, x + 1, value_y[ 2 ] + 1 );
+	engine_font_manager_draw_text( " 10  ", x, value_y[ 2 ] + 0 );
+	engine_locale_manager_draw_text( location + 2, x, value_y[ 2 ] + 1 );
 }
 
 
