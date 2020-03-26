@@ -291,22 +291,9 @@ void engine_enemy_manager_update( unsigned char enemy )
 void engine_enemy_manager_swap( unsigned char enemy )
 {
 	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
-	eo->frame = 1 - eo->frame;
+	eo->image = 1 - eo->image;
 	calcd_frame( enemy );
 }
-
-//void engine_enemy_manager_swap()
-//{
-//	struct_enemy_object *eo;
-//	unsigned char enemy;
-//
-//	for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
-//	{
-//		eo = &global_enemy_objects[ enemy ];
-//		eo->frame = 1 - eo->frame;
-//		calcd_frame( enemy );
-//	}
-//}
 
 void engine_enemy_manager_draw()
 {

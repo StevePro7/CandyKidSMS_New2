@@ -17,6 +17,11 @@
 
 static void display_cursor();
 
+static void toggle_kid();
+static void toggle_enemy( unsigned char enemy );
+static void toggle_trees();
+static void toggle_exits();
+
 // TODO - correct cursor locations
 static unsigned char distance;
 static unsigned char cursorX[ 2 ] = { 7, 8 };
@@ -69,14 +74,15 @@ void screen_option_screen_load()
 
 	st->state_object_curr_screen = screen_type_option;
 	st->state_object_next_screen = screen_type_start;
-
-	// TODO delete
-	engine_font_manager_draw_text( "OS", SCREEN_TILE_LEFT, 6 );
 }
 
 void screen_option_screen_update( unsigned char *screen_type )
 {
 	struct_state_object *st = &global_state_object;
+	
+	struct_enemy_object *eo;
+	unsigned char enemy;
+
 	unsigned char input[ 2 ] = { 0, 0 };
 
 	engine_option_manager_draw_actor( distance );
@@ -85,6 +91,21 @@ void screen_option_screen_update( unsigned char *screen_type )
 		// TODO do I want to update actors on options screen - could be annoying!!
 		//engine_option_manager_update( st->state_object_curr_screen );
 	}
+
+
+	input[ 0 ] = engine_input_manager_hold( input_type_fire1 );
+	if( input[ 0 ] )
+	{
+		enemy = actor_type_pro;
+		eo = &global_enemy_objects[ enemy ];
+		engine_enemy_manager_swap( enemy );
+		engine_option_manager_text_enemy_no( enemy, eo->image );
+
+		//toggle_kid();
+		//toggle_trees();
+		//toggle_exits();
+	}
+
 
 	input[ 1 ] = engine_input_manager_hold( input_type_fire2 );
 	if( input[ 1 ] )
@@ -96,4 +117,31 @@ void screen_option_screen_update( unsigned char *screen_type )
 	}
 
 	*screen_type = st->state_object_curr_screen;
+}
+
+static void toggle_kid()
+{
+	struct_gamer_object *go = &global_gamer_object;
+	engine_gamer_manager_swap();
+	engine_option_manager_text_kid_no( distance, go->image );
+}
+static void toggle_enemy( unsigned char enemy )
+{
+	//struct_enemy_object *eo = &global_enemy_objects[ enemy ];
+	engine_enemy_manager_swap( enemy );
+}
+static void toggle_trees()
+{
+	struct_state_object *st = &global_state_object;
+	st->state_object_trees_type = 1 - st->state_object_trees_type;
+	engine_board_manager_border( border_type_main );
+	engine_option_manager_text_tree( distance, st->state_object_trees_type );
+	engine_option_manager_option_tree( st->state_object_trees_type );
+}
+static void toggle_exits()
+{
+	struct_state_object *st = &global_state_object;
+	st->state_object_exits_type = 1 - st->state_object_exits_type;
+	engine_option_manager_text_exit( distance, st->state_object_exits_type );
+	engine_board_manager_toggle();
 }

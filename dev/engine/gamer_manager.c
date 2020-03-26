@@ -151,7 +151,7 @@ void engine_gamer_manager_update()
 void engine_gamer_manager_swap()
 {
 	struct_gamer_object *go = &global_gamer_object;
-	go->frame = 1 - go->frame;
+	go->image = 1 - go->image;
 	calcd_frame();
 }
 

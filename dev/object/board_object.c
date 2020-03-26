@@ -27,5 +27,10 @@ const unsigned char board_object_wide[] = { TREE_COLS, SCREEN_TILE_WIDE - 1 };
 const unsigned char board_object_rght[] = { 22, 28 };
 const unsigned char board_object_left[] = { 3, 4 };
 const unsigned char board_object_midd[] = { 8, 10 };
-const unsigned char board_object_exitX[] = { 6, 16, 6, 16, 0, 0, 22, 22 };
+
+// Main
+const unsigned char board_object_exitX[] = { 8, 20, 8, 20, 0, 0, 28, 28};
 const unsigned char board_object_exitY[] = { 0, 0, 22, 22, 6, 16, 6, 16 };
+// Game
+//const unsigned char board_object_exitX[] = { 6, 16, 6, 16, 0, 0, 22, 22 };
+//const unsigned char board_object_exitY[] = { 0, 0, 22, 22, 6, 16, 6, 16 };
