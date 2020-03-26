@@ -21,6 +21,9 @@ static void toggle_kid();
 static void toggle_enemy( unsigned char enemy );
 static void toggle_trees();
 static void toggle_exits();
+static void toggle_world();
+static void toggle_round();
+static void toggle_diff();
 
 // TODO - correct cursor locations
 static unsigned char distance;
@@ -66,7 +69,8 @@ void screen_option_screen_load()
 	engine_option_manager_text_other();
 
 	// Draw world + round data.
-	engine_option_manager_option_level( st->state_object_world_data, st->state_object_round_data );
+	engine_option_manager_option_world( st->state_object_world_data );
+	engine_option_manager_option_round( st->state_object_round_data );
 
 	// Draw difficulty.
 	engine_option_manager_option_diff( st->state_object_difficulty );
@@ -92,14 +96,13 @@ void screen_option_screen_update( unsigned char *screen_type )
 	input[ 0 ] = engine_input_manager_hold( input_type_fire1 );
 	if( input[ 0 ] )
 	{
-		//enemy = actor_type_pro;
-		//eo = &global_enemy_objects[ enemy ];
-		//engine_enemy_manager_swap( enemy );
-		//engine_option_manager_text_enemy_no( enemy, eo->image );
+		//toggle_world();
+		//toggle_round();
+		//toggle_diff();
 
 		//toggle_kid();
-		toggle_enemy( 0 );
-		//toggle_trees();
+		//toggle_enemy( 0 );
+		toggle_trees();
 		//toggle_exits();
 	}
 
@@ -142,4 +145,32 @@ static void toggle_exits()
 	st->state_object_exits_type = 1 - st->state_object_exits_type;
 	engine_option_manager_text_exit( distance, st->state_object_exits_type );
 	engine_board_manager_toggle();
+}
+static void toggle_world()
+{
+	struct_state_object *st = &global_state_object;
+	st->state_object_world_data++;
+	if (st->state_object_world_data >= MAX_WORLDS )
+	{
+		st->state_object_world_data = 0;
+	}
+
+	engine_option_manager_option_world( st->state_object_world_data );
+}
+static void toggle_round()
+{
+	struct_state_object *st = &global_state_object;
+	st->state_object_round_data++;
+	if( st->state_object_round_data >= MAX_ROUNDS )
+	{
+		st->state_object_round_data = 0;
+	}
+
+	engine_option_manager_option_round( st->state_object_round_data );
+}
+static void toggle_diff()
+{
+	struct_state_object *st = &global_state_object;
+	st->state_object_difficulty = 1 - st->state_object_difficulty;
+	engine_option_manager_option_diff( st->state_object_difficulty );
 }

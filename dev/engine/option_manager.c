@@ -209,10 +209,12 @@ void engine_option_manager_text_other()
 	engine_locale_manager_draw_text( location + 20, value_x[ 2 ], value_y[ 3 ] + 0 );
 }
 
-void engine_option_manager_option_level( unsigned char world, unsigned char round )
+void engine_option_manager_option_world( unsigned char world )
 {
-	//locale_object_number
 	engine_font_manager_draw_text( locale_object_number[ world ], value_x[ 1 ] + 3, value_y[ 3 ] + 0 );
+}
+void engine_option_manager_option_round( unsigned char round )
+{
 	engine_font_manager_draw_text( locale_object_number[ round ], value_x[ 1 ] + 3, value_y[ 3 ] + 1 );
 }
 void engine_option_manager_option_diff( unsigned char diff )
