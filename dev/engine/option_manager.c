@@ -211,7 +211,11 @@ void engine_option_manager_text_other()
 
 void engine_option_manager_option_level( unsigned char world, unsigned char round )
 {
+	//locale_object_number
+	engine_font_manager_draw_text( locale_object_number[ world ], value_x[ 1 ] + 3, value_y[ 3 ] + 0 );
+	engine_font_manager_draw_text( locale_object_number[ round ], value_x[ 1 ] + 3, value_y[ 3 ] + 1 );
 }
 void engine_option_manager_option_diff( unsigned char diff )
 {
+	engine_locale_manager_draw_text( 8 + diff, value_x[ 3 ] + 1, value_y[ 3 ] + 1 );
 }
