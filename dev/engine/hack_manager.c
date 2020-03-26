@@ -74,10 +74,10 @@ void engine_hack_manager_invert()
 	st->state_object_invincibie = 0;
 	st->state_object_localcheat = 0;
 
-	st->state_object_difficulty = 1;
-	st->state_object_pace_speed = 0;
-	st->state_object_trees_type = 0;
-	st->state_object_exits_type = 0;
+	//st->state_object_difficulty = 1;
+	//st->state_object_pace_speed = 0;
+	//st->state_object_trees_type = 0;
+	//st->state_object_exits_type = 0;
 
 
 	st->state_object_enemy_move[ actor_type_pro ] = 1;

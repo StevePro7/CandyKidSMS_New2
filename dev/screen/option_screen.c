@@ -211,6 +211,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 	input[ 1 ] = engine_input_manager_hold( input_type_fire2 );
 	if( input[ 1 ] )
 	{
+		display_cursor( cursor_type_spaces );
 		// Save game state to SRAM when game over.
 		engine_main_manager_save();
 
