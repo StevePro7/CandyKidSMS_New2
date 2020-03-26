@@ -234,4 +234,11 @@ typedef enum tag_enum_menu_type
 
 } enum_menu_type;
 
+typedef enum tag_enum_cursor_type
+{
+	cursor_type_arrows = 0,
+	cursor_type_spaces = 1,
+
+} enum_cursor_type;
+
 #endif//_ENUM_MANAGER_H_

@@ -16,7 +16,7 @@
 #include "..\engine\tile_manager.h"
 #include "..\devkit\_sms_manager.h"
 
-static void display_cursor();
+static void display_cursor( unsigned char type );
 
 static void toggle_kid();
 static void toggle_enemy( unsigned char enemy );
@@ -28,13 +28,15 @@ static void toggle_diff();
 
 // TODO - correct cursor locations
 static unsigned char distance;
-static unsigned char cursorX[ 2 ] = { OPTION_X + 2, OPTION_X + 15 };
-static unsigned char cursorY[ 5 ] = { OPTION_Y + 1, OPTION_Y + 4, OPTION_Y + 7, OPTION_Y + 10, OPTION_Y + 11 };
-static unsigned char cursor;
+static unsigned char cursorsX[ 2 ] = { OPTION_X + 2, OPTION_X + 15 };
+static unsigned char cursorsY[ 5 ] = { OPTION_Y + 1, OPTION_Y + 4, OPTION_Y + 7, OPTION_Y + 10, OPTION_Y + 11 };
+static unsigned char cursorX;
+static unsigned char cursorY;
 
 void screen_option_screen_init()
 {
-	cursor = 0;
+	cursorX = 0;
+	cursorY = 0;
 }
 
 void screen_option_screen_load()
@@ -77,6 +79,8 @@ void screen_option_screen_load()
 	engine_option_manager_option_diff( st->state_object_difficulty );
 
 
+	display_cursor( cursor_type_arrows );
+
 	st->state_object_curr_screen = screen_type_option;
 	st->state_object_next_screen = screen_type_start;
 }
@@ -84,6 +88,7 @@ void screen_option_screen_load()
 void screen_option_screen_update( unsigned char *screen_type )
 {
 	struct_state_object *st = &global_state_object;
+	//unsigned char direction = direction_type_none;
 	unsigned char input[ 2 ] = { 0, 0 };
 
 	engine_option_manager_draw_actor( distance );
@@ -92,6 +97,37 @@ void screen_option_screen_update( unsigned char *screen_type )
 		// TODO do I want to update actors on options screen - could be annoying!!
 		//engine_option_manager_update( st->state_object_curr_screen );
 	}
+
+	input[ 0 ] = engine_input_manager_hold( input_type_up );
+	input[ 1 ] = engine_input_manager_hold( input_type_down	 );
+	if( input[ 0 ] || input[ 1 ] )
+	{
+		display_cursor( cursor_type_spaces );
+		if( 0 == cursorX )
+		{
+			/*if( input[ 0 ] )
+			{
+				if( 0 == cursorY )
+				{
+					cursorY = 4;
+				}
+			}*/
+			if( input[ 1 ] )
+			{
+				cursorY++;
+			}
+		}
+
+		display_cursor( cursor_type_arrows );
+	}
+	//else
+	//{
+	//	input[ 0 ] = engine_input_manager_hold( input_type_left );
+	//	input[ 1 ] = engine_input_manager_hold( input_type_right );
+	//}
+
+
+
 
 
 	input[ 0 ] = engine_input_manager_hold( input_type_fire1 );
@@ -121,6 +157,25 @@ void screen_option_screen_update( unsigned char *screen_type )
 	}
 
 	*screen_type = st->state_object_curr_screen;
+}
+
+static void display_cursor( unsigned char type )
+{
+	unsigned char x = cursorsX[ cursorX ];
+	if( 0 == cursorX && ( 3 == cursorY || 4 == cursorY ) )
+	{
+		x -= 2;
+	}
+
+	if( cursor_type_arrows == type )
+	{
+		engine_font_manager_draw_text( LOCALE_SELECT_SPACES, cursorsX[ cursorX ], cursorsY[ cursorY ] );
+	}
+	else
+	{
+		engine_font_manager_draw_text( LOCALE_SELECT_ARROWS, cursorsX[ cursorX ], cursorsY[ cursorY ] );
+	}
+
 }
 
 static void toggle_kid()
