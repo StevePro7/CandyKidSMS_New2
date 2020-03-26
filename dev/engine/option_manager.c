@@ -49,7 +49,7 @@ void engine_option_manager_update( unsigned char screen )
 	delay_data2++;
 	if( delay_data1 >= SWAP_DELAY1 )
 	{
-		engine_enemy_manager_swap( enemy_type );
+		engine_enemy_manager_frame( enemy_type );
 		delay_data1 = 0;
 
 		enemy_type++;
@@ -61,7 +61,7 @@ void engine_option_manager_update( unsigned char screen )
 
 	if( delay_data2 >= SWAP_DELAY2 )
 	{
-		engine_gamer_manager_swap();
+		engine_gamer_manager_frame();
 
 		if( screen_type_title == screen || screen_type_start == screen )
 		{

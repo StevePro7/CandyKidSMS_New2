@@ -288,12 +288,7 @@ void engine_enemy_manager_update( unsigned char enemy )
 	}
 }
 
-void engine_enemy_manager_swap( unsigned char enemy )
-{
-	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
-	eo->image = 1 - eo->image;
-	calcd_frame( enemy );
-}
+
 
 void engine_enemy_manager_draw()
 {
@@ -410,6 +405,13 @@ void engine_enemy_manager_reset_mode( unsigned char enemy, unsigned char mode )
 	// TODO delete used for debugging
 	//engine_memo_manager_debugging( enemy, eo->action );
 	// TODO delete used for debugging
+}
+
+void engine_enemy_manager_frame( unsigned char enemy )
+{
+	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
+	eo->frame = 1 - eo->frame;
+	calcd_frame( enemy );
 }
 
 void engine_enemy_manager_image( unsigned char enemy )

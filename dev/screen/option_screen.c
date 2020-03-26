@@ -101,8 +101,8 @@ void screen_option_screen_update( unsigned char *screen_type )
 		//toggle_diff();
 
 		//toggle_kid();
-		//toggle_enemy( 0 );
-		toggle_trees();
+		toggle_enemy( 2 );
+		//toggle_trees();
 		//toggle_exits();
 	}
 
@@ -122,13 +122,13 @@ void screen_option_screen_update( unsigned char *screen_type )
 static void toggle_kid()
 {
 	struct_gamer_object *go = &global_gamer_object;
-	engine_gamer_manager_swap();
+	engine_gamer_manager_image();
 	engine_option_manager_text_kid_no( distance, go->image );
 }
 static void toggle_enemy( unsigned char enemy )
 {
 	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
-	engine_enemy_manager_swap( enemy );
+	engine_enemy_manager_image( enemy );
 	engine_option_manager_text_enemy_no( enemy, eo->image );
 }
 static void toggle_trees()

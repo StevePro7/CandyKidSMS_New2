@@ -11,7 +11,6 @@ void engine_gamer_manager_init();
 void engine_gamer_manager_load();
 void engine_gamer_manager_stance();
 void engine_gamer_manager_update();
-void engine_gamer_manager_swap();
 void engine_gamer_manager_draw();
 void engine_gamer_manager_draws( unsigned char x, unsigned char y );
 void engine_gamer_manager_hide();
@@ -23,6 +22,7 @@ void engine_gamer_manager_pace( unsigned char boost );
 void engine_gamer_manager_stop();
 void engine_gamer_manager_dead();
 void engine_gamer_manager_reset();
+void engine_gamer_manager_frame();
 void engine_gamer_manager_image();
 void engine_gamer_manager_images( unsigned char image_kid );
 

@@ -148,13 +148,6 @@ void engine_gamer_manager_update()
 	}
 }
 
-void engine_gamer_manager_swap()
-{
-	struct_gamer_object *go = &global_gamer_object;
-	go->image = 1 - go->image;
-	calcd_frame();
-}
-
 void engine_gamer_manager_draw()
 {
 	struct_gamer_object *go = &global_gamer_object;
@@ -308,6 +301,12 @@ void engine_gamer_manager_reset()
 	calcd_spots();
 }
 
+void engine_gamer_manager_frame()
+{
+	struct_gamer_object *go = &global_gamer_object;
+	go->frame = 1 - go->frame;
+	calcd_frame();
+}
 void engine_gamer_manager_image()
 {
 	struct_gamer_object *go = &global_gamer_object;

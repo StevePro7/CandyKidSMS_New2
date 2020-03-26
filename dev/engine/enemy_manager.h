@@ -13,7 +13,6 @@ void engine_enemy_manager_load();
 void engine_enemy_manager_stance();
 void engine_enemy_manager_dohand( unsigned char enemy );
 void engine_enemy_manager_update( unsigned char enemy );
-void engine_enemy_manager_swap( unsigned char enemy );
 void engine_enemy_manager_draw();
 void engine_enemy_manager_draws( unsigned char enemy, unsigned char x, unsigned char y );
 void engine_enemy_manager_hide();
@@ -23,6 +22,7 @@ void engine_enemy_manager_stop( unsigned char enemy );
 void engine_enemy_manager_dead( unsigned char enemy );
 void engine_enemy_manager_reset_home();
 void engine_enemy_manager_reset_mode( unsigned char enemy, unsigned char mode );
+void engine_enemy_manager_frame( unsigned char enemy );
 void engine_enemy_manager_image( unsigned char enemy );
 void engine_enemy_manager_images( unsigned char image_pro, unsigned char image_adi, unsigned char image_suz );
 
