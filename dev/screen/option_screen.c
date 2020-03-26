@@ -26,16 +26,31 @@ static unsigned char cursor;
 void screen_option_screen_init()
 {
 	cursor = 0;
-
-
 }
 
 void screen_option_screen_load()
 {
 	struct_state_object *st = &global_state_object;
+	struct_gamer_object *go = &global_gamer_object;
+	struct_enemy_object *eo;
+	unsigned char enemy;
 
+	// Clear menu area first.
 	engine_option_manager_clear();
 	distance = menu_type_double;
+
+
+	engine_option_manager_option_tree( st->state_object_trees_type );
+	engine_option_manager_option_exit();
+
+	// Draw Kid#, Pro#, Adi#, Suz#
+	engine_option_manager_text_kid_no( distance, go->image );
+	for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
+	{
+		eo = &global_enemy_objects[ enemy ];
+		engine_option_manager_text_enemy_no( enemy, eo->image );
+	}
+
 
 	st->state_object_curr_screen = screen_type_option;
 	st->state_object_next_screen = screen_type_start;
@@ -65,6 +80,5 @@ void screen_option_screen_update( unsigned char *screen_type )
 		return;
 	}
 
-	
 	*screen_type = st->state_object_curr_screen;
 }

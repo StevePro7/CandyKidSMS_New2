@@ -111,11 +111,19 @@ void engine_option_manager_draw_actor( unsigned index )
 
 void engine_option_manager_text_kid( unsigned index )
 {
-	unsigned char x =leftside - index;
+	unsigned char x = leftside - index;
 
 	// Candy Kid.
 	engine_locale_manager_draw_text( location + 0, x + 0, value_y[ 0 ] + 0 );
 	engine_locale_manager_draw_text( location + 1, x + 1, value_y[ 0 ] + 1 );
+}
+
+void engine_option_manager_text_kid_no( unsigned index, unsigned char value )
+{
+	unsigned char x = leftside - index;
+
+	// Kid #.
+	engine_locale_manager_draw_text( location + 6 + value, x + 1, value_y[ 0 ] + 1 );
 }
 
 void engine_option_manager_text_enemy()
@@ -132,6 +140,11 @@ void engine_option_manager_text_enemy()
 
 	// Build version is on each "intro" screen so draw it here!
 	engine_locale_manager_draw_text( 0, SCREEN_TILE_LEFT + 24, BOTT_TEXT_Y );
+}
+
+void engine_option_manager_text_enemy_no( unsigned enemy, unsigned char value )
+{
+	engine_locale_manager_draw_text( location + 8 + ( enemy * 2 ) + value, value_x[ 3 ] + 1, value_y[ enemy ] + 1 );
 }
 
 void engine_option_manager_text_start( unsigned char mode )

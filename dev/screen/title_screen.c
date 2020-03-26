@@ -25,7 +25,9 @@ void screen_title_screen_load()
 	struct_state_object *st = &global_state_object;
 	distance = menu_type_double;
 
+	// Clear menu area first.
 	engine_option_manager_clear();
+
 	engine_locale_manager_draw_text( 1, SCREEN_TILE_LEFT + COIN_TEXT_X + 2, TEXT4_Y );
 	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + 2, BOTT_TEXT_Y );
 
@@ -45,8 +47,8 @@ void screen_title_screen_load()
 	engine_option_manager_draw_candy( distance );
 
 	//st->state_object_curr_screen = screen_type_init;
-	st->state_object_curr_screen = screen_type_start;
-	//st->state_object_curr_screen = screen_type_title;
+	//st->state_object_curr_screen = screen_type_start;
+	st->state_object_curr_screen = screen_type_title;
 }
 
 void screen_title_screen_update( unsigned char *screen_type )

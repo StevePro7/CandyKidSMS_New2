@@ -48,6 +48,12 @@ const unsigned char *locale_object_texts[] =
 	"ADI2",
 	"SUZ1",
 	"SUZ2",
+	"TREES",
+	"AVOID",
+	"DEATH",
+	"EXITS",
+	" OPEN"
+	" SHUT"
 };
 
 

@@ -8,7 +8,9 @@ void engine_option_manager_update( unsigned char screen );
 void engine_option_manager_clear();
 void engine_option_manager_draw_actor( unsigned index );
 void engine_option_manager_text_kid( unsigned index );
+void engine_option_manager_text_kid_no( unsigned index, unsigned char value );
 void engine_option_manager_text_enemy();
+void engine_option_manager_text_enemy_no( unsigned enemy, unsigned char value );
 void engine_option_manager_text_start( unsigned char mode );
 
 void engine_option_manager_draw_bonus( unsigned index );

@@ -31,15 +31,25 @@ void screen_start_screen_init()
 void screen_start_screen_load()
 {
 	struct_state_object *st = &global_state_object;
+
+	// Clear menu area first.
 	engine_option_manager_clear();
-
 	distance = menu_type_double;
+	engine_option_manager_draw_bonus( distance );
+	engine_option_manager_draw_candy( distance );
 
+	// Draw all generic actor text.
+	engine_option_manager_text_kid( distance );
+	engine_option_manager_text_enemy();
+
+	// Draw NEW GAME or CONTINUE...
 	engine_option_manager_text_start( st->state_object_availables );
+
 	display_cursor();
 
-	st->state_object_curr_screen = screen_type_option;
-	//st->state_object_curr_screen = screen_type_start;
+
+	//st->state_object_curr_screen = screen_type_option;
+	st->state_object_curr_screen = screen_type_start;
 }
 
 void screen_start_screen_update( unsigned char *screen_type )
