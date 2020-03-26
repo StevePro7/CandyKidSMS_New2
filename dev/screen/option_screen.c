@@ -105,16 +105,27 @@ void screen_option_screen_update( unsigned char *screen_type )
 		display_cursor( cursor_type_spaces );
 		if( 0 == cursorX )
 		{
-			/*if( input[ 0 ] )
+			if( input[ 0 ] )
 			{
 				if( 0 == cursorY )
 				{
 					cursorY = 4;
 				}
-			}*/
+				else
+				{
+					cursorY--;
+				}
+			}
 			if( input[ 1 ] )
 			{
-				cursorY++;
+				if( 4 == cursorY )
+				{
+					cursorY = 0;
+				}
+				else
+				{
+					cursorY++;
+				}
 			}
 		}
 
@@ -169,13 +180,12 @@ static void display_cursor( unsigned char type )
 
 	if( cursor_type_arrows == type )
 	{
-		engine_font_manager_draw_text( LOCALE_SELECT_SPACES, cursorsX[ cursorX ], cursorsY[ cursorY ] );
+		engine_font_manager_draw_text( LOCALE_SELECT_ARROWS, x, cursorsY[ cursorY ] );
 	}
 	else
 	{
-		engine_font_manager_draw_text( LOCALE_SELECT_ARROWS, cursorsX[ cursorX ], cursorsY[ cursorY ] );
+		engine_font_manager_draw_text( LOCALE_SELECT_SPACES, x, cursorsY[ cursorY ] );
 	}
-
 }
 
 static void toggle_kid()
