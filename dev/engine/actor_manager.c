@@ -32,20 +32,20 @@
 //}
 
 
-void engine_actor_manager_get_data( unsigned char *mover, unsigned char *tileZ )
-{
-	struct_gamer_object *go = &global_gamer_object;
-	struct_enemy_object *eo;
-	unsigned char enemy;
-	unsigned char index;
-
-	mover[ 0 ] = 1;
-	tileZ[ 0 ] = go->tileZ;
-	for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
-	{
-		eo = &global_enemy_objects[ enemy ];
-		index = enemy + 1;
-		mover[ index ] = eo->mover;
-		tileZ[ index ] = eo->tileZ;
-	}
-}
+//void engine_actor_manager_get_data( unsigned char *mover, unsigned char *tileZ )
+//{
+//	struct_gamer_object *go = &global_gamer_object;
+//	struct_enemy_object *eo;
+//	unsigned char enemy;
+//	unsigned char index;
+//
+//	mover[ 0 ] = 1;
+//	tileZ[ 0 ] = go->tileZ;
+//	for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
+//	{
+//		eo = &global_enemy_objects[ enemy ];
+//		index = enemy + 1;
+//		mover[ index ] = eo->mover;
+//		tileZ[ index ] = eo->tileZ;
+//	}
+//}

@@ -13,6 +13,7 @@
 #include "..\engine\option_manager.h"
 #include "..\engine\state_manager.h"
 #include "..\devkit\_sms_manager.h"
+#include <stdlib.h>
 
 static void display_cursor();
 static unsigned char distance;
@@ -83,6 +84,8 @@ void screen_start_screen_update( unsigned char *screen_type )
 		return;
 	}
 
+	// TODO implement:
+	//rand();
 	*screen_type = screen_type_start;
 }
 

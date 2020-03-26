@@ -7,7 +7,9 @@
 extern struct_level_object global_level_object;
 
 void engine_level_manager_load_level( const unsigned char world, const unsigned char round );
-void engine_level_manager_update_level( const unsigned char round, unsigned char *actor_mover, unsigned char *actor_tileZ );
+
+// TODO delete
+//void engine_level_manager_update_level( const unsigned char round, unsigned char *actor_mover, unsigned char *actor_tileZ );
 void engine_level_manager_beat_level( const unsigned char *data, const unsigned char size, const unsigned char bank );
 void engine_level_manager_blank_tile( unsigned char index );
 void engine_level_manager_draw_level();

@@ -7,6 +7,6 @@
 //void engine_actor_manager_exec_gamer_speed( unsigned char args );
 //void engine_actor_manager_exec_enemy_speed( unsigned char args );
 
-void engine_actor_manager_get_data( unsigned char *mover, unsigned char *tileZ );
+//void engine_actor_manager_get_data( unsigned char *mover, unsigned char *tileZ );
 
 #endif//_ACTOR_MANAGER_H_

@@ -59,93 +59,94 @@ void engine_level_manager_load_level( const unsigned char world, const unsigned 
 	}
 }
 
-void engine_level_manager_update_level( const unsigned char round, unsigned char *actor_mover, unsigned char *actor_tileZ )
-{
-	struct_level_object *lo = &global_level_object;
-	struct_state_object *st = &global_state_object;
-	unsigned char actor;
-	unsigned char mover;
-	unsigned char index;
-	unsigned char tileX;
-	unsigned char tileY;
-	unsigned char tiles;
-	unsigned char tile_type;
-	unsigned char upper_nibble;
-	unsigned char lower_nibble;
-
-	// Count all available home tiles: Kid, Pro, Adi, Suz
-	// Kid always moves so means that will be at least 1x.
-	tiles = 0;
-	for( actor = 0; actor < MAX_ACTORS; actor++ )
-	{
-		mover = actor_mover[ actor ];
-		if( mover )
-		{
-			tiles++;
-			continue;
-		}
-
-		// Enemy is idle this level so blank out tile.
-		index = actor_tileZ[ actor ];
-		engine_function_manager_convertZtoXY( MAZE_ROWS, index, &tileX, &tileY );
-		tile_type = engine_level_manager_get_tile_type( tileX, tileY, direction_type_none, offset_type_none );
-
-		if( tile_type_bonusA == tile_type || tile_type_bonusB == tile_type || tile_type_bonusC == tile_type || tile_type_bonusD == tile_type )
-		{
-			lo->level_object_bonus_count--;
-		}
-		if( tile_type_candy == tile_type )
-		{
-			lo->level_object_candy_count--;
-		}
-
-		tile_type = engine_level_manager_get_next_tile( tileX, tileY, direction_type_none, offset_type_none );
-		engine_function_manager_convertByteToNibbles( tile_type, &upper_nibble, &lower_nibble );
-		lower_nibble = tile_type_blank;
-		engine_function_manager_convertNibblesToByte( upper_nibble, lower_nibble, &tile_type );
-		level_object_tiles_array[ index ] = tile_type;
-	}
-
-	// Every fifth level award freeman tile if not invincible.
-	if( st->state_object_localcheat )
-	{
-		return;
-	}
-	if( 0 != ( round + 1 ) % 5 )
-	{
-		return;
-	}
-
-	// However, flip coin if can have free man candy on difficult hard.
-	if( diff_type_hard == st->state_object_difficulty )
-	{
-		
-		if( 0 != rand() % 2 )
-		{
-			return;
-		}
-	}
-
-	mover = rand() % tiles;
-	index = actor_tileZ[ mover ];
-	engine_function_manager_convertZtoXY( MAZE_ROWS, index, &tileX, &tileY );
-	tile_type = engine_level_manager_get_tile_type( tileX, tileY, direction_type_none, offset_type_none );
-
-	if( tile_type_bonusA == tile_type || tile_type_bonusB == tile_type || tile_type_bonusC == tile_type || tile_type_bonusD == tile_type )
-	{
-		lo->level_object_bonus_count--;
-	}
-	if( tile_type_candy == tile_type )
-	{
-		lo->level_object_candy_count--;
-	}
-
-	tile_type = engine_level_manager_get_next_tile( tileX, tileY, direction_type_none, offset_type_none );
-	engine_function_manager_convertByteToNibbles( tile_type, &upper_nibble, &lower_nibble );
-	lower_nibble = tile_type_oneup;
-	engine_function_manager_convertNibblesToByte( upper_nibble, lower_nibble, &tile_type );
-	level_object_tiles_array[ index ] = tile_type;
-}
+// TODO delete
+//void engine_level_manager_update_level( const unsigned char round, unsigned char *actor_mover, unsigned char *actor_tileZ )
+//{
+//	struct_level_object *lo = &global_level_object;
+//	struct_state_object *st = &global_state_object;
+//	unsigned char actor;
+//	unsigned char mover;
+//	unsigned char index;
+//	unsigned char tileX;
+//	unsigned char tileY;
+//	unsigned char tiles;
+//	unsigned char tile_type;
+//	unsigned char upper_nibble;
+//	unsigned char lower_nibble;
+//
+//	// Count all available home tiles: Kid, Pro, Adi, Suz
+//	// Kid always moves so means that will be at least 1x.
+//	tiles = 0;
+//	for( actor = 0; actor < MAX_ACTORS; actor++ )
+//	{
+//		mover = actor_mover[ actor ];
+//		if( mover )
+//		{
+//			tiles++;
+//			continue;
+//		}
+//
+//		// Enemy is idle this level so blank out tile.
+//		index = actor_tileZ[ actor ];
+//		engine_function_manager_convertZtoXY( MAZE_ROWS, index, &tileX, &tileY );
+//		tile_type = engine_level_manager_get_tile_type( tileX, tileY, direction_type_none, offset_type_none );
+//
+//		if( tile_type_bonusA == tile_type || tile_type_bonusB == tile_type || tile_type_bonusC == tile_type || tile_type_bonusD == tile_type )
+//		{
+//			lo->level_object_bonus_count--;
+//		}
+//		if( tile_type_candy == tile_type )
+//		{
+//			lo->level_object_candy_count--;
+//		}
+//
+//		tile_type = engine_level_manager_get_next_tile( tileX, tileY, direction_type_none, offset_type_none );
+//		engine_function_manager_convertByteToNibbles( tile_type, &upper_nibble, &lower_nibble );
+//		lower_nibble = tile_type_blank;
+//		engine_function_manager_convertNibblesToByte( upper_nibble, lower_nibble, &tile_type );
+//		level_object_tiles_array[ index ] = tile_type;
+//	}
+//
+//	// Every fifth level award freeman tile if not invincible.
+//	if( st->state_object_localcheat )
+//	{
+//		return;
+//	}
+//	if( 0 != ( round + 1 ) % 5 )
+//	{
+//		return;
+//	}
+//
+//	// However, flip coin if can have free man candy on difficult hard.
+//	if( diff_type_hard == st->state_object_difficulty )
+//	{
+//		
+//		if( 0 != rand() % 2 )
+//		{
+//			return;
+//		}
+//	}
+//
+//	mover = rand() % tiles;
+//	index = actor_tileZ[ mover ];
+//	engine_function_manager_convertZtoXY( MAZE_ROWS, index, &tileX, &tileY );
+//	tile_type = engine_level_manager_get_tile_type( tileX, tileY, direction_type_none, offset_type_none );
+//
+//	if( tile_type_bonusA == tile_type || tile_type_bonusB == tile_type || tile_type_bonusC == tile_type || tile_type_bonusD == tile_type )
+//	{
+//		lo->level_object_bonus_count--;
+//	}
+//	if( tile_type_candy == tile_type )
+//	{
+//		lo->level_object_candy_count--;
+//	}
+//
+//	tile_type = engine_level_manager_get_next_tile( tileX, tileY, direction_type_none, offset_type_none );
+//	engine_function_manager_convertByteToNibbles( tile_type, &upper_nibble, &lower_nibble );
+//	lower_nibble = tile_type_oneup;
+//	engine_function_manager_convertNibblesToByte( upper_nibble, lower_nibble, &tile_type );
+//	level_object_tiles_array[ index ] = tile_type;
+//}
 
 void engine_level_manager_draw_level()
 {

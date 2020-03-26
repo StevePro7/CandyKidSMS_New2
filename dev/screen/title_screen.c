@@ -10,6 +10,7 @@
 #include "..\engine\timer_manager.h"
 #include "..\object\locale_object.h"
 #include "..\devkit\_sms_manager.h"
+#include <stdlib.h>
 
 #define TITLE_FLASH_DELAY	50
 #define LOCAL_CHEAT_TOTAL	5
@@ -104,5 +105,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 		}
 	}
 
+	// TODO implement:
+	//rand();
 	*screen_type = st->state_object_curr_screen;
 }

@@ -25,8 +25,8 @@ static void print_enemy();		// TODO delete
 void screen_load_screen_load()
 {
 	struct_state_object *st = &global_state_object;
-	unsigned char actor_mover[ MAX_ACTORS ];
-	unsigned char actor_tileZ[ MAX_ACTORS ];
+	//unsigned char actor_mover[ MAX_ACTORS ];
+	//unsigned char actor_tileZ[ MAX_ACTORS ];
 
 	st->state_object_curr_screen = screen_type_load;
 	st->state_object_next_screen = screen_type_ready;
@@ -47,10 +47,10 @@ void screen_load_screen_load()
 	// TODO do I want to put this after after level draw?
 	engine_gamer_manager_load();
 	engine_enemy_manager_load();
-	engine_actor_manager_get_data( actor_mover, actor_tileZ );
+	//engine_actor_manager_get_data( actor_mover, actor_tileZ );		// TODO delete
 
 	engine_level_manager_load_level( st->state_object_world_data, st->state_object_round_data );
-	engine_level_manager_update_level( st->state_object_round_data, actor_mover, actor_tileZ );
+	//engine_level_manager_update_level( st->state_object_round_data, actor_mover, actor_tileZ );		// TODO delete
 	engine_level_manager_draw_level();
 
 	print_level();
