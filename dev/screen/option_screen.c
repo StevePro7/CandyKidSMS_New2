@@ -17,7 +17,6 @@
 #include "..\devkit\_sms_manager.h"
 
 static void display_cursor( unsigned char type );
-
 static void toggle_kid();
 static void toggle_enemy( unsigned char enemy );
 static void toggle_trees();
@@ -26,7 +25,6 @@ static void toggle_world();
 static void toggle_round();
 static void toggle_diff();
 
-// TODO - correct cursor locations
 static unsigned char distance;
 static unsigned char cursorsX[ 2 ] = { OPTION_X + 2, OPTION_X + 15 };
 static unsigned char cursorsY[ 5 ] = { OPTION_Y + 1, OPTION_Y + 4, OPTION_Y + 7, OPTION_Y + 10, OPTION_Y + 11 };
@@ -90,7 +88,6 @@ void screen_option_screen_load()
 void screen_option_screen_update( unsigned char *screen_type )
 {
 	struct_state_object *st = &global_state_object;
-	//unsigned char direction = direction_type_none;
 	unsigned char input[ 2 ] = { 0, 0 };
 	unsigned char skip = 0;
 
@@ -169,9 +166,6 @@ void screen_option_screen_update( unsigned char *screen_type )
 			display_cursor( cursor_type_arrows );
 		}
 	}
-
-	engine_font_manager_draw_data( cursorX, 15, 6 );
-	engine_font_manager_draw_data( cursorY, 15, 7 );
 
 
 	input[ 0 ] = engine_input_manager_hold( input_type_fire1 );
