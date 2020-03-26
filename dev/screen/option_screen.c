@@ -79,10 +79,6 @@ void screen_option_screen_load()
 void screen_option_screen_update( unsigned char *screen_type )
 {
 	struct_state_object *st = &global_state_object;
-	
-	struct_enemy_object *eo;
-	unsigned char enemy;
-
 	unsigned char input[ 2 ] = { 0, 0 };
 
 	engine_option_manager_draw_actor( distance );
@@ -96,12 +92,13 @@ void screen_option_screen_update( unsigned char *screen_type )
 	input[ 0 ] = engine_input_manager_hold( input_type_fire1 );
 	if( input[ 0 ] )
 	{
-		enemy = actor_type_pro;
-		eo = &global_enemy_objects[ enemy ];
-		engine_enemy_manager_swap( enemy );
-		engine_option_manager_text_enemy_no( enemy, eo->image );
+		//enemy = actor_type_pro;
+		//eo = &global_enemy_objects[ enemy ];
+		//engine_enemy_manager_swap( enemy );
+		//engine_option_manager_text_enemy_no( enemy, eo->image );
 
 		//toggle_kid();
+		toggle_enemy( 0 );
 		//toggle_trees();
 		//toggle_exits();
 	}
@@ -127,8 +124,9 @@ static void toggle_kid()
 }
 static void toggle_enemy( unsigned char enemy )
 {
-	//struct_enemy_object *eo = &global_enemy_objects[ enemy ];
+	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
 	engine_enemy_manager_swap( enemy );
+	engine_option_manager_text_enemy_no( enemy, eo->image );
 }
 static void toggle_trees()
 {
