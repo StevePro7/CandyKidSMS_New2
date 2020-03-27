@@ -1,5 +1,6 @@
 #include "option_screen.h"
 #include "..\engine\asm_manager.h"
+#include "..\engine\audio_manager.h"
 #include "..\engine\board_manager.h"
 #include "..\engine\content_manager.h"
 #include "..\engine\enemy_manager.h"
@@ -81,8 +82,8 @@ void screen_option_screen_load()
 
 	display_cursor( cursor_type_arrows );
 
+	//st->state_object_next_screen = screen_type_start;
 	st->state_object_curr_screen = screen_type_option;
-	st->state_object_next_screen = screen_type_start;
 }
 
 void screen_option_screen_update( unsigned char *screen_type )
@@ -212,11 +213,11 @@ void screen_option_screen_update( unsigned char *screen_type )
 	if( input[ 1 ] )
 	{
 		display_cursor( cursor_type_spaces );
+
 		// Save game state to SRAM when game over.
 		engine_main_manager_save();
 
-		// TODO sound FX
-		//engine_audio_manager_sfx_play( sfx_type_reset );
+		engine_audio_manager_sfx_play( sfx_type_reset );
 		*screen_type = screen_type_start;
 		return;
 	}
