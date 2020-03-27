@@ -7,16 +7,17 @@ Friday, 27th March 2020
 ###### INTRO
 Candy Kid is a simple maze chase game.  Eat all the candy to pass each level.  Eat all bonuses to maximize your score!
 <br />
-The 3x Candy "Mama" enemies Pro / Adi / Suz have different pesonalities and alternate between scatter and attack modes.
+The 3x Candy "Mama" enemies Pro / Adi / Suz have different pesonalities and alternate between scatter and attack.
 <br />
 Blast your way through 100x levels of crazy maze paced action.  Simple. Addictive. Fun.
 
 ###### HISTORY
 Candy Kid video game was originally programmed by Grandstand Leisure from New Zealand in September 1984.
 <br />
-The game was written in BASIC on the Sega SC-3000.  Thanks to SMS Power! original source code can be found [here](https://www.smspower.org/Scans/SegaComputer-Magazine-Issue02?gallerypage=17)
+The game written in BASIC on the Sega SC-3000.  Thanks to SMS Power! original source code can be found [here](https://www.smspower.org/Scans/SegaComputer-Magazine-Issue02?gallerypage=17)
 <br />
-Candy Kid was subsequently re-written in C#/.NET and XNA for Windows PC and ported to iOS / Android using MonoGame.
+<br />
+Candy Kid was re-written in C#/.NET and XNA for Windows PC and ported to iOS / Android using MonoGame.
 <br />
 Now, finally, thanks to the awesome community at SMS Power! Candy Kid is available for the Sega Master System.
 
@@ -54,7 +55,7 @@ Player will receive extra 2000 pts after eating all candy and collecting all bon
 ###### CHEATS
 Press button 2 five times on Title screen and you'll be invincible each game this is actioned.
 <br />
-Press and hold button 2 during game play to action Game Over and forcefully quit out of game.
+Press and hold button 2 during game play to action Game Over and force quit out of game.
 <br />
 Press and hold button 2 on Splash screen to reset High score and all options previously saved.
 
@@ -70,9 +71,9 @@ As always, thanks goes to:
 Maxim, Martin, Ville Helin, Steve Snake, Bock + Kusfo
 
 ###### INVOLVEMENT
-Currently, there are 100x levels but the game has capacity for twice that - please let me know if you'd like to design some levels :)
+Currently, there are 100x levels but game has twice capacity - please let me know if you'd like to design some levels :)
 <br />
-Also, feel free to give your input: should the Candy Mamas scatter and/or attack for differenct durations, increase / decrease speeds etc.?
+Also, feel free to give your input: should Candy Mamas scatter and/or attack for differenct durations, increase/decrease speeds etc.?
 
 ###### SOCIAL MEDIA
 - Facebook https://www.facebook.com/CandyKidVideoGame
