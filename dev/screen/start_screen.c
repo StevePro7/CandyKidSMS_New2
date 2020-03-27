@@ -26,7 +26,7 @@ static unsigned char cursor;
 void screen_start_screen_init()
 {
 	cursor = 0;
-	cursor = 1;
+	//cursor = 1;
 }
 
 void screen_start_screen_load()
