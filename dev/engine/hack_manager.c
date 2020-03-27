@@ -71,8 +71,8 @@ void engine_hack_manager_invert()
 {
 	// TODO delete this hard coded
 	struct_state_object *st = &global_state_object;
-	st->state_object_invincibie = 0;
-	st->state_object_localcheat = 0;
+	st->state_object_invincibie = 1;
+	st->state_object_localcheat = 1;
 
 	// TODO delete adriana stevepro as this overwrites SRAM and makes look like bug!!
 	st->state_object_difficulty = 0;
@@ -145,7 +145,7 @@ void engine_hack_manager_invert()
 	//st->state_object_world_data = 1 - 1;
 	//st->state_object_round_data = 1 - 1;
 
-	st->state_object_world_data = 3 - 1;
-	st->state_object_round_data = 2 - 1;
+	st->state_object_world_data = 1 - 1;
+	st->state_object_round_data = 1 - 1;
 	// TODO delete this hard coded
 }

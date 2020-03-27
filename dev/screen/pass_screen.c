@@ -11,8 +11,6 @@
 #include "..\engine\state_manager.h"
 #include "..\engine\timer_manager.h"
 
-//#define PASS_SCREEN_DELAY	50
-//#define PASS_SCREEN_DELAY1	25
 #define PASS_SCREEN_DELAY1	25
 #define PASS_SCREEN_DELAY2	250
 
@@ -52,13 +50,14 @@ void screen_pass_screen_update( unsigned char *screen_type )
 	{
 		delay = engine_delay_manager_update();
 		input = 0;
-		if( st->state_object_mydebugger )
-		{
+		//if( st->state_object_mydebugger )
+		//{
 			input = engine_input_manager_hold( input_type_fire2 );
-		}
+		//}
 		if( delay || input )
 		{
 			next_level();
+			engine_audio_manager_music_stop();
 			*screen_type = st->state_object_next_screen;
 			return;
 		}
@@ -83,10 +82,10 @@ void screen_pass_screen_update( unsigned char *screen_type )
 			engine_score_manager_finish_bonus();
 		}
 
-		if( !st->state_object_mydebugger )
-		{
+		//if( !st->state_object_mydebugger )
+		//{
 			engine_audio_manager_music_play_norepeat( mus_type_level );
-		}
+		//}
 
 		event_stage = event_stage_pause;
 	}
