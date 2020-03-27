@@ -71,8 +71,8 @@ void engine_hack_manager_invert()
 {
 	// TODO delete this hard coded
 	struct_state_object *st = &global_state_object;
-	st->state_object_invincibie = 1;
-	st->state_object_localcheat = 1;
+	st->state_object_invincibie = 0;
+	st->state_object_localcheat = 0;
 
 	// TODO delete adriana stevepro as this overwrites SRAM and makes look like bug!!
 	st->state_object_difficulty = 1;
@@ -93,7 +93,7 @@ void engine_hack_manager_invert()
 	// TODO don't forget to remove this!!		MUST be zero for final build as pass music will NOT play!!
 	st->state_object_mydebugger = 1;
 	st->state_object_full_boost = 0;
-	st->state_object_delay_test = 1;
+	st->state_object_delay_test = 0;
 
 	// TODO delete this hard coded
 	st->state_object_load_asset = 0;
@@ -133,11 +133,11 @@ void engine_hack_manager_invert()
 	// Invert default values.
 	// TODO revert this code to play music + sound FX.
 
-	//st->state_object_music_data = !st->state_object_music_data;
-	//st->state_object_sound_data = !st->state_object_sound_data;
+	st->state_object_music_data = !st->state_object_music_data;
+	st->state_object_sound_data = !st->state_object_sound_data;
 
-	st->state_object_music_data = 0;
-	st->state_object_sound_data = 0;
+	//st->state_object_music_data = 0;
+	//st->state_object_sound_data = 0;
 
 	// TODO revert this code to play music + sound FX.
 

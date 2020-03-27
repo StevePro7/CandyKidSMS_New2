@@ -16,6 +16,7 @@
 #include "..\engine\timer_manager.h"
 #include "..\devkit\_sms_manager.h"
 #include "..\object\locale_object.h"
+#include <stdlib.h>
 
 #define LOAD_SCREEN_DELAY	150
 
@@ -65,6 +66,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 	struct_state_object *st = &global_state_object;
 	unsigned char delay;
 	unsigned char input;
+	unsigned char index;
 
 	// Draw sprites first.
 	engine_enemy_manager_draw();
@@ -74,10 +76,9 @@ void screen_load_screen_update( unsigned char *screen_type )
 	input = devkit_SMS_getKeysStatus();
 	if( delay || input )
 	{
+		index = rand() % MAX_MUSIC;
 		engine_level_manager_draw_middle();
-		//engine_audio_manager_music_play( mus_type_game01 );
-		engine_audio_manager_music_play( mus_type_game02 );
-		//engine_audio_manager_music_play( mus_type_beat );
+		engine_audio_manager_music_play( index + 3 );
 		*screen_type = st->state_object_next_screen;
 		return;
 	}

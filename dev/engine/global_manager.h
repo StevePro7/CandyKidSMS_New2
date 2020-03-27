@@ -49,6 +49,9 @@
 #define MAX_CMD_TYPE			16	//32
 #define MAX_COMMANDS			256
 
+#define MAX_MUSIC				3
+#define MAX_SOUND				3
+
 #define NUM_DIRECTIONS			4
 #define NUM_ENTITY_IMAGE		2
 #define NUM_ENTITY_FRAME		2

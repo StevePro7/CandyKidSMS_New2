@@ -12,6 +12,7 @@
 #include "..\engine\state_manager.h"
 #include "..\engine\tile_manager.h"
 #include "..\engine\timer_manager.h"
+#include <stdlib.h>
 
 #define DEATH_SCREEN_DELAY		100
 #define FLASH_SCREEN_DELAY		20
@@ -31,6 +32,7 @@ void screen_dead_screen_load()
 {
 	struct_state_object *st = &global_state_object;
 	unsigned char lives;
+	unsigned char index;
 	engine_audio_manager_music_stop();
 
 //	engine_command_manager_load();
@@ -56,7 +58,8 @@ void screen_dead_screen_load()
 	//if( !st->state_object_mydebugger )
 	//{
 		//engine_audio_manager_sfx_play( sfx_type_accept );
-		engine_audio_manager_sfx_play( sfx_type_death03 );
+	index = rand() % MAX_MUSIC;
+	engine_audio_manager_sfx_play( index + 3 );
 	//}
 }
 
