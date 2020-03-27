@@ -47,7 +47,7 @@ void screen_start_screen_load()
 	display_cursor();
 
 	//engine_delay_manager_load( SOUND_SCREEN_DELAY + 10 );
-	engine_delay_manager_load( 80 );
+	engine_delay_manager_load( SOUND_SCREEN_DELAY + 20 );
 	event_stage = event_stage_start;
 
 	st->state_object_next_screen = screen_type_init;
