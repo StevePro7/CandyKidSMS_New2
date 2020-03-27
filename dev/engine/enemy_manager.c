@@ -391,6 +391,7 @@ void engine_enemy_manager_reset_home()
 
 void engine_enemy_manager_reset_mode( unsigned char enemy, unsigned char mode )
 {
+	struct_state_object *st = &global_state_object;
 	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
 	eo->action = mode;
 	eo->ticker = 0;
@@ -402,9 +403,10 @@ void engine_enemy_manager_reset_mode( unsigned char enemy, unsigned char mode )
 	eo->speed = eo->speeds[ mode ];
 	eo->delay = eo->delays[ mode ];
 
-	// TODO delete used for debugging
-	//engine_memo_manager_debugging( enemy, eo->action );
-	// TODO delete used for debugging
+	if( st->state_object_mydebugger )
+	{
+		engine_memo_manager_debugging( enemy, eo->action );
+	}
 }
 
 void engine_enemy_manager_frame( unsigned char enemy )
@@ -465,6 +467,7 @@ unsigned char engine_enemy_manager_scatter_direction( unsigned char enemy )
 	advance = 0;
 	if( NUM_DIRECTIONS == eo->dir_count && DIRECTION_LOOPING == eo->dir_total )
 	{
+		eo->dir_total2++;
 		advance = 1;
 	}
 	else
@@ -653,16 +656,23 @@ unsigned char engine_enemy_manager_what_direction( unsigned char enemy, unsigned
 
 unsigned char engine_enemy_manager_input_boost( unsigned char enemy )
 {
+	struct_state_object *st = &global_state_object;
 	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
 	unsigned char toggle = eo->toggle[ eo->action ];
 	unsigned char boost = 0;
 	unsigned char reset = 0;
 
-	// Attempt to prevent infinite looping esp. on Attack mode.
-	if( enemymove_type_kill == eo->action && eo->dir_total2 >= ENEMY_LOOPS )
+	// Attempt to prevent infinite looping by toggling action.
+	if( eo->dir_total2 >= ENEMY_LOOPS )
 	{
 		reset = 1;
 	}
+
+	// TODO delete - loose grip on Attack action only.
+	//if( enemymove_type_kill == eo->action && eo->dir_total2 >= ENEMY_LOOPS )
+	//{
+	//	reset = 1;
+	//}
 
 	// Not ready to swap modes.
 	if( !reset )
@@ -682,7 +692,7 @@ unsigned char engine_enemy_manager_input_boost( unsigned char enemy )
 
 	// IMPORTANT - this will alternate the images during game play - useful for debugging Scatter vs. Attack mode
 	// Swap image to indicate different mode : Scatter vs. Attack.
-	//if( state_object_mydebugger )
+	//if( st->state_object_mydebugger )
 	//{
 	//	eo->image = 1 - eo->image;
 	//	calcd_frame( enemy );
@@ -690,9 +700,10 @@ unsigned char engine_enemy_manager_input_boost( unsigned char enemy )
 	// IMPORTANT - this will alternate the images during game play - useful for debugging Scatter vs. Attack mode
 
 
-	//TODO delete
-	//engine_memo_manager_debugging( enemy, eo->action );
-	//TODO delete
+	if( st->state_object_mydebugger )
+	{
+		engine_memo_manager_debugging( enemy, eo->action );
+	}
 
 	return boost;
 }

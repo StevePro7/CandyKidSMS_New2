@@ -104,12 +104,8 @@ void engine_memo_manager_option()
 
 void engine_memo_manager_debugging( unsigned char enemy, unsigned char action )
 {
-	if( 0 == action )
-	{
-		engine_font_manager_draw_text( "SCATTR", 26, 21 + enemy );
-	}
-	if( 1 == action )
-	{
-		engine_font_manager_draw_text( "ATTACK", 26, 21 + enemy );
-	}
+	unsigned char x = 26 + enemy * 2 + 1;
+	unsigned char y = 21;
+	unsigned char text[] = { 'S', 'A', 'W', 'H' };
+	engine_font_manager_draw_char( text[ action ], x, y );
 }
