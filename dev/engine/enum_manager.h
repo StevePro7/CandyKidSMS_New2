@@ -209,7 +209,10 @@ typedef enum tag_enum_sfx_type
 	sfx_type_accept = 0,
 	sfx_type_reset = 1,
 	sfx_type_power = 2,
-	sfx_type_explode = 3,
+	sfx_type_death01 = 3,
+	sfx_type_death02 = 4,
+	sfx_type_death03 = 5,
+	sfx_type_over = 5,
 
 } enum_sfx_type;
 

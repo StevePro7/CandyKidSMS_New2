@@ -43,8 +43,9 @@ void screen_start_screen_load()
 	engine_option_manager_text_start( st->state_object_availables );
 	display_cursor();
 
+	st->state_object_curr_screen = screen_type_init;
 	//st->state_object_curr_screen = screen_type_option;
-	st->state_object_curr_screen = screen_type_start;
+	//st->state_object_curr_screen = screen_type_start;
 }
 
 void screen_start_screen_update( unsigned char *screen_type )

@@ -53,10 +53,11 @@ void screen_dead_screen_load()
 	//screen = screen_type_cont;
 	//screen = screen_type_ready;
 
-	if( !st->state_object_mydebugger )
-	{
-		//engine_audio_manager_sfx_play( sfx_type_death );		// adriana
-	}
+	//if( !st->state_object_mydebugger )
+	//{
+		//engine_audio_manager_sfx_play( sfx_type_accept );
+		engine_audio_manager_sfx_play( sfx_type_death01 );
+	//}
 }
 
 void screen_dead_screen_update( unsigned char *screen_type )
