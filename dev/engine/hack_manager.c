@@ -105,14 +105,14 @@ void engine_hack_manager_invert()
 	struct_hack_object *ho = &global_hack_object;
 	struct_state_object *st = &global_state_object;
 
-	st->state_object_invincibie = 1;
-	st->state_object_localcheat = 1;
+	//st->state_object_invincibie = 1;
+	//st->state_object_localcheat = 1;
 
 	// TODO delete adriana stevepro as this overwrites SRAM and makes look like bug!!
-	st->state_object_difficulty = 0;
-	st->state_object_pace_speed = 0;
-	st->state_object_trees_type = 1;
-	st->state_object_exits_type = 0;
+	//st->state_object_difficulty = 0;
+	//st->state_object_pace_speed = 0;
+	//st->state_object_trees_type = 1;
+	//st->state_object_exits_type = 0;
 
 
 	st->state_object_enemy_move[ actor_type_pro ] = 1;
@@ -125,19 +125,19 @@ void engine_hack_manager_invert()
 
 
 	// TODO don't forget to remove this!!		MUST be zero for final build as pass music will NOT play!!
-	st->state_object_mydebugger = 0;
-	st->state_object_full_boost = 0;
-	st->state_object_delay_test = 0;
+	//st->state_object_mydebugger = 0;
+	//st->state_object_full_boost = 0;
+	//st->state_object_delay_test = 0;
 
 	// TODO delete this hard coded
 	//st->state_object_load_asset = 0;
 	// TODO delete this hard coded
 
 	// Trees.
-	st->state_object_trees_type = tree_type_death == st->state_object_trees_type ? tree_type_death : tree_type_avoid;
+	//st->state_object_trees_type = tree_type_death == st->state_object_trees_type ? tree_type_death : tree_type_avoid;
 
 	// Exits.
-	st->state_object_exits_type = exit_type_closed == st->state_object_exits_type ? exit_type_closed : exit_type_public;
+	//st->state_object_exits_type = exit_type_closed == st->state_object_exits_type ? exit_type_closed : exit_type_public;
 
 
 	// World.
@@ -179,7 +179,7 @@ void engine_hack_manager_invert()
 	//st->state_object_world_data = 1 - 1;
 	//st->state_object_round_data = 1 - 1;
 
-	st->state_object_world_data = 1 - 1;
-	st->state_object_round_data = 1 - 1;
+	//st->state_object_world_data = 1 - 1;
+	//st->state_object_round_data = 1 - 1;
 	// TODO delete this hard coded
 }
