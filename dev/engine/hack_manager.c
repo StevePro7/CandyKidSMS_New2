@@ -4,7 +4,7 @@
 #include "state_manager.h"
 
 // Global variable.
-//struct_hack_object global_hack_object;
+struct_hack_object global_hack_object;
 
 #define PEEK( addr)			(* ( unsigned char *)( addr ) )
 #define POKE( addr, data )	(* ( unsigned char *)( addr ) = ( data ) )
@@ -133,11 +133,11 @@ void engine_hack_manager_invert()
 	// Invert default values.
 	// TODO revert this code to play music + sound FX.
 
-	//st->state_object_music_data = !st->state_object_music_data;
-	//st->state_object_sound_data = !st->state_object_sound_data;
+	st->state_object_music_data = !st->state_object_music_data;
+	st->state_object_sound_data = !st->state_object_sound_data;
 
-	st->state_object_music_data = 0;
-	st->state_object_sound_data = 0;
+	//st->state_object_music_data = 0;
+	//st->state_object_sound_data = 0;
 
 	// TODO revert this code to play music + sound FX.
 

@@ -81,8 +81,8 @@ void screen_dead_screen_update( unsigned char *screen_type )
 
 
 	// Check if Kid want to advance.
-	if( st->state_object_mydebugger )
-	{
+	//if( st->state_object_mydebugger )
+	//{
 		input = engine_input_manager_hold( input_type_fire2 );
 		if( input )
 		{
@@ -95,7 +95,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 			*screen_type = screen;
 			return;
 		}
-	}
+	//}
 
 	//engine_frame_manager_draw();
 	//engine_delay_manager_draw();
