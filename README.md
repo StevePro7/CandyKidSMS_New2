@@ -9,17 +9,17 @@ Candy Kid is a simple maze chase game.  Eat all the candy to pass each level.  E
 <br />
 The 3x Candy "Mama" enemies Pro / Adi / Suz have different pesonalities and alternate between scatter and attack.
 <br />
-Blast your way through 100x levels of crazy maze paced action.  Simple. Addictive. Fun.
+Blast your way through 100x levels of crazy maze paced action!  Simple. Addictive. Fun.
 
 ###### HISTORY
 Candy Kid video game was originally programmed by Grandstand Leisure from New Zealand in September 1984.
 <br />
-The game written in BASIC on the Sega SC-3000.  Thanks to SMS Power! original source code can be found [here](https://www.smspower.org/Scans/SegaComputer-Magazine-Issue02?gallerypage=17)
+The game written in BASIC on the Sega SC-3000.  Thanks to SMS Power! original source code can be found [here](https://www.smspower.org/Scans/SegaComputer-Magazine-Issue02?gallerypage=17).
 <br />
 <br />
 Candy Kid was re-written in C#/.NET and XNA for Windows PC and ported to iOS / Android using MonoGame.
 <br />
-Now, finally, thanks to the awesome community at SMS Power! Candy Kid is available for the Sega Master System.
+Now, thanks to the awesome community at SMS Power! Candy Kid is available for the Sega Master System.
 
 ###### TOOLS
 - Programming:	devkitSMS
