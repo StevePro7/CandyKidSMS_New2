@@ -7,7 +7,7 @@ Friday, 27th March 2020
 ###### INTRO
 Candy Kid is a simple maze chase game.  Eat all the candy to pass each level.  Eat all bonuses to maximize your score!
 <br />
-The 3x Candy "Mama" enemies Pro / Adi / Suz have different pesonalities and alternate between scatter and attack.
+The 3x Candy "Mama" enemies Pro / Adi / Suz have different personalities and alternate between scatter and attack.
 <br />
 Blast your way through 100x levels of crazy maze paced action!  Simple. Addictive. Fun.
 
@@ -71,7 +71,7 @@ Finally, thanks goes to: Maxim, Martin, Ville Helin, Steve Snake, Bock + Kusfo
 ###### INVOLVEMENT
 Currently, there are 100x levels but game has twice capacity - please let me know if you'd like to design some levels :)
 <br />
-Feel free to give your input: should Candy Mamas scatter and/or attack for different durations, different speeds etc.?
+Feel free to give your input: should Candy Mamas scatter and/or attack for different duration, different speeds etc.?
 
 ###### SOCIAL MEDIA
 - Facebook https://www.facebook.com/CandyKidVideoGame
@@ -93,9 +93,7 @@ StevePro Studios is an independent game developer that builds and publishes 80s 
 Founded by Steven Boland "SteveProXNA" (Jan-2007) a "one man team of one" currently based in Dublin, Ireland.
 <br />
 <br />
-Original Candy Kid builds are available here:
-<br />
-"Candy Kid" available here:
+Candy Kid builds are available here:
 - iOS		http://apple.co/1QcidUk
 - Android	http://goo.gl/5rWsYO
 - PC		http://amzn.to/1QiHM9d
