@@ -2,6 +2,11 @@
 
 
 27/03/2020
+Levels esp. that may need tweaking
+03	02
+03	03
+
+
 SoundFX
 E:\Steven\roms\SegaStuff\SMSpower\MusicTOOLS\Mod2PSG2_V2_04
 E:\Steven\XNA\BlogNEW\Mod2Psg2
