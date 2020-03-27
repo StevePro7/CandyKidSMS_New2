@@ -106,7 +106,6 @@ void screen_title_screen_update( unsigned char *screen_type )
 		}
 	}
 
-	// TODO implement:
-	//rand();
+	rand();
 	*screen_type = st->state_object_curr_screen;
 }

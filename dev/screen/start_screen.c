@@ -26,7 +26,6 @@ static unsigned char cursor;
 void screen_start_screen_init()
 {
 	cursor = 0;
-	//cursor = 1;
 }
 
 void screen_start_screen_load()
@@ -47,7 +46,6 @@ void screen_start_screen_load()
 	engine_option_manager_text_start( st->state_object_availables );
 	display_cursor();
 
-	//engine_delay_manager_load( SOUND_SCREEN_DELAY + 10 );
 	engine_delay_manager_load( SOUND_SCREEN_DELAY );
 	event_stage = event_stage_start;
 
@@ -108,7 +106,6 @@ void screen_start_screen_update( unsigned char *screen_type )
 		}
 
 		event_stage = event_stage_pause;
-		//*screen_type = st->state_object_curr_screen;
 		engine_audio_manager_sfx_play( sfx_type_accept );
 		return;
 	}
@@ -118,15 +115,11 @@ void screen_start_screen_update( unsigned char *screen_type )
 	{
 		event_stage = event_stage_pause;
 		st->state_object_next_screen = screen_type_title;
-		//*screen_type = st->state_object_curr_screen;
 		engine_audio_manager_sfx_play( sfx_type_reset );
 		return;
 	}
 
-	// TODO implement:
-	//rand();
-
-	//*screen_type = st->state_object_curr_screen;
+	rand();
 }
 
 static void display_cursor()

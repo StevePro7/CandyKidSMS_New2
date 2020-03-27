@@ -236,18 +236,13 @@ void screen_option_screen_update( unsigned char *screen_type )
 	input[ 1 ] = engine_input_manager_hold( input_type_fire2 );
 	if( input[ 1 ] )
 	{
-		
-
 		// Save game state to SRAM when game over.
 		engine_main_manager_save();
 
 		event_stage = event_stage_pause;
 		engine_audio_manager_sfx_play( sfx_type_reset );
-		//*screen_type = screen_type_start;
 		return;
 	}
-
-	//*screen_type = st->state_object_curr_screen;
 }
 
 static void display_cursor( unsigned char type )
