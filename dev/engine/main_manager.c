@@ -42,18 +42,18 @@ void engine_main_manager_load()
 	engine_hack_manager_invert();		// TODO DELETE any hardcoded stuff
 }
 
-void engine_main_manager_debug()
-{
-	struct_state_object *st = &global_state_object;
-	if( !st->state_object_load_asset )
-	{
-		return;
-	}
-
-	engine_content_manager_load_tiles_font();
-	engine_content_manager_load_tiles_game();
-	engine_content_manager_load_sprites_game();
-}
+//void engine_main_manager_debug()
+//{
+//	struct_state_object *st = &global_state_object;
+//	if( !st->state_object_load_asset )
+//	{
+//		return;
+//	}
+//
+//	engine_content_manager_load_tiles_font();
+//	engine_content_manager_load_tiles_game();
+//	engine_content_manager_load_sprites_game();
+//}
 
 void engine_main_manager_save()
 {

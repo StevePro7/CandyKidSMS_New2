@@ -38,7 +38,7 @@ void engine_hack_manager_init()
 
 	// TODO delete - used for testing...!!
 	st->state_object_delay_test = 0;
-	st->state_object_load_asset = 0;
+	//st->state_object_load_asset = 0;
 }
 
 void engine_hack_manager_load()
@@ -96,7 +96,7 @@ void engine_hack_manager_invert()
 	st->state_object_delay_test = 0;
 
 	// TODO delete this hard coded
-	st->state_object_load_asset = 0;
+	//st->state_object_load_asset = 0;
 	// TODO delete this hard coded
 
 	// Trees.

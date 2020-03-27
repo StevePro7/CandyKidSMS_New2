@@ -22,7 +22,7 @@ typedef struct tag_struct_state_object
 
 	unsigned char state_object_actor_kill;
 	unsigned char state_object_delay_test;
-	unsigned char state_object_load_asset;
+	//unsigned char state_object_load_asset;
 
 	unsigned char state_object_curr_screen;
 	unsigned char state_object_next_screen;
