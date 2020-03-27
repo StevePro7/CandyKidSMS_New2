@@ -66,14 +66,12 @@ Plus shout out to [eruiz00](http://www.smspower.org/forums/member10267) as I use
 <br />
 Also, I used a lot of programming tricks from [haroldoop](http://www.smspower.org/forums/member601)'s various code samples.
 <br />
-As always, thanks goes to:
-<br />
-Maxim, Martin, Ville Helin, Steve Snake, Bock + Kusfo
+Finally, thanks goes to: Maxim, Martin, Ville Helin, Steve Snake, Bock + Kusfo
 
 ###### INVOLVEMENT
 Currently, there are 100x levels but game has twice capacity - please let me know if you'd like to design some levels :)
 <br />
-Also, feel free to give your input: should Candy Mamas scatter and/or attack for differenct durations, increase/decrease speeds etc.?
+Feel free to give your input: should Candy Mamas scatter and/or attack for different durations, different speeds etc.?
 
 ###### SOCIAL MEDIA
 - Facebook https://www.facebook.com/CandyKidVideoGame
