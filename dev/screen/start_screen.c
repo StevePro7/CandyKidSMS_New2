@@ -26,6 +26,7 @@ static unsigned char cursor;
 void screen_start_screen_init()
 {
 	cursor = 0;
+	cursor = 1;
 }
 
 void screen_start_screen_load()
@@ -47,7 +48,7 @@ void screen_start_screen_load()
 	display_cursor();
 
 	//engine_delay_manager_load( SOUND_SCREEN_DELAY + 10 );
-	engine_delay_manager_load( SOUND_SCREEN_DELAY + 20 );
+	engine_delay_manager_load( SOUND_SCREEN_DELAY );
 	event_stage = event_stage_start;
 
 	st->state_object_next_screen = screen_type_init;
@@ -76,7 +77,6 @@ void screen_start_screen_update( unsigned char *screen_type )
 	// Enable slight pause for movement.
 	if( event_stage_pause == event_stage )
 	{
-		//*screen_type = st->state_object_curr_screen;
 		delay = engine_delay_manager_update();
 		if( delay )
 		{

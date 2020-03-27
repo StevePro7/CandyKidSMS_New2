@@ -79,6 +79,6 @@
 
 #define ENEMY_LOOPS				5
 #define SCORE_VALUES			5
-#define SOUND_SCREEN_DELAY		30
+#define SOUND_SCREEN_DELAY		50
 
 #endif//_GLOBAL_MANAGER_H_
