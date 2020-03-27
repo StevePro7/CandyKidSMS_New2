@@ -5,23 +5,20 @@ Candy Kid game for the SMS Power! 2020 Competition.
 Friday, 27th March 2020
 
 ###### INTRO
-Candy Kid is a simple maze chase game.  Eat all the candy to pass each level.  Eat all bonuses to increase your score!
+Candy Kid is a simple maze chase game.  Eat all the candy to pass each level.  Eat all bonuses to maximize your score!
 <br />
 The 3x Candy "Mama" enemies Pro / Adi / Suz have different pesonalities and alternate between scatter and attack modes.
+<br />
+Blast your way through 100x levels of crazy maze paced action.  Simple. Addictive. Fun.
 
-
-todo
 ###### HISTORY
-Sega Computer September Issue 1984
-Type in listing BASIC for Sega SC-3000
-as a basic maze chase game
-https://www.smspower.org/Scans/SegaComputer-Magazine-Issue02?gallerypage=17
-- Twitter:	[@SteveProXNA](http://twitter.com/SteveProXNA)
-
-Re-written in C#/.NET and XNA for Windows PC and ported to iOS / Android using MonoGame
-Now, finally Candy Kid has been re-written in C/Z80 assembler for the Sega Master System.
-
-
+Candy Kid video game was originally programmed by Grandstand Leisure from New Zealand in September 1984.
+<br />
+The game was written in BASIC on the Sega SC-3000.  Thanks to SMS Power! original source code can be found [here](https://www.smspower.org/Scans/SegaComputer-Magazine-Issue02?gallerypage=17)
+<br />
+Candy Kid was subsequently re-written in C#/.NET and XNA for Windows PC and ported to iOS / Android using MonoGame.
+<br />
+Now, finally, thanks to the awesome community at SMS Power! Candy Kid is available for the Sega Master System.
 
 ###### TOOLS
 - Programming:	devkitSMS
@@ -39,11 +36,20 @@ http://github.com/SteveProXNA/CandyKidSMS
 ###### ROM HACKING
 You can hack this ROM!  
 Download and dump CandyKid.sms into Hex Editor, e.g. HxD, and modify the bytes:
+- 0x004F	Debugger	Used to show debugging info for game.
+- 0x0050	Invincible	Non-zero value enables invincibility.
+- 0x0051	FullBoost	Non-zero value enables maximum boost.
+- 0x0052	Difficulty	Set value to 1=Easy otherwise 2=Hard.
+- 0x0053	Game Speed	Set value to 1=Slow otherwise 2=Fast.
+- 0x0054	World No.	Set start world no currently 1 to 10.
+- 0x0055	Round No.	Set start round no currently 1 to 10.
+- 0x0056	Music Off	Set 0=music to play otherwise volume.
+- 0x0057	Sound Off	Set 0=sound to play otherwise volume.
 
 ###### BONUSES
 There are 4x different bonuses: 100 / 200 / 400 / 800 pts.  Double bonus points after level 70.
 <br />
-Player will receives extra 2000 pts after eating and candy and collecting all bonuses in level.
+Player will receive extra 2000 pts after eating all candy and collecting all bonuses in level.
 
 ###### CHEATS
 Press button 2 five times on Title screen and you'll be invincible each game this is actioned.
@@ -61,21 +67,16 @@ Also, I used a lot of programming tricks from [haroldoop](http://www.smspower.or
 <br />
 As always, thanks goes to:
 <br />
-Maxim, Martin, Ville Helin, Steve Snake, Bock + Calindro
+Maxim, Martin, Ville Helin, Steve Snake, Bock + Kusfo
 
-
-todo
 ###### INVOLVEMENT
-Involvement
-100 levels
-200 levels capacity	help design levels!!
-Tweak data:
-Scatter time duration
-Attack time duration
-Easy	speed for 3x Candy Mamas
-Hard 	speed for 3x Candy Mamas
+Currently, there are 100x levels but the game has capacity for twice that - please let me know if you'd like to design some levels :)
+<br />
+Also, feel free to give your input: should the Candy Mamas scatter and/or attack for differenct durations, increase / decrease speeds etc.?
 
-
+###### SOCIAL MEDIA
+- Facebook https://www.facebook.com/CandyKidVideoGame
+- Blogger  http://steveproxna.blogspot.com/search/label/Candy%20Kid
 
 ###### DOCUMENTATION
 Links to documentation on games written for the Sega Master System using devkitSMS:

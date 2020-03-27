@@ -7,6 +7,7 @@
 #include "..\engine\enemy_manager.h"
 #include "..\engine\font_manager.h"
 #include "..\engine\gamer_manager.h"
+#include "..\engine\hack_manager.h"
 #include "..\engine\input_manager.h"
 #include "..\engine\level_manager.h"
 #include "..\engine\memo_manager.h"
@@ -33,6 +34,7 @@ static unsigned char nextr_direction;
 
 void screen_play_screen_load()
 {
+	struct_hack_object *ho = &global_hack_object;
 	struct_state_object *st = &global_state_object;
 
 	struct_enemy_object *eo;

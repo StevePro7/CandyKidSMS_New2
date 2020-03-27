@@ -1,5 +1,5 @@
 #include "audio_manager.h"
-#include "state_manager.h"
+#include "hack_manager.h"
 #include "..\object\audio_object.h"
 #include "..\devkit\_sms_manager.h"
 #include "..\devkit\_snd_manager.h"
@@ -9,10 +9,10 @@ static unsigned char music_bank;
 // Music.
 void engine_audio_manager_music_play( unsigned char index )
 {
-	struct_state_object *st = &global_state_object;
+	struct_hack_object *ho = &global_hack_object;
 	const unsigned char *music_data;
 
-	if( !st->state_object_music_data )
+	if( !ho->hack_object_music_data )
 	{
 		return;
 	}
@@ -25,11 +25,11 @@ void engine_audio_manager_music_play( unsigned char index )
 }
 void engine_audio_manager_music_play_norepeat( unsigned char index )
 {
-	struct_state_object *st = &global_state_object;
+	struct_hack_object *ho = &global_hack_object;
 	const unsigned char *music;
 	unsigned char bank;
 
-	if( !st->state_object_music_data )
+	if( !ho->hack_object_music_data )
 	{
 		return;
 	}
@@ -53,12 +53,12 @@ void engine_audio_manager_music_stop()
 // Sound.
 void engine_audio_manager_sfx_play( unsigned char index )
 {
-	struct_state_object *st = &global_state_object;
+	struct_hack_object *ho = &global_hack_object;
 	const unsigned char *sfx;
 	unsigned char status;
 
 	// If sound effects are  disabled then return.
-	if( !st->state_object_sound_data )
+	if( !ho->hack_object_sound_data )
 	{
 		return;
 	}
