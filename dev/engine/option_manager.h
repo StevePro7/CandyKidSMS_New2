@@ -2,7 +2,6 @@
 #define _OPTION_MANAGER_H_
 
 void engine_option_manager_init( unsigned char sides );
-//void engine_option_manager_load( unsigned char type );
 void engine_option_manager_update( unsigned char screen );
 
 void engine_option_manager_clear();

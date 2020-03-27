@@ -13,12 +13,14 @@
 //#define OPTION_Y		TEXT1_Y + TEXT1_Y
 #define SWAP_DELAY1		60
 #define SWAP_DELAY2		3 * SWAP_DELAY1 / 2
+#define SWAP_DELAY3		2 * SWAP_DELAY1
 
 static unsigned char value_x[] = { OPTION_X + 0, OPTION_X + 5, OPTION_X + 12, OPTION_X + 17 };
 static unsigned char value_y[] = { OPTION_Y + 0, OPTION_Y + 3, OPTION_Y + 6,  OPTION_Y + 10 };
 
 static unsigned char delay_data1;
 static unsigned char delay_data2;
+static unsigned char delay_data3;
 static unsigned char bonus_tile;
 static unsigned char enemy_type;
 static unsigned char location;
@@ -33,20 +35,18 @@ void engine_option_manager_init( unsigned char sides )
 
 	delay_data1 = 0;
 	delay_data2 = 0;
+	delay_data3 = 0;
 	bonus_tile = tile_type_bonusA;
 	enemy_type = actor_type_pro;
 	location = 29;
 	leftside = value_x[ 1 ];
 }
 
-//void engine_option_manager_load( unsigned char type )
-//{
-//}
-
 void engine_option_manager_update( unsigned char screen )
 {
 	delay_data1++;
 	delay_data2++;
+	delay_data3++;
 	if( delay_data1 >= SWAP_DELAY1 )
 	{
 		engine_enemy_manager_frame( enemy_type );
@@ -61,8 +61,7 @@ void engine_option_manager_update( unsigned char screen )
 
 	if( delay_data2 >= SWAP_DELAY2 )
 	{
-		engine_gamer_manager_frame();
-
+		//engine_gamer_manager_frame();
 		if( screen_type_title == screen || screen_type_start == screen )
 		{
 			bonus_tile++;
@@ -79,6 +78,12 @@ void engine_option_manager_update( unsigned char screen )
 		}
 
 		delay_data2 = 0;
+	}
+
+	if( delay_data3 >= SWAP_DELAY3 )
+	{
+		engine_gamer_manager_frame();
+		delay_data3 = 0;
 	}
 }
 
