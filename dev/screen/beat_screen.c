@@ -8,6 +8,7 @@
 #include "..\engine\input_manager.h"
 #include "..\engine\level_manager.h"
 #include "..\engine\locale_manager.h"
+#include "..\engine\main_manager.h"
 #include "..\engine\memo_manager.h"
 #include "..\engine\state_manager.h"
 #include "..\engine\timer_manager.h"
@@ -71,6 +72,10 @@ void screen_beat_screen_update( unsigned char *screen_type )
 		engine_audio_manager_music_stop();
 		st->state_object_world_data = 0;
 		st->state_object_round_data = 0;
+
+		// Save game state to SRAM when game over.
+		engine_main_manager_save();
+
 		*screen_type = st->state_object_next_screen;
 		return;
 	}
