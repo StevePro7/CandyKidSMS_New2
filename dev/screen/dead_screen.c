@@ -56,7 +56,7 @@ void screen_dead_screen_load()
 	//if( !st->state_object_mydebugger )
 	//{
 		//engine_audio_manager_sfx_play( sfx_type_accept );
-		engine_audio_manager_sfx_play( sfx_type_death01 );
+		engine_audio_manager_sfx_play( sfx_type_death03 );
 	//}
 }
 

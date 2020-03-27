@@ -75,7 +75,7 @@ void engine_hack_manager_invert()
 	st->state_object_localcheat = 0;
 
 	// TODO delete adriana stevepro as this overwrites SRAM and makes look like bug!!
-	st->state_object_difficulty = 0;
+	st->state_object_difficulty = 1;
 	st->state_object_pace_speed = 0;
 	st->state_object_trees_type = 1;
 	//st->state_object_exits_type = 0;
