@@ -76,7 +76,7 @@ void engine_hack_manager_load()
 	ho->hack_object_full_boost = PEEK( HACKER_START + 1 );			// 0x0051		// Non-zero value enables maximum boost.
 
 	ho->hack_object_trees_type = PEEK( HACKER_START + 2 );			// 0x0052		// Set value to 1=Show otherwise 2=Kill.
-																	//ho->hack_object_exits_type = PEEK( HACKER_START + 3 );			// 0x0053		// Set value to 1=Open otherwise 2=Shut.
+	ho->hack_object_exits_type = PEEK( HACKER_START + 3 );			// 0x0053		// Set value to 1=Open otherwise 2=Shut.
 																	//ho->hack_object_difficulty = PEEK( HACKER_START + 4 );			// 0x0054		// Set value to 1=Easy otherwise 2=Hard.
 																	//ho->hack_object_pace_speed = PEEK( HACKER_START + 5 );			// 0x0055		// Set value to 1=Slow otherwise 2=Fast.
 
@@ -104,8 +104,9 @@ void engine_hack_manager_invert()
 	//ho->hack_object_mydebugger = 1;
 	//ho->hack_object_invincibie = 1;
 
-	ho->hack_object_trees_type = 0 + 1;
-	//ho->hack_object_exits_type = 0;
+	// These need offset of one to differentiate from SRAM values.
+	//ho->hack_object_trees_type = 0 + 1;
+	//ho->hack_object_exits_type = 1 + 1;
 	//ho->hack_object_difficulty = 1;
 	//ho->hack_object_pace_speed = 0;
 
@@ -130,7 +131,10 @@ void engine_hack_manager_invert()
 
 
 	// Exits.
-	//st->state_object_exits_type = exit_type_closed == st->state_object_exits_type ? exit_type_closed : exit_type_public;
+	if( ho->hack_object_exits_type )
+	{
+		st->state_object_exits_type = ( exit_type_closed + 1 ) == st->state_object_exits_type ? exit_type_closed : exit_type_public;
+	}
 
 
 	// World.
