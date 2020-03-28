@@ -10,7 +10,7 @@ void engine_state_manager_init()
 
 	st->state_object_availables = 0;
 	st->state_object_localcheat = 0;
-	st->state_object_high_score = 0;
+	st->state_object_high_score = DEF_HI_SCORE;
 
 	st->state_object_trees_type = 0;
 	st->state_object_exits_type = 0;
@@ -19,6 +19,8 @@ void engine_state_manager_init()
 
 	st->state_object_world_data = 0;
 	st->state_object_round_data = 0;
+
+	st->state_object_actor_kill = actor_type_kid;
 
 	st->state_object_curr_screen = screen_type_none;
 	st->state_object_next_screen = screen_type_none;

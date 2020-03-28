@@ -61,7 +61,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 	unsigned char delay;
 
 	engine_option_manager_draw_actor( distance );
-	if( !st->state_object_delay_test )
+	if( !ho->hack_object_delay_test )
 	{
 		engine_option_manager_update( st->state_object_curr_screen );
 	}
@@ -69,7 +69,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 	delay = engine_delay_manager_update();
 	if( delay )
 	{
-		if( !st->state_object_delay_test )
+		if( !ho->hack_object_delay_test )
 		{
 			flash_count = 1 - flash_count;
 		}

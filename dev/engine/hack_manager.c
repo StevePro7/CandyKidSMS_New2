@@ -23,6 +23,7 @@ void engine_hack_manager_init()
 	struct_state_object *st = &global_state_object;
 	struct_hack_object *ho = &global_hack_object;
 
+	ho->hack_object_delay_test = 0;
 	ho->hack_object_mydebugger = 0;
 	ho->hack_object_invincibie = 0;
 	ho->hack_object_full_boost = 0;
@@ -36,12 +37,18 @@ void engine_hack_manager_init()
 	ho->hack_object_round_data = 0;
 	ho->hack_object_music_data = 0;
 	ho->hack_object_sound_data = 0;
+
+	// Zero means enable enemy.
+	ho->hack_object_enemy_move[ actor_type_pro ] = 0;
+	ho->hack_object_enemy_move[ actor_type_adi ] = 0;
+	ho->hack_object_enemy_move[ actor_type_suz ] = 0;
 }
 
 void engine_hack_manager_load()
 {
 	struct_hack_object *ho = &global_hack_object;
 
+	ho->hack_object_delay_test = PEEK( HACKER_START - 2 );			// 0x004E		// Used to speed through any game delay.
 	ho->hack_object_mydebugger = PEEK( HACKER_START - 1 );			// 0x004F		// Used to show debugging info for game.
 	ho->hack_object_invincibie = PEEK( HACKER_START + 0 );			// 0x0050		// Non-zero value enables invincibility.
 	ho->hack_object_full_boost = PEEK( HACKER_START + 1 );			// 0x0051		// Non-zero value enables maximum boost.
@@ -103,9 +110,6 @@ void engine_hack_manager_invert()
 	//st->state_object_full_boost = 0;
 	//st->state_object_delay_test = 0;
 
-	// TODO delete this hard coded
-	//st->state_object_load_asset = 0;
-	// TODO delete this hard coded
 
 	// Trees.
 	//st->state_object_trees_type = tree_type_death == st->state_object_trees_type ? tree_type_death : tree_type_avoid;
