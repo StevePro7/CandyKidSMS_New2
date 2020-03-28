@@ -24,77 +24,53 @@ void engine_hack_manager_init()
 	struct_hack_object *ho = &global_hack_object;
 
 	ho->hack_object_mydebugger = 0;
-	ho->hack_object_full_boost = 0;
 	ho->hack_object_invincibie = 0;
-	//ho->hack_object_localcheat = 0;
+	ho->hack_object_full_boost = 0;
 
-	ho->hack_object_difficulty = 0;
-	ho->hack_object_pace_speed = 0;
 	ho->hack_object_trees_type = 0;
 	ho->hack_object_exits_type = 0;
+	ho->hack_object_difficulty = 0;
+	ho->hack_object_pace_speed = 0;
 
 	ho->hack_object_world_data = 0;
 	ho->hack_object_round_data = 0;
 	ho->hack_object_music_data = 0;
 	ho->hack_object_sound_data = 0;
-
-	ho->hack_object_sound_data = 0;
-
-
-	
-	st->state_object_mydebugger = 0;
-	st->state_object_full_boost = 0;
-	st->state_object_invincibie = 0;
-	st->state_object_localcheat = 0;
-
-	st->state_object_difficulty = 0;
-	st->state_object_pace_speed = 0;
-	st->state_object_trees_type = 0;
-	st->state_object_exits_type = 0;
-
-	st->state_object_world_data = 0;
-	st->state_object_round_data = 0;
-
-	// TODO delete - used for testing...!!
-	st->state_object_delay_test = 0;
-	//st->state_object_load_asset = 0;
 }
 
 void engine_hack_manager_load()
 {
 	struct_hack_object *ho = &global_hack_object;
-	struct_state_object *st = &global_state_object;
 
-	/*ho->hack_object_music_data = 0;
-	ho->hack_object_music_data = PEEK( HACKER_START + 6 );
-	ho->hack_object_invincibie = PEEK( HACKER_START - 1 );*/
+	//ho->hack_object_mydebugger = PEEK( HACKER_START - 1 );			// 0x004F		// Used to show debugging info for game.
+	//ho->hack_object_invincibie = PEEK( HACKER_START + 0 );			// 0x0050		// Non-zero value enables invincibility.
+	//ho->hack_object_full_boost = PEEK( HACKER_START + 1 );			// 0x0051		// Non-zero value enables maximum boost.
+
+	//ho->hack_object_trees_type = PEEK( HACKER_START + 2 );			// 0x0052		// Set value to 1=Show otherwise 2=Kill.
+	//ho->hack_object_exits_type = PEEK( HACKER_START + 3 );			// 0x0053		// Set value to 1=Open otherwise 2=Shut.
+	//ho->hack_object_difficulty = PEEK( HACKER_START + 4 );			// 0x0054		// Set value to 1=Easy otherwise 2=Hard.
+	//ho->hack_object_pace_speed = PEEK( HACKER_START + 5 );			// 0x0055		// Set value to 1=Slow otherwise 2=Fast.
+
+	//ho->hack_object_world_data = PEEK( HACKER_START + 6 );			// 0x0056		// Set start World no currently 1 to 10.
+	//ho->hack_object_round_data = PEEK( HACKER_START + 7 );			// 0x0057		// Set start Round no currently 1 to 10.
+	ho->hack_object_music_data = PEEK( HACKER_START + 8 );			// 0x0058		// Set 0=Music to play otherwise silent.
+	ho->hack_object_sound_data = PEEK( HACKER_START + 9 );			// 0x0059		// Set 0=Sound to play otherwise silent.
 
 #ifndef _CONSOLE
 
-	ho->hack_object_music_data = PEEK( HACKER_START + 0 );
+	//ho->hack_object_mydebugger = PEEK( HACKER_START - 1 );			// 0x004F		// Used to show debugging info for game.
+	//ho->hack_object_invincibie = PEEK( HACKER_START + 0 );			// 0x0050		// Non-zero value enables invincibility.
+	//ho->hack_object_full_boost = PEEK( HACKER_START + 1 );			// 0x0051		// Non-zero value enables maximum boost.
 
-	ho->hack_object_music_data = PEEK( HACKER_START + 6 );
-	ho->hack_object_invincibie = PEEK( HACKER_START - 1 );
+	//ho->hack_object_trees_type = PEEK( HACKER_START + 2 );			// 0x0052		// Set value to 1=Show otherwise 2=Kill.
+	//ho->hack_object_exits_type = PEEK( HACKER_START + 3 );			// 0x0053		// Set value to 1=Open otherwise 2=Shut.
+	//ho->hack_object_difficulty = PEEK( HACKER_START + 4 );			// 0x0054		// Set value to 1=Easy otherwise 2=Hard.
+	//ho->hack_object_pace_speed = PEEK( HACKER_START + 5 );			// 0x0055		// Set value to 1=Slow otherwise 2=Fast.
 
-	//ho->hack_object_music_data = PEEK( HACKER_START + 6 );			// 0x0056		 Set 0 = music to play otherwise disabled.
-	//ho->hack_object_sound_data = PEEK( HACKER_START + 7 );			// 0x0057		 Set 0 = sound to play otherwise disabled.
-
-	//st->state_object_mydebugger = PEEK( HACKER_START - 3 );			// 0x004D		// Set my debugging from zero-based value.
-	//st->state_object_full_boost = PEEK( HACKER_START - 2 );			// 0x004E		// Set maximum boost for zero-based value.
-	st->state_object_invincibie = PEEK( HACKER_START - 1 );			// 0x004F		// Set invincibility for zero-based value.
-
-	//st->state_object_difficulty = PEEK( HACKER_START + 0 );			// 0x0050		// Set the difficulty to zero-based value.
-	//st->state_object_pace_speed = PEEK( HACKER_START + 1 );			// 0x0051		// Set the game speed to zero-based value.
-	////st->state_object_trees_type = PEEK( HACKER_START + 2 );			// 0x0052		// Set start treeType to zero-based value.
-	////st->state_object_exits_type = PEEK( HACKER_START + 3 );			// 0x0053		// Set start exitType to zero-based value.
-
-	////st->state_object_world_data = PEEK( HACKER_START + 4 );			// 0x0054		// Set start world no to zero-based value.
-	////st->state_object_round_data = PEEK( HACKER_START + 5 );			// 0x0055		// Set start round no to zero-based value.
-	//st->state_object_music_data = PEEK( HACKER_START + 6 );			// 0x0056		// Set 0=music to play otherwise disabled.
-	//st->state_object_sound_data = PEEK( HACKER_START + 7 );			// 0x0057		// Set 0=sound to play otherwise disabled.
-
-	//// TODO delete - used for testing...!!
-	//st->state_object_delay_test = PEEK( HACKER_START + 8 );			// 0x0058		// Set 0 enables all delays otherwise off.
+	//ho->hack_object_world_data = PEEK( HACKER_START + 6 );			// 0x0056		// Set start World no currently 1 to 10.
+	//ho->hack_object_round_data = PEEK( HACKER_START + 7 );			// 0x0057		// Set start Round no currently 1 to 10.
+	//ho->hack_object_music_data = PEEK( HACKER_START + 8 );			// 0x0058		// Set 0=Music to play otherwise silent.
+	//ho->hack_object_sound_data = PEEK( HACKER_START + 9 );			// 0x0059		// Set 0=Sound to play otherwise silent.
 
 #endif
 }
@@ -105,23 +81,23 @@ void engine_hack_manager_invert()
 	struct_hack_object *ho = &global_hack_object;
 	struct_state_object *st = &global_state_object;
 
-	//st->state_object_invincibie = 1;
-	//st->state_object_localcheat = 1;
+	st->state_object_invincibie = 0;
+	st->state_object_localcheat = 0;
 
 	// TODO delete Adriana stevepro as this overwrites SRAM and makes look like bug!!
-	st->state_object_difficulty = 1;
-	st->state_object_pace_speed = 0;
-	st->state_object_trees_type = 1;
-	st->state_object_exits_type = 0;
+	//st->state_object_trees_type = 1;
+	//st->state_object_exits_type = 0;
+	//st->state_object_difficulty = 1;
+	//st->state_object_pace_speed = 0;
 
 
 	st->state_object_enemy_move[ actor_type_pro ] = 1;
 	st->state_object_enemy_move[ actor_type_adi ] = 1;
 	st->state_object_enemy_move[ actor_type_suz ] = 1;
 
-	st->state_object_enemy_move[ actor_type_pro ] = 0;
+	//st->state_object_enemy_move[ actor_type_pro ] = 0;
 	//st->state_object_enemy_move[ actor_type_adi ] = 0;
-	st->state_object_enemy_move[ actor_type_suz ] = 0;
+	//st->state_object_enemy_move[ actor_type_suz ] = 0;
 
 
 	// TODO don't forget to remove this!!		MUST be zero for final build as pass music will NOT play!!
@@ -179,7 +155,7 @@ void engine_hack_manager_invert()
 	//st->state_object_world_data = 1 - 1;
 	//st->state_object_round_data = 1 - 1;
 
-	st->state_object_world_data = 1 - 1;
-	st->state_object_round_data = 1 - 1;
+	//st->state_object_world_data = 1 - 1;
+	//st->state_object_round_data = 1 - 1;
 	// TODO delete this hard coded
 }

@@ -4,8 +4,9 @@
 typedef struct tag_struct_hack_object
 {
 	unsigned char hack_object_mydebugger;
-	unsigned char hack_object_full_boost;
 	unsigned char hack_object_invincibie;
+	unsigned char hack_object_full_boost;
+	
 	//unsigned char hack_object_localcheat;
 	//unsigned int  hack_object_high_score;
 

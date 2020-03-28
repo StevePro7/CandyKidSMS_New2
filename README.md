@@ -40,12 +40,14 @@ Download and dump CandyKid.sms into Hex Editor, e.g. HxD, and modify the bytes:
 - 0x004F	Debugger	Used to show debugging info for game.
 - 0x0050	Invincible	Non-zero value enables invincibility.
 - 0x0051	FullBoost	Non-zero value enables maximum boost.
-- 0x0052	Difficulty	Set value to 1=Easy otherwise 2=Hard.
-- 0x0053	Game Speed	Set value to 1=Slow otherwise 2=Fast.
-- 0x0054	World No.	Set start world no currently 1 to 10.
-- 0x0055	Round No.	Set start round no currently 1 to 10.
-- 0x0056	Music Off	Set 0=music to play otherwise volume.
-- 0x0057	Sound Off	Set 0=sound to play otherwise volume.
+- 0x0052	Trees Type	Set value to 1=Show otherwise 2=Kill.
+- 0x0053	Exits Type	Set value to 1=Open otherwise 2=Shut.
+- 0x0054	Difficulty	Set value to 1=Easy otherwise 2=Hard.
+- 0x0055	Game Speed	Set value to 1=Slow otherwise 2=Fast.
+- 0x0056	World No.	Set start World no currently 1 to 10.
+- 0x0057	Round No.	Set start Round no currently 1 to 10.
+- 0x0058	Music Off	Set 0=Music to play otherwise silent.
+- 0x0059	Sound Off	Set 0=Sound to play otherwise silent.
 
 ###### BONUSES
 There are 4x different bonuses: 100 / 200 / 400 / 800 pts.  Double bonus points after level 70.

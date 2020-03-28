@@ -1,6 +1,11 @@
 # CandyKidSMS_New2
 
 
+28/03/2020
+Kid dies by Trees death + recalc directions on death tile
+Revert code in dead + cont screen and just calc for  tile
+Refactor code in level Mgr to bulk calc directions and call refactored method per tile
+
 27/03/2020
 Levels esp. that may need tweaking
 03	02
