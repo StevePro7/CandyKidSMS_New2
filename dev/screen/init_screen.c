@@ -11,7 +11,7 @@
 
 void screen_init_screen_load()
 {
-	// Load from SRAM first.
+	// TODO delete used for debugging!!
 	//engine_main_manager_load();
 
 
