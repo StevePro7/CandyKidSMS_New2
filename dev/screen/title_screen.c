@@ -3,6 +3,7 @@
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
 #include "..\engine\global_manager.h"
+#include "..\engine\hack_manager.h"
 #include "..\engine\input_manager.h"
 #include "..\engine\locale_manager.h"
 #include "..\engine\option_manager.h"
@@ -23,6 +24,7 @@ static unsigned char distance;
 void screen_title_screen_load()
 {
 	struct_state_object *st = &global_state_object;
+	struct_hack_object *ho = &global_hack_object;
 	distance = menu_type_double;
 
 	// Clear menu area first.
@@ -32,7 +34,7 @@ void screen_title_screen_load()
 	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + 2, BOTT_TEXT_Y );
 
 	st->state_object_localcheat = 0;
-	if( st->state_object_invincibie )
+	if( ho->hack_object_invincibie )
 	{
 		engine_locale_manager_draw_text( 2, SCREEN_TILE_LEFT + 2, BOTT_TEXT_Y );
 		st->state_object_localcheat = 1;
@@ -54,6 +56,7 @@ void screen_title_screen_load()
 void screen_title_screen_update( unsigned char *screen_type )
 {
 	struct_state_object *st = &global_state_object;
+	struct_hack_object *ho = &global_hack_object;
 	unsigned char input;
 	unsigned char delay;
 
@@ -91,7 +94,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 		return;
 	}
 
-	if( !st->state_object_invincibie )
+	if( !ho->hack_object_invincibie )
 	{
 		input = engine_input_manager_hold( input_type_fire2 );
 		if( input )

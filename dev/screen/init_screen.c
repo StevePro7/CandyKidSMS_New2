@@ -12,7 +12,7 @@
 void screen_init_screen_load()
 {
 	// Load from SRAM first.
-	engine_main_manager_load();
+	//engine_main_manager_load();
 
 
 	devkit_SMS_displayOff();

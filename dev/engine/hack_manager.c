@@ -43,7 +43,7 @@ void engine_hack_manager_load()
 	struct_hack_object *ho = &global_hack_object;
 
 	ho->hack_object_mydebugger = PEEK( HACKER_START - 1 );			// 0x004F		// Used to show debugging info for game.
-	//ho->hack_object_invincibie = PEEK( HACKER_START + 0 );			// 0x0050		// Non-zero value enables invincibility.
+	ho->hack_object_invincibie = PEEK( HACKER_START + 0 );			// 0x0050		// Non-zero value enables invincibility.
 	ho->hack_object_full_boost = PEEK( HACKER_START + 1 );			// 0x0051		// Non-zero value enables maximum boost.
 
 	//ho->hack_object_trees_type = PEEK( HACKER_START + 2 );			// 0x0052		// Set value to 1=Show otherwise 2=Kill.
@@ -81,8 +81,6 @@ void engine_hack_manager_invert()
 	struct_hack_object *ho = &global_hack_object;
 	struct_state_object *st = &global_state_object;
 
-	st->state_object_invincibie = 0;
-	st->state_object_localcheat = 0;
 
 	// TODO delete Adriana stevepro as this overwrites SRAM and makes look like bug!!
 	//st->state_object_trees_type = 1;
