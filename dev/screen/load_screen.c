@@ -51,6 +51,7 @@ void screen_load_screen_load()
 	//engine_actor_manager_get_data( actor_mover, actor_tileZ );		// TODO delete
 
 	engine_level_manager_load_level( st->state_object_world_data, st->state_object_round_data );
+	engine_level_manager_directions();
 	//engine_level_manager_update_level( st->state_object_round_data, actor_mover, actor_tileZ );		// TODO delete
 	engine_level_manager_draw_level();
 

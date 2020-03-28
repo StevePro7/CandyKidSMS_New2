@@ -59,6 +59,33 @@ void engine_level_manager_load_level( const unsigned char world, const unsigned 
 	}
 }
 
+void engine_level_manager_directions()
+{
+	unsigned char row, col;
+	unsigned int index;
+	unsigned char test_type;
+	unsigned char direction;
+
+	// Set each tile directions available.
+	for( row = 0; row < MAX_ROWS; row++ )
+	{
+		for( col = 0; col < MAX_COLS; col++ )
+		{
+			//if( 3 == row && 1 == col )
+			//{
+			//	index = 0;
+			//}
+			direction = engine_level_manager_test_direction( ( row + 2 ), ( col + 2 ) );
+
+			index = ( row + 2 ) * MAZE_COLS + ( col + 2 );
+			test_type = level_object_tiles_array[ index ];
+
+			engine_function_manager_convertNibblesToByte( direction, test_type, &test_type );
+			level_object_tiles_array[ index ] = test_type;
+		}
+	}
+}
+
 // TODO delete
 //void engine_level_manager_update_level( const unsigned char round, unsigned char *actor_mover, unsigned char *actor_tileZ )
 //{
@@ -330,7 +357,7 @@ static void load_level( const unsigned char *data, const unsigned char size, con
 	unsigned char row, col;
 	unsigned char tile_data;
 
-	unsigned int index;
+	unsigned char index;
 	unsigned char tile_type;
 	unsigned char coll_type;
 	unsigned char test_type;
@@ -384,6 +411,10 @@ static void load_level( const unsigned char *data, const unsigned char size, con
 	{
 		for( col = 0; col < MAX_COLS; col++ )
 		{
+		//	if( 3 == row && 1 == col )
+		//	{
+		//		index = 0;
+		//	}
 			direction = engine_level_manager_test_direction( ( row + 2 ), ( col + 2 ) );
 
 			index = ( row + 2 ) * MAZE_COLS + ( col + 2 );

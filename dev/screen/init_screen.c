@@ -4,12 +4,17 @@
 #include "..\engine\content_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
+#include "..\engine\main_manager.h"
 #include "..\engine\memo_manager.h"
 #include "..\engine\score_manager.h"
 #include "..\devkit\_sms_manager.h"
 
 void screen_init_screen_load()
 {
+	// TODO delete - used for debugging
+	engine_main_manager_load();
+	// TODO delete - used for debugging
+
 	devkit_SMS_displayOff();
 
 	engine_asm_manager_clear_VRAM();
