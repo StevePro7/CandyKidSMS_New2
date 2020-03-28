@@ -111,7 +111,12 @@ void screen_title_screen_update( unsigned char *screen_type )
 	{
 		event_stage = event_stage_pause;
 		engine_delay_manager_load( SOUND_SCREEN_DELAY );
-		engine_audio_manager_sfx_play( sfx_type_accept );
+
+		if( !ho->hack_object_delay_test )
+		{
+			engine_audio_manager_sfx_play( sfx_type_accept );
+		}
+
 		return;
 	}
 

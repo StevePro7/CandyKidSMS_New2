@@ -78,10 +78,10 @@ void engine_hack_manager_invert()
 	struct_state_object *st = &global_state_object;
 
 	// Ensure all commented out : used for testing!
-	//ho->hack_object_full_boost = 1;
 	//ho->hack_object_delay_test = 1;
 	//ho->hack_object_mydebugger = 1;
 	//ho->hack_object_invincibie = 1;
+	//ho->hack_object_full_boost = 1;
 
 	// These need offset of one to differentiate from SRAM values.
 	//ho->hack_object_trees_type = 0 + 1;
