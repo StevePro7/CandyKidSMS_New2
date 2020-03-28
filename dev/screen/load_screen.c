@@ -41,9 +41,8 @@ void screen_load_screen_load()
 	engine_enemy_manager_reset_home();
 	engine_gamer_manager_reset();
 
-	// TODO delete - used during debugging.
+	// Force override enemy move!
 	engine_enemy_manager_debug();
-	// TODO delete - used during debugging.
 
 	// TODO do I want to put this after after level draw?
 	engine_gamer_manager_load();

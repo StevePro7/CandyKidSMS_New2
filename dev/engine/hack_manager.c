@@ -20,7 +20,6 @@ struct_hack_object global_hack_object;
 
 void engine_hack_manager_init()
 {
-	struct_state_object *st = &global_state_object;
 	struct_hack_object *ho = &global_hack_object;
 
 	ho->hack_object_delay_test = 0;
@@ -63,6 +62,10 @@ void engine_hack_manager_load()
 	ho->hack_object_music_data = PEEK( HACKER_START + 8 );			// 0x0058		// Set 0=Music to play otherwise silent.
 	ho->hack_object_sound_data = PEEK( HACKER_START + 9 );			// 0x0059		// Set 0=Sound to play otherwise silent.
 
+	ho->hack_object_enemy_move[ actor_type_pro ] = PEEK( HACKER_START + 16 );
+	ho->hack_object_enemy_move[ actor_type_adi ] = PEEK( HACKER_START + 17 );
+	ho->hack_object_enemy_move[ actor_type_suz ] = PEEK( HACKER_START + 18 );
+
 #ifndef _CONSOLE
 
 	//ho->hack_object_mydebugger = PEEK( HACKER_START - 1 );			// 0x004F		// Used to show debugging info for game.
@@ -86,29 +89,29 @@ void engine_hack_manager_invert()
 {
 	// TODO delete this hard coded
 	struct_hack_object *ho = &global_hack_object;
-	struct_state_object *st = &global_state_object;
+
+	// Ensure all commented out : used for testing!
+	//ho->hack_object_full_boost = 1;
+	//ho->hack_object_delay_test = 1;
+	//ho->hack_object_mydebugger = 1;
+	//ho->hack_object_invincibie = 1;
+
+	//ho->hack_object_trees_type = 1;
+	//ho->hack_object_exits_type = 0;
+	//ho->hack_object_difficulty = 1;
+	//ho->hack_object_pace_speed = 0;
 
 
-	// TODO delete Adriana stevepro as this overwrites SRAM and makes look like bug!!
-	//st->state_object_trees_type = 1;
-	//st->state_object_exits_type = 0;
-	//st->state_object_difficulty = 1;
-	//st->state_object_pace_speed = 0;
+	// Enable enemy movement via ROM hack = 0.
+	//ho->hack_object_enemy_move[ actor_type_pro ] = 0;
+	//ho->hack_object_enemy_move[ actor_type_adi ] = 0;
+	//ho->hack_object_enemy_move[ actor_type_suz ] = 0;
 
+	// Disable  enemy movement via ROM hack = 1.
+	//ho->hack_object_enemy_move[ actor_type_pro ] = 1;
+	//ho->hack_object_enemy_move[ actor_type_adi ] = 1;
+	//ho->hack_object_enemy_move[ actor_type_suz ] = 1;
 
-	st->state_object_enemy_move[ actor_type_pro ] = 1;
-	st->state_object_enemy_move[ actor_type_adi ] = 1;
-	st->state_object_enemy_move[ actor_type_suz ] = 1;
-
-	//st->state_object_enemy_move[ actor_type_pro ] = 0;
-	//st->state_object_enemy_move[ actor_type_adi ] = 0;
-	//st->state_object_enemy_move[ actor_type_suz ] = 0;
-
-
-	// TODO don't forget to remove this!!		MUST be zero for final build as pass music will NOT play!!
-	//st->state_object_mydebugger = 0;
-	//st->state_object_full_boost = 0;
-	//st->state_object_delay_test = 0;
 
 
 	// Trees.

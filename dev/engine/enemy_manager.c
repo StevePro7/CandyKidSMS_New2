@@ -436,17 +436,14 @@ void engine_enemy_manager_images( unsigned char image_pro, unsigned char image_a
 // TODO delete!!
 void engine_enemy_manager_debug()
 {
-	struct_state_object *st = &global_state_object;
+	struct_hack_object *ho = &global_hack_object;
 	struct_enemy_object *eo;
 	unsigned char enemy;
 
 	for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
 	{
 		eo = &global_enemy_objects[ enemy ];
-
-		// TODO delete as this will be replaced by menu selection.
-		eo->mover = st->state_object_enemy_move[ enemy ];
-		// TODO delete as this will be replaced by menu selection.
+		eo->mover = !ho->hack_object_enemy_move[ enemy ];
 	}
 }
 
