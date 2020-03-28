@@ -80,8 +80,8 @@ void engine_hack_manager_load()
 	ho->hack_object_difficulty = PEEK( HACKER_START + 4 );			// 0x0054		// Set value to 1=Easy otherwise 2=Hard.
 	ho->hack_object_pace_speed = PEEK( HACKER_START + 5 );			// 0x0055		// Set value to 1=Slow otherwise 2=Fast.
 
-																	//ho->hack_object_world_data = PEEK( HACKER_START + 6 );			// 0x0056		// Set start World no currently 1 to 10.
-																	//ho->hack_object_round_data = PEEK( HACKER_START + 7 );			// 0x0057		// Set start Round no currently 1 to 10.
+	ho->hack_object_world_data = PEEK( HACKER_START + 6 );			// 0x0056		// Set start World no currently 1 to 10.
+	ho->hack_object_round_data = PEEK( HACKER_START + 7 );			// 0x0057		// Set start Round no currently 1 to 10.
 	ho->hack_object_music_data = PEEK( HACKER_START + 8 );			// 0x0058		// Set 0=Music to play otherwise silent.
 	ho->hack_object_sound_data = PEEK( HACKER_START + 9 );			// 0x0059		// Set 0=Sound to play otherwise silent.
 
@@ -149,28 +149,29 @@ void engine_hack_manager_invert()
 
 
 	// World.
-	//if( 0 != st->state_object_world_data )
-	//{
-	//	if( st->state_object_world_data > MAX_WORLDS )
-	//	{
-	//		st->state_object_world_data = MAX_WORLDS;
-	//	}
+	if( ho->hack_object_world_data )
+	{
+		if( ho->hack_object_world_data > MAX_WORLDS )
+		{
+			ho->hack_object_world_data = MAX_WORLDS;
+		}
 
-	//	// Zero-based index.
-	//	st->state_object_world_data -= 1;
-	//}
+		// Zero-based index.
+		st->state_object_world_data = ho->hack_object_world_data - 1;
+	}
 
 	// Round.
-	//if( 0 != st->state_object_round_data )
-	//{
-	//	if( st->state_object_round_data > MAX_ROUNDS )
-	//	{
-	//		st->state_object_round_data = MAX_ROUNDS;
-	//	}
+	if( ho->hack_object_round_data )
+	{
+		if( ho->hack_object_round_data > MAX_ROUNDS )
+		{
+			ho->hack_object_round_data = MAX_ROUNDS;
+		}
 
-	//	// Zero-based index.
-	//	st->state_object_round_data -= 1;
-	//}
+		// Zero-based index.
+		st->state_object_round_data = ho->hack_object_round_data - 1;
+	}
+
 
 	// Invert default values.
 	ho->hack_object_music_data = !ho->hack_object_music_data;
@@ -180,9 +181,6 @@ void engine_hack_manager_invert()
 
 
 	// TODO delete this hard coded
-	//st->state_object_world_data = 1 - 1;
-	//st->state_object_round_data = 1 - 1;
-
 	//st->state_object_world_data = 1 - 1;
 	//st->state_object_round_data = 1 - 1;
 	// TODO delete this hard coded
