@@ -16,6 +16,7 @@
 #include "..\engine\sprite_manager.h"
 #include "..\engine\tile_manager.h"
 #include "..\devkit\_sms_manager.h"
+#include "..\object\level_object.h"
 #include "..\banks\bank3.h"
 
 static void load_boss32();
@@ -65,15 +66,16 @@ void screen_test_screen_load()
 	//draw_oneup( 7, 3 );
 
 	engine_level_manager_clear();
-	engine_level_manager_load_oneup( 1 );
+	engine_level_manager_load_oneup( 25 );
 
 	engine_level_manager_draw_level();
 	engine_level_manager_draw_middle();
+
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
 {
-	//engine_gamer_manager_draw();
+	engine_gamer_manager_draw();
 	//engine_enemy_manager_draw();
 
 	// top left		3, 3
@@ -89,7 +91,8 @@ void screen_test_screen_update( unsigned char *screen_type )
 	// bot right	10, 9
 	//draw_boss64( 160 - 16, 32 - 16 );
 
-	//draw_boss32( 2, 160 - 16, 32 - 16 );
+	draw_boss32( 1, 48 - 16, 144 - 16 );
+	draw_boss32( 2, 160 - 16, 32 - 16 );
 	*screen_type = screen_type_test;
 }
 

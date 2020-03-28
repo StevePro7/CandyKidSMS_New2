@@ -88,8 +88,8 @@ void engine_level_manager_load_oneup( unsigned char quantity )
 			row = rand() % MAX_ROWS;
 			col = rand() % MAX_COLS;
 
-			row = 0;
-			col = 0;
+			//row = 9;
+			//col = 9;
 
 			// TODO calculate rectangle around boss home so no candy drawn there!
 		//	//// Ensure no 
