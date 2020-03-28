@@ -8,6 +8,7 @@
 #include "..\engine\font_manager.h"
 #include "..\engine\gamer_manager.h"
 #include "..\engine\input_manager.h"
+#include "..\engine\level_manager.h"
 #include "..\engine\score_manager.h"
 #include "..\engine\state_manager.h"
 #include "..\engine\tile_manager.h"
@@ -196,6 +197,13 @@ static void reset_death()
 	if( actor_type_pro == st->state_object_actor_kill || actor_type_adi == st->state_object_actor_kill || actor_type_suz == st->state_object_actor_kill )
 	{
 		engine_enemy_manager_reset_mode( st->state_object_actor_kill, enemymove_type_tour );
+	}
+
+	// If Kid dies from death tree then update directions
+	// because Mamas can now move through this empty tile.
+	if( actor_type_tree == st->state_object_actor_kill )
+	{
+		engine_level_manager_directions();
 	}
 
 	// IMPORTANT I've decided NOT to reset boost on loss of life.

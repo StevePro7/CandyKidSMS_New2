@@ -360,8 +360,8 @@ static void load_level( const unsigned char *data, const unsigned char size, con
 	unsigned char index;
 	unsigned char tile_type;
 	unsigned char coll_type;
-	unsigned char test_type;
-	unsigned char direction;
+	//unsigned char test_type;
+	//unsigned char direction;
 
 	unsigned char load_cols;
 	unsigned char draw_cols;
@@ -407,23 +407,23 @@ static void load_level( const unsigned char *data, const unsigned char size, con
 	}
 
 	// Set each tile directions available.
-	for( row = 0; row < MAX_ROWS; row++ )
-	{
-		for( col = 0; col < MAX_COLS; col++ )
-		{
-		//	if( 3 == row && 1 == col )
-		//	{
-		//		index = 0;
-		//	}
-			direction = engine_level_manager_test_direction( ( row + 2 ), ( col + 2 ) );
+	//for( row = 0; row < MAX_ROWS; row++ )
+	//{
+	//	for( col = 0; col < MAX_COLS; col++ )
+	//	{
+	//	//	if( 3 == row && 1 == col )
+	//	//	{
+	//	//		index = 0;
+	//	//	}
+	//		direction = engine_level_manager_test_direction( ( row + 2 ), ( col + 2 ) );
 
-			index = ( row + 2 ) * MAZE_COLS + ( col + 2 );
-			test_type = level_object_tiles_array[ index ];
+	//		index = ( row + 2 ) * MAZE_COLS + ( col + 2 );
+	//		test_type = level_object_tiles_array[ index ];
 
-			engine_function_manager_convertNibblesToByte( direction, test_type, &test_type );
-			level_object_tiles_array[ index ] = test_type;
-		}
-	}
+	//		engine_function_manager_convertNibblesToByte( direction, test_type, &test_type );
+	//		level_object_tiles_array[ index ] = test_type;
+	//	}
+	//}
 }
 
 static void draw_tiles( unsigned char x, unsigned char y )
