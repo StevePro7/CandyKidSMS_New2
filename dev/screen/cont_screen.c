@@ -63,12 +63,12 @@ void screen_cont_screen_update( unsigned char *screen_type )
 					engine_enemy_manager_reset_mode( st->state_object_actor_kill, enemymove_type_tour );
 				}
 
-				//// If Kid dies from death tree then update directions
-				//// because Mamas can now move through this empty tile.
-				//if( actor_type_tree == st->state_object_actor_kill && tree_type_death == st->state_object_trees_type )
-				//{
-				//	engine_level_manager_directions();
-				//}
+				// If Kid dies from death tree then update directions
+				// because Mamas can now move through this empty tile.
+				if( actor_type_tree == st->state_object_actor_kill && tree_type_death == st->state_object_trees_type )
+				{
+					engine_level_manager_directions();
+				}
 
 				engine_score_manager_reset_boost();
 				engine_score_manager_reset_lives();

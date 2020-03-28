@@ -57,12 +57,13 @@ void screen_dead_screen_load()
 	//screen = screen_type_ready;
 
 
+	// TODO if do here then only re-calc death tile rather than the entire maze!!
 	// If Kid dies from death tree then update directions
 	// because Mamas can now move through this empty tile.
-	if( actor_type_tree == st->state_object_actor_kill && tree_type_death == st->state_object_trees_type )
-	{
-		engine_level_manager_directions();
-	}
+	//if( actor_type_tree == st->state_object_actor_kill && tree_type_death == st->state_object_trees_type )
+	//{
+		//engine_level_manager_directions();
+	//}
 
 	//if( !st->state_object_mydebugger )
 	//{
@@ -207,12 +208,12 @@ static void reset_death()
 		engine_enemy_manager_reset_mode( st->state_object_actor_kill, enemymove_type_tour );
 	}
 
-	//// If Kid dies from death tree then update directions
-	//// because Mamas can now move through this empty tile.
-	//if( actor_type_tree == st->state_object_actor_kill && tree_type_death == st->state_object_trees_type )
-	//{
-	//	engine_level_manager_directions();
-	//}
+	// If Kid dies from death tree then update directions
+	// because Mamas can now move through this empty tile.
+	if( actor_type_tree == st->state_object_actor_kill && tree_type_death == st->state_object_trees_type )
+	{
+		engine_level_manager_directions();
+	}
 
 	// IMPORTANT I've decided NOT to reset boost on loss of life.
 	// only reset boost if zero or pass level or continue game.
