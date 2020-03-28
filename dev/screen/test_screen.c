@@ -9,6 +9,7 @@
 #include "..\engine\gamer_manager.h"
 #include "..\engine\global_manager.h"
 #include "..\engine\input_manager.h"
+#include "..\engine\level_manager.h"
 #include "..\engine\locale_manager.h"
 #include "..\engine\main_manager.h"
 #include "..\engine\option_manager.h"
@@ -22,12 +23,14 @@ static void load_boss32();
 
 static void draw_boss32( unsigned char index, unsigned char x, unsigned char y );
 static void draw_boss64( unsigned char x, unsigned char y );
+static void draw_oneup( unsigned char col, unsigned char row );
 
 void screen_test_screen_load()
 {
 	//unsigned char option;
 	//unsigned char actor;
 	unsigned char index;
+	unsigned char x, y;
 
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_load_tiles_font();
@@ -51,12 +54,27 @@ void screen_test_screen_load()
 
 	engine_enemy_manager_load();
 	engine_enemy_manager_reset_home();
+
+	x = 7;
+	y = 1;
+	
+	//draw_oneup( 7, 0 );
+	//draw_oneup( 8, 0 );
+	//draw_oneup( 8, 1 );
+	//draw_oneup( 7, 2 );
+	//draw_oneup( 7, 3 );
+
+	engine_level_manager_clear();
+	engine_level_manager_load_oneup( 1 );
+
+	engine_level_manager_draw_level();
+	engine_level_manager_draw_middle();
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
 {
-	engine_gamer_manager_draw();
-	engine_enemy_manager_draw();
+	//engine_gamer_manager_draw();
+	//engine_enemy_manager_draw();
 
 	// top left		3, 3
 	//draw_boss64( 48-16, 32-16 );
@@ -71,7 +89,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 	// bot right	10, 9
 	//draw_boss64( 160 - 16, 32 - 16 );
 
-	draw_boss32( 2, 160 - 16, 32 - 16 );
+	//draw_boss32( 2, 160 - 16, 32 - 16 );
 	*screen_type = screen_type_test;
 }
 
@@ -122,4 +140,11 @@ static void draw_boss64( unsigned char x, unsigned char y )
 			devkit_SMS_addSprite( x + c * 8, y + r * 8, tile );
 		}
 	}
+}
+
+static void draw_oneup( unsigned char col, unsigned char row )
+{
+	unsigned char x = ( col + 1 ) * 2;
+	unsigned char y = ( row + 1 ) * 2;
+	engine_tile_manager_draw_oneup( SCREEN_TILE_LEFT + x, y );
 }

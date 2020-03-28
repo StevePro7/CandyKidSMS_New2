@@ -6,7 +6,9 @@
 // Global variable.
 extern struct_level_object global_level_object;
 
+void engine_level_manager_clear();
 void engine_level_manager_load_level( const unsigned char world, const unsigned char round );
+void engine_level_manager_load_oneup( unsigned char quantity );
 void engine_level_manager_directions();
 
 // TODO delete

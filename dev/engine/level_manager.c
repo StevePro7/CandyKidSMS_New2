@@ -6,6 +6,7 @@
 #include "mask_manager.h"
 #include "state_manager.h"
 #include "tile_manager.h"
+#include "..\object\board_object.h"
 #include "..\devkit\_sms_manager.h"
 #include <stdlib.h>
 
@@ -21,6 +22,21 @@ static void load_level( const unsigned char *data, const unsigned char size, con
 //static void draw_level( unsigned char beg_row, unsigned char end_row, unsigned char beg_col, unsigned char end_col );
 static void draw_tiles( unsigned char x, unsigned char y );
 static unsigned char test_direction( unsigned char x, unsigned char y, unsigned char input_direction );
+
+void engine_level_manager_clear()
+{
+	unsigned char row, col;
+	unsigned char index;
+
+	for( row = 0; row < MAX_ROWS; row++ )
+	{
+		for( col = 0; col < MAX_COLS; col++ )
+		{
+			index = ( row + 2 ) * MAZE_COLS + ( col + 2 );
+			level_object_tiles_array[ index ] = tile_type_blank;
+		}
+	}
+}
 
 void engine_level_manager_load_level( const unsigned char world, const unsigned char round )
 {
@@ -57,6 +73,47 @@ void engine_level_manager_load_level( const unsigned char world, const unsigned 
 		const unsigned char bank = level_object_BBbank[ index ];
 		load_level( data, size, bank, mult );
 	}
+}
+
+void engine_level_manager_load_oneup( unsigned char quantity )
+{
+	unsigned char row, col;
+	unsigned char index;
+	unsigned char tiles;
+	unsigned char loops;
+	for( loops = 0; loops < quantity; loops++ )
+	{
+		while( 1 )
+		{
+			row = rand() % MAX_ROWS;
+			col = rand() % MAX_COLS;
+
+			row = 0;
+			col = 0;
+
+			// TODO calculate rectangle around boss home so no candy drawn there!
+		//	//// Ensure no 
+		//	//if( !( col == board_object_homeX[ 0 ] - 2 && row == board_object_homeY[ 0 ] - 2 ) &&
+		//	//	!( col == board_object_homeX[ 1 ] - 2 && row == board_object_homeY[ 1 ] - 2 ) &&
+		//	//	!( col == board_object_homeX[ 2 ] - 2 && row == board_object_homeY[ 2 ] - 2 ) &&
+		//	//	!( col == board_object_homeX[ 3 ] - 2 && row == board_object_homeY[ 3 ] - 2 ) )
+		//	//{
+
+			index = ( row + 2 ) * MAZE_COLS + ( col + 2 );
+			tiles = level_object_tiles_array[ index ];
+			if( tile_type_blank == tiles )
+			{
+				break;
+			}
+		}
+
+		level_object_tiles_array[ index ] = tile_type_oneup;
+	}
+
+	//col = 0;
+	//loops = 0;
+	//index = ( row + 2 ) * MAZE_COLS + ( col + 2 );
+	//level_object_tiles_array[ index ] = tile_type_oneup;
 }
 
 void engine_level_manager_directions()
