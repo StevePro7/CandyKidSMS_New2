@@ -4,7 +4,7 @@
 typedef struct tag_struct_state_object
 {
 	unsigned char state_object_availables;
-	unsigned char state_object_mydebugger;
+	//unsigned char state_object_mydebugger;
 	unsigned char state_object_full_boost;
 	unsigned char state_object_invincibie;
 	unsigned char state_object_localcheat;

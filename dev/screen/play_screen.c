@@ -47,7 +47,7 @@ void screen_play_screen_load()
 	//engine_delay_manager_draw();
 
 	//engine_font_manager_draw_text( "SCATTR", 26, 21 );
-	if( st->state_object_mydebugger )
+	if( ho->hack_object_mydebugger )
 	{
 		eo = &global_enemy_objects[ actor_type_pro ];	engine_memo_manager_debugging( actor_type_pro, eo->action );
 		eo = &global_enemy_objects[ actor_type_adi ];	engine_memo_manager_debugging( actor_type_adi, eo->action );

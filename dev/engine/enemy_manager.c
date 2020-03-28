@@ -3,6 +3,7 @@
 #include "font_manager.h"
 #include "function_manager.h"
 #include "global_manager.h"
+#include "hack_manager.h"
 #include "level_manager.h"
 #include "memo_manager.h"
 #include "move_manager.h"
@@ -392,6 +393,7 @@ void engine_enemy_manager_reset_home()
 void engine_enemy_manager_reset_mode( unsigned char enemy, unsigned char mode )
 {
 	struct_state_object *st = &global_state_object;
+	struct_hack_object *ho = &global_hack_object;
 	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
 	eo->action = mode;
 	eo->ticker = 0;
@@ -403,7 +405,7 @@ void engine_enemy_manager_reset_mode( unsigned char enemy, unsigned char mode )
 	eo->speed = eo->speeds[ mode ];
 	eo->delay = eo->delays[ mode ];
 
-	if( st->state_object_mydebugger )
+	if( ho->hack_object_mydebugger )
 	{
 		engine_memo_manager_debugging( enemy, eo->action );
 	}
@@ -657,6 +659,7 @@ unsigned char engine_enemy_manager_what_direction( unsigned char enemy, unsigned
 unsigned char engine_enemy_manager_input_boost( unsigned char enemy )
 {
 	struct_state_object *st = &global_state_object;
+	struct_hack_object *ho = &global_hack_object;
 	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
 	unsigned char toggle = eo->toggle[ eo->action ];
 	unsigned char boost = 0;
@@ -700,7 +703,7 @@ unsigned char engine_enemy_manager_input_boost( unsigned char enemy )
 	// IMPORTANT - this will alternate the images during game play - useful for debugging Scatter vs. Attack mode
 
 
-	if( st->state_object_mydebugger )
+	if( ho->hack_object_mydebugger )
 	{
 		engine_memo_manager_debugging( enemy, eo->action );
 	}
