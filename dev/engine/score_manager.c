@@ -2,6 +2,7 @@
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "global_manager.h"
+#include "hack_manager.h"
 #include "locale_manager.h"
 #include "level_manager.h"
 #include "state_manager.h"
@@ -130,7 +131,8 @@ void engine_score_manager_update_boost()
 {
 	struct_score_object *so = &global_score_object;
 	struct_state_object *st = &global_state_object;
-	if( st->state_object_full_boost )
+	struct_hack_object *ho = &global_hack_object;
+	if( ho->hack_object_full_boost )
 	{
 		return;
 	}

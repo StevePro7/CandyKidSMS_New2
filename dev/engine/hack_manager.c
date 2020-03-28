@@ -44,7 +44,7 @@ void engine_hack_manager_load()
 
 	ho->hack_object_mydebugger = PEEK( HACKER_START - 1 );			// 0x004F		// Used to show debugging info for game.
 	//ho->hack_object_invincibie = PEEK( HACKER_START + 0 );			// 0x0050		// Non-zero value enables invincibility.
-	//ho->hack_object_full_boost = PEEK( HACKER_START + 1 );			// 0x0051		// Non-zero value enables maximum boost.
+	ho->hack_object_full_boost = PEEK( HACKER_START + 1 );			// 0x0051		// Non-zero value enables maximum boost.
 
 	//ho->hack_object_trees_type = PEEK( HACKER_START + 2 );			// 0x0052		// Set value to 1=Show otherwise 2=Kill.
 	//ho->hack_object_exits_type = PEEK( HACKER_START + 3 );			// 0x0053		// Set value to 1=Open otherwise 2=Shut.
