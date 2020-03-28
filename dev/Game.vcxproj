@@ -42,6 +42,7 @@
     <ClInclude Include="engine\asm_manager.h" />
     <ClInclude Include="engine\audio_manager.h" />
     <ClInclude Include="engine\board_manager.h" />
+    <ClInclude Include="engine\boss_manager.h" />
     <ClInclude Include="engine\collision_manager.h" />
     <ClInclude Include="engine\content_manager.h" />
     <ClInclude Include="engine\enemy_manager.h" />
@@ -71,6 +72,7 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="object\audio_object.h" />
     <ClInclude Include="object\board_object.h" />
+    <ClInclude Include="object\boss_object.h" />
     <ClInclude Include="object\enemy_object.h" />
     <ClInclude Include="object\gamer_object.h" />
     <ClInclude Include="object\hack_object.h" />
@@ -121,6 +123,7 @@
     <ClCompile Include="engine\asm_manager.c" />
     <ClCompile Include="engine\audio_manager.c" />
     <ClCompile Include="engine\board_manager.c" />
+    <ClCompile Include="engine\boss_manager.c" />
     <ClCompile Include="engine\collision_manager.c" />
     <ClCompile Include="engine\content_manager.c" />
     <ClCompile Include="engine\enemy_manager.c" />
@@ -156,6 +159,7 @@
     <ClCompile Include="object\level_object.c" />
     <ClCompile Include="object\locale_object.c" />
     <ClCompile Include="object\score_object.c" />
+    <ClCompile Include="object\boss_object.c" />
     <ClCompile Include="object\state_object.c" />
     <ClCompile Include="object\storage_object.c" />
     <ClCompile Include="object\timer_object.c" />

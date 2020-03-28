@@ -54,6 +54,9 @@ void screen_test_screen_update( unsigned char *screen_type )
 	//draw_boss64( 48 - 16, 128 - 16 );
 
 	// top right	10, 3
+	//draw_boss64( 160 - 16, 32 - 16 );
+
+	// bot right	10, 9
 	draw_boss64( 160 - 16, 32 - 16 );
 	*screen_type = screen_type_test;
 }
