@@ -23,7 +23,7 @@ void engine_main_manager_load()
 
 	// Set default global state.
 	engine_hack_manager_init();
-	engine_hack_manager_load();			// TODO read from SRAM before ROM hack
+	engine_hack_manager_load();
 
 	// Check if global state previously stored.
 	storage = engine_storage_manager_available();
@@ -33,9 +33,8 @@ void engine_main_manager_load()
 		st->state_object_availables = 1;
 	}
 
-	// Invert any hack overrides...
-	//engine_hack_manager_load();		// Uncomment out will overwerite SRAM values
-	engine_hack_manager_invert();		// TODO DELETE any hardcoded stuff
+	// Invert any hack overrides.
+	engine_hack_manager_invert();
 }
 
 void engine_main_manager_save()

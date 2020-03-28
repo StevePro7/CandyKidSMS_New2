@@ -19,7 +19,6 @@ void engine_state_manager_init()
 
 	st->state_object_world_data = 0;
 	st->state_object_round_data = 0;
-
 	st->state_object_actor_kill = actor_type_kid;
 
 	st->state_object_curr_screen = screen_type_none;

@@ -47,12 +47,13 @@ void engine_hack_manager_load()
 {
 	struct_hack_object *ho = &global_hack_object;
 
+	/*
 	ho->hack_object_delay_test = PEEK( HACKER_START - 2 );			// 0x004E		// Used to speed through any game delay.
 	ho->hack_object_mydebugger = PEEK( HACKER_START - 1 );			// 0x004F		// Used to show debugging info for game.
 	ho->hack_object_invincibie = PEEK( HACKER_START + 0 );			// 0x0050		// Non-zero value enables invincibility.
 	ho->hack_object_full_boost = PEEK( HACKER_START + 1 );			// 0x0051		// Non-zero value enables maximum boost.
 
-	//ho->hack_object_trees_type = PEEK( HACKER_START + 2 );			// 0x0052		// Set value to 1=Show otherwise 2=Kill.
+	ho->hack_object_trees_type = PEEK( HACKER_START + 2 );			// 0x0052		// Set value to 1=Show otherwise 2=Kill.
 	//ho->hack_object_exits_type = PEEK( HACKER_START + 3 );			// 0x0053		// Set value to 1=Open otherwise 2=Shut.
 	//ho->hack_object_difficulty = PEEK( HACKER_START + 4 );			// 0x0054		// Set value to 1=Easy otherwise 2=Hard.
 	//ho->hack_object_pace_speed = PEEK( HACKER_START + 5 );			// 0x0055		// Set value to 1=Slow otherwise 2=Fast.
@@ -65,22 +66,28 @@ void engine_hack_manager_load()
 	ho->hack_object_enemy_move[ actor_type_pro ] = PEEK( HACKER_START + 16 );
 	ho->hack_object_enemy_move[ actor_type_adi ] = PEEK( HACKER_START + 17 );
 	ho->hack_object_enemy_move[ actor_type_suz ] = PEEK( HACKER_START + 18 );
+	*/
 
 #ifndef _CONSOLE
 
-	//ho->hack_object_mydebugger = PEEK( HACKER_START - 1 );			// 0x004F		// Used to show debugging info for game.
-	//ho->hack_object_invincibie = PEEK( HACKER_START + 0 );			// 0x0050		// Non-zero value enables invincibility.
-	//ho->hack_object_full_boost = PEEK( HACKER_START + 1 );			// 0x0051		// Non-zero value enables maximum boost.
+	ho->hack_object_delay_test = PEEK( HACKER_START - 2 );			// 0x004E		// Used to speed through any game delay.
+	ho->hack_object_mydebugger = PEEK( HACKER_START - 1 );			// 0x004F		// Used to show debugging info for game.
+	ho->hack_object_invincibie = PEEK( HACKER_START + 0 );			// 0x0050		// Non-zero value enables invincibility.
+	ho->hack_object_full_boost = PEEK( HACKER_START + 1 );			// 0x0051		// Non-zero value enables maximum boost.
 
-	//ho->hack_object_trees_type = PEEK( HACKER_START + 2 );			// 0x0052		// Set value to 1=Show otherwise 2=Kill.
-	//ho->hack_object_exits_type = PEEK( HACKER_START + 3 );			// 0x0053		// Set value to 1=Open otherwise 2=Shut.
-	//ho->hack_object_difficulty = PEEK( HACKER_START + 4 );			// 0x0054		// Set value to 1=Easy otherwise 2=Hard.
-	//ho->hack_object_pace_speed = PEEK( HACKER_START + 5 );			// 0x0055		// Set value to 1=Slow otherwise 2=Fast.
+	ho->hack_object_trees_type = PEEK( HACKER_START + 2 );			// 0x0052		// Set value to 1=Show otherwise 2=Kill.
+																	//ho->hack_object_exits_type = PEEK( HACKER_START + 3 );			// 0x0053		// Set value to 1=Open otherwise 2=Shut.
+																	//ho->hack_object_difficulty = PEEK( HACKER_START + 4 );			// 0x0054		// Set value to 1=Easy otherwise 2=Hard.
+																	//ho->hack_object_pace_speed = PEEK( HACKER_START + 5 );			// 0x0055		// Set value to 1=Slow otherwise 2=Fast.
 
-	//ho->hack_object_world_data = PEEK( HACKER_START + 6 );			// 0x0056		// Set start World no currently 1 to 10.
-	//ho->hack_object_round_data = PEEK( HACKER_START + 7 );			// 0x0057		// Set start Round no currently 1 to 10.
-	//ho->hack_object_music_data = PEEK( HACKER_START + 8 );			// 0x0058		// Set 0=Music to play otherwise silent.
-	//ho->hack_object_sound_data = PEEK( HACKER_START + 9 );			// 0x0059		// Set 0=Sound to play otherwise silent.
+																	//ho->hack_object_world_data = PEEK( HACKER_START + 6 );			// 0x0056		// Set start World no currently 1 to 10.
+																	//ho->hack_object_round_data = PEEK( HACKER_START + 7 );			// 0x0057		// Set start Round no currently 1 to 10.
+	ho->hack_object_music_data = PEEK( HACKER_START + 8 );			// 0x0058		// Set 0=Music to play otherwise silent.
+	ho->hack_object_sound_data = PEEK( HACKER_START + 9 );			// 0x0059		// Set 0=Sound to play otherwise silent.
+
+	ho->hack_object_enemy_move[ actor_type_pro ] = PEEK( HACKER_START + 16 );
+	ho->hack_object_enemy_move[ actor_type_adi ] = PEEK( HACKER_START + 17 );
+	ho->hack_object_enemy_move[ actor_type_suz ] = PEEK( HACKER_START + 18 );
 
 #endif
 }
@@ -89,6 +96,7 @@ void engine_hack_manager_invert()
 {
 	// TODO delete this hard coded
 	struct_hack_object *ho = &global_hack_object;
+	struct_state_object *st = &global_state_object;
 
 	// Ensure all commented out : used for testing!
 	//ho->hack_object_full_boost = 1;
@@ -96,7 +104,7 @@ void engine_hack_manager_invert()
 	//ho->hack_object_mydebugger = 1;
 	//ho->hack_object_invincibie = 1;
 
-	//ho->hack_object_trees_type = 1;
+	ho->hack_object_trees_type = 0 + 1;
 	//ho->hack_object_exits_type = 0;
 	//ho->hack_object_difficulty = 1;
 	//ho->hack_object_pace_speed = 0;
@@ -115,7 +123,11 @@ void engine_hack_manager_invert()
 
 
 	// Trees.
-	//st->state_object_trees_type = tree_type_death == st->state_object_trees_type ? tree_type_death : tree_type_avoid;
+	if( ho->hack_object_trees_type )
+	{
+		st->state_object_trees_type = ( tree_type_death + 1 ) == ho->hack_object_trees_type ? tree_type_death : tree_type_avoid;
+	}
+
 
 	// Exits.
 	//st->state_object_exits_type = exit_type_closed == st->state_object_exits_type ? exit_type_closed : exit_type_public;

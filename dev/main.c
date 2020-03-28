@@ -10,15 +10,10 @@ void main (void)
 	devkit_SMS_init();
 	devkit_SMS_displayOff();
 
-
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 	devkit_SMS_useFirstHalfTilesforSprites_False();
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
-
-
 	engine_main_manager_init();
-	//engine_main_manager_load();
-	//engine_main_manager_debug();
 
 	//open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_test;
