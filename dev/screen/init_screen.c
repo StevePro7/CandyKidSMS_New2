@@ -11,20 +11,12 @@
 
 void screen_init_screen_load()
 {
-	// DELETEL
-	engine_main_manager_load();
-	// DELETEL
-
-
 	devkit_SMS_displayOff();
 
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_load_tiles_font();
 	engine_content_manager_load_tiles_game();
 	engine_content_manager_load_sprites_game();
-
-	// Manually clear any text artifacts.
-	//engine_memo_manager_clear();
 
 	// Draw tree border with exits.
 	engine_board_manager_border( border_type_game );
