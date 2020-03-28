@@ -133,7 +133,7 @@ void engine_hack_manager_invert()
 	// Exits.
 	if( ho->hack_object_exits_type )
 	{
-		st->state_object_exits_type = ( exit_type_closed + 1 ) == st->state_object_exits_type ? exit_type_closed : exit_type_public;
+		st->state_object_exits_type = ( exit_type_closed + 1 ) == ho->hack_object_exits_type ? exit_type_closed : exit_type_public;
 	}
 
 
