@@ -14,49 +14,73 @@
 #include "..\engine\sprite_manager.h"
 #include "..\engine\tile_manager.h"
 #include "..\devkit\_sms_manager.h"
+#include "..\banks\bank3.h"
 
-static unsigned char distance;
+static void load_boss32();
+//static void draw_boss32();
+
+static void load_boss64();
+static void draw_boss64( unsigned char x, unsigned char y );
 
 void screen_test_screen_load()
 {
-	// Load from SRAM first.
-	engine_main_manager_load();
-
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_load_tiles_font();
-	engine_content_manager_load_tiles_main();
-	engine_content_manager_load_sprites_game();
+	engine_content_manager_load_tiles_game();
 
-	engine_board_manager_border( border_type_main );
-	engine_tile_manager_main_title( 2, 2 );
-
-
-	//distance = menu_type_single;
-	distance = menu_type_double;
-	engine_option_manager_text_kid( distance );
-	engine_option_manager_text_enemy();
-
-	// Title screen
-	engine_option_manager_draw_bonus( distance );
-	engine_option_manager_draw_candy( distance );
-
-	// Option screen
-	//engine_option_manager_option_tree( 1 );
-	//engine_option_manager_option_exit();
-
+	load_boss64();
+	engine_board_manager_border( border_type_game );
 
 	// TODO delete
-	engine_font_manager_draw_text( "TS", 2, 6 );
+	//engine_font_manager_draw_text( "TS", 2, 6 );
+
+	engine_gamer_manager_load();
+	engine_gamer_manager_reset();
+
+	engine_enemy_manager_load();
+	engine_enemy_manager_reset_home();
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
 {
-	engine_option_manager_draw_actor( distance );
+	engine_gamer_manager_draw();
+	engine_enemy_manager_draw();
 
-	/*unsigned char input = engine_input_manager_hold( input_type_fire1 );
-	if( input )
-	{
-	}*/
+	// top left		3, 3
+	//draw_boss64( 48-16, 32-16 );
 
+	// bot left		3, 9
+	//draw_boss64( 48 - 16, 144 - 32 );
+	//draw_boss64( 48 - 16, 128 - 16 );
+
+	// top right	10, 3
+	draw_boss64( 160 - 16, 32 - 16 );
 	*screen_type = screen_type_test;
+}
+
+static void load_boss32()
+{
+	devkit_SMS_mapROMBank( boss32_00__tiles__psgcompr_bank );
+	devkit_SMS_loadPSGaidencompressedTiles( boss32_00__tiles__psgcompr, SPRITE_TILES );
+	devkit_SMS_loadSpritePalette( ( void * ) boss32_00__palette__bin );
+}
+static void load_boss64()
+{
+	devkit_SMS_mapROMBank( boss64_00__tiles__psgcompr_bank );
+	devkit_SMS_loadPSGaidencompressedTiles( boss64_00__tiles__psgcompr, SPRITE_TILES );
+	devkit_SMS_loadSpritePalette( ( void * ) boss64_00__palette__bin );
+}
+
+static void draw_boss64( unsigned char x, unsigned char y )
+{
+	unsigned int tile;
+	unsigned char r, c;
+	for( r = 0; r < 8; r++ )
+	{
+		for( c = 0; c < 6; c++ )
+		{
+			tile = SPRITE_TILES + r * 6 + c;
+			devkit_SMS_addSprite( x + c * 8, y + r * 8, tile );
+		}
+	}
 }
