@@ -20,24 +20,25 @@
 static void load_boss32();
 //static void draw_boss32();
 
-static void load_boss64();
+static void draw_boss32( unsigned char index, unsigned char x, unsigned char y );
 static void draw_boss64( unsigned char x, unsigned char y );
 
 void screen_test_screen_load()
 {
-	unsigned char option;
-	unsigned char actor;
-	unsigned char index;
+	//unsigned char option;
+	//unsigned char actor;
+	//unsigned char index;
 
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_load_tiles_font();
 	engine_content_manager_load_tiles_game();
 
-	//load_boss64();
-	option = 0;
-	actor = actor_type_suz;
-	index = actor * 2 + option;
-	engine_boss_manager_content( index );
+	load_boss32();
+	//option = 0;
+	//actor = actor_type_suz;
+	//index = actor * 2 + option;
+	//engine_boss_manager_content( index );
+
 	engine_board_manager_border( border_type_game );
 
 	// TODO delete
@@ -66,7 +67,9 @@ void screen_test_screen_update( unsigned char *screen_type )
 	//draw_boss64( 160 - 16, 32 - 16 );
 
 	// bot right	10, 9
-	draw_boss64( 160 - 16, 32 - 16 );
+	//draw_boss64( 160 - 16, 32 - 16 );
+
+	draw_boss32( 3, 160 - 16, 32 - 16 );
 	*screen_type = screen_type_test;
 }
 
@@ -82,6 +85,28 @@ static void load_boss32()
 //	devkit_SMS_loadPSGaidencompressedTiles( boss64_00__tiles__psgcompr, SPRITE_TILES );
 //	devkit_SMS_loadSpritePalette( ( void * ) boss64_00__palette__bin );
 //}
+
+static void draw_boss32( unsigned char index, unsigned char x, unsigned char y )
+{
+	unsigned int tile;
+	unsigned char r, c;
+	unsigned char t, l;
+
+	// TL	(t, l) = (0, 0)
+	// TR	(t, l) = (0, 3)
+	// BL	(t, l) = (4, 0)
+	// BR	(t, l) = (4, 3)
+	t = boss_object_tileX[ index ];
+	l = boss_object_tileY[ index ];
+	for( r = 0; r < 4; r++ )
+	{
+		for( c = 0; c < 3; c++ )
+		{
+			tile = SPRITE_TILES + ( t + r ) * 6 + ( l + c );
+			devkit_SMS_addSprite( x + c * 8, y + r * 8, tile );
+		}
+	}
+}
 
 static void draw_boss64( unsigned char x, unsigned char y )
 {
