@@ -11,6 +11,11 @@
 
 void screen_init_screen_load()
 {
+	// DELETEL
+	engine_main_manager_load();
+	// DELETEL
+
+
 	devkit_SMS_displayOff();
 
 	engine_asm_manager_clear_VRAM();

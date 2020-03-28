@@ -201,7 +201,7 @@ static void reset_death()
 
 	// If Kid dies from death tree then update directions
 	// because Mamas can now move through this empty tile.
-	if( actor_type_tree == st->state_object_actor_kill )
+	if( actor_type_tree == st->state_object_actor_kill && tree_type_death == st->state_object_trees_type )
 	{
 		engine_level_manager_directions();
 	}

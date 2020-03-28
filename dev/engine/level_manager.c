@@ -71,10 +71,6 @@ void engine_level_manager_directions()
 	{
 		for( col = 0; col < MAX_COLS; col++ )
 		{
-			//if( 3 == row && 1 == col )
-			//{
-			//	index = 0;
-			//}
 			direction = engine_level_manager_test_direction( ( row + 2 ), ( col + 2 ) );
 
 			index = ( row + 2 ) * MAZE_COLS + ( col + 2 );

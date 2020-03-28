@@ -28,7 +28,7 @@ S _engine_enemy_manager_stop Ref0000
 S _engine_frame_manager_load Ref0000
 S __modsint Ref0000
 S _engine_delay_manager_load Ref0000
-A _CODE size 1DE flags 0 addr 0
+A _CODE size 1E5 flags 0 addr 0
 S _screen_dead_screen_update Def0052
 S _screen_dead_screen_load Def0000
 A _DATA size 4 flags 0 addr 0
@@ -183,9 +183,11 @@ T BD 01 E5 AF F5 33 C5 33 CD 00 00 F1 E1
 R 00 00 00 00 02 09 03 00
 T C8 01
 R 00 00 00 00
-T C8 01 7E D6 04 20 03 CD 00 00
-R 00 00 00 00 02 08 08 00
-T D0 01
+T C8 01 7E D6 04 20 0A 21 09 00 4E 0D 20 03 CD
+R 00 00 00 00 02 08 11 00
+T D5 01 00 00
+R 00 00 00 00 02 02 08 00
+T D7 01
 R 00 00 00 00
-T D0 01 3E 02 F5 33 CD 00 00 33 7D B7 C0 C3 00 00
+T D7 01 3E 02 F5 33 CD 00 00 33 7D B7 C0 C3 00 00
 R 00 00 00 00 02 07 10 00 02 0E 04 00
