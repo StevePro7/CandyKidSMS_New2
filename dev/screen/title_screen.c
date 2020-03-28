@@ -17,6 +17,7 @@
 #define LOCAL_CHEAT_TOTAL	5
 #define COIN_TEXT_X			6
 
+static unsigned char event_stage;
 static unsigned char flash_count;
 static unsigned char cheat_count;
 static unsigned char distance;
@@ -41,12 +42,15 @@ void screen_title_screen_load()
 	}
 
 	engine_delay_manager_load( TITLE_FLASH_DELAY );
+	event_stage = event_stage_start;
 	flash_count = 0;
 	cheat_count = 0;
 
 	distance = menu_type_double;
 	engine_option_manager_draw_bonus( distance );
 	engine_option_manager_draw_candy( distance );
+
+	st->state_object_next_screen = screen_type_start;
 
 	//st->state_object_curr_screen = screen_type_init;
 	//st->state_object_curr_screen = screen_type_start;
@@ -66,7 +70,24 @@ void screen_title_screen_update( unsigned char *screen_type )
 		engine_option_manager_update( st->state_object_curr_screen );
 	}
 
+	// Set the current screen first.
+	*screen_type = st->state_object_curr_screen;
 	delay = engine_delay_manager_update();
+
+
+	// Enable slight pause for movement.
+	if( event_stage_pause == event_stage )
+	{
+		if( delay )
+		{
+			*screen_type = st->state_object_next_screen;
+		}
+
+		return;
+	}
+
+
+	//delay = engine_delay_manager_update();
 	if( delay )
 	{
 		if( !ho->hack_object_delay_test )
@@ -88,9 +109,9 @@ void screen_title_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_fire1 );
 	if( input )
 	{
+		event_stage = event_stage_pause;
+		engine_delay_manager_load( SOUND_SCREEN_DELAY );
 		engine_audio_manager_sfx_play( sfx_type_accept );
-		//*screen_type = screen_type_init;
-		*screen_type = screen_type_start;
 		return;
 	}
 
@@ -110,5 +131,5 @@ void screen_title_screen_update( unsigned char *screen_type )
 	}
 
 	rand();
-	*screen_type = st->state_object_curr_screen;
+	//*screen_type = st->state_object_curr_screen;
 }
