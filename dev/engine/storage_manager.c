@@ -62,10 +62,10 @@ void engine_storage_manager_write()
 	savegame->Magic = MAGIC;
 	savegame->save_high_score = st->state_object_high_score;
 
-	savegame->save_difficulty = st->state_object_difficulty;
-	savegame->save_game_speed = st->state_object_pace_speed;
 	savegame->save_trees_type = st->state_object_trees_type;
 	savegame->save_exits_type = st->state_object_exits_type;
+	savegame->save_difficulty = st->state_object_difficulty;
+	savegame->save_game_speed = pace_type_slow;				// st->state_object_pace_speed;			// unconditionally save Slow speed always!!	[not wired up]
 
 	savegame->save_world_data = st->state_object_world_data;
 	savegame->save_round_data = st->state_object_round_data;

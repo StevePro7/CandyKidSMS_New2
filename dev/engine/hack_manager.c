@@ -77,8 +77,8 @@ void engine_hack_manager_load()
 
 	ho->hack_object_trees_type = PEEK( HACKER_START + 2 );			// 0x0052		// Set value to 1=Show otherwise 2=Kill.
 	ho->hack_object_exits_type = PEEK( HACKER_START + 3 );			// 0x0053		// Set value to 1=Open otherwise 2=Shut.
-																	//ho->hack_object_difficulty = PEEK( HACKER_START + 4 );			// 0x0054		// Set value to 1=Easy otherwise 2=Hard.
-																	//ho->hack_object_pace_speed = PEEK( HACKER_START + 5 );			// 0x0055		// Set value to 1=Slow otherwise 2=Fast.
+	ho->hack_object_difficulty = PEEK( HACKER_START + 4 );			// 0x0054		// Set value to 1=Easy otherwise 2=Hard.
+	ho->hack_object_pace_speed = PEEK( HACKER_START + 5 );			// 0x0055		// Set value to 1=Slow otherwise 2=Fast.
 
 																	//ho->hack_object_world_data = PEEK( HACKER_START + 6 );			// 0x0056		// Set start World no currently 1 to 10.
 																	//ho->hack_object_round_data = PEEK( HACKER_START + 7 );			// 0x0057		// Set start Round no currently 1 to 10.
@@ -107,7 +107,7 @@ void engine_hack_manager_invert()
 	// These need offset of one to differentiate from SRAM values.
 	//ho->hack_object_trees_type = 0 + 1;
 	//ho->hack_object_exits_type = 1 + 1;
-	//ho->hack_object_difficulty = 1;
+	//ho->hack_object_difficulty = 1 + 1;
 	//ho->hack_object_pace_speed = 0;
 
 
@@ -129,11 +129,22 @@ void engine_hack_manager_invert()
 		st->state_object_trees_type = ( tree_type_death + 1 ) == ho->hack_object_trees_type ? tree_type_death : tree_type_avoid;
 	}
 
-
 	// Exits.
 	if( ho->hack_object_exits_type )
 	{
 		st->state_object_exits_type = ( exit_type_closed + 1 ) == ho->hack_object_exits_type ? exit_type_closed : exit_type_public;
+	}
+
+	// Difficulty.
+	if( ho->hack_object_difficulty )
+	{
+		st->state_object_difficulty = ( diff_type_hard + 1 ) == ho->hack_object_difficulty ? diff_type_hard : diff_type_easy;
+	}
+
+	// Game speed.
+	if( ho->hack_object_pace_speed )
+	{
+		st->state_object_pace_speed = ( pace_type_fast + 1 ) == ho->hack_object_pace_speed ? pace_type_fast : pace_type_slow;
 	}
 
 
@@ -162,15 +173,11 @@ void engine_hack_manager_invert()
 	//}
 
 	// Invert default values.
-	// TODO revert this code to play music + sound FX.
-
 	ho->hack_object_music_data = !ho->hack_object_music_data;
 	ho->hack_object_sound_data = !ho->hack_object_sound_data;
-
 	//ho->hack_object_music_data  = 0;
 	//ho->hack_object_sound_data = 0;
 
-	// TODO revert this code to play music + sound FX.
 
 	// TODO delete this hard coded
 	//st->state_object_world_data = 1 - 1;
