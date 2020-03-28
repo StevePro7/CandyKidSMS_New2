@@ -1,7 +1,7 @@
 #ifndef _ENEMY_MANAGER_H_
 #define _ENEMY_MANAGER_H_
 
-//#include "global_manager.h"
+#include "global_manager.h"
 #include "..\object\enemy_object.h"
 
 // Global variables.

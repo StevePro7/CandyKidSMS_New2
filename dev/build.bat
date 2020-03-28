@@ -126,15 +126,9 @@ engine\input_manager.rel ^
 engine\level_manager.rel ^
 engine\locale_manager.rel ^
 engine\main_manager.rel engine\mask_manager.rel engine\memo_manager.rel engine\move_manager.rel ^
-engine\option_manager.rel ^
-engine\score_manager.rel ^
-engine\screen_manager.rel ^
-engine\sprite_manager.rel ^
-engine\state_manager.rel ^
-engine\storage_manager.rel ^
-engine\timer_manager.rel ^
-engine\tile_manager.rel ^
-object\audio_object.rel object\board_object.rel object\enemy_object.rel object\gamer_object.rel ^
+engine\option_manager.rel engine\score_manager.rel engine\screen_manager.rel engine\sprite_manager.rel ^
+engine\state_manager.rel engine\storage_manager.rel engine\timer_manager.rel engine\tile_manager.rel ^
+object\audio_object.rel object\board_object.rel object\boss_object.rel object\enemy_object.rel object\gamer_object.rel ^
 object\hack_object.rel ^
 object\level_object.rel object\locale_object.rel object\score_object.rel object\state_object.rel ^
 object\storage_object.rel ^
@@ -174,6 +168,6 @@ if exist "*.noi" del "*.noi" > nul; if exist "*.sym" del "*.sym" > nul; if exist
 
 
 :: Run
-::java -jar C:\SEGA\Emulicious\Emulicious.jar output.sms
+java -jar C:\SEGA\Emulicious\Emulicious.jar output.sms
 ::C:\SEGA\meka\mekaw.exe output.sms
-output.sms
+::output.sms

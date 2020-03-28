@@ -4,10 +4,11 @@
 #define MAX_SCREEENS			18
 #define CONTENT_BANK			2
 
+#define MAX_BOSSES				2
 #define MAX_ENEMIES				3
 #define MAX_ACTORS				MAX_ENEMIES + 1
 
-#define INVALID_INDEX			-1
+//#define INVALID_INDEX			-1
 
 // Have capacity for 20 worlds i.e. 200 levels
 #define TOT_WORLDS				20

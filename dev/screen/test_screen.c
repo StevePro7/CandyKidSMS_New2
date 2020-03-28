@@ -1,6 +1,7 @@
 #include "test_screen.h"
 #include "..\engine\asm_manager.h"
 #include "..\engine\board_manager.h"
+#include "..\engine\boss_manager.h"
 #include "..\engine\content_manager.h"
 #include "..\engine\enemy_manager.h"
 #include "..\engine\enum_manager.h"
@@ -24,11 +25,19 @@ static void draw_boss64( unsigned char x, unsigned char y );
 
 void screen_test_screen_load()
 {
+	unsigned char option;
+	unsigned char actor;
+	unsigned char index;
+
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_load_tiles_font();
 	engine_content_manager_load_tiles_game();
 
-	load_boss64();
+	//load_boss64();
+	option = 0;
+	actor = actor_type_suz;
+	index = actor * 2 + option;
+	engine_boss_manager_content( index );
 	engine_board_manager_border( border_type_game );
 
 	// TODO delete
@@ -67,12 +76,12 @@ static void load_boss32()
 	devkit_SMS_loadPSGaidencompressedTiles( boss32_00__tiles__psgcompr, SPRITE_TILES );
 	devkit_SMS_loadSpritePalette( ( void * ) boss32_00__palette__bin );
 }
-static void load_boss64()
-{
-	devkit_SMS_mapROMBank( boss64_00__tiles__psgcompr_bank );
-	devkit_SMS_loadPSGaidencompressedTiles( boss64_00__tiles__psgcompr, SPRITE_TILES );
-	devkit_SMS_loadSpritePalette( ( void * ) boss64_00__palette__bin );
-}
+//static void load_boss64()
+//{
+//	devkit_SMS_mapROMBank( boss64_00__tiles__psgcompr_bank );
+//	devkit_SMS_loadPSGaidencompressedTiles( boss64_00__tiles__psgcompr, SPRITE_TILES );
+//	devkit_SMS_loadSpritePalette( ( void * ) boss64_00__palette__bin );
+//}
 
 static void draw_boss64( unsigned char x, unsigned char y )
 {
