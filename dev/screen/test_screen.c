@@ -27,7 +27,7 @@ void screen_test_screen_load()
 {
 	//unsigned char option;
 	//unsigned char actor;
-	//unsigned char index;
+	unsigned char index;
 
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_load_tiles_font();
@@ -37,7 +37,9 @@ void screen_test_screen_load()
 	//option = 0;
 	//actor = actor_type_suz;
 	//index = actor * 2 + option;
-	//engine_boss_manager_content( index );
+
+	index = 2;
+	engine_boss_manager_content( index );
 
 	engine_board_manager_border( border_type_game );
 
@@ -69,7 +71,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 	// bot right	10, 9
 	//draw_boss64( 160 - 16, 32 - 16 );
 
-	draw_boss32( 3, 160 - 16, 32 - 16 );
+	draw_boss32( 2, 160 - 16, 32 - 16 );
 	*screen_type = screen_type_test;
 }
 

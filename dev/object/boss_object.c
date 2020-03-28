@@ -5,6 +5,9 @@
 // Boss Manager.
 const unsigned char *boss_object_tiles[] =
 {
+	boss32_00__tiles__psgcompr,
+	boss32_01__tiles__psgcompr,
+	boss32_02__tiles__psgcompr,
 	boss64_00__tiles__psgcompr,
 	boss64_01__tiles__psgcompr,
 	boss64_02__tiles__psgcompr,
@@ -15,6 +18,9 @@ const unsigned char *boss_object_tiles[] =
 
 const unsigned char *boss_object_color[] =
 {
+	boss32_00__palette__bin,
+	boss32_01__palette__bin,
+	boss32_02__palette__bin,
 	boss64_00__palette__bin,
 	boss64_01__palette__bin,
 	boss64_02__palette__bin,
@@ -25,6 +31,9 @@ const unsigned char *boss_object_color[] =
 
 const unsigned char boss_object_bank[] =
 {
+	boss32_00__tiles__psgcompr_bank,
+	boss32_01__tiles__psgcompr_bank,
+	boss32_02__tiles__psgcompr_bank,
 	boss64_00__tiles__psgcompr_bank,
 	boss64_01__tiles__psgcompr_bank,
 	boss64_02__tiles__psgcompr_bank,
