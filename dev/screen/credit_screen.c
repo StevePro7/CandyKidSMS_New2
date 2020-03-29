@@ -29,6 +29,7 @@ static unsigned char nextr_direction;
 void screen_credit_screen_load()
 {
 	struct_state_object *st = &global_state_object;
+	unsigned char oneup_count = 1;
 
 	// Load from SRAM first.
 	engine_main_manager_load();
@@ -63,7 +64,7 @@ void screen_credit_screen_load()
 
 	// load oneup
 	engine_level_manager_clear();
-	engine_level_manager_load_oneup( 5 );
+	engine_level_manager_load_oneup( oneup_count );
 
 	engine_level_manager_draw_level();
 	engine_level_manager_draw_middle();
@@ -234,6 +235,12 @@ void screen_credit_screen_update( unsigned char *screen_type )
 	// Check oneup collision before sprite collision as we want to test if all oneup eaten = boss complete.
 	if( coll_type_oneup == gamer_collision )
 	{
+		oneup_count = engine_score_manager_get_oneup();
 		engine_audio_manager_sfx_play( sfx_type_power );
+		if( lo->level_object_oneup_count == oneup_count )
+		{
+			*screen_type = screen_type_pass;
+			return;
+		}
 	}
 }
