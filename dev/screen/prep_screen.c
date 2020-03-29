@@ -23,11 +23,20 @@
 #include "..\devkit\_sms_manager.h"
 #include "..\object\level_object.h"
 
+#define PREP_SCREEN_DELAY	150
+//#define PREP_SCREEN_DELAY	0
+
 void screen_prep_screen_load()
 {
 	struct_state_object *st = &global_state_object;
 	struct_level_object *lo = &global_level_object;
 	unsigned char oneup_count = 2;
+
+
+	st->state_object_curr_screen = screen_type_prep	;
+	st->state_object_next_screen = screen_type_fight;
+
+	engine_delay_manager_load( PREP_SCREEN_DELAY );
 
 
 	// TODO calculate which content to load depending on boos1 or boss2
@@ -44,6 +53,7 @@ void screen_prep_screen_load()
 
 	// Force override enemy move!
 	//engine_enemy_manager_debug();
+	//engine_boss_manager_debug();
 
 	engine_gamer_manager_load();
 	engine_boss_manager_load();
