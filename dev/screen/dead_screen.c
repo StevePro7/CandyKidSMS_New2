@@ -52,7 +52,18 @@ void screen_dead_screen_load()
 
 	engine_score_manager_update_lives( -1 );
 	lives = engine_score_manager_get_value( score_type_lives );
-	screen = ( 0 == lives ) ? screen_type_cont : screen_type_ready;
+
+	screen = screen_type_cont;
+	if( fight_type_enemy == st->state_object_fight_type )
+	{
+		screen = ( 0 == lives ) ? screen_type_cont : screen_type_ready;
+	}
+	else
+	{
+		screen = ( 0 == lives ) ? screen_type_cont : screen_type_load;
+		//screen = ( 0 == lives ) ? screen_type_cont : screen_type_ready;
+	}
+	
 	//screen = screen_type_cont;
 	//screen = screen_type_ready;
 
@@ -86,8 +97,15 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	unsigned int frame = fo->frame_count;
 
 	// Draw sprites first.
-	engine_enemy_manager_draw();
-	engine_gamer_manager_draw_death( death_frame );
+	if( fight_type_enemy == st->state_object_fight_type )
+	{
+		engine_enemy_manager_draw();
+	}
+
+	if( screen_type_cont == screen )
+	{
+		engine_gamer_manager_draw_death( death_frame );
+	}
 
 
 	// Check if Kid want to advance.
@@ -96,10 +114,13 @@ void screen_dead_screen_update( unsigned char *screen_type )
 		input = engine_input_manager_hold( input_type_fire2 );
 		if( input )
 		{
+			if( screen_type_cont != screen )
+			{
+				reset_death();
+			}
 			if( screen_type_ready == screen )
 			{
 				engine_audio_manager_music_resume();
-				reset_death();
 			}
 
 			*screen_type = screen;
@@ -117,17 +138,20 @@ void screen_dead_screen_update( unsigned char *screen_type )
 		if( delay )
 		{
 			flash_count++;
-			if( screen_type_ready == screen )
+			if( screen_type_cont != screen )
 			{
 				death_frame = 1 - death_frame;
 			}
 
 			if( flash_count >= 7 )
 			{
+				if( screen_type_cont != screen )
+				{
+					reset_death();
+				}
 				if( screen_type_ready == screen )
 				{
 					engine_audio_manager_music_resume();
-					reset_death();
 				}
 
 				*screen_type = screen;
@@ -138,40 +162,43 @@ void screen_dead_screen_update( unsigned char *screen_type )
 
 
 	// Move enemies.
-	for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
+	if( fight_type_enemy == st->state_object_fight_type )
 	{
-		eo = &global_enemy_objects[ enemy ];
+		for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
+		{
+			eo = &global_enemy_objects[ enemy ];
 
-		// Swap hands first if enemy moving and not dead.
-		if( eo->mover && lifecycle_type_dead != eo->lifecycle )
-		{
-			engine_enemy_manager_dohand( enemy );
-		}
-
-		// If enemy not moving then skip all movement code.
-		if( !eo->mover )
-		{
-			continue;
-		}
-
-		// Move enemy.
-		if( direction_type_none != eo->direction && lifecycle_type_move == eo->lifecycle )
-		{
-			//  warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
-			engine_enemy_manager_update( enemy );
-		}
-		if( direction_type_none != eo->direction && lifecycle_type_idle == eo->lifecycle )
-		{
-			engine_enemy_manager_stop( enemy );
-		}
-		// For continuity we want to check if actor can move immediately after stopping.
-		if( direction_type_none == eo->direction && lifecycle_type_idle == eo->lifecycle )
-		{
-			enemy_direction = engine_enemy_manager_gohome_direction( enemy );
-			if( direction_type_none != enemy_direction )
+			// Swap hands first if enemy moving and not dead.
+			if( eo->mover && lifecycle_type_dead != eo->lifecycle )
 			{
-//				engine_command_manager_add( frame, command_type_enemy_mover, ( enemy | ( enemy_direction << 4 ) ) );
-				engine_enemy_manager_move( enemy, enemy_direction );
+				engine_enemy_manager_dohand( enemy );
+			}
+
+			// If enemy not moving then skip all movement code.
+			if( !eo->mover )
+			{
+				continue;
+			}
+
+			// Move enemy.
+			if( direction_type_none != eo->direction && lifecycle_type_move == eo->lifecycle )
+			{
+				//  warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
+				engine_enemy_manager_update( enemy );
+			}
+			if( direction_type_none != eo->direction && lifecycle_type_idle == eo->lifecycle )
+			{
+				engine_enemy_manager_stop( enemy );
+			}
+			// For continuity we want to check if actor can move immediately after stopping.
+			if( direction_type_none == eo->direction && lifecycle_type_idle == eo->lifecycle )
+			{
+				enemy_direction = engine_enemy_manager_gohome_direction( enemy );
+				if( direction_type_none != enemy_direction )
+				{
+					//				engine_command_manager_add( frame, command_type_enemy_mover, ( enemy | ( enemy_direction << 4 ) ) );
+					engine_enemy_manager_move( enemy, enemy_direction );
+				}
 			}
 		}
 	}
@@ -190,6 +217,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 		}
 	}
 
+	engine_gamer_manager_draw_death( death_frame );
 	*screen_type = screen_type_dead;
 }
 
