@@ -79,6 +79,7 @@ void engine_enemy_manager_load()
 	unsigned char offset;
 	unsigned char random = st->state_object_round_data + 2;
 
+	engine_state_manager_fight( fight_type_enemy );
 	engine_enemy_manager_stance();
 	for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
 	{

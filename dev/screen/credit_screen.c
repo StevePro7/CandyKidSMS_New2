@@ -43,7 +43,7 @@ void screen_credit_screen_load()
 	engine_gamer_manager_reset();
 
 
-	engine_delay_manager_load( 20 );
+	engine_delay_manager_load( 0 );
 
 	//	engine_command_manager_load();
 	engine_frame_manager_load();
@@ -108,6 +108,7 @@ void screen_credit_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_move( input_type_fire2 );
 	if( input )
 	{
+		engine_font_manager_draw_text( "CREDIT SCREEN...!!", 4, 14 );
 		check = engine_reset_manager_update();
 		if( check )
 		{

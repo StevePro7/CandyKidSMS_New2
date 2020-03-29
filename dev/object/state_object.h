@@ -15,6 +15,7 @@ typedef struct tag_struct_state_object
 	unsigned char state_object_world_data;
 	unsigned char state_object_round_data;
 	unsigned char state_object_actor_kill;
+	unsigned char state_object_fight_type;
 
 	unsigned char state_object_curr_screen;
 	unsigned char state_object_next_screen;

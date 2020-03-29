@@ -246,4 +246,11 @@ typedef enum tag_enum_cursor_type
 
 } enum_cursor_type;
 
+typedef enum tag_enum_fight_type
+{
+	fight_type_enemy = 0,
+	fight_type_boss = 1,
+
+} enum_fight_type;
+
 #endif//_ENUM_MANAGER_H_

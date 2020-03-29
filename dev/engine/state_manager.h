@@ -7,5 +7,6 @@
 extern struct_state_object global_state_object;
 
 void engine_state_manager_init();
+void engine_state_manager_fight( unsigned char fight );
 
 #endif//_STATE_MANAGER_H_

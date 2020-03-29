@@ -1,4 +1,6 @@
 #include "boss_manager.h"
+#include "enum_manager.h"
+#include "state_manager.h"
 #include "..\devkit\_sms_manager.h"
 #include "..\banks\bank3.h"
 
@@ -29,6 +31,7 @@ void engine_boss_manager_init()
 
 void engine_boss_manager_load()
 {
+	engine_state_manager_fight( fight_type_boss );
 }
 
 void engine_boss_manager_update()
