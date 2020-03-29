@@ -1,5 +1,13 @@
 # CandyKidSMS_New2
 
+29/03/2020
+Boss battles	TODO
+Invincibility	check still works	w/ death tree + boss
+Exits open + shut still work	
+Death tree = death => dead and then play [next level] if lives > 0 or cont screen then play screen [next level]
+
+Oneup implement logic to NOT place near boss home tiles
+
 
 28/03/2020
 Kid dies by Trees death + recalc directions on death tile
