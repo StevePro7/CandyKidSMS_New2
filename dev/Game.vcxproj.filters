@@ -288,6 +288,15 @@
     <ClInclude Include="engine\boss_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
+    <ClInclude Include="screen\prep_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\boss_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\fight_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -526,6 +535,15 @@
     </ClCompile>
     <ClCompile Include="engine\boss_manager.c">
       <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\boss_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\fight_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\prep_screen.c">
+      <Filter>Source Files\screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

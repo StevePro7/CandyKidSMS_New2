@@ -19,10 +19,13 @@ typedef enum tag_enum_screen_type
 	screen_type_dead = 11,
 	screen_type_cont = 12,
 	screen_type_over = 13,
-	screen_type_beat = 14,
-	screen_type_option = 15,
-	screen_type_credit = 16,
-	screen_type_test = 17,
+	screen_type_prep = 14,
+	screen_type_fight = 15,
+	screen_type_boss = 16,
+	screen_type_beat = 17,
+	screen_type_option = 18,
+	screen_type_credit = 19,
+	screen_type_test = 20,
 
 } enum_screen_type;
 

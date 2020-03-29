@@ -85,9 +85,11 @@
     <ClInclude Include="psg.h" />
     <ClInclude Include="screen\beat_screen.h" />
     <ClInclude Include="screen\begin_screen.h" />
+    <ClInclude Include="screen\boss_screen.h" />
     <ClInclude Include="screen\cont_screen.h" />
     <ClInclude Include="screen\credit_screen.h" />
     <ClInclude Include="screen\dead_screen.h" />
+    <ClInclude Include="screen\fight_screen.h" />
     <ClInclude Include="screen\init_screen.h" />
     <ClInclude Include="screen\intro_screen.h" />
     <ClInclude Include="screen\load_screen.h" />
@@ -96,6 +98,7 @@
     <ClInclude Include="screen\over_screen.h" />
     <ClInclude Include="screen\pass_screen.h" />
     <ClInclude Include="screen\play_screen.h" />
+    <ClInclude Include="screen\prep_screen.h" />
     <ClInclude Include="screen\ready_screen.h" />
     <ClInclude Include="screen\splash_screen.h" />
     <ClInclude Include="screen\start_screen.h" />
@@ -166,9 +169,11 @@
     <ClCompile Include="psg.c" />
     <ClCompile Include="screen\beat_screen.c" />
     <ClCompile Include="screen\begin_screen.c" />
+    <ClCompile Include="screen\boss_screen.c" />
     <ClCompile Include="screen\cont_screen.c" />
     <ClCompile Include="screen\credit_screen.c" />
     <ClCompile Include="screen\dead_screen.c" />
+    <ClCompile Include="screen\fight_screen.c" />
     <ClCompile Include="screen\init_screen.c" />
     <ClCompile Include="screen\intro_screen.c" />
     <ClCompile Include="screen\load_screen.c" />
@@ -177,6 +182,7 @@
     <ClCompile Include="screen\over_screen.c" />
     <ClCompile Include="screen\pass_screen.c" />
     <ClCompile Include="screen\play_screen.c" />
+    <ClCompile Include="screen\prep_screen.c" />
     <ClCompile Include="screen\ready_screen.c" />
     <ClCompile Include="screen\splash_screen.c" />
     <ClCompile Include="screen\start_screen.c" />
