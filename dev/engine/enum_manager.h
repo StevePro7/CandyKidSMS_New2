@@ -139,7 +139,8 @@ typedef enum tag_enum_actor_type
 	actor_type_suz = 2,
 	actor_type_kid = 3,
 	actor_type_tree = 4,
-	actor_type_boss = 5,
+	actor_type_boss1 = 5,
+	actor_type_boss2 = 6,
 
 } enum_actor_type;
 
