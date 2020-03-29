@@ -9,6 +9,7 @@
 #include "..\engine\font_manager.h"
 #include "..\engine\gamer_manager.h"
 #include "..\engine\global_manager.h"
+#include "..\engine\hack_manager.h"
 #include "..\engine\input_manager.h"
 #include "..\engine\level_manager.h"
 #include "..\engine\locale_manager.h"
@@ -33,6 +34,7 @@ void screen_prep_screen_load()
 {
 	struct_state_object *st = &global_state_object;
 	struct_level_object *lo = &global_level_object;
+	struct_hack_object *ho = &global_hack_object;
 	unsigned char oneup_count = 2;
 
 
@@ -69,7 +71,11 @@ void screen_prep_screen_load()
 	engine_level_manager_draw_level();
 	//engine_level_manager_draw_middle();
 	
-	print_level();
+	if( !ho->hack_object_delay_test )
+	{
+		print_level();
+	}
+
 	//engine_font_manager_draw_text( "PREP SCREEN!!", 4, 10 );
 }
 

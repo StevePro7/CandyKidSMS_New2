@@ -5,9 +5,9 @@
 //#include "..\engine\font_manager.h"
 #include "..\engine\gamer_manager.h"
 //#include "..\engine\level_manager.h"
-#include "..\engine\state_manager.h"
+//#include "..\engine\state_manager.h"
 //#include "..\engine\timer_manager.h"
-#include "..\devkit\_sms_manager.h"
+//#include "..\devkit\_sms_manager.h"
 
 //#define READY_SCREEN_DELAY	0
 
