@@ -44,10 +44,7 @@ void screen_boss_screen_load()
 	nextr_direction = direction_type_none;
 
 	engine_reset_manager_load( QUIT_SCREEN_DELAY );
-
 	st->state_object_curr_screen = screen_type_boss;
-
-	engine_font_manager_draw_text( "BOSS SCREEN!!", 4, 12 );
 }
 
 void screen_boss_screen_update( unsigned char *screen_type )
@@ -68,9 +65,9 @@ void screen_boss_screen_update( unsigned char *screen_type )
 	unsigned char oneup_count = 0;
 
 	unsigned char proceed;
-	//unsigned char input;
+	unsigned char input;
 	//unsigned char bossX;
-	//unsigned char check;
+	unsigned char check;
 	unsigned int frame = fo->frame_count;
 	st->state_object_actor_kill = actor_type_kid;
 
@@ -100,8 +97,123 @@ void screen_boss_screen_update( unsigned char *screen_type )
 	frame = fo->frame_count;
 
 
+	// Does player want to quit out?
+	input = engine_input_manager_move( input_type_fire2 );
+	if( input )
+	{
+		check = engine_reset_manager_update();
+		if( check )
+		{
+			engine_board_manager_midd_text();
+			*screen_type = screen_type_over;
+			return;
+		}
+	}
+	else
+	{
+		engine_reset_manager_reset();
+	}
+
+
+	// Move gamer.
+	if( direction_type_none != go->direction && lifecycle_type_move == go->lifecycle )
+	{
+		//  warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
+		input_direction = engine_input_manager_direction();
+		if( direction_type_none != input_direction && gamer_direction != input_direction )
+		{
+			nextr_direction = gamer_direction;
+		}
+
+		engine_gamer_manager_update();
+
+		// Check boost for next cycle.
+		gamer_boost = engine_gamer_manager_input_boost( go->direction );
+		if( pace_type_none != gamer_boost )
+		{
+			//			engine_command_manager_add( frame, command_type_gamer_speed, gamer_boost );
+			engine_gamer_manager_pace( gamer_boost );
+		}
+	}
+	if( direction_type_none != go->direction && lifecycle_type_idle == go->lifecycle )
+	{
+		// Check gamer collision.
+		gamer_tile_type = engine_level_manager_get_tile_type( go->tileX, go->tileY, go->direction, offset_type_none );
+		if( tile_type_blank != gamer_tile_type )
+		{
+			// Collide with [death] tree, candy, bonus or one up therefore process tile accordingly...
+			gamer_collision = engine_collision_manager_tile_collision( gamer_tile_type );
+			if( coll_type_block == gamer_collision )
+			{
+				engine_gamer_manager_dead();
+				st->state_object_actor_kill = actor_type_tree;
+			}
+		}
+
+		engine_gamer_manager_stop();
+	}
+	// For continuity we want to check if actor can move immediately after stopping.
+	if( direction_type_none == go->direction && lifecycle_type_idle == go->lifecycle )
+	{
+		if( coll_type_empty == gamer_collision )
+		{
+			if( direction_type_none != nextr_direction )
+			{
+				gamer_direction = nextr_direction;
+				nextr_direction = direction_type_none;
+			}
+			else
+			{
+				gamer_direction = engine_input_manager_direction();
+			}
+
+			gamer_direction = engine_gamer_manager_find_direction( gamer_direction );
+			if( direction_type_none != gamer_direction )
+			{
+				//engine_command_manager_add( frame, command_type_gamer_mover, gamer_direction );
+				engine_gamer_manager_move( gamer_direction );
+
+				gamer_boost = engine_gamer_manager_input_boost( gamer_direction );
+				if( pace_type_none != gamer_boost )
+				{
+					//					engine_command_manager_add( frame, command_type_gamer_speed, gamer_boost );
+					engine_gamer_manager_pace( gamer_boost );
+				}
+			}
+		}
+	}
+
+
 	// Execute all commands for this frame.
 	//engine_command_manager_execute( frame );
 	first_time = 0;
 
+
+	// Check oneup collision before sprite collision as we want to test if all oneup eaten = boss complete.
+	if( coll_type_oneup == gamer_collision )
+	{
+		oneup_count = engine_score_manager_get_oneup();
+		engine_audio_manager_sfx_play( sfx_type_power );
+		if( lo->level_object_oneup_count == oneup_count )
+		{
+			*screen_type = screen_type_pass;
+			return;
+		}
+	}
+
+	// Kid invincible thus don't check for death collisions.
+	if( st->state_object_localcheat )
+	{
+		return;
+	}
+
+	// Kid collide with death tree?
+	if( st->state_object_trees_type == tree_type_death )
+	{
+		if( actor_type_kid != st->state_object_actor_kill )
+		{
+			*screen_type = screen_type_dead;
+			return;
+		}
+	}
 }

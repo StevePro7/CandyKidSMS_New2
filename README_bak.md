@@ -1,7 +1,13 @@
 # CandyKidSMS_New2
 
 29/03/2020
-Boss battles	TODO
+TODO
+Boss battles
+Dead	go back to fight_screen	just like ready_screen
+Cont	go back to fight screen just like ready_screen
+i.e.	cannot advance until beaten boss
+
+
 Invincibility	check still works	w/ death tree + boss
 Exits open + shut still work	
 Death tree = death => dead and then play [next level] if lives > 0 or cont screen then play screen [next level]
