@@ -14,6 +14,8 @@
 #define PASS_SCREEN_DELAY1	25
 #define PASS_SCREEN_DELAY2	250
 
+static void draw_actor();
+static void hide_actor();
 static void next_level();
 
 static unsigned char event_stage;
@@ -26,8 +28,9 @@ void screen_pass_screen_load()
 	struct_level_object *lo = &global_level_object;
 
 	// Draw sprites first.
-	engine_enemy_manager_draw();
-	engine_gamer_manager_draw();
+	draw_actor();
+	//engine_enemy_manager_draw();
+	//engine_gamer_manager_draw();
 
 	st->state_object_curr_screen = screen_type_pass;
 	st->state_object_next_screen = screen_type_load;
@@ -67,8 +70,9 @@ void screen_pass_screen_update( unsigned char *screen_type )
 		}
 
 		// Draw sprites first.
-		engine_enemy_manager_hide();
-		engine_gamer_manager_hide();
+		hide_actor();
+		//engine_enemy_manager_hide();
+		//engine_gamer_manager_hide();
 		return;
 	}
 
@@ -93,16 +97,39 @@ void screen_pass_screen_update( unsigned char *screen_type )
 	// Draw sprites first.
 	if( event_stage_start == event_stage )
 	{
-		engine_enemy_manager_draw();
-		engine_gamer_manager_draw();
+		draw_actor();
+		//engine_enemy_manager_draw();
+		//engine_gamer_manager_draw();
 	}
 	else
 	{
-		engine_enemy_manager_hide();
-		engine_gamer_manager_hide();
+		hide_actor();
+		//engine_enemy_manager_hide();
+		//engine_gamer_manager_hide();
 	}
 
 	*screen_type = st->state_object_curr_screen;
+}
+
+static void draw_actor()
+{
+	struct_state_object *st = &global_state_object;
+	if( fight_type_enemy == st->state_object_fight_type )
+	{
+		engine_enemy_manager_draw();
+	}
+
+	engine_gamer_manager_draw();
+}
+static void hide_actor()
+{
+	struct_state_object *st = &global_state_object;
+	if( fight_type_enemy == st->state_object_fight_type )
+	{
+		engine_enemy_manager_hide();
+	}
+
+	engine_gamer_manager_hide();
 }
 
 static void next_level()
