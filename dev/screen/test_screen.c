@@ -12,7 +12,9 @@
 #include "..\engine\level_manager.h"
 #include "..\engine\locale_manager.h"
 #include "..\engine\main_manager.h"
+#include "..\engine\memo_manager.h"
 #include "..\engine\option_manager.h"
+#include "..\engine\score_manager.h"
 #include "..\engine\sprite_manager.h"
 #include "..\engine\tile_manager.h"
 #include "..\devkit\_sms_manager.h"
@@ -37,12 +39,25 @@ void screen_test_screen_load()
 	engine_content_manager_load_tiles_font();
 	engine_content_manager_load_tiles_game();
 
+
+	// TODO delete
+	// Reset all score data.
+	engine_score_manager_text();
+	engine_score_manager_init();
+	engine_memo_manager_option();
+	// TODO delete
+	// load screen
+	// Reset all score data.
+	engine_score_manager_load();
+
+
+
 	load_boss32();
 	//option = 0;
 	//actor = actor_type_suz;
 	//index = actor * 2 + option;
 
-	index = 2;
+	index = 4;
 	engine_boss_manager_content( index );
 
 	engine_board_manager_border( border_type_game );
@@ -66,7 +81,7 @@ void screen_test_screen_load()
 	//draw_oneup( 7, 3 );
 
 	engine_level_manager_clear();
-	engine_level_manager_load_oneup( 25 );
+	engine_level_manager_load_oneup( 7 );
 
 	engine_level_manager_draw_level();
 	engine_level_manager_draw_middle();
@@ -88,10 +103,10 @@ void screen_test_screen_update( unsigned char *screen_type )
 	//draw_boss64( 160 - 16, 32 - 16 );
 
 	// bot right	10, 9
-	//draw_boss64( 160 - 16, 32 - 16 );
+	draw_boss64( 160 - 16, 128 - 16 );
 
-	draw_boss32( 1, 48 - 16, 144 - 16 );
-	draw_boss32( 2, 160 - 16, 32 - 16 );
+	//draw_boss32( 1, 48 - 16, 144 - 16 );
+	//draw_boss32( 2, 160 - 16, 32 - 16 );
 	*screen_type = screen_type_test;
 }
 

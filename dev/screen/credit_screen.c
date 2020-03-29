@@ -3,6 +3,7 @@
 #include "..\engine\board_manager.h"
 #include "..\engine\boss_manager.h"
 #include "..\engine\content_manager.h"
+#include "..\engine\collision_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
 #include "..\engine\gamer_manager.h"
@@ -11,7 +12,9 @@
 #include "..\engine\level_manager.h"
 #include "..\engine\locale_manager.h"
 #include "..\engine\main_manager.h"
+#include "..\engine\memo_manager.h"
 #include "..\engine\option_manager.h"
+#include "..\engine\score_manager.h"
 #include "..\engine\sprite_manager.h"
 #include "..\engine\state_manager.h"
 #include "..\engine\tile_manager.h"
@@ -33,19 +36,33 @@ void screen_credit_screen_load()
 	engine_boss_manager_content( 3 );
 	engine_board_manager_border( border_type_game );
 
+	// TODO delete
+	// Reset all score data.
+	engine_score_manager_text();
+	engine_score_manager_init();
+	engine_memo_manager_option();
+	// TODO delete
+
+
+	// load screen
+	// Reset all score data.
+	engine_score_manager_load();
+
+	//engine_boss_manager_reset_home()
+	engine_gamer_manager_reset();
+
+	// Force override enemy move!
+	//engine_enemy_manager_debug();
+
+	engine_gamer_manager_load();
+	engine_boss_manager_load();
+
+	// load one up
 	engine_level_manager_clear();
 	engine_level_manager_load_oneup( 5 );
 
 	engine_level_manager_draw_level();
 	engine_level_manager_draw_middle();
-
-	// load screen
-	engine_gamer_manager_load();
-	engine_boss_manager_load();
-
-	// ready screen
-	//engine_boss_manager_reset_home()
-	engine_gamer_manager_reset();
 	
 
 	engine_delay_manager_load( 0 );
@@ -76,9 +93,18 @@ void screen_credit_screen_update( unsigned char *screen_type )
 	struct_level_object *lo = &global_level_object;
 	//struct_boss_object *bo;
 
+	unsigned char gamer_boost = 0;
+	unsigned char enemy_boost = 0;
+	unsigned char gamer_direction = direction_type_none;
+	unsigned char bossX_direction = direction_type_none;
+	unsigned char input_direction = direction_type_none;
+	unsigned char gamer_collision = coll_type_empty;
+	unsigned char gamer_tile_type = tile_type_blank;
+	unsigned char oneup_count = 0;
+
 	unsigned char proceed;
 	unsigned char input;
-	//unsigned char boss;
+	//unsigned char bossX;
 	unsigned char check;
 	unsigned int frame = fo->frame_count;
 	st->state_object_actor_kill = actor_type_kid;
@@ -91,8 +117,8 @@ void screen_credit_screen_update( unsigned char *screen_type )
 	*screen_type = st->state_object_curr_screen;
 
 
-	engine_frame_manager_draw();
-	engine_delay_manager_draw();
+	//engine_frame_manager_draw();
+	//engine_delay_manager_draw();
 	if( !first_time )
 	{
 		proceed = engine_delay_manager_update();
@@ -113,7 +139,6 @@ void screen_credit_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_move( input_type_fire2 );
 	if( input )
 	{
-		engine_font_manager_draw_text( "CREDIT SCREEN...!!", 4, 14 );
 		check = engine_reset_manager_update();
 		if( check )
 		{
@@ -125,6 +150,77 @@ void screen_credit_screen_update( unsigned char *screen_type )
 	else
 	{
 		engine_reset_manager_reset();
+	}
+
+
+	// Move gamer.
+	if( direction_type_none != go->direction && lifecycle_type_move == go->lifecycle )
+	{
+		//  warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
+		input_direction = engine_input_manager_direction();
+		if( direction_type_none != input_direction && gamer_direction != input_direction )
+		{
+			nextr_direction = gamer_direction;
+		}
+
+		engine_gamer_manager_update();
+
+		// Check boost for next cycle.
+		gamer_boost = engine_gamer_manager_input_boost( go->direction );
+		if( pace_type_none != gamer_boost )
+		{
+			//			engine_command_manager_add( frame, command_type_gamer_speed, gamer_boost );
+			engine_gamer_manager_pace( gamer_boost );
+		}
+	}
+	if( direction_type_none != go->direction && lifecycle_type_idle == go->lifecycle )
+	{
+		// Check gamer collision.
+		gamer_tile_type = engine_level_manager_get_tile_type( go->tileX, go->tileY, go->direction, offset_type_none );
+		if( tile_type_blank != gamer_tile_type )
+		{
+			// Collide with [death] tree, candy, bonus or one up therefore process tile accordingly...
+			gamer_collision = engine_collision_manager_tile_collision( gamer_tile_type );
+
+			// Will NOT collide with tree on boss battle as there are none!
+			//if( coll_type_block == gamer_collision )
+			//{
+			//	engine_gamer_manager_dead();
+			//	st->state_object_actor_kill = actor_type_tree;
+			//}
+		}
+
+		engine_gamer_manager_stop();
+	}
+	// For continuity we want to check if actor can move immediately after stopping.
+	if( direction_type_none == go->direction && lifecycle_type_idle == go->lifecycle )
+	{
+		if( coll_type_empty == gamer_collision )
+		{
+			if( direction_type_none != nextr_direction )
+			{
+				gamer_direction = nextr_direction;
+				nextr_direction = direction_type_none;
+			}
+			else
+			{
+				gamer_direction = engine_input_manager_direction();
+			}
+
+			gamer_direction = engine_gamer_manager_find_direction( gamer_direction );
+			if( direction_type_none != gamer_direction )
+			{
+				//engine_command_manager_add( frame, command_type_gamer_mover, gamer_direction );
+				engine_gamer_manager_move( gamer_direction );
+
+				gamer_boost = engine_gamer_manager_input_boost( gamer_direction );
+				if( pace_type_none != gamer_boost )
+				{
+					//					engine_command_manager_add( frame, command_type_gamer_speed, gamer_boost );
+					engine_gamer_manager_pace( gamer_boost );
+				}
+			}
+		}
 	}
 
 
