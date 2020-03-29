@@ -77,6 +77,11 @@ unsigned char engine_score_manager_get_candy()
 	struct_score_object *so = &global_score_object;
 	return so->candy;
 }
+unsigned char engine_score_manager_get_oneup()
+{
+	struct_score_object *so = &global_score_object;
+	return so->oneup;
+}
 unsigned char engine_score_manager_get_bonus( unsigned char index )
 {
 	return bonuses[ index - 3 ];
@@ -119,7 +124,7 @@ void engine_score_manager_update_oneup()
 {
 	struct_score_object *so = &global_score_object;
 	//so->total++;
-	update_lives( 1 );
+	update_score( 5 );
 }
 
 void engine_score_manager_update_lives( signed char value )

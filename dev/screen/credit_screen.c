@@ -1,5 +1,6 @@
 #include "credit_screen.h"
 #include "..\engine\asm_manager.h"
+#include "..\engine\audio_manager.h"
 #include "..\engine\board_manager.h"
 #include "..\engine\boss_manager.h"
 #include "..\engine\content_manager.h"
@@ -29,6 +30,9 @@ void screen_credit_screen_load()
 {
 	struct_state_object *st = &global_state_object;
 
+	// Load from SRAM first.
+	engine_main_manager_load();
+
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_load_tiles_font();
 	engine_content_manager_load_tiles_game();
@@ -57,7 +61,7 @@ void screen_credit_screen_load()
 	engine_gamer_manager_load();
 	engine_boss_manager_load();
 
-	// load one up
+	// load oneup
 	engine_level_manager_clear();
 	engine_level_manager_load_oneup( 5 );
 
@@ -181,13 +185,11 @@ void screen_credit_screen_update( unsigned char *screen_type )
 		{
 			// Collide with [death] tree, candy, bonus or one up therefore process tile accordingly...
 			gamer_collision = engine_collision_manager_tile_collision( gamer_tile_type );
-
-			// Will NOT collide with tree on boss battle as there are none!
-			//if( coll_type_block == gamer_collision )
-			//{
-			//	engine_gamer_manager_dead();
-			//	st->state_object_actor_kill = actor_type_tree;
-			//}
+			if( coll_type_block == gamer_collision )
+			{
+				engine_gamer_manager_dead();
+				st->state_object_actor_kill = actor_type_tree;
+			}
 		}
 
 		engine_gamer_manager_stop();
@@ -227,4 +229,11 @@ void screen_credit_screen_update( unsigned char *screen_type )
 	// Execute all commands for this frame.
 	//engine_command_manager_execute( frame );
 	first_time = 0;
+
+
+	// Check oneup collision before sprite collision as we want to test if all oneup eaten = boss complete.
+	if( coll_type_oneup == gamer_collision )
+	{
+		engine_audio_manager_sfx_play( sfx_type_power );
+	}
 }

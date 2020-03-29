@@ -77,10 +77,13 @@ void engine_level_manager_load_level( const unsigned char world, const unsigned 
 
 void engine_level_manager_load_oneup( unsigned char quantity )
 {
+	struct_level_object *lo = &global_level_object;
 	unsigned char row, col;
 	unsigned char index;
 	unsigned char tiles;
 	unsigned char loops;
+
+	lo->level_object_oneup_count = 0;
 	for( loops = 0; loops < quantity; loops++ )
 	{
 		while( 1 )
@@ -108,6 +111,7 @@ void engine_level_manager_load_oneup( unsigned char quantity )
 		}
 
 		level_object_tiles_array[ index ] = tile_type_oneup;
+		lo->level_object_oneup_count++;
 	}
 
 	//col = 0;
@@ -420,9 +424,9 @@ static void load_level( const unsigned char *data, const unsigned char size, con
 	unsigned char draw_cols;
 	load_cols = size / MAX_ROWS;
 	draw_cols = load_cols - CRLF;
-
 	lo->level_object_bonus_count = 0;
 	lo->level_object_candy_count = 0;
+	
 	lo->level_object_multiplier = mult;
 
 	mult = 0;
