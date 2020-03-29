@@ -70,7 +70,6 @@ void screen_test_screen_load()
 
 	engine_level_manager_draw_level();
 	engine_level_manager_draw_middle();
-
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
