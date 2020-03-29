@@ -4,7 +4,7 @@
 #include "..\engine\board_manager.h"
 #include "..\engine\boss_manager.h"
 #include "..\engine\content_manager.h"
-#include "..\engine\collision_manager.h"
+//#include "..\engine\collision_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
 #include "..\engine\gamer_manager.h"
@@ -12,16 +12,17 @@
 #include "..\engine\input_manager.h"
 #include "..\engine\level_manager.h"
 #include "..\engine\locale_manager.h"
-#include "..\engine\main_manager.h"
+//#include "..\engine\main_manager.h"
 #include "..\engine\memo_manager.h"
-#include "..\engine\option_manager.h"
+//#include "..\engine\option_manager.h"
 #include "..\engine\score_manager.h"
 //#include "..\engine\sprite_manager.h"
 #include "..\engine\state_manager.h"
-#include "..\engine\tile_manager.h"
+//#include "..\engine\tile_manager.h"
 #include "..\engine\timer_manager.h"
 #include "..\devkit\_sms_manager.h"
 #include "..\object\locale_object.h"
+#include <stdlib.h>
 
 #define PREP_SCREEN_DELAY	150
 //#define PREP_SCREEN_DELAY	0
@@ -35,7 +36,7 @@ void screen_prep_screen_load()
 	unsigned char oneup_count = 2;
 
 
-	st->state_object_curr_screen = screen_type_prep	;
+	st->state_object_curr_screen = screen_type_prep;
 	st->state_object_next_screen = screen_type_fight;
 
 	engine_delay_manager_load( PREP_SCREEN_DELAY );
@@ -74,7 +75,28 @@ void screen_prep_screen_load()
 
 void screen_prep_screen_update( unsigned char *screen_type )
 {
-	*screen_type = screen_type_prep;
+	struct_state_object *st = &global_state_object;
+	unsigned char delay;
+	unsigned char input;
+	unsigned char index;
+
+	// Draw sprites first.
+	//engine_enemy_manager_draw();
+	engine_boss_manager_draw();
+	engine_gamer_manager_draw();
+
+	delay = engine_delay_manager_update();
+	input = devkit_SMS_getKeysStatus();
+	if( delay || input )
+	{
+		index = rand() % MAX_MUSIC;
+		engine_level_manager_draw_middle();
+		//engine_audio_manager_music_play( index + 3 );
+		*screen_type = st->state_object_next_screen;
+		return;
+	}
+
+	*screen_type = st->state_object_curr_screen;
 }
 
 
@@ -82,12 +104,11 @@ void screen_prep_screen_update( unsigned char *screen_type )
 static void print_level()
 {
 	struct_state_object *st = &global_state_object;
-	unsigned char index;
+	unsigned char index = 49 + st->state_object_fight_type;
+
 	engine_board_manager_midd_text();
 	engine_memo_manager_levels( 14, 11, 12 );
 
 	engine_font_manager_draw_text( locale_object_texts[ 12 ], SCREEN_TILE_LEFT + 8, 11 );
-
-	index = 49 + st->state_object_fight_type;
 	engine_font_manager_draw_text( locale_object_texts[ index ], SCREEN_TILE_LEFT + 8, 12 );
 }
