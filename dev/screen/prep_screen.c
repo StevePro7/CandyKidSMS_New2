@@ -21,10 +21,12 @@
 #include "..\engine\tile_manager.h"
 #include "..\engine\timer_manager.h"
 #include "..\devkit\_sms_manager.h"
-#include "..\object\level_object.h"
+#include "..\object\locale_object.h"
 
 #define PREP_SCREEN_DELAY	150
 //#define PREP_SCREEN_DELAY	0
+
+static void print_level();
 
 void screen_prep_screen_load()
 {
@@ -48,6 +50,7 @@ void screen_prep_screen_load()
 	// Reset all score data.
 	engine_score_manager_load();
 
+	// TODO
 	//engine_boss_manager_reset_home()
 	engine_gamer_manager_reset();
 
@@ -56,20 +59,35 @@ void screen_prep_screen_load()
 	//engine_boss_manager_debug();
 
 	engine_gamer_manager_load();
-	engine_boss_manager_load();
+	engine_boss_manager_load( st->state_object_round_data );
 
 	// load oneup
 	engine_level_manager_clear();
 	engine_level_manager_load_oneup( oneup_count );
 
 	engine_level_manager_draw_level();
-	engine_level_manager_draw_middle();
+	//engine_level_manager_draw_middle();
 	
-
-	engine_font_manager_draw_text( "PREP SCREEN!!", 4, 10 );
+	print_level();
+	//engine_font_manager_draw_text( "PREP SCREEN!!", 4, 10 );
 }
 
 void screen_prep_screen_update( unsigned char *screen_type )
 {
 	*screen_type = screen_type_prep;
+}
+
+
+
+static void print_level()
+{
+	struct_state_object *st = &global_state_object;
+	unsigned char index;
+	engine_board_manager_midd_text();
+	engine_memo_manager_levels( 14, 11, 12 );
+
+	engine_font_manager_draw_text( locale_object_texts[ 12 ], SCREEN_TILE_LEFT + 8, 11 );
+
+	index = 49 + st->state_object_fight_type;
+	engine_font_manager_draw_text( locale_object_texts[ index ], SCREEN_TILE_LEFT + 8, 12 );
 }

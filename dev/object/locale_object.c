@@ -55,6 +55,8 @@ const unsigned char *locale_object_texts[] =
 	" OPEN",
 	" SHUT",
 	"DIFFICULTY",
+	"BIG BOSS",
+	"LIL BOSS",
 };
 
 
