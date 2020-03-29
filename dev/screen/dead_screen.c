@@ -62,7 +62,8 @@ void screen_dead_screen_load()
 	}
 	else
 	{
-		st->state_object_next_screen = ( 0 == lives ) ? screen_type_cont : screen_type_load;
+		//st->state_object_next_screen = ( 0 == lives ) ? screen_type_cont : screen_type_load;
+		st->state_object_next_screen = ( 0 == lives ) ? screen_type_cont : screen_type_fight;
 		//screen = ( 0 == lives ) ? screen_type_cont : screen_type_load;
 	}
 	
@@ -120,9 +121,11 @@ void screen_dead_screen_update( unsigned char *screen_type )
 			{
 				reset_death();
 			}
-			if( screen_type_load == st->state_object_next_screen )
+			//if( screen_type_load == st->state_object_next_screen )
+			if( screen_type_fight == st->state_object_next_screen )
 			{
-				engine_state_manager_level();
+				// TODO stevepro adriana goto fight
+				//engine_state_manager_level();
 			}
 			if( screen_type_ready == st->state_object_next_screen )
 			{
@@ -155,9 +158,11 @@ void screen_dead_screen_update( unsigned char *screen_type )
 				{
 					reset_death();
 				}
-				if( screen_type_load == st->state_object_next_screen )
+				//if( screen_type_load == st->state_object_next_screen )
+				if( screen_type_fight == st->state_object_next_screen )
 				{
-					engine_state_manager_level();
+					// TODO stevepro adriana goto fight
+					//engine_state_manager_level();
 				}
 				if( screen_type_ready == st->state_object_next_screen )
 				{

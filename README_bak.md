@@ -7,6 +7,15 @@ Dead	go back to fight_screen	just like ready_screen
 Cont	go back to fight screen just like ready_screen
 i.e.	cannot advance until beaten boss
 
+Pass	this is the only screen in which you can advance level
+Pass	every 5th and 10th round goto Prep screen for boss
+
+Decide which boss1 or boss2
+if boss1 then load content is easy but boss2 need to work out algorithm
+
+Will have 2x bosses always but only 1x for boss1 move + draw
+Will have 2x bosses for Easy but 1x will move and both draw AND Hard both will move and draw
+
 
 Invincibility	check still works	w/ death tree + boss
 Exits open + shut still work	

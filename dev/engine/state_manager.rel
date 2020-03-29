@@ -1,11 +1,10 @@
 XL2
-H 9 areas 5 global symbols
+H 9 areas 4 global symbols
 M state_manager
 O -mz80
 S .__.ABS. Def0000
-A _CODE size 76 flags 0 addr 0
+A _CODE size 51 flags 0 addr 0
 S _engine_state_manager_fight Def0043
-S _engine_state_manager_level Def0051
 S _engine_state_manager_init Def0000
 A _DATA size E flags 0 addr 0
 S _global_state_object Def0000
@@ -36,13 +35,3 @@ T 43 00
 R 00 00 00 00
 T 43 00 21 0B 00 FD 21 02 00 FD 39 FD 7E 00 77 C9
 R 00 00 00 00 00 03 01 00
-T 51 00
-R 00 00 00 00
-T 51 00 01 08 00 0A 57 21 09 00 5E 7A D6 09 20 0B
-R 00 00 00 00 00 03 01 00 00 08 01 00
-T 5F 00 7B D6 09 20 06 21 0D 00 36 11 C9
-R 00 00 00 00 00 08 01 00
-T 6A 00
-R 00 00 00 00
-T 6A 00 1C 73 7B D6 0A D8 36 00 0A 3C 02 C9
-R 00 00 00 00
