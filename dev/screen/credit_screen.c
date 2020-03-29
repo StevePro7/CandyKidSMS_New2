@@ -41,8 +41,9 @@ void screen_credit_screen_load()
 
 	engine_boss_manager_content( 3 );
 	engine_board_manager_border( border_type_game );
+	engine_board_manager_side_tile();
 
-	// TODO delete
+		// TODO delete
 	// Reset all score data.
 	engine_score_manager_text();
 	engine_score_manager_init();
