@@ -123,7 +123,7 @@ void engine_score_manager_update_candy()
 void engine_score_manager_update_oneup()
 {
 	struct_score_object *so = &global_score_object;
-	//so->total++;
+	so->oneup++;
 	update_score( 5 );
 }
 

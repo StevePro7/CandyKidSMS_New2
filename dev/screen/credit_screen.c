@@ -16,7 +16,7 @@
 #include "..\engine\memo_manager.h"
 #include "..\engine\option_manager.h"
 #include "..\engine\score_manager.h"
-#include "..\engine\sprite_manager.h"
+//#include "..\engine\sprite_manager.h"
 #include "..\engine\state_manager.h"
 #include "..\engine\tile_manager.h"
 #include "..\engine\timer_manager.h"
@@ -29,6 +29,7 @@ static unsigned char nextr_direction;
 void screen_credit_screen_load()
 {
 	struct_state_object *st = &global_state_object;
+	struct_level_object *lo = &global_level_object;
 	unsigned char oneup_count = 1;
 
 	// Load from SRAM first.
@@ -88,6 +89,7 @@ void screen_credit_screen_load()
 
 
 	engine_font_manager_draw_text( "CREDIT SCREEN...!!", 4, 10 );
+	engine_font_manager_draw_data( lo->level_object_oneup_count, 10, 12 );
 }
 
 void screen_credit_screen_update( unsigned char *screen_type )
