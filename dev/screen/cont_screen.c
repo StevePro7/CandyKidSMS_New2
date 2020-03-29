@@ -91,7 +91,11 @@ void screen_cont_screen_update( unsigned char *screen_type )
 	}
 
 	// Draw sprites last.
-	engine_enemy_manager_hide();
+	if( fight_type_enemy == st->state_object_fight_type )
+	{
+		engine_enemy_manager_hide();
+	}
+
 	engine_gamer_manager_hide_death();
 
 	input[ 0 ] = engine_input_manager_hold( input_type_left );

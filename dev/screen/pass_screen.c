@@ -16,7 +16,7 @@
 
 static void draw_actor();
 static void hide_actor();
-static void next_level();
+//static void next_level();
 
 static unsigned char event_stage;
 static unsigned char perfect;
@@ -38,7 +38,12 @@ void screen_pass_screen_load()
 	engine_delay_manager_load( PASS_SCREEN_DELAY1 );
 	engine_audio_manager_music_stop();
 
-	perfect = ( lo->level_object_bonus_count + lo->level_object_candy_count == so->bonus + so->candy );
+	perfect = 1;
+	if( fight_type_enemy == st->state_object_fight_type )
+	{
+		perfect = ( lo->level_object_bonus_count + lo->level_object_candy_count == so->bonus + so->candy );
+	}
+
 	event_stage = event_stage_start;
 }
 
@@ -59,7 +64,8 @@ void screen_pass_screen_update( unsigned char *screen_type )
 		//}
 		if( delay || input )
 		{
-			next_level();
+			//next_level();
+			engine_state_manager_level();
 			engine_audio_manager_music_stop();
 			*screen_type = st->state_object_next_screen;
 			return;
@@ -81,9 +87,14 @@ void screen_pass_screen_update( unsigned char *screen_type )
 	{
 		engine_delay_manager_load( PASS_SCREEN_DELAY2 );
 		engine_memo_manager_pass( perfect );
-		if( perfect )
+
+		// Only award 2000pts on normal levels i.e. not boss!
+		if( fight_type_enemy == st->state_object_fight_type )
 		{
-			engine_score_manager_finish_bonus();
+			if( perfect )
+			{
+				engine_score_manager_finish_bonus();
+			}
 		}
 
 		//if( !st->state_object_mydebugger )
@@ -132,21 +143,21 @@ static void hide_actor()
 	engine_gamer_manager_hide();
 }
 
-static void next_level()
-{
-	// Clocked game!
-	struct_state_object *st = &global_state_object;
-	if( MAX_WORLDS - 1 == st->state_object_world_data  && MAX_ROUNDS - 1 == st->state_object_round_data )
-	{
-		st->state_object_next_screen = screen_type_beat;
-		return;
-	}
-
-	// TODO  here is where we check to go to boss level if there are any!!
-	st->state_object_round_data++;
-	if( st->state_object_round_data >= MAX_ROUNDS )
-	{
-		st->state_object_round_data = 0;
-		st->state_object_world_data++;
-	}
-}
+//static void next_level()
+//{
+//	// Clocked game!
+//	struct_state_object *st = &global_state_object;
+//	if( MAX_WORLDS - 1 == st->state_object_world_data  && MAX_ROUNDS - 1 == st->state_object_round_data )
+//	{
+//		st->state_object_next_screen = screen_type_beat;
+//		return;
+//	}
+//
+//	// TODO  here is where we check to go to boss level if there are any!!
+//	st->state_object_round_data++;
+//	if( st->state_object_round_data >= MAX_ROUNDS )
+//	{
+//		st->state_object_round_data = 0;
+//		st->state_object_world_data++;
+//	}
+//}
