@@ -44,7 +44,7 @@ void screen_credit_screen_load()
 	engine_reset_manager_load( QUIT_SCREEN_DELAY );
 
 
-	engine_font_manager_draw_text( "CREDIT SCREEN...!!", 4, 10 );
+	engine_font_manager_draw_text( "CREDIT SCREEN!!", 4, 10 );
 }
 
 void screen_credit_screen_update( unsigned char *screen_type )
