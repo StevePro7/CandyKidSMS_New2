@@ -252,7 +252,8 @@ typedef enum tag_enum_cursor_type
 typedef enum tag_enum_fight_type
 {
 	fight_type_enemy = 0,
-	fight_type_boss = 1,
+	fight_type_boss1 = 1,
+	fight_type_boss2 = 2,
 
 } enum_fight_type;
 

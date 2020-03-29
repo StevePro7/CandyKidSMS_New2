@@ -66,6 +66,7 @@ void engine_score_manager_load()
 	so->values[ score_type_level ] = st->state_object_world_data * MAX_ROUNDS + st->state_object_round_data + 1;
 	so->bonus = 0;
 	so->candy = 0;
+	so->oneup = 0;
 	so->values[ score_type_boost ] = boost_X[ st->state_object_pace_speed ];
 
 	draw_value( score_type_level );

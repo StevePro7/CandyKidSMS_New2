@@ -31,7 +31,10 @@ void engine_boss_manager_init()
 
 void engine_boss_manager_load()
 {
-	engine_state_manager_fight( fight_type_boss );
+	// TODO calculate
+	// boss1	every  5th round
+	// boss2	every 10th round
+	engine_state_manager_fight( fight_type_boss1 );
 }
 
 void engine_boss_manager_update()
