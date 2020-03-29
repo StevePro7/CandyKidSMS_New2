@@ -246,4 +246,20 @@ void screen_credit_screen_update( unsigned char *screen_type )
 			return;
 		}
 	}
+
+	// Kid invincible thus don't check for death collisions.
+	if( st->state_object_localcheat )
+	{
+		return;
+	}
+
+	// Kid collide with death tree?
+	if( st->state_object_trees_type == tree_type_death )
+	{
+		if( actor_type_kid != st->state_object_actor_kill )
+		{
+			*screen_type = screen_type_dead;
+			return;
+		}
+	}
 }
