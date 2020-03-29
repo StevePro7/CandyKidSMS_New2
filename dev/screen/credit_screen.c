@@ -39,9 +39,14 @@ void screen_credit_screen_load()
 	engine_level_manager_draw_level();
 	engine_level_manager_draw_middle();
 
+	// load screen
 	engine_gamer_manager_load();
-	engine_gamer_manager_reset();
+	engine_boss_manager_load();
 
+	// ready screen
+	//engine_boss_manager_reset_home()
+	engine_gamer_manager_reset();
+	
 
 	engine_delay_manager_load( 0 );
 
