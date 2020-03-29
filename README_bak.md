@@ -6,6 +6,7 @@ Invincibility	check still works	w/ death tree + boss
 Exits open + shut still work	
 Death tree = death => dead and then play [next level] if lives > 0 or cont screen then play screen [next level]
 
+Boss level => dead / cont logic like pass i.e. increment level count
 Oneup implement logic to NOT place near boss home tiles
 
 
