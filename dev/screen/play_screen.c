@@ -25,11 +25,11 @@
 #pragma disable_warning 110
 #endif
 
-#define QUIT_SCREEN_DELAY		75
+//#define QUIT_SCREEN_DELAY		75
 
 // PLAY screen - is the main command add + execute driver
 static unsigned char first_time;
-static unsigned char frame_spot;
+//static unsigned char frame_spot;
 static unsigned char nextr_direction;
 
 void screen_play_screen_load()
@@ -55,7 +55,7 @@ void screen_play_screen_load()
 	}
 
 	first_time = 1;
-	frame_spot = 0;
+	//frame_spot = 0;
 
 	//power1 = state_object_invincibie;
 	//power2 = state_object_localcheat;

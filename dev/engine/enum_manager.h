@@ -99,7 +99,8 @@ typedef enum tag_enum_tile_type
 	tile_type_bonusC = 5,
 	tile_type_bonusD = 6,
 	tile_type_oneup = 7,
-	tile_type_cross = 8,
+	tile_type_cross1 = 8,
+	tile_type_cross2 = 9,
 
 } enum_tile_type;
 
@@ -109,6 +110,7 @@ typedef enum tag_enum_coll_type
 	coll_type_block = 1,
 	coll_type_candy = 2,
 	coll_type_oneup = 3,
+	coll_type_cross = 4,
 
 } enum_coll_type;
 
@@ -134,6 +136,7 @@ typedef enum tag_enum_actor_type
 	actor_type_suz = 2,
 	actor_type_kid = 3,
 	actor_type_tree = 4,
+	actor_type_boss = 5,
 
 } enum_actor_type;
 
