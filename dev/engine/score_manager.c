@@ -49,7 +49,7 @@ void engine_score_manager_init()
 	so->score = 0;
 
 	so->values[ score_type_lives ] = NUMBER_LIVES - st->state_object_difficulty;
-	so->values[ score_type_lives ] = 1; // stevepro
+	so->values[ score_type_lives ] = 2; // stevepro
 
 	draw_zero( DATA_X + 1, TEXT0_Y + 1 );
 	draw_zero( DATA_X + 1, TEXT1_Y + 1 );

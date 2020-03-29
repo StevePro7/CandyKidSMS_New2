@@ -27,7 +27,7 @@ static unsigned char event_stage;
 static unsigned char flash_count;
 
 static void reset_death();
-static unsigned char screen;
+//static unsigned char screen;
 
 void screen_dead_screen_load()
 {
@@ -53,15 +53,17 @@ void screen_dead_screen_load()
 	engine_score_manager_update_lives( -1 );
 	lives = engine_score_manager_get_value( score_type_lives );
 
-	screen = screen_type_cont;
+	st->state_object_next_screen = screen_type_cont;
+	//screen = screen_type_cont;
 	if( fight_type_enemy == st->state_object_fight_type )
 	{
-		screen = ( 0 == lives ) ? screen_type_cont : screen_type_ready;
+		st->state_object_next_screen = ( 0 == lives ) ? screen_type_cont : screen_type_ready;
+		//screen = ( 0 == lives ) ? screen_type_cont : screen_type_ready;
 	}
 	else
 	{
-		screen = ( 0 == lives ) ? screen_type_cont : screen_type_load;
-		//screen = ( 0 == lives ) ? screen_type_cont : screen_type_ready;
+		st->state_object_next_screen = ( 0 == lives ) ? screen_type_cont : screen_type_load;
+		//screen = ( 0 == lives ) ? screen_type_cont : screen_type_load;
 	}
 	
 	//screen = screen_type_cont;
@@ -102,7 +104,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 		engine_enemy_manager_draw();
 	}
 
-	if( screen_type_cont == screen )
+	if( screen_type_cont == st->state_object_next_screen )
 	{
 		engine_gamer_manager_draw_death( death_frame );
 	}
@@ -114,16 +116,20 @@ void screen_dead_screen_update( unsigned char *screen_type )
 		input = engine_input_manager_hold( input_type_fire2 );
 		if( input )
 		{
-			if( screen_type_cont != screen )
+			if( screen_type_cont != st->state_object_next_screen )
 			{
 				reset_death();
 			}
-			if( screen_type_ready == screen )
+			if( screen_type_load == st->state_object_next_screen )
+			{
+				engine_state_manager_level();
+			}
+			if( screen_type_ready == st->state_object_next_screen )
 			{
 				engine_audio_manager_music_resume();
 			}
 
-			*screen_type = screen;
+			*screen_type = st->state_object_next_screen;
 			return;
 		}
 	//}
@@ -138,23 +144,27 @@ void screen_dead_screen_update( unsigned char *screen_type )
 		if( delay )
 		{
 			flash_count++;
-			if( screen_type_cont != screen )
+			if( screen_type_cont != st->state_object_next_screen )
 			{
 				death_frame = 1 - death_frame;
 			}
 
 			if( flash_count >= 7 )
 			{
-				if( screen_type_cont != screen )
+				if( screen_type_cont != st->state_object_next_screen )
 				{
 					reset_death();
 				}
-				if( screen_type_ready == screen )
+				if( screen_type_load == st->state_object_next_screen )
+				{
+					engine_state_manager_level();
+				}
+				if( screen_type_ready == st->state_object_next_screen )
 				{
 					engine_audio_manager_music_resume();
 				}
 
-				*screen_type = screen;
+				*screen_type = st->state_object_next_screen;
 				return;
 			}
 		}
