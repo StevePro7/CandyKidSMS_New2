@@ -24,6 +24,8 @@ static unsigned char nextr_direction;
 
 void screen_credit_screen_load()
 {
+	struct_state_object *st = &global_state_object;
+
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_load_tiles_font();
 	engine_content_manager_load_tiles_game();
@@ -40,11 +42,25 @@ void screen_credit_screen_load()
 	engine_gamer_manager_load();
 	engine_gamer_manager_reset();
 
+
+	engine_delay_manager_load( 20 );
+
+	//	engine_command_manager_load();
+	engine_frame_manager_load();
+
+	engine_frame_manager_draw();
+	engine_delay_manager_draw();
+
+
 	nextr_direction = direction_type_none;
 	engine_reset_manager_load( QUIT_SCREEN_DELAY );
 
 
-	engine_font_manager_draw_text( "CREDIT SCREEN!!", 4, 10 );
+	//st->state_object_next_screen = screen_type_init;
+	st->state_object_curr_screen = screen_type_credit;
+
+
+	engine_font_manager_draw_text( "CREDIT SCREEN...!!", 4, 10 );
 }
 
 void screen_credit_screen_update( unsigned char *screen_type )
@@ -55,10 +71,58 @@ void screen_credit_screen_update( unsigned char *screen_type )
 	struct_level_object *lo = &global_level_object;
 	//struct_boss_object *bo;
 
-	//unsigned char proceed;
-	//unsigned char input;
+	unsigned char proceed;
+	unsigned char input;
 	//unsigned char boss;
+	unsigned char check;
+	unsigned int frame = fo->frame_count;
+	st->state_object_actor_kill = actor_type_kid;
 
+	// Draw sprites first.
+	//engine_boss_manager_draw();
 	engine_gamer_manager_draw();
-	*screen_type = screen_type_credit;
+
+	// Set the current screen first.
+	*screen_type = st->state_object_curr_screen;
+
+
+	engine_frame_manager_draw();
+	engine_delay_manager_draw();
+	if( !first_time )
+	{
+		proceed = engine_delay_manager_update();
+		if( !proceed )
+		{
+			return;
+		}
+
+		engine_frame_manager_update();
+		first_time = 1;
+	}
+
+	// Continue...
+	frame = fo->frame_count;
+
+
+	// Does player want to quit out?
+	input = engine_input_manager_move( input_type_fire2 );
+	if( input )
+	{
+		check = engine_reset_manager_update();
+		if( check )
+		{
+			engine_board_manager_midd_text();
+			*screen_type = screen_type_over;
+			return;
+		}
+	}
+	else
+	{
+		engine_reset_manager_reset();
+	}
+
+
+	// Execute all commands for this frame.
+	//engine_command_manager_execute( frame );
+	first_time = 0;
 }

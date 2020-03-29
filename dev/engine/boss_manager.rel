@@ -1,5 +1,5 @@
 XL2
-H 9 areas D global symbols
+H 9 areas E global symbols
 M boss_manager
 O -mz80
 S _devkit_SMS_loadPSGaidencompressedTiles Ref0000
@@ -9,9 +9,10 @@ S _boss_object_color Ref0000
 S _boss_object_tiles Ref0000
 S _devkit_SMS_loadSpritePalette Ref0000
 S _devkit_SMS_mapROMBank Ref0000
-A _CODE size 47 flags 0 addr 0
+A _CODE size 48 flags 0 addr 0
 S _engine_boss_manager_update Def0046
 S _engine_boss_manager_load Def0045
+S _engine_boss_manager_draw Def0047
 S _engine_boss_manager_init Def0044
 S _engine_boss_manager_content Def0000
 A _DATA size 6 flags 0 addr 0
@@ -55,4 +56,8 @@ R 00 00 00 00
 T 46 00
 R 00 00 00 00
 T 46 00 C9
+R 00 00 00 00
+T 47 00
+R 00 00 00 00
+T 47 00 C9
 R 00 00 00 00

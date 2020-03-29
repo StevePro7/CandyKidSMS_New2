@@ -34,3 +34,7 @@ void engine_boss_manager_load()
 void engine_boss_manager_update()
 {
 }
+
+void engine_boss_manager_draw()
+{
+}
