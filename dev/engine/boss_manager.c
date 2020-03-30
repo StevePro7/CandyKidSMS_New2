@@ -59,6 +59,9 @@ void engine_boss_manager_init()
 
 void engine_boss_manager_setup( unsigned char round )
 {
+	// Rule:
+	// boss1	every  5th round
+	// boss2	every 10th round
 	struct_enemy_object *eo;
 	unsigned char enemy;
 	unsigned char image;
@@ -106,19 +109,14 @@ void engine_boss_manager_setup( unsigned char round )
 	}
 }
 
-void engine_boss_manager_load( unsigned char round )
+void engine_boss_manager_load()
 {
 	struct_boss_object *bo;
 	unsigned char enemy;
 	unsigned char index;
 
 
-	// TODO calculate
-	// boss1	every  5th round
-	// boss2	every 10th round
-	round++;
-	engine_state_manager_fight( fight_type_boss1 );
-	//engine_state_manager_fight( fight_type_boss2 );
+	
 
 	enemy = actor_type_pro;
 	//enemy = actor_type_adi;
