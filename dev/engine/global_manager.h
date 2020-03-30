@@ -30,6 +30,7 @@
 
 #define TILE_SIZE				16
 #define TILE_HALF				8
+#define TILE_HEXS				6
 
 #define SCREEN_SIZE_WIDE		256
 #define SCREEN_SIZE_HIGH		192

@@ -5,7 +5,7 @@
 #include "..\object\boss_object.h"
 
 // Global variable.
-extern struct_boss_object global_boss_object;
+//extern struct_boss_object global_boss_object;
 
 // Global variables.
 extern struct_boss_object global_boss_objects[ MAX_BOSSES ];

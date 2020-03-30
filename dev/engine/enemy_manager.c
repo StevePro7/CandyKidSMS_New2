@@ -33,7 +33,7 @@ void engine_enemy_manager_init()
 	for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
 	{
 		eo = &global_enemy_objects[ enemy ];
-		eo->actor = enemy;
+		//eo->actor = enemy;
 
 		eo->tileX = board_object_homeX[ enemy ];
 		eo->tileY = board_object_homeY[ enemy ];

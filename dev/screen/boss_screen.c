@@ -36,8 +36,8 @@ void screen_boss_screen_load()
 	//	engine_command_manager_load();
 	engine_frame_manager_load();
 
-	engine_frame_manager_draw();
-	engine_delay_manager_draw();
+	//engine_frame_manager_draw();
+	//engine_delay_manager_draw();
 
 
 	first_time = 1;
@@ -79,8 +79,8 @@ void screen_boss_screen_update( unsigned char *screen_type )
 	*screen_type = st->state_object_curr_screen;
 
 
-	engine_frame_manager_draw();
-	engine_delay_manager_draw();
+	//engine_frame_manager_draw();
+	//engine_delay_manager_draw();
 	if( !first_time )
 	{
 		proceed = engine_delay_manager_update();
