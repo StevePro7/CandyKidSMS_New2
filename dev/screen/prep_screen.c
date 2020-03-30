@@ -49,7 +49,8 @@ void screen_prep_screen_load()
 
 	// TODO calculate which content to load depending on boos1 or boss2
 	// If boss2 then also calculate what index of 4 to render per boss.
-	engine_boss_manager_content( 3 );
+	//engine_boss_manager_content( 3 );
+	//engine_boss_manager_content( 0 );
 
 
 	// load screen
@@ -65,6 +66,8 @@ void screen_prep_screen_load()
 	//engine_boss_manager_debug();
 
 	engine_gamer_manager_load();
+	engine_boss_manager_setup( st->state_object_round_data );
+	engine_boss_manager_content();
 	engine_boss_manager_load( st->state_object_round_data );
 
 	// load oneup

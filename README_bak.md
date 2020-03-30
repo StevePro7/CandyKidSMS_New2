@@ -4,13 +4,26 @@
 Once I have music with boss screen don't forget to resume music on Dead screen like Play
 Integrate every 5th and 10th level boss screen - test Beat screen on 100 level boss
 
+Large boss
+minX	3	maxX	10
+minY	3	maxY	 9
+
+Small boss
+minX	2	maxX	11
+minY	2	maxY	10
+
+Home spots
+Large + Small
+Pro		10, 9
+Adi		 3, 9
+Suz		10, 3
+
 29/03/2020
 TODO
 Boss battles
 Dead	go back to fight_screen	just like ready_screen
 Cont	go back to fight screen just like ready_screen
-i.e.	cannot advance until beaten boss
-
+i.e.	cannot advance until beaten boss10
 Pass	this is the only screen in which you can advance level
 Pass	every 5th and 10th round goto Prep screen for boss
 

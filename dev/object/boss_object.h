@@ -19,6 +19,8 @@ typedef struct tag_struct_boss_object
 	unsigned char sizer;		// Size this bossX can shows.
 	unsigned char mover;		// Flag when bossX can moves.
 	unsigned char drawr;		// Flag when bossX can draws.
+	unsigned char wide;			// Used to render small boss.
+	unsigned char high;			// Used to render small boss.
 	
 	unsigned char lifecycle;
 	//unsigned char prev_moves[ 4 ];	// Previous direction moved.

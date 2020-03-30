@@ -26,11 +26,11 @@ void engine_sprite_manager_draw_boss1( unsigned char x, unsigned char y )
 	}
 }
 
-void engine_sprite_manager_draw_boss2( unsigned char top, unsigned char lft, unsigned char x, unsigned char y )
+void engine_sprite_manager_draw_boss2( unsigned char wide, unsigned char high, unsigned char x, unsigned char y )
 {
 	unsigned int tile;
 	unsigned char row, col;
-
+	unsigned char top, lft;
 	// TL	(t, l) = (0, 0)
 	// TR	(t, l) = (0, 3)
 	// BL	(t, l) = (4, 0)
@@ -38,6 +38,8 @@ void engine_sprite_manager_draw_boss2( unsigned char top, unsigned char lft, uns
 	//t = boss_object_tileX[ index ];
 	//l = boss_object_tileY[ index ];
 
+	top = high * 4;
+	lft = wide * 3;
 	for( row = 0; row < TILE_HALF / 2; row++ )
 	{
 		for( col = 0; col < TILE_HEXS / 2; col++ )
