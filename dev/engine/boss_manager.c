@@ -121,8 +121,8 @@ void engine_boss_manager_load( unsigned char round )
 	//engine_state_manager_fight( fight_type_boss2 );
 
 	enemy = actor_type_pro;
-	enemy = actor_type_adi;
-	enemy = actor_type_suz;
+	//enemy = actor_type_adi;
+	//enemy = actor_type_suz;
 	index = 0;
 	bo = &global_boss_objects[ index ];
 	//bo->sizer = boss_type_large;
