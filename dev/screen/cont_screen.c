@@ -46,7 +46,11 @@ void screen_cont_screen_update( unsigned char *screen_type )
 	if( event_stage_pause == event_stage )
 	{
 		// Draw sprites first.
-		engine_enemy_manager_hide();
+		if( fight_type_enemy == st->state_object_fight_type )
+		{
+			engine_enemy_manager_hide();
+		}
+
 		engine_gamer_manager_hide_death();
 
 		delay = engine_delay_manager_update();
@@ -73,8 +77,15 @@ void screen_cont_screen_update( unsigned char *screen_type )
 				engine_score_manager_reset_boost();
 				engine_score_manager_reset_lives();
 				engine_level_manager_draw_middle();
-				engine_audio_manager_music_resume();
-				*screen_type = screen_type_ready;
+
+				// TODO stevepro include ready + fight once fight screen has music
+				if( fight_type_enemy == st->state_object_fight_type )
+				{
+					engine_audio_manager_music_resume();
+				}
+
+				*screen_type = fight_type_enemy == st->state_object_fight_type ? screen_type_ready : screen_type_fight;
+//				*screen_type = screen_type_ready;
 				return;
 			}
 			else

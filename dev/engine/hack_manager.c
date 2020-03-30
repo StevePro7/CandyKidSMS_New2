@@ -161,7 +161,7 @@ void engine_hack_manager_invert()
 
 	// TODO delete this hard coded!!
 	//st->state_object_world_data = 7 - 1;
-	//st->state_object_round_data = 4 - 1;
+	st->state_object_round_data = 1 - 1;
 	//st->state_object_localcheat = 1;
 	// TODO delete this hard coded!!
 }

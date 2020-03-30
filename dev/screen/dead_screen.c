@@ -122,11 +122,14 @@ void screen_dead_screen_update( unsigned char *screen_type )
 				reset_death();
 			}
 			//if( screen_type_load == st->state_object_next_screen )
-			if( screen_type_fight == st->state_object_next_screen )
-			{
-				// TODO stevepro adriana goto fight
-				//engine_state_manager_level();
-			}
+			//if( screen_type_fight == st->state_object_next_screen )
+			//{
+			//	// TODO stevepro adriana goto fight
+			//	//engine_state_manager_level();
+			//}
+
+			// TODO stevepro include ready + fight once fight screen has music
+			//if( screen_type_cont != st->state_object_next_screen )
 			if( screen_type_ready == st->state_object_next_screen )
 			{
 				engine_audio_manager_music_resume();
@@ -159,11 +162,14 @@ void screen_dead_screen_update( unsigned char *screen_type )
 					reset_death();
 				}
 				//if( screen_type_load == st->state_object_next_screen )
-				if( screen_type_fight == st->state_object_next_screen )
-				{
-					// TODO stevepro adriana goto fight
-					//engine_state_manager_level();
-				}
+				//if( screen_type_fight == st->state_object_next_screen )
+				//{
+				//	// TODO stevepro adriana goto fight
+				//	//engine_state_manager_level();
+				//}
+
+				// TODO stevepro include ready + fight once fight screen has music
+				//if( screen_type_cont != st->state_object_next_screen )
 				if( screen_type_ready == st->state_object_next_screen )
 				{
 					engine_audio_manager_music_resume();

@@ -1,5 +1,9 @@
 # CandyKidSMS_New2
 
+30/03/2020
+Once I have music with boss screen don't forget to resume music on Dead screen like Play
+Integrate every 5th and 10th level boss screen - test Beat screen on 100 level boss
+
 29/03/2020
 TODO
 Boss battles
