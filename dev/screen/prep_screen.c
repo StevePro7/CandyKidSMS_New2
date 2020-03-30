@@ -69,7 +69,7 @@ void screen_prep_screen_load()
 
 	// load oneup
 	engine_level_manager_clear();
-	engine_level_manager_load_oneup( oneup_count );
+	//engine_level_manager_load_oneup( oneup_count );		// TODO revert stevepro
 
 	engine_level_manager_draw_level();
 	//engine_level_manager_draw_middle();
