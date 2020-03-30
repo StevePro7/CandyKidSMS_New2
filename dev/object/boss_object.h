@@ -5,6 +5,14 @@ typedef struct tag_struct_boss_object
 {
 	unsigned char posnX;		// PositionX during movement.
 	unsigned char posnY;		// PositionY during movement.
+	unsigned char tileX;		// Posn tileX on bossX stops.
+	unsigned char tileY;		// Posn tileY on bossX stops.
+	unsigned char tileZ;		// Posn tile stored as R x C.
+	unsigned char sizer;		// Size this bossX can shows.
+	unsigned char mover;		// Flag when bossX can moves.
+	unsigned char drawr;		// Flag when bossX can draws.
+	
+	unsigned char image;
 
 } struct_boss_object;
 

@@ -1,6 +1,7 @@
 #include "content_manager.h"
 #include "global_manager.h"
 #include "..\banks\bank2.h"
+#include "..\banks\bank3.h"
 #include "..\devkit\_sms_manager.h"
 #include "..\gfx.h"
 
@@ -55,8 +56,4 @@ void engine_content_manager_load_sprites_game()
 	// Sprite tiles.
 	devkit_SMS_loadPSGaidencompressedTiles( sprites__tiles__psgcompr, SPRITE_TILES + 48 );
 	devkit_SMS_loadSpritePalette( ( void * ) sprites__palette__bin );
-}
-
-void engine_content_manager_load_sprites_boss()
-{
 }

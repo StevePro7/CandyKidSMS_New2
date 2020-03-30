@@ -258,4 +258,11 @@ typedef enum tag_enum_fight_type
 
 } enum_fight_type;
 
+typedef enum tag_enum_boss_type
+{
+	boss_type_large = 0,
+	boss_type_small = 1,
+
+} enum_boss_type;
+
 #endif//_ENUM_MANAGER_H_

@@ -35,6 +35,8 @@ void screen_prep_screen_load()
 	struct_state_object *st = &global_state_object;
 	struct_level_object *lo = &global_level_object;
 	struct_hack_object *ho = &global_hack_object;
+
+	// TODO calc how many oneup
 	unsigned char oneup_count = 2;
 
 
