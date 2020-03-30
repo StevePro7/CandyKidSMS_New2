@@ -1,5 +1,6 @@
 #include "boss_manager.h"
 #include "enum_manager.h"
+#include "sprite_manager.h"
 #include "state_manager.h"
 #include "..\devkit\_sms_manager.h"
 #include "..\banks\bank3.h"
@@ -55,9 +56,10 @@ void engine_boss_manager_load( unsigned char round )
 	//engine_state_manager_fight( fight_type_boss2 );
 
 	bo = &global_boss_objects[ 0 ];
-	bo->posnX = 128;
-	bo->posnY = 96;
+	bo->posnX = 96;
+	bo->posnY = 48;
 	bo->sizer = boss_type_large;
+	//bo->sizer = boss_type_small;
 	bo->mover = 1;
 	bo->drawr = 1;
 }
@@ -68,6 +70,16 @@ void engine_boss_manager_update()
 
 void engine_boss_manager_draw()
 {
+	struct_boss_object *bo;
+	bo = &global_boss_objects[ 0 ];
+	if( boss_type_large == bo->sizer )
+	{
+		engine_sprite_manager_draw_boss1( bo->posnX, bo->posnY );
+	}
+	else if( boss_type_small == bo->sizer )
+	{
+		engine_sprite_manager_draw_boss2( 0, 0, bo->posnX, bo->posnY );
+	}
 }
 
 

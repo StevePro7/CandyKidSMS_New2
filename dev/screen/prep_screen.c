@@ -41,7 +41,8 @@ void screen_prep_screen_load()
 
 
 	st->state_object_curr_screen = screen_type_prep;
-	st->state_object_next_screen = screen_type_fight;
+	st->state_object_next_screen = screen_type_prep;
+	//st->state_object_next_screen = screen_type_fight;
 
 	engine_delay_manager_load( PREP_SCREEN_DELAY );
 
@@ -78,7 +79,7 @@ void screen_prep_screen_load()
 		print_level();
 	}
 
-	//engine_font_manager_draw_text( "PREP SCREEN!!", 4, 10 );
+	engine_font_manager_draw_text( "PREP", 4, 10 );
 }
 
 void screen_prep_screen_update( unsigned char *screen_type )
