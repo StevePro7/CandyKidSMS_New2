@@ -89,7 +89,7 @@ void screen_test_screen_load()
 
 	//engine_level_manager_draw_level();
 	//engine_level_manager_draw_middle();
-	//engine_audio_manager_music_play( 8 );
+	engine_audio_manager_music_play( 8 );
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
