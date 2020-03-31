@@ -75,6 +75,23 @@ void engine_level_manager_load_level( const unsigned char world, const unsigned 
 	}
 }
 
+void engine_level_manager_temp_level( unsigned char tileX, unsigned char tileY, unsigned char tile_type )
+{
+	// Surround home tile with "dummy" tile so not to get chosen during oneup randomize for boss battle.
+	struct_level_object *lo = &global_level_object;
+	unsigned char row, col;
+	unsigned char index;
+
+	for( row = 0; row < 2; row++ )
+	{
+		for( col = 0; col < 3; col++ )
+		{
+			index = ( tileY + row ) * MAZE_COLS + ( tileX + col );
+			level_object_tiles_array[ index ] = tile_type;
+		}
+	}
+}
+
 void engine_level_manager_load_oneup( unsigned char quantity )
 {
 	struct_level_object *lo = &global_level_object;

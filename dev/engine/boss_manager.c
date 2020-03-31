@@ -3,6 +3,7 @@
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "function_manager.h"
+#include "gamer_manager.h"
 #include "sprite_manager.h"
 #include "state_manager.h"
 #include "..\devkit\_sms_manager.h"
@@ -70,7 +71,8 @@ void engine_boss_manager_setup( unsigned char round )
 
 	// Randomize the first boss.
 	enemy = rand() % MAX_ENEMIES;
-	
+	enemy = 0;	// todo delete
+
 	boss_index[ 0 ] = enemy;
 	boss_one = enemy;
 	if( 0 == ( round + 1 ) % MAX_ROUNDS )
@@ -92,6 +94,8 @@ void engine_boss_manager_setup( unsigned char round )
 		while( 1 )
 		{
 			enemy = rand() % MAX_ENEMIES;
+			enemy = 1;		// todo delete
+
 			if( boss_one != enemy )
 			{
 				boss_index[ 1 ] = enemy;
@@ -129,7 +133,6 @@ void engine_boss_manager_load()
 		bo = &global_boss_objects[ bossX ];
 		bo->actor = boss_index[ bossX ];
 
-		
 		bo->homeX = board_object_homeX[ bo->actor ];
 		bo->homeY = board_object_homeY[ bo->actor ];
 
@@ -228,6 +231,11 @@ void engine_boss_manager_content()
 	devkit_SMS_mapROMBank( bank );
 	devkit_SMS_loadPSGaidencompressedTiles( tiles, SPRITE_TILES );
 	devkit_SMS_loadSpritePalette( ( void * ) color );
+}
+
+unsigned char engine_boss_manager_index()
+{
+	return content_index;
 }
 
 static void calcd_spots( unsigned char index )

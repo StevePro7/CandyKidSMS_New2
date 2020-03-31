@@ -28,6 +28,7 @@
 #define PREP_SCREEN_DELAY	150
 //#define PREP_SCREEN_DELAY	0
 
+static void setup_level( unsigned char tile_type );
 static void print_level();
 
 void screen_prep_screen_load()
@@ -37,7 +38,7 @@ void screen_prep_screen_load()
 	struct_hack_object *ho = &global_hack_object;
 
 	// TODO calc how many oneup
-	unsigned char oneup_count = 2;
+	unsigned char oneup_count = 1;
 
 
 	st->state_object_curr_screen = screen_type_prep;
@@ -72,7 +73,9 @@ void screen_prep_screen_load()
 
 	// load oneup
 	engine_level_manager_clear();
-	//engine_level_manager_load_oneup( oneup_count );		// TODO revert stevepro
+	setup_level( tile_type_trees );
+	engine_level_manager_load_oneup( oneup_count );		// TODO revert stevepro
+	setup_level( tile_type_blank );
 
 	engine_level_manager_draw_level();
 	//engine_level_manager_draw_middle();
@@ -111,7 +114,23 @@ void screen_prep_screen_update( unsigned char *screen_type )
 	*screen_type = st->state_object_curr_screen;
 }
 
+static void setup_level( unsigned char tile_type )
+{
+	struct_gamer_object *go = &global_gamer_object;
+	struct_boss_object *bo;
+	unsigned char bossX;
 
+	// Offset one to the left for easier left to right in function.
+	engine_level_manager_temp_level( go->tileX - 1, go->tileY, tile_type );
+	for( bossX = 0; bossX < MAX_BOSSES; bossX++ )
+	{
+		bo = &global_boss_objects[ bossX ];
+		if( bo->drawr )
+		{
+			engine_level_manager_temp_level( bo->tileX - 1, bo->tileY, tile_type );
+		}
+	}
+}
 
 static void print_level()
 {

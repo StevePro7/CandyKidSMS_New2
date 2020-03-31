@@ -16,6 +16,7 @@ void engine_boss_manager_load();
 void engine_boss_manager_update();
 void engine_boss_manager_draw();
 void engine_boss_manager_content();
+unsigned char engine_boss_manager_index();
 //void engine_boss_manager_content( unsigned char index );
 
 #endif//_BOSS_MANAGER_H_
