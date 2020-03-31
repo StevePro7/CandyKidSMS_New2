@@ -23,6 +23,7 @@
 struct_boss_object global_boss_objects[ MAX_BOSSES ];
 
 static void calcd_spots( unsigned char index );
+static unsigned char boss_index[ MAX_BOSSES ] = { 0, 0 };
 static unsigned char boss_one;
 static unsigned char boss_two;
 static unsigned char content_index;
@@ -68,16 +69,20 @@ void engine_boss_manager_setup( unsigned char round )
 
 	// Randomize the first boss.
 	enemy = rand() % MAX_ENEMIES;
+	enemy = 0;
+	
+	boss_index[ 0 ] = enemy;
 	boss_one = enemy;
 	if( 0 == ( round + 1 ) % MAX_ROUNDS )
 	{
 		engine_state_manager_fight( fight_type_boss1 );
+		boss_index[ 1 ] = enemy;
 		boss_two = enemy;
 
 		eo = &global_enemy_objects[ enemy ];
 		image = eo->image;
 
-		content_index = enemy * 2 + image;
+		content_index = MAX_ENEMIES + enemy * 2 + image;
 	}
 	else
 	{
@@ -89,6 +94,7 @@ void engine_boss_manager_setup( unsigned char round )
 			enemy = rand() % MAX_ENEMIES;
 			if( boss_one != enemy )
 			{
+				boss_index[ 1 ] = enemy;
 				boss_two = enemy;
 				break;
 			}
@@ -111,38 +117,59 @@ void engine_boss_manager_setup( unsigned char round )
 
 void engine_boss_manager_load()
 {
+	struct_state_object *st = &global_state_object;
 	struct_boss_object *bo;
-	unsigned char enemy;
-	unsigned char index;
+	unsigned char bossX;
+	//unsigned char index;
+	//unsigned char enemy;
 
-
-	enemy = actor_type_pro;
-	//enemy = actor_type_adi;
-	//enemy = actor_type_suz;
-	index = 0;
-	bo = &global_boss_objects[ index ];
-	//bo->sizer = boss_type_large;
-	bo->sizer = boss_type_small;
-
-	bo->homeX = board_object_homeX[ enemy ];
-	bo->homeY = board_object_homeY[ enemy ];
-
-	// Offset homeY by 1x row for bottom enemies.
-	if( actor_type_suz != enemy )
+	for( bossX = 0; bossX < MAX_BOSSES; bossX++ )
 	{
-		bo->homeY -= 1;
+		bo = &global_boss_objects[ bossX ];
+		bo->actor = boss_index[ bossX ];
+		bo->homeX = board_object_homeX[ bo->actor ];
+		bo->homeY = board_object_homeY[ bo->actor ];
+
+		// Offset homeY by 1x row for bottom bosses.
+		if( actor_type_suz != bo->actor )
+		{
+			bo->homeY -= 1;
+		}
+
+		bo->tileX = bo->homeX;
+		bo->tileY = bo->homeY;
+
+		bo->mover = 1;
+		bo->drawr = 1;
+		bo->wide = 0;
+		bo->high = 0;
+
+		if( fight_type_boss1 == st->state_object_fight_type )
+		{
+			bo->sizer = boss_type_large;
+			if( 1 == bossX )
+			{
+				bo->mover = 0;
+				bo->drawr = 0;
+			}
+		}
+		else if( fight_type_boss2 == st->state_object_fight_type )
+		{
+			bo->sizer = boss_type_small;
+			if( diff_type_easy == bossX && st->state_object_difficulty && 1 == bossX )
+			{
+				bo->mover = 0;
+				bo->drawr = 1;
+			}
+
+			bo->mover = 1;
+			bo->drawr = 1;
+			bo->wide = 0;
+			bo->high = 0;
+		}
+
+		calcd_spots( bossX );
 	}
-
-	bo->tileX = bo->homeX;
-	bo->tileY = bo->homeY;
-	
-	bo->mover = 1;
-	bo->drawr = 1;
-
-	bo->wide = 1;
-	bo->high = 1;
-
-	calcd_spots( index );
 }
 
 void engine_boss_manager_update()

@@ -1,9 +1,9 @@
 #include "test_screen.h"
-#include "..\engine\asm_manager.h"
-#include "..\engine\audio_manager.h"
+//#include "..\engine\asm_manager.h"
+//#include "..\engine\audio_manager.h"
 //#include "..\engine\board_manager.h"
 //#include "..\engine\boss_manager.h"
-#include "..\engine\content_manager.h"
+//#include "..\engine\content_manager.h"
 //#include "..\engine\enemy_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
@@ -12,7 +12,7 @@
 //#include "..\engine\input_manager.h"
 //#include "..\engine\level_manager.h"
 //#include "..\engine\locale_manager.h"
-#include "..\engine\main_manager.h"
+//#include "..\engine\main_manager.h"
 //#include "..\engine\memo_manager.h"
 //#include "..\engine\option_manager.h"
 //#include "..\engine\score_manager.h"
@@ -32,16 +32,16 @@
 void screen_test_screen_load()
 {
 	// TODO delete used for debugging!!
-	engine_main_manager_load();
+	//engine_main_manager_load();
 
 	//unsigned char option;
 	//unsigned char actor;
 	//unsigned char index;
 	//unsigned char x, y;
 
-	engine_asm_manager_clear_VRAM();
-	engine_content_manager_load_tiles_font();
-	engine_content_manager_load_tiles_game();
+	//engine_asm_manager_clear_VRAM();
+	//engine_content_manager_load_tiles_font();
+	//engine_content_manager_load_tiles_game();
 
 
 	//// TODO delete
@@ -89,7 +89,7 @@ void screen_test_screen_load()
 
 	//engine_level_manager_draw_level();
 	//engine_level_manager_draw_middle();
-	engine_audio_manager_music_play( 8 );
+	//engine_audio_manager_music_play( 8 );
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
