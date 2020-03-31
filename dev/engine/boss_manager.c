@@ -70,7 +70,6 @@ void engine_boss_manager_setup( unsigned char round )
 
 	// Randomize the first boss.
 	enemy = rand() % MAX_ENEMIES;
-	enemy = 2;	// todo delete
 	
 	boss_index[ 0 ] = enemy;
 	boss_one = enemy;
@@ -168,11 +167,11 @@ void engine_boss_manager_load()
 
 
 			// TODO delete
-			if( 1 == bossX )
-			{
-				bo->mover = 0;
-				bo->drawr = 0;
-			}
+			//if( 1 == bossX )
+			//{
+			//	bo->mover = 0;
+			//	bo->drawr = 0;
+			//}
 			// TODO delete
 
 
