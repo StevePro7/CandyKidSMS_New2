@@ -1,5 +1,11 @@
 # CandyKidSMS_New2
 
+31/03/2020
+Boss music
+bank11		2x bosses		Space Harrier - 05 - Ida.vgm		mus_boss01.psg
+bank12		1x boss			Space Harrier - 04 - Squilla.vgm	mus_boss02.psg
+bank13		1x boss			Space Harrier - 12 - Haya Oh.vgm	mus_boss03.psg
+
 30/03/2020
 Once I have music with boss screen don't forget to resume music on Dead screen like Play
 Integrate every 5th and 10th level boss screen - test Beat screen on 100 level boss

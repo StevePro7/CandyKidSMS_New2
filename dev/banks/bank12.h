@@ -23,6 +23,10 @@ extern const unsigned char	boss64_02__tiles__psgcompr[];
 #define				boss64_02__tiles__psgcompr_bank 12
 
 extern const unsigned char	mus_boss02_psg[];
-#define				mus_boss02_psg_size 4932
+#define				mus_boss02_psg_size 2440
 #define				mus_boss02_psg_bank 12
+
+extern const unsigned char	xmus_boss02_psg[];
+#define				xmus_boss02_psg_size 4932
+#define				xmus_boss02_psg_bank 12
 
