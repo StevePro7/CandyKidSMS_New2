@@ -6,7 +6,7 @@
 #include "state_manager.h"
 #include "..\devkit\_sms_manager.h"
 #include "..\object\board_object.h"
-#include "..\banks\bank3.h"
+//#include "..\banks\bank3.h"
 #include <stdlib.h>
 
 // IMPORTANT disable compiler warning 110
