@@ -116,8 +116,6 @@ void engine_boss_manager_load()
 	unsigned char index;
 
 
-	
-
 	enemy = actor_type_pro;
 	//enemy = actor_type_adi;
 	//enemy = actor_type_suz;

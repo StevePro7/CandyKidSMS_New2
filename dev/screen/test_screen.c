@@ -67,7 +67,7 @@ void screen_test_screen_load()
 	//engine_board_manager_border( border_type_game );
 
 	//// TODO delete
-	engine_font_manager_draw_text( "TEST SCREEN", 2, 6 );
+	engine_font_manager_draw_text( "TEST SCREEN!!!!", 2, 6 );
 
 	//engine_gamer_manager_load();
 	//engine_gamer_manager_reset();
@@ -89,7 +89,7 @@ void screen_test_screen_load()
 
 	//engine_level_manager_draw_level();
 	//engine_level_manager_draw_middle();
-	engine_audio_manager_music_play( 8 );
+	//engine_audio_manager_music_play( 8 );
 }
 
 void screen_test_screen_update( unsigned char *screen_type )

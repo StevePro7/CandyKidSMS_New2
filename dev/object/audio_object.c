@@ -1,5 +1,4 @@
 #include "audio_object.h"
-#include "..\banks\bank3.h"
 #include "..\banks\bank6.h"
 #include "..\banks\bank7.h"
 #include "..\banks\bank8.h"
@@ -36,7 +35,7 @@ const unsigned char *music_object_data[] =
 	mus_game03_psg,
 	mus_beat_psg,
 	mus_candykid_psg,
-	mus_boss04_psg,
+	mus_boss01_psg,
 	mus_boss02_psg,
 	mus_boss03_psg,
 };
@@ -50,7 +49,7 @@ const unsigned char music_object_bank[] =
 	mus_game03_psg_bank,
 	mus_beat_psg_bank,
 	mus_candykid_psg_bank,
-	mus_boss04_psg_bank,
+	mus_boss01_psg_bank,
 	mus_boss02_psg_bank,
 	mus_boss03_psg_bank,
 };

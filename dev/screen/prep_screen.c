@@ -68,7 +68,7 @@ void screen_prep_screen_load()
 	engine_gamer_manager_load();
 	engine_boss_manager_setup( st->state_object_round_data );
 	engine_boss_manager_content();
-	engine_boss_manager_load( st->state_object_round_data );
+	engine_boss_manager_load();
 
 	// load oneup
 	engine_level_manager_clear();
