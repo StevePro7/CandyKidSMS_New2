@@ -179,14 +179,22 @@ void engine_boss_manager_update()
 void engine_boss_manager_draw()
 {
 	struct_boss_object *bo;
-	bo = &global_boss_objects[ 0 ];
-	if( boss_type_large == bo->sizer )
+	unsigned char bossX;
+
+	for( bossX = 0; bossX < MAX_BOSSES; bossX++ )
 	{
-		engine_sprite_manager_draw_boss1( bo->posnX, bo->posnY );
-	}
-	else if( boss_type_small == bo->sizer )
-	{
-		engine_sprite_manager_draw_boss2( bo->wide, bo->high, bo->posnX, bo->posnY );
+		bo = &global_boss_objects[ bossX ];
+		if( bo->drawr )
+		{
+			if( boss_type_large == bo->sizer )
+			{
+				engine_sprite_manager_draw_boss1( bo->posnX, bo->posnY );
+			}
+			else if( boss_type_small == bo->sizer )
+			{
+				engine_sprite_manager_draw_boss2( bo->wide, bo->high, bo->posnX, bo->posnY );
+			}
+		}
 	}
 }
 
