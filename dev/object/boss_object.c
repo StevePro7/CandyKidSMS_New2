@@ -1,5 +1,7 @@
 #include "boss_object.h"
-#include "..\banks\bank3.h"
+#include "..\banks\bank11.h"
+#include "..\banks\bank12.h"
+#include "..\banks\bank13.h"
 
 // FIXED bank.
 // Boss Manager.
