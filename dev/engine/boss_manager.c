@@ -1,6 +1,7 @@
 #include "boss_manager.h"
 #include "enemy_manager.h"
 #include "enum_manager.h"
+#include "font_manager.h"
 #include "function_manager.h"
 #include "sprite_manager.h"
 #include "state_manager.h"
@@ -69,7 +70,7 @@ void engine_boss_manager_setup( unsigned char round )
 
 	// Randomize the first boss.
 	enemy = rand() % MAX_ENEMIES;
-	enemy = 0;
+	enemy = 2;	// todo delete
 	
 	boss_index[ 0 ] = enemy;
 	boss_one = enemy;
@@ -118,6 +119,7 @@ void engine_boss_manager_setup( unsigned char round )
 void engine_boss_manager_load()
 {
 	struct_state_object *st = &global_state_object;
+	struct_enemy_object *eo;
 	struct_boss_object *bo;
 	unsigned char bossX;
 	//unsigned char index;
@@ -127,6 +129,8 @@ void engine_boss_manager_load()
 	{
 		bo = &global_boss_objects[ bossX ];
 		bo->actor = boss_index[ bossX ];
+
+		
 		bo->homeX = board_object_homeX[ bo->actor ];
 		bo->homeY = board_object_homeY[ bo->actor ];
 
@@ -162,10 +166,26 @@ void engine_boss_manager_load()
 				bo->drawr = 1;
 			}
 
-			bo->mover = 1;
-			bo->drawr = 1;
-			bo->wide = 0;
-			bo->high = 0;
+
+			// TODO delete
+			if( 1 == bossX )
+			{
+				bo->mover = 0;
+				bo->drawr = 0;
+			}
+			// TODO delete
+
+
+			eo = &global_enemy_objects[ bo->actor ];
+			bo->wide = eo->image;
+			if( ( actor_type_pro == bo->actor ) || ( actor_type_adi == bo->actor && 1 == content_index ) )
+			{
+				bo->high = 0;
+			}
+			else if( ( actor_type_suz == bo->actor ) || ( actor_type_adi == bo->actor && 0 == content_index ) )
+			{
+				bo->high = 1;
+			}
 		}
 
 		calcd_spots( bossX );
