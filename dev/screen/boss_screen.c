@@ -193,11 +193,15 @@ void screen_boss_screen_update( unsigned char *screen_type )
 	if( coll_type_oneup == gamer_collision )
 	{
 		oneup_count = engine_score_manager_get_oneup();
-		engine_audio_manager_sfx_play( sfx_type_power );
 		if( lo->level_object_oneup_count == oneup_count )
 		{
 			*screen_type = screen_type_pass;
 			return;
+		}
+		else
+		{
+			// Don't play sound effect on last oneup collect.
+			engine_audio_manager_sfx_play( sfx_type_power );
 		}
 	}
 

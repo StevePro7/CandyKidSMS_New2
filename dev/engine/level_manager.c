@@ -109,11 +109,12 @@ void engine_level_manager_load_oneup( unsigned char quantity )
 			row = rand() % MAX_ROWS;
 			col = rand() % MAX_COLS;
 
-			if( 0 == loops )
-			{
-				row = 4;
-				col = 4;
-			}
+			// TODO delete testing...
+			//if( 0 == loops )
+			//{
+			//	row = 4;
+			//	col = 4;
+			//}
 
 			// TODO remove
 			//row = 0;
