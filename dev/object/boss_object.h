@@ -22,7 +22,7 @@ typedef struct tag_struct_boss_object
 	unsigned char speed;
 	unsigned char delay;
 	unsigned char timer;
-	unsigned char delta;
+	//unsigned char delta;
 	unsigned char total;
 	unsigned char sizer;		// Size this bossX can shows.
 	unsigned char mover;		// Flag when bossX can moves.

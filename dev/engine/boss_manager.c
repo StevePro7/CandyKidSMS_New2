@@ -46,7 +46,8 @@ void engine_boss_manager_init()
 		bo->waiter = 0;	bo->action = enemymove_type_wait;
 
 		bo->paths = 0;	bo->timer = 0;
-		bo->delta = 0;	bo->total = 0;
+		//bo->delta = 0;
+		bo->total = 0;
 
 		bo->sizer = boss_type_large;
 		bo->mover = 1;	bo->drawr = 1;
@@ -193,16 +194,19 @@ void engine_boss_manager_load()
 			}
 		}
 
+		calcd_spots( bossX );
+
+
 		// TODO stevepro Adriana correct
 		//bo->action = enemymove_type_wait;
 		bo->action = enemymove_type_tour;
 		bo->speed = 1;
-		bo->delay = 1;
+		bo->delay = 4;
 
-		calcd_spots( bossX );
 
 		// Scatter.
-		bo->scatter[ 0 ] = 30;
+		bo->scatter[ 0 ] = 94;
+		// TODO stevepro Adriana correct
 	}
 }
 
@@ -221,8 +225,56 @@ void engine_boss_manager_update( unsigned char bossX )
 	}
 
 	bo->timer = 0;
-	bo->delta += bo->speed;
+	//bo->delta += bo->speed;
 	bo->total += bo->speed;
+
+	// Update position.
+	if( direction_type_upxx == bo->direction )
+	{
+		bo->posnY -= bo->speed;
+	}
+	else if( direction_type_down == bo->direction )
+	{
+		bo->posnY += bo->speed;
+	}
+	else if( direction_type_left == bo->direction )
+	{
+		bo->posnX -= bo->speed;
+	}
+	else if( direction_type_rght == bo->direction )
+	{
+		bo->posnX += bo->speed;
+	}
+
+	// Update lifecycle.
+	if( bo->total >= TILE_SIZE )
+	{
+		if( direction_type_upxx == bo->direction )
+		{
+			bo->tileY--;
+		}
+		else if( direction_type_down == bo->direction )
+		{
+			bo->tileY++;
+		}
+		else if( direction_type_left == bo->direction )
+		{
+			bo->tileX--;
+		}
+		else if( direction_type_rght == bo->direction )
+		{
+			bo->tileX++;
+		}
+
+		calcd_spots( bossX );
+
+		bo->lifecycle = lifecycle_type_idle;
+		bo->total = 0;
+
+
+		//engine_font_manager_draw_data( bo->tileX, 10, 10 );
+		//engine_font_manager_draw_data( bo->tileY, 10, 11 );
+	}
 }
 
 void engine_boss_manager_draw()

@@ -23,7 +23,7 @@ sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 boss_mana
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 collision_manager.c
 ::::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 command_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 enemy_manager.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 enemy_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 enum_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 font_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 function_manager.c
@@ -50,8 +50,8 @@ cd ..
 cd object
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 audio_object.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 board_object.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 boss_object.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 enemy_object.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 boss_object.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 enemy_object.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 gamer_object.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 hack_object.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_object.c
@@ -69,7 +69,7 @@ cd screen
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 intro_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 title_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 start_screen.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 init_screen.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 init_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 load_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 ready_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 play_screen.c
@@ -77,7 +77,7 @@ sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 init_scre
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 dead_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 cont_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 over_screen.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 prep_screen.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 prep_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 fight_screen.c
 sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 boss_screen.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 beat_screen.c
@@ -118,24 +118,15 @@ banks\bank10.rel banks\bank11.rel banks\bank12.rel banks\bank13.rel ^
 banks\bank14.rel banks\bank15.rel ^
 devkit\_sms_manager.rel devkit\_snd_manager.rel ^
 engine\actor_manager.rel engine\asm_manager.rel engine\audio_manager.rel engine\board_manager.rel engine\boss_manager.rel ^
-engine\collision_manager.rel engine\content_manager.rel ^
-engine\enum_manager.rel ^
-engine\enemy_manager.rel ^
-engine\font_manager.rel ^
-engine\function_manager.rel ^
-engine\gamer_manager.rel ^
-engine\hack_manager.rel ^
-engine\input_manager.rel ^
-engine\level_manager.rel ^
-engine\locale_manager.rel ^
+engine\collision_manager.rel engine\content_manager.rel engine\enum_manager.rel engine\enemy_manager.rel ^
+engine\font_manager.rel engine\function_manager.rel engine\gamer_manager.rel engine\hack_manager.rel ^
+engine\input_manager.rel engine\level_manager.rel engine\locale_manager.rel ^
 engine\main_manager.rel engine\mask_manager.rel engine\memo_manager.rel engine\move_manager.rel ^
 engine\option_manager.rel engine\score_manager.rel engine\screen_manager.rel engine\sprite_manager.rel ^
 engine\state_manager.rel engine\storage_manager.rel engine\timer_manager.rel engine\tile_manager.rel ^
 object\audio_object.rel object\board_object.rel object\boss_object.rel object\enemy_object.rel object\gamer_object.rel ^
-object\hack_object.rel ^
-object\level_object.rel object\locale_object.rel object\score_object.rel object\state_object.rel ^
-object\storage_object.rel ^
-object\timer_object.rel ^
+object\hack_object.rel object\level_object.rel object\locale_object.rel object\score_object.rel object\state_object.rel ^
+object\storage_object.rel object\timer_object.rel ^
 screen\none_screen.rel screen\splash_screen.rel screen\begin_screen.rel screen\intro_screen.rel screen\title_screen.rel ^
 screen\start_screen.rel screen\init_screen.rel screen\load_screen.rel screen\ready_screen.rel screen\play_screen.rel ^
 screen\pass_screen.rel screen\dead_screen.rel screen\cont_screen.rel screen\over_screen.rel screen\prep_screen.rel ^

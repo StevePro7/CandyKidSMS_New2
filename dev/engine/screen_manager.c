@@ -6,7 +6,7 @@
 #include "..\screen\none_screen.h"
 #include "..\screen\splash_screen.h"
 #include "..\screen\begin_screen.h"
-#include "..\screen\intro_screen.h"
+//#include "..\screen\intro_screen.h"
 #include "..\screen\title_screen.h"
 #include "..\screen\start_screen.h"
 #include "..\screen\init_screen.h"
@@ -22,8 +22,8 @@
 #include "..\screen\boss_screen.h"
 #include "..\screen\beat_screen.h"
 #include "..\screen\option_screen.h"
-#include "..\screen\credit_screen.h"
-#include "..\screen\test_screen.h"
+//#include "..\screen\credit_screen.h"
+//#include "..\screen\test_screen.h"
 
 static unsigned char curr_screen_type;
 static unsigned char next_screen_type;
@@ -102,9 +102,9 @@ void engine_screen_manager_update()
 		case screen_type_begin:
 			screen_begin_screen_load();
 				break;
-		case screen_type_intro:
-			screen_intro_screen_load();
-				break;
+		//case screen_type_intro:
+		//	screen_intro_screen_load();
+		//		break;
 		case screen_type_title:
 			screen_title_screen_load();
 				break;
@@ -150,12 +150,12 @@ void engine_screen_manager_update()
 		case screen_type_option:
 			screen_option_screen_load();
 				break;
-		case screen_type_credit:
-			screen_credit_screen_load();
-				break;
-		case screen_type_test:
-			screen_test_screen_load();
-				break;
+		//case screen_type_credit:
+		//	screen_credit_screen_load();
+		//		break;
+		//case screen_type_test:
+		//	screen_test_screen_load();
+		//		break;
 		}
 		/**/
 	}
@@ -175,9 +175,9 @@ void engine_screen_manager_update()
 	case screen_type_begin:
 		screen_begin_screen_update( &next_screen_type );
 			break;
-	case screen_type_intro:
-		screen_intro_screen_update( &next_screen_type );
-			break;
+	//case screen_type_intro:
+	//	screen_intro_screen_update( &next_screen_type );
+	//		break;
 	case screen_type_title:
 		screen_title_screen_update( &next_screen_type );
 			break;
@@ -223,12 +223,12 @@ void engine_screen_manager_update()
 	case screen_type_option:
 		screen_option_screen_update( &next_screen_type );
 			break;
-	case screen_type_credit:
-		screen_credit_screen_update( &next_screen_type );
-			break;
-	case screen_type_test:
-		screen_test_screen_update( &next_screen_type );
-			break;
+	//case screen_type_credit:
+	//	screen_credit_screen_update( &next_screen_type );
+	//		break;
+	//case screen_type_test:
+	//	screen_test_screen_update( &next_screen_type );
+	//		break;
 	}
 	/**/
 }
