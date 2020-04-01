@@ -1,6 +1,7 @@
 #include "pass_screen.h"
 #include "..\engine\audio_manager.h"
 #include "..\engine\board_manager.h"
+#include "..\engine\boss_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\enemy_manager.h"
 #include "..\engine\gamer_manager.h"
@@ -129,6 +130,10 @@ static void draw_actor()
 	{
 		engine_enemy_manager_draw();
 	}
+	else
+	{
+		engine_boss_manager_draw();
+	}
 
 	engine_gamer_manager_draw();
 }
@@ -138,6 +143,12 @@ static void hide_actor()
 	if( fight_type_enemy == st->state_object_fight_type )
 	{
 		engine_enemy_manager_hide();
+	}
+	else
+	{
+		// TODO stevepro Adriana implement corresponding version of this
+		//engine_boss_manager_hide();
+		engine_boss_manager_draw();
 	}
 
 	engine_gamer_manager_hide();
