@@ -78,6 +78,7 @@
     <ClInclude Include="object\hack_object.h" />
     <ClInclude Include="object\level_object.h" />
     <ClInclude Include="object\locale_object.h" />
+    <ClInclude Include="object\move_object.h" />
     <ClInclude Include="object\score_object.h" />
     <ClInclude Include="object\state_object.h" />
     <ClInclude Include="object\storage_object.h" />
@@ -161,6 +162,7 @@
     <ClCompile Include="object\hack_object.c" />
     <ClCompile Include="object\level_object.c" />
     <ClCompile Include="object\locale_object.c" />
+    <ClCompile Include="object\move_object.c" />
     <ClCompile Include="object\score_object.c" />
     <ClCompile Include="object\boss_object.c" />
     <ClCompile Include="object\state_object.c" />

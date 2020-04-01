@@ -15,6 +15,77 @@
 
 static unsigned char movement[] = { direction_type_upxx, direction_type_down, direction_type_left, direction_type_rght };
 
+unsigned char engine_move_manager_what_direction( unsigned char sourceX, unsigned char sourceY, unsigned char targetX, unsigned char targetY, unsigned char prev_move )
+{
+	/*
+	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
+	unsigned char directions[ NUM_DIRECTIONS ] = { direction_type_none, direction_type_none, direction_type_none, direction_type_none };
+	unsigned char move_direction = direction_type_none;
+	unsigned char oppX_direction = direction_type_none;
+	//unsigned char prev_direction = direction_type_none;
+	unsigned char test_direction = direction_type_none;
+	unsigned char collision = direction_type_none;
+	unsigned char available = direction_type_none;
+
+	unsigned char sourceX = eo->tileX;
+	unsigned char sourceY = eo->tileY;
+	unsigned char index = 0;
+	//unsigned char byte = 0;
+	unsigned char list = 0;
+	unsigned char half = 0;
+	unsigned char flip = 0;
+
+	// Get the list of 4x possible directions in the order depending on tiles.
+	engine_move_manager_get_directions( sourceX, sourceY, targetX, targetY, &list, &half );
+
+	index = list * 2 * NUM_DIRECTIONS + half * NUM_DIRECTIONS;
+
+	// TODO fixed bank - change to data bank!!
+	directions[ 0 ] = enemy_object_directions[ index + 0 ];
+	directions[ 1 ] = enemy_object_directions[ index + 1 ];
+	directions[ 2 ] = enemy_object_directions[ index + 2 ];
+	directions[ 3 ] = enemy_object_directions[ index + 3 ];
+
+	//prev_direction = eo->prev_move[ 3 ];
+	//oppX_direction = engine_move_manager_opposite_direction( eo->prev_move[ 0 ] );
+	oppX_direction = engine_move_manager_opposite_direction( eo->prev_move );
+	available = engine_level_manager_get_direction( sourceX, sourceY, direction_type_none, offset_type_none );
+
+	for( index = 0; index < NUM_DIRECTIONS; index++ )
+	{
+		test_direction = directions[ index ];
+		if( oppX_direction == test_direction )
+		{
+			continue;
+		}
+
+		if( test_direction == ( available & test_direction ) )
+		{
+			move_direction = test_direction;
+			break;
+		}
+
+		//collision = engine_level_manager_get_collision( sourceX, sourceY, test_direction, offset_type_one );
+		//if( coll_type_empty == collision )
+		//{
+		//	move_direction = test_direction;
+		//	break;
+		//}
+	}
+
+
+	// Enemy in cul de sac so must be able to go in opposite direction!
+	if( direction_type_none == move_direction )
+	{
+		move_direction = oppX_direction;
+	}
+
+	return move_direction;
+	*/
+
+	return 0;
+}
+
 void engine_move_manager_get_directions( unsigned char srceX, unsigned char srceY, unsigned char destX, unsigned char destY, unsigned char *list, unsigned char *half )
 {
 	unsigned char deltaX = 0;

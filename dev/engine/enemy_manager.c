@@ -10,6 +10,7 @@
 #include "sprite_manager.h"
 #include "state_manager.h"
 #include "..\object\board_object.h"
+#include "..\object\move_object.h"
 #include <stdlib.h>
 
 #define SPRITE_TILES_ENEMY	256 + 48
@@ -594,10 +595,14 @@ unsigned char engine_enemy_manager_what_direction( unsigned char enemy, unsigned
 	index = list * 2 * NUM_DIRECTIONS + half * NUM_DIRECTIONS;
 
 	// TODO fixed bank - change to data bank!!
-	directions[ 0 ] = enemy_object_directions[ index + 0 ];
-	directions[ 1 ] = enemy_object_directions[ index + 1 ];
-	directions[ 2 ] = enemy_object_directions[ index + 2 ];
-	directions[ 3 ] = enemy_object_directions[ index + 3 ];
+	//directions[ 0 ] = enemy_object_directions[ index + 0 ];
+	//directions[ 1 ] = enemy_object_directions[ index + 1 ];
+	//directions[ 2 ] = enemy_object_directions[ index + 2 ];
+	//directions[ 3 ] = enemy_object_directions[ index + 3 ];
+	directions[ 0 ] = move_object_directions[ index + 0 ];
+	directions[ 1 ] = move_object_directions[ index + 1 ];
+	directions[ 2 ] = move_object_directions[ index + 2 ];
+	directions[ 3 ] = move_object_directions[ index + 3 ];
 
 	//prev_direction = eo->prev_move[ 3 ];
 	//oppX_direction = engine_move_manager_opposite_direction( eo->prev_move[ 0 ] );

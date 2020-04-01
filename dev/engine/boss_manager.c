@@ -324,8 +324,32 @@ void engine_boss_manager_dead( unsigned char bossX )
 
 unsigned char engine_boss_manager_scatter_direction( unsigned char bossX )
 {
-	bossX++;
-	return direction_type_none;
+	struct_boss_object *bo = &global_boss_objects[ bossX ];
+	unsigned char bossX_direction = direction_type_none;
+	unsigned char targetX;
+	unsigned char targetY;
+	unsigned char advance;
+	unsigned char tileZ;
+
+	// SCATTER.
+	tileZ = bo->scatter[ bo->paths ];
+	engine_function_manager_convertZtoXY( MAZE_ROWS, tileZ, &targetX, &targetY );
+
+	advance = targetX == bo->tileX && targetY == bo->tileY;
+	if( advance )
+	{
+		bo->paths++;
+		if( bo->paths >= NUM_DIRECTIONS * 2 )
+		{
+			bo->paths = 0;
+		}
+
+		tileZ = bo->scatter[ bo->paths ];
+		engine_function_manager_convertZtoXY( MAZE_ROWS, tileZ, &targetX, &targetY );
+	}
+
+	//bossX_direction = engine_enemy_manager_what_direction( enemy, targetX, targetY );
+	return bossX_direction;
 }
 
 unsigned char engine_boss_manager_gohome_direction( unsigned char bossX )
