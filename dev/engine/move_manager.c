@@ -71,7 +71,7 @@ void engine_move_manager_get_directions( unsigned char srceX, unsigned char srce
 	*half = minusY ? 0 : 1;
 }
 
-unsigned char engine_move_manager_what_direction( unsigned char sourceX, unsigned char sourceY, unsigned char targetX, unsigned char targetY, unsigned char prev_move )
+unsigned char engine_move_manager_what_direction( unsigned char sourceX, unsigned char sourceY, unsigned char prev_move, unsigned char targetX, unsigned char targetY )
 {
 	//struct_enemy_object *eo = &global_enemy_objects[ enemy ];
 
