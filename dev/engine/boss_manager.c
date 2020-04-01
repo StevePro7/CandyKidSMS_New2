@@ -191,6 +191,8 @@ void engine_boss_manager_load()
 		}
 
 		calcd_spots( bossX );
+
+		// Scatter.
 	}
 }
 

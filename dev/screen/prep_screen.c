@@ -76,6 +76,7 @@ void screen_prep_screen_load()
 	setup_level( tile_type_trees );
 	engine_level_manager_load_oneup( oneup_count );		// TODO revert stevepro
 	setup_level( tile_type_blank );
+	engine_level_manager_directions();
 
 	engine_level_manager_draw_level();
 	//engine_level_manager_draw_middle();

@@ -156,15 +156,15 @@ void engine_hack_manager_invert()
 	ho->hack_object_music_data = !ho->hack_object_music_data;
 	ho->hack_object_sound_data = !ho->hack_object_sound_data;
 
-	//ho->hack_object_music_data  = 0;
-	//ho->hack_object_sound_data = 0;
+	ho->hack_object_music_data  = 0;
+	ho->hack_object_sound_data = 0;
 
 
 	// TODO delete this hard coded!!
 	//st->state_object_world_data = 7 - 1;
 
 	st->state_object_round_data = 10 - 1;
-	//st->state_object_round_data = 5 - 1;
+	st->state_object_round_data = 5 - 1;
 
 	//st->state_object_localcheat = 1;
 	// TODO delete this hard coded!!
