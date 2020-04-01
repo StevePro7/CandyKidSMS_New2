@@ -38,12 +38,12 @@ void screen_prep_screen_load()
 	struct_hack_object *ho = &global_hack_object;
 
 	// TODO calc how many oneup
-	unsigned char oneup_count = 25;
+	unsigned char oneup_count = 2;
 
 
 	st->state_object_curr_screen = screen_type_prep;
-	st->state_object_next_screen = screen_type_prep;
-	//st->state_object_next_screen = screen_type_fight;
+	//st->state_object_next_screen = screen_type_prep;
+	st->state_object_next_screen = screen_type_fight;
 
 	engine_delay_manager_load( PREP_SCREEN_DELAY );
 
@@ -104,9 +104,10 @@ void screen_prep_screen_update( unsigned char *screen_type )
 	input = devkit_SMS_getKeysStatus();
 	if( delay || input )
 	{
-		index = rand() % MAX_MUSIC;
+		//index = rand() % MAX_MUSIC;
+		index = engine_boss_manager_index() / MAX_ENEMIES;
 		engine_level_manager_draw_middle();
-		//engine_audio_manager_music_play( index + 3 );
+		engine_audio_manager_music_play( index + 8 );
 		*screen_type = st->state_object_next_screen;
 		return;
 	}
