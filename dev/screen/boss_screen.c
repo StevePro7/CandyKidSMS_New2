@@ -223,7 +223,8 @@ void screen_boss_screen_update( unsigned char *screen_type )
 			if( enemymove_type_tour == bo->action )
 			{
 				bossX_direction = engine_boss_manager_scatter_direction( bossX );
-				bossX_direction = direction_type_upxx;
+				//engine_font_manager_draw_data( bossX_direction, 10, 10 );
+				//bossX_direction = direction_type_upxx;
 			}
 			//else if( enemymove_type_kill == bo->action )
 			//{

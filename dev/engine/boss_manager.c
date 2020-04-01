@@ -4,6 +4,7 @@
 #include "font_manager.h"
 #include "function_manager.h"
 #include "gamer_manager.h"
+#include "move_manager.h"
 #include "sprite_manager.h"
 #include "state_manager.h"
 #include "..\devkit\_sms_manager.h"
@@ -201,11 +202,20 @@ void engine_boss_manager_load()
 		//bo->action = enemymove_type_wait;
 		bo->action = enemymove_type_tour;
 		bo->speed = 1;
-		bo->delay = 4;
+		bo->delay = 1;
 
 
 		// Scatter.
 		bo->scatter[ 0 ] = 94;
+		bo->scatter[ 1 ] = 93;
+		bo->scatter[ 2 ] = 92;
+		bo->scatter[ 3 ] = 91;
+
+		bo->scatter[ 4 ] = 108;
+		bo->scatter[ 5 ] = 92;
+		bo->scatter[ 6 ] = 104;
+		bo->scatter[ 7 ] = 136;
+
 		// TODO stevepro Adriana correct
 	}
 }
@@ -346,9 +356,11 @@ unsigned char engine_boss_manager_scatter_direction( unsigned char bossX )
 
 		tileZ = bo->scatter[ bo->paths ];
 		engine_function_manager_convertZtoXY( MAZE_ROWS, tileZ, &targetX, &targetY );
+
+		engine_font_manager_draw_data( tileZ, 30, 0 );
 	}
 
-	//bossX_direction = engine_enemy_manager_what_direction( enemy, targetX, targetY );
+	bossX_direction = engine_move_manager_what_direction( bo->tileX, bo->tileY, bo->prev_move, targetX, targetY );
 	return bossX_direction;
 }
 
