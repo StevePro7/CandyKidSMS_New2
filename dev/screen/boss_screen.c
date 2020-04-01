@@ -185,15 +185,15 @@ void screen_boss_screen_update( unsigned char *screen_type )
 
 
 	// Move boss(es).
-	bossX = 0;
-	//for( bossX = 0; bossX < MAX_BOSSES; bossX++ )
-	//{
+	//bossX = 0;
+	for( bossX = 0; bossX < MAX_BOSSES; bossX++ )
+	{
 		bo = &global_boss_objects[ bossX ];
 
 		// If boss not moving then skip all movement code.
 		if( !bo->mover )
 		{
-			//continue;
+			continue;
 		}
 
 		// Move boss.
@@ -223,7 +223,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 			if( enemymove_type_tour == bo->action )
 			{
 				bossX_direction = engine_boss_manager_scatter_direction( bossX );
-				bossX_direction = direction_type_left;
+				bossX_direction = direction_type_upxx;
 			}
 			//else if( enemymove_type_kill == bo->action )
 			//{
@@ -236,7 +236,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 				engine_boss_manager_move( bossX, bossX_direction );
 			}
 		}
-	//}
+	}
 
 
 	// Execute all commands for this frame.
