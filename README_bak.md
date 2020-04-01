@@ -1,5 +1,8 @@
 # CandyKidSMS_New2
 
+01/04/2020
+Pass + Cont screen	hide boss(es) if they are in the middle section
+
 31/03/2020
 Boss music
 bank11		2x bosses		Space Harrier - 05 - Ida.vgm		mus_boss01.psg

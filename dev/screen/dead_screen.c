@@ -1,6 +1,7 @@
 #include "dead_screen.h"
 #include "..\engine\audio_manager.h"
 #include "..\engine\board_manager.h"
+#include "..\engine\boss_manager.h"
 #include "..\engine\collision_manager.h"
 //#include "..\engine\command_manager.h"
 #include "..\engine\enum_manager.h"
@@ -103,6 +104,10 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	if( fight_type_enemy == st->state_object_fight_type )
 	{
 		engine_enemy_manager_draw();
+	}
+	else
+	{
+		engine_boss_manager_draw();
 	}
 
 	if( screen_type_cont == st->state_object_next_screen )
@@ -252,9 +257,20 @@ static void reset_death()
 
 	// Reset enemy that killed Kid to scatter mode only.
 	// Nasty bug : do NOT set when death tree kills Kid!
-	if( actor_type_pro == st->state_object_actor_kill || actor_type_adi == st->state_object_actor_kill || actor_type_suz == st->state_object_actor_kill )
+	if( fight_type_enemy == st->state_object_fight_type )
 	{
-		engine_enemy_manager_reset_mode( st->state_object_actor_kill, enemymove_type_tour );
+		if( actor_type_pro == st->state_object_actor_kill || actor_type_adi == st->state_object_actor_kill || actor_type_suz == st->state_object_actor_kill )
+		{
+			engine_enemy_manager_reset_mode( st->state_object_actor_kill, enemymove_type_tour );
+		}
+	}
+	else
+	{
+		//if( actor_type_boss1 == st->state_object_actor_kill || actor_type_boss2 == st->state_object_actor_kill )
+		//{
+			// TODO stevepro Adriana add this method to reset boss(es) to tour mode irrespective!
+			//engine_boss_manager_reset_mode( st->state_object_actor_kill, enemymove_type_tour );
+		//}
 	}
 
 	// If Kid dies from death tree then update directions

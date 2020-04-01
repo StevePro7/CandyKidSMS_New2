@@ -79,7 +79,7 @@ void engine_hack_manager_invert()
 
 	// Ensure all commented out : used for testing!
 	ho->hack_object_delay_test = 0;			// Adriana todo - revert for final build
-	//ho->hack_object_mydebugger = 1;
+	ho->hack_object_mydebugger = 1;
 	//ho->hack_object_invincibie = 1;
 	//ho->hack_object_full_boost = 1;
 

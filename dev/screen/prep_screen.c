@@ -96,7 +96,6 @@ void screen_prep_screen_update( unsigned char *screen_type )
 	unsigned char index;
 
 	// Draw sprites first.
-	//engine_enemy_manager_draw();
 	engine_boss_manager_draw();
 	engine_gamer_manager_draw();
 
