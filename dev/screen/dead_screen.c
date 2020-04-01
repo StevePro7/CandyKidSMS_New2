@@ -125,6 +125,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 			if( screen_type_cont != st->state_object_next_screen )
 			{
 				reset_death();
+				engine_audio_manager_music_resume();
 			}
 			//if( screen_type_load == st->state_object_next_screen )
 			//if( screen_type_fight == st->state_object_next_screen )
@@ -135,10 +136,10 @@ void screen_dead_screen_update( unsigned char *screen_type )
 
 			// TODO stevepro include ready + fight once fight screen has music
 			//if( screen_type_cont != st->state_object_next_screen )
-			if( screen_type_ready == st->state_object_next_screen )
-			{
-				engine_audio_manager_music_resume();
-			}
+			//if( screen_type_ready == st->state_object_next_screen )
+			//{
+			//	engine_audio_manager_music_resume();
+			//}
 
 			*screen_type = st->state_object_next_screen;
 			return;
@@ -165,6 +166,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 				if( screen_type_cont != st->state_object_next_screen )
 				{
 					reset_death();
+					engine_audio_manager_music_resume();
 				}
 				//if( screen_type_load == st->state_object_next_screen )
 				//if( screen_type_fight == st->state_object_next_screen )
@@ -175,10 +177,10 @@ void screen_dead_screen_update( unsigned char *screen_type )
 
 				// TODO stevepro include ready + fight once fight screen has music
 				//if( screen_type_cont != st->state_object_next_screen )
-				if( screen_type_ready == st->state_object_next_screen )
-				{
-					engine_audio_manager_music_resume();
-				}
+				//if( screen_type_ready == st->state_object_next_screen )
+				//{
+				//	engine_audio_manager_music_resume();
+				//}
 
 				*screen_type = st->state_object_next_screen;
 				return;

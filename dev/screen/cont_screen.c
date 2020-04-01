@@ -86,10 +86,10 @@ void screen_cont_screen_update( unsigned char *screen_type )
 				engine_level_manager_draw_middle();
 
 				// TODO stevepro include ready + fight once fight screen has music
-				if( fight_type_enemy == st->state_object_fight_type )
-				{
+				//if( fight_type_enemy == st->state_object_fight_type )
+				//{
 					engine_audio_manager_music_resume();
-				}
+				//}
 
 				*screen_type = fight_type_enemy == st->state_object_fight_type ? screen_type_ready : screen_type_fight;
 //				*screen_type = screen_type_ready;

@@ -38,7 +38,7 @@ void screen_prep_screen_load()
 	struct_hack_object *ho = &global_hack_object;
 
 	// TODO calc how many oneup
-	unsigned char oneup_count = 3;
+	unsigned char oneup_count = 1;
 
 
 	st->state_object_curr_screen = screen_type_prep;
