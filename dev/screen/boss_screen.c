@@ -53,7 +53,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 	struct_gamer_object *go = &global_gamer_object;
 	struct_state_object *st = &global_state_object;
 	struct_level_object *lo = &global_level_object;
-	//struct_boss_object *bo;
+	struct_boss_object *bo;
 
 	unsigned char gamer_boost = 0;
 	unsigned char enemy_boost = 0;
@@ -66,7 +66,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 
 	unsigned char proceed;
 	unsigned char input;
-	//unsigned char bossX;
+	unsigned char bossX;
 	unsigned char check;
 	unsigned int frame = fo->frame_count;
 	st->state_object_actor_kill = actor_type_kid;
@@ -182,6 +182,61 @@ void screen_boss_screen_update( unsigned char *screen_type )
 			}
 		}
 	}
+
+
+	// Move boss(es).
+	bossX = 0;
+	//for( bossX = 0; bossX < MAX_BOSSES; bossX++ )
+	//{
+		bo = &global_boss_objects[ bossX ];
+
+		// If boss not moving then skip all movement code.
+		if( !bo->mover )
+		{
+			//continue;
+		}
+
+		// Move boss.
+		if( direction_type_none != bo->direction && lifecycle_type_move == bo->lifecycle )
+		{
+			//  warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
+			engine_boss_manager_update( bossX );
+		}
+		if( direction_type_none != bo->direction && lifecycle_type_idle == bo->lifecycle )
+		{
+			// Check collision.
+			engine_boss_manager_stop( bossX );
+		}
+		// For continuity we want to check if actor can move immediately after stopping.
+		if( direction_type_none == bo->direction && lifecycle_type_idle == bo->lifecycle )
+		{
+			//engine_font_manager_draw_data( eo->action, 30, 21 );
+			//if( enemymove_type_wait == bo->action )
+			//{
+			//	//if( frame >= bo->waiter )
+			//	//{
+			//	//	engine_boss_manager_reset_mode( enemy, enemymove_type_tour );
+			//	//	//engine_boss_manager_reset_mode( enemy, enemymove_type_kill );		// adriana - remove in final build - just used for testing!!
+			//	//}
+			//}
+
+			if( enemymove_type_tour == bo->action )
+			{
+				bossX_direction = engine_boss_manager_scatter_direction( bossX );
+				bossX_direction = direction_type_left;
+			}
+			//else if( enemymove_type_kill == bo->action )
+			//{
+			//	bossX_direction = engine_enemy_manager_attack_direction( bossX, go->tileX, go->tileY );
+			//}
+
+			if( direction_type_none != bossX_direction )
+			{
+				// engine_command_manager_add( frame, command_type_enemy_mover, ( enemy | ( enemy_direction << 4 ) ) );
+				engine_boss_manager_move( bossX, bossX_direction );
+			}
+		}
+	//}
 
 
 	// Execute all commands for this frame.

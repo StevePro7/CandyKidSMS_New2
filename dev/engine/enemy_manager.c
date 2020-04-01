@@ -41,7 +41,7 @@ void engine_enemy_manager_init()
 
 		eo->paths = 0;
 		eo->timer = 0;
-		eo->delta = 0;
+//		eo->delta = 0;
 		eo->total = 0;
 		eo->mover = 1;		// 1=move 0=stay.
 		eo->lifecycle = lifecycle_type_idle;
@@ -241,7 +241,7 @@ void engine_enemy_manager_update( unsigned char enemy )
 	}
 
 	eo->timer = 0;
-	eo->delta += eo->speed;
+//	eo->delta += eo->speed;
 	eo->total += eo->speed;
 
 	// Update position.
@@ -285,7 +285,7 @@ void engine_enemy_manager_update( unsigned char enemy )
 		calcd_spots( enemy );
 
 		eo->lifecycle = lifecycle_type_idle;
-		eo->delta = 0;
+//		eo->delta = 0;
 		eo->total = 0;
 	}
 }
@@ -385,7 +385,7 @@ void engine_enemy_manager_reset_home()
 		eo->lifecycle = lifecycle_type_idle;
 		eo->direction = direction_type_none;
 		eo->frame = frame_type_stance;
-		eo->delta = 0;
+		//eo->delta = 0;
 		eo->total = 0;
 		calcd_frame( enemy );
 	}

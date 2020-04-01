@@ -78,8 +78,8 @@ void engine_hack_manager_invert()
 	struct_state_object *st = &global_state_object;
 
 	// Ensure all commented out : used for testing!
-	ho->hack_object_delay_test = 0;			// Adriana todo - revert for final build
-	ho->hack_object_mydebugger = 1;
+	ho->hack_object_delay_test = 1;			// Adriana todo - revert for final build
+	ho->hack_object_mydebugger = 0;
 	//ho->hack_object_invincibie = 1;
 	//ho->hack_object_full_boost = 1;
 
@@ -164,7 +164,7 @@ void engine_hack_manager_invert()
 	//st->state_object_world_data = 7 - 1;
 
 	st->state_object_round_data = 10 - 1;
-	st->state_object_round_data = 5 - 1;
+	//st->state_object_round_data = 5 - 1;
 
 	//st->state_object_localcheat = 1;
 	// TODO delete this hard coded!!

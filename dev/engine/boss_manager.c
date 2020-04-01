@@ -45,6 +45,9 @@ void engine_boss_manager_init()
 		bo->tileX = 0;	bo->tileY = 0;	bo->tileZ = 0;
 		bo->waiter = 0;	bo->action = enemymove_type_wait;
 
+		bo->paths = 0;	bo->timer = 0;
+		bo->delta = 0;	bo->total = 0;
+
 		bo->sizer = boss_type_large;
 		bo->mover = 1;	bo->drawr = 1;
 		bo->high = 0;	bo->wide = 0;
@@ -190,14 +193,36 @@ void engine_boss_manager_load()
 			}
 		}
 
+		// TODO stevepro Adriana correct
+		//bo->action = enemymove_type_wait;
+		bo->action = enemymove_type_tour;
+		bo->speed = 1;
+		bo->delay = 1;
+
 		calcd_spots( bossX );
 
 		// Scatter.
+		bo->scatter[ 0 ] = 30;
 	}
 }
 
-void engine_boss_manager_update()
+void engine_boss_manager_update( unsigned char bossX )
 {
+	struct_boss_object *bo = &global_boss_objects[ bossX ];
+	if( lifecycle_type_move != bo->lifecycle )
+	{
+		return;
+	}
+
+	bo->timer++;
+	if( bo->timer < bo->delay )
+	{
+		return;
+	}
+
+	bo->timer = 0;
+	bo->delta += bo->speed;
+	bo->total += bo->speed;
 }
 
 void engine_boss_manager_draw()
@@ -222,6 +247,40 @@ void engine_boss_manager_draw()
 	}
 }
 
+void engine_boss_manager_move( unsigned char bossX, unsigned char direction )
+{
+	struct_boss_object *bo = &global_boss_objects[ bossX ];
+	bo->lifecycle = lifecycle_type_move;
+	bo->direction = direction;
+}
+
+void engine_boss_manager_stop( unsigned char bossX )
+{
+	struct_boss_object *bo = &global_boss_objects[ bossX ];
+	bo->prev_move = bo->direction;
+	bo->direction = direction_type_none;
+}
+
+void engine_boss_manager_dead( unsigned char bossX )
+{
+	struct_boss_object *bo = &global_boss_objects[ bossX ];
+	bo = &global_boss_objects[ bossX ];
+	bo->lifecycle = lifecycle_type_dead;
+	bo->prev_move = bo->direction;
+	bo->direction = direction_type_none;
+}
+
+unsigned char engine_boss_manager_scatter_direction( unsigned char bossX )
+{
+	bossX++;
+	return direction_type_none;
+}
+
+unsigned char engine_boss_manager_gohome_direction( unsigned char bossX )
+{
+	bossX++;
+	return direction_type_none;
+}
 
 //void engine_boss_manager_content( unsigned char index )
 void engine_boss_manager_content()

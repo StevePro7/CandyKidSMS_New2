@@ -16,6 +16,14 @@ typedef struct tag_struct_boss_object
 	unsigned char waiter;		// Wait time when level load.
 	unsigned char action;		// Current action: W / T / K.
 	unsigned char scatter[ NUM_DIRECTIONS * 2 ];
+	unsigned char paths;		// Track enemy scatter paths.
+	//unsigned char speeds[ 2 ];
+	//unsigned char delays[ 2 ];
+	unsigned char speed;
+	unsigned char delay;
+	unsigned char timer;
+	unsigned char delta;
+	unsigned char total;
 	unsigned char sizer;		// Size this bossX can shows.
 	unsigned char mover;		// Flag when bossX can moves.
 	unsigned char drawr;		// Flag when bossX can draws.

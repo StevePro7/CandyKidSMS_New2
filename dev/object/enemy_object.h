@@ -22,7 +22,7 @@ typedef struct tag_struct_enemy_object
 	unsigned char speed;
 	unsigned char delay;
 	unsigned char timer;
-	unsigned char delta;
+	//unsigned char delta;
 	unsigned char total;
 	unsigned char mover;		// Flag when enemy can moves.
 	unsigned char hands;		// Delay when swap hand over.
