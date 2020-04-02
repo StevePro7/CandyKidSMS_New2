@@ -6,8 +6,9 @@
 #include "locale_manager.h"
 #include "level_manager.h"
 #include "state_manager.h"
-#include "..\devkit\_sms_manager.h"
 #include "..\object\locale_object.h"
+#include "..\devkit\_sms_manager.h"
+#include "..\banks\fixedbank.h"
 
 #define TEXTS_Y		22
 #define WORLD_Y		22

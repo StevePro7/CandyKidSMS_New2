@@ -6,8 +6,9 @@
 #include "locale_manager.h"
 #include "score_manager.h"
 #include "state_manager.h"
-#include "..\devkit\_sms_manager.h"
 #include "..\object\locale_object.h"
+#include "..\devkit\_sms_manager.h"
+#include "..\banks\fixedbank.h"
 
 //void engine_memo_manager_clear()
 //{

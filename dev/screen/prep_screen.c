@@ -21,8 +21,9 @@
 #include "..\engine\state_manager.h"
 //#include "..\engine\tile_manager.h"
 #include "..\engine\timer_manager.h"
-#include "..\devkit\_sms_manager.h"
 #include "..\object\locale_object.h"
+#include "..\devkit\_sms_manager.h"
+#include "..\banks\fixedbank.h"
 #include <stdlib.h>
 
 #define PREP_SCREEN_DELAY	150
