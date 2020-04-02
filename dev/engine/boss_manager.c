@@ -186,15 +186,18 @@ void engine_boss_manager_load()
 			{
 				bo->mover = 0;
 				bo->drawr = 1;
+				
 			}
 
 
 			// TODO delete
-			//if( 1 == bossX )
-			//{
+			
+			if( 1 == bossX )
+			{
+				bo->drawr = 0;
 			//	bo->mover = 0;
 			//	bo->drawr = 0;
-			//}
+			}
 			// TODO delete
 
 
@@ -344,6 +347,33 @@ void engine_boss_manager_draw()
 			}
 			else if( boss_type_small == bo->sizer )
 			{
+				engine_sprite_manager_draw_boss2( bo->wide, bo->high, bo->posnX, bo->posnY );
+			}
+		}
+	}
+}
+
+void engine_boss_manager_hide()
+{
+	struct_boss_object *bo;
+	unsigned char bossX;
+
+	for( bossX = 0; bossX < MAX_BOSSES; bossX++ )
+	{
+		bo = &global_boss_objects[ bossX ];
+		if( bo->drawr )
+		{
+			if( boss_type_large == bo->sizer )
+			{
+				engine_sprite_manager_draw_boss1( bo->posnX, bo->posnY );
+			}
+			else if( boss_type_small == bo->sizer )
+			{
+				if( bo->posnX > 54 && bo->posnX < 146 && bo->posnY > 48 && bo->posnY < 112 )
+				{
+					continue;
+				}
+
 				engine_sprite_manager_draw_boss2( bo->wide, bo->high, bo->posnX, bo->posnY );
 			}
 		}

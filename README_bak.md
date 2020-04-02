@@ -4,7 +4,7 @@
 Boss delay + speed parameterized
 Boss collision detection
 Boss hide on dead + cont
-Boss to drop cross
+Boss to drop cross??	DEATH
 Algorthm to determine how many oneup
 
 01/04/2020
