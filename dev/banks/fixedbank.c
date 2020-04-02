@@ -11,7 +11,7 @@ const unsigned char foo_object_text[] = { 1, 2, 3 };
 // Locale Manager.
 const unsigned char *locale_object_texts[] =
 {
-	"V1.1",
+	"V2.0",
 	"INSERT COIN(S)",
 	"CHEAT!",
 	" HIGH",
