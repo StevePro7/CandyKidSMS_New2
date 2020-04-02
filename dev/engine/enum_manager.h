@@ -197,19 +197,6 @@ typedef enum tag_enum_offset_type
 //
 //} enum_play_type;
 
-typedef enum tag_enum_music_type
-{
-	mus_type_level = 0,
-	mus_type_cont = 1,
-	mus_type_over = 2,
-	mus_type_game01 = 3,
-	mus_type_game02 = 4,
-	mus_type_game03 = 5,
-	mus_type_beat = 6,
-	mus_type_candykid = 7,
-
-} enum_music_type;
-
 typedef enum tag_enum_sfx_type
 {
 	sfx_type_accept = 0,
@@ -221,6 +208,22 @@ typedef enum tag_enum_sfx_type
 	sfx_type_over = 5,
 
 } enum_sfx_type;
+
+typedef enum tag_enum_music_type
+{
+	mus_type_level = 0,
+	mus_type_cont = 1,
+	mus_type_over = 2,
+	mus_type_game01 = 3,
+	mus_type_game02 = 4,
+	mus_type_game03 = 5,
+	mus_type_beat = 6,
+	mus_type_candykid = 7,
+	mus_type_boss01 = 8,
+	mus_type_boss02 = 9,
+	mus_type_boss03 = 10,
+
+} enum_music_type;
 
 typedef enum tag_enum_stage_type
 {

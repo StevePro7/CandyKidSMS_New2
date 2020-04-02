@@ -3,6 +3,12 @@
 
 
 // FIXED bank.
+// Audio Manager.
+extern const unsigned char *music_object_data[];
+extern const unsigned char music_object_bank[];
+
+
+// FIXED bank.
 // Boss Manager.
 extern const unsigned char *boss_object_tiles[];
 extern const unsigned char *boss_object_color[];
