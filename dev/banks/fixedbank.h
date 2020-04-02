@@ -1,18 +1,17 @@
 // Fixed  bank.
 #define FIXED_BANK	15
 
-extern const unsigned char foo_object_text[];
-
-// FIXED bank.
-// Locale Manager.
-extern const unsigned char *locale_object_texts[];
-
 
 // FIXED bank.
 // Boss Manager.
 extern const unsigned char *boss_object_tiles[];
 extern const unsigned char *boss_object_color[];
 extern const unsigned char boss_object_bank[];
+
+
+// FIXED bank.
+// Locale Manager.
+extern const unsigned char *locale_object_texts[];
 
 
 // FIXED bank.
