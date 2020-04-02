@@ -24,7 +24,7 @@ cd engine
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 actor_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 audio_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 board_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 boss_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 boss_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 collision_manager.c
 ::::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 command_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_manager.c
@@ -170,6 +170,6 @@ if exist "*.noi" del "*.noi" > nul; if exist "*.sym" del "*.sym" > nul; if exist
 
 
 :: Run
-::java -jar C:\SEGA\Emulicious\Emulicious.jar output.sms
+java -jar C:\SEGA\Emulicious\Emulicious.jar output.sms
 ::C:\SEGA\meka\mekaw.exe output.sms
-output.sms
+::output.sms

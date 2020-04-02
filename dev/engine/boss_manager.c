@@ -9,7 +9,7 @@
 #include "state_manager.h"
 #include "..\devkit\_sms_manager.h"
 #include "..\object\board_object.h"
-//#include "..\banks\bank3.h"
+#include "..\banks\fixedbank.h"
 #include <stdlib.h>
 
 // IMPORTANT disable compiler warning 110
@@ -373,9 +373,14 @@ unsigned char engine_boss_manager_gohome_direction( unsigned char bossX )
 //void engine_boss_manager_content( unsigned char index )
 void engine_boss_manager_content()
 {
-	const unsigned char *tiles = boss_object_tiles[ content_index ];
-	const unsigned char *color = boss_object_color[ content_index ];
-	const unsigned char bank = boss_object_bank[ content_index ];
+	unsigned char *tiles;
+	unsigned char *color;
+	unsigned char bank;
+
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	tiles = ( unsigned char* ) boss_object_tiles[ content_index ];
+	color = ( unsigned char* ) boss_object_color[ content_index ];
+	bank = boss_object_bank[ content_index ];
 
 	devkit_SMS_mapROMBank( bank );
 	devkit_SMS_loadPSGaidencompressedTiles( tiles, SPRITE_TILES );

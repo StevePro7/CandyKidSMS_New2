@@ -1,11 +1,11 @@
 #include "level_object.h"
-#include "..\banks\bank2.h"
-#include "..\banks\bank4.h"
-#include "..\banks\bank5.h"
-#include "..\banks\bank6.h"
-#include "..\banks\bank7.h"
-#include "..\banks\bank8.h"
-#include "..\banks\bank9.h"
+//#include "..\banks\bank2.h"
+//#include "..\banks\bank4.h"
+//#include "..\banks\bank5.h"
+//#include "..\banks\bank6.h"
+//#include "..\banks\bank7.h"
+//#include "..\banks\bank8.h"
+//#include "..\banks\bank9.h"
 
 // DATA bank.
 // Level Manager.
