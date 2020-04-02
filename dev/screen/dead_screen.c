@@ -10,6 +10,7 @@
 #include "..\engine\gamer_manager.h"
 #include "..\engine\input_manager.h"
 #include "..\engine\level_manager.h"
+#include "..\engine\move_manager.h"
 #include "..\engine\score_manager.h"
 #include "..\engine\state_manager.h"
 #include "..\engine\tile_manager.h"
@@ -26,6 +27,7 @@
 static unsigned char death_frame;
 static unsigned char event_stage;
 static unsigned char flash_count;
+static unsigned char first_times;
 
 static void reset_death();
 //static unsigned char screen;
@@ -50,6 +52,7 @@ void screen_dead_screen_load()
 	event_stage = event_stage_start;
 	death_frame = 0;
 	flash_count = 0;
+	first_times = 1;
 
 	engine_score_manager_update_lives( -1 );
 	lives = engine_score_manager_get_value( score_type_lives );
@@ -258,7 +261,17 @@ void screen_dead_screen_update( unsigned char *screen_type )
 			// For continuity we want to check if actor can move immediately after stopping.
 			if( direction_type_none == bo->direction && lifecycle_type_idle == bo->lifecycle )
 			{
-				bossX_direction = engine_boss_manager_gohome_direction( bossX );
+				// First time around to in the opposite direction.
+				if( 1 == first_times )
+				{
+					first_times = 0;
+					bossX_direction = engine_move_manager_opposite_direction( bo->prev_move );
+				}
+				else
+				{
+					bossX_direction = engine_boss_manager_gohome_direction( bossX );
+				}
+				
 				if( direction_type_none != bossX_direction )
 				{
 					//				engine_command_manager_add( frame, command_type_enemy_mover, ( enemy | ( enemy_direction << 4 ) ) );
