@@ -127,11 +127,26 @@ void engine_boss_manager_setup( unsigned char round )
 void engine_boss_manager_load()
 {
 	struct_state_object *st = &global_state_object;
+	struct_gamer_object *go = &global_gamer_object;
 	struct_enemy_object *eo;
+	
 	struct_boss_object *bo;
 	unsigned char bossX;
-	//unsigned char index;
-	//unsigned char enemy;
+	unsigned char index;
+
+	unsigned char minX, minY;
+	unsigned char maxX, maxY;
+	unsigned char distX, distY;
+	unsigned char tileX, tileY, tileZ;
+
+	// Used to calculate random scatter tiles.
+	eo = &global_enemy_objects[ actor_type_pro ];
+	minX = go->tileX + 1 - st->state_object_fight_type;
+	minY = go->tileY + 1 - st->state_object_fight_type;
+	maxX = eo->tileX + 1 - st->state_object_fight_type;
+	maxY = eo->tileY + 0 - st->state_object_fight_type;
+	distX = maxX - minX + 1;
+	distY = maxY - minY + 1;
 
 	for( bossX = 0; bossX < MAX_BOSSES; bossX++ )
 	{
@@ -167,7 +182,7 @@ void engine_boss_manager_load()
 		else if( fight_type_boss2 == st->state_object_fight_type )
 		{
 			bo->sizer = boss_type_small;
-			if( diff_type_easy == bossX && st->state_object_difficulty && 1 == bossX )
+			if( diff_type_easy == st->state_object_difficulty && 1 == bossX )
 			{
 				bo->mover = 0;
 				bo->drawr = 1;
@@ -202,21 +217,47 @@ void engine_boss_manager_load()
 		//bo->action = enemymove_type_wait;
 		bo->action = enemymove_type_tour;
 		bo->speed = 1;
-		bo->delay = 1;
+		bo->delay = 4;
 
 
-		// Scatter.
-		bo->scatter[ 0 ] = 94;
-		bo->scatter[ 1 ] = 93;
-		bo->scatter[ 2 ] = 92;
-		bo->scatter[ 3 ] = 91;
+		//tileX = go->tileX;
+		//tileY = go->tileY;
 
-		bo->scatter[ 4 ] = 108;
-		bo->scatter[ 5 ] = 92;
-		bo->scatter[ 6 ] = 104;
-		bo->scatter[ 7 ] = 136;
+
+		//eo = &global_enemy_objects[ 1 ];
+		//
+		//
+		//
+		//engine_function_manager_convertXYtoZ( MAZE_ROWS, tileX, tileY, &tileZ1 );
+
+		//eo = &global_enemy_objects[ 2 ];
+		//tileX = eo->tileX;
+		//tileY = eo->tileY;
+		//engine_function_manager_convertXYtoZ( MAZE_ROWS, tileX, tileY, &tileZ2 );
+		////engine_function_manager_convertXYtoZ( MAZE_ROWS, go->tileX-0, go->tileY-0, &tileZ2 );
+		//// Scatter.
+		for( index = 0; index < NUM_DIRECTIONS * 2; index ++ )
+		{
+			tileX = rand() % distX;
+			tileY = rand() % distY;
+
+			tileX += minX;
+			tileY += minY;
+			engine_function_manager_convertXYtoZ( MAZE_ROWS, tileX, tileY, &tileZ );
+			bo->scatter[ index ] = tileZ;
+		}
+
+		//bo->scatter[ 1 ] = 93;
+		//bo->scatter[ 2 ] = 92;
+		//bo->scatter[ 3 ] = 91;
+
+		//bo->scatter[ 4 ] = 108;
+		//bo->scatter[ 5 ] = 92;
+		//bo->scatter[ 6 ] = 104;
+		//bo->scatter[ 7 ] = 136;
 
 		// TODO stevepro Adriana correct
+		index = 8;
 	}
 }
 
