@@ -12,18 +12,18 @@
 #include "state_manager.h"
 #include "tile_manager.h"
 
-#define DISTNACE_EASY		8
-#define DISTNACE_HARD		10
-static unsigned char collision_distance[] = { DISTNACE_EASY, DISTNACE_HARD };
+#define DIST_ENEMY_EASY		8
+#define DIST_ENEMY_HARD		10
+static unsigned char coll_enemy_distance[] = { DIST_ENEMY_EASY, DIST_ENEMY_HARD };
 
-unsigned char engine_collision_manager_sprite_collision()
+unsigned char engine_collision_manager_enemy_collision()
 {
 	struct_gamer_object *go = &global_gamer_object;
 	struct_state_object *st = &global_state_object;
 	struct_enemy_object *eo;
 	unsigned char gamer_collision = actor_type_kid;
 	
-	unsigned char distance = collision_distance[ st->state_object_difficulty ];
+	unsigned char distance = coll_enemy_distance[ st->state_object_difficulty ];
 	unsigned char enemy;
 	unsigned char dx, dy;
 
@@ -59,6 +59,12 @@ unsigned char engine_collision_manager_sprite_collision()
 		}
 	}
 
+	return gamer_collision;
+}
+
+unsigned char engine_collision_manager_boss_collision()
+{
+	unsigned char gamer_collision = actor_type_kid;
 	return gamer_collision;
 }
 

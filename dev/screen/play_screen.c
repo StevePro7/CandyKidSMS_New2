@@ -317,7 +317,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	gamer_collision = devkit_isCollisionDetected();
 	if( 0 != gamer_collision )
 	{
-		st->state_object_actor_kill = engine_collision_manager_sprite_collision();
+		st->state_object_actor_kill = engine_collision_manager_enemy_collision();
 		if( actor_type_kid != st->state_object_actor_kill )
 		{
 			engine_enemy_manager_dead( st->state_object_actor_kill );
