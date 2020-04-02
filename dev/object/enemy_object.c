@@ -1,7 +1,7 @@
 #include "enemy_object.h"
 #include "..\engine\enum_manager.h"
 
-// FIXED bank.
+// DATA bank.
 // Enemy Manager.
 //extern const unsigned char enemy_object_directions[] =
 //{

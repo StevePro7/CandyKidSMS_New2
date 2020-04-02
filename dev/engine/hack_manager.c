@@ -156,8 +156,8 @@ void engine_hack_manager_invert()
 	ho->hack_object_music_data = !ho->hack_object_music_data;
 	ho->hack_object_sound_data = !ho->hack_object_sound_data;
 
-	ho->hack_object_music_data  = 0;
-	ho->hack_object_sound_data = 0;
+	//ho->hack_object_music_data = 0;
+	//ho->hack_object_sound_data = 0;
 
 
 	// TODO delete this hard coded!!
