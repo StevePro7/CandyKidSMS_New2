@@ -5,7 +5,7 @@ extern const unsigned char foo_object_text[];
 
 // FIXED bank.
 // Locale Manager.
-//extern const unsigned char *locale_object_texts[];
+extern const unsigned char *locale_object_texts[];
 
 
 // FIXED bank.

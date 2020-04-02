@@ -93,6 +93,7 @@ static void print_level()
 	engine_board_manager_midd_text();
 	engine_memo_manager_levels( 14, 11, 12 );
 
+	devkit_SMS_mapROMBank( FIXED_BANK );
 	engine_font_manager_draw_text( locale_object_texts[ 12 ], SCREEN_TILE_LEFT + 8, 11 );
 	engine_font_manager_draw_text( locale_object_texts[ 13 ], SCREEN_TILE_LEFT + 8, 12 );
 }

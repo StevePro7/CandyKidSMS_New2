@@ -72,6 +72,7 @@ void engine_memo_manager_option()
 	const unsigned char *text;
 	unsigned char x = TEXT_X + 2;
 
+	devkit_SMS_mapROMBank( FIXED_BANK );
 	if( pace_type_slow == st->state_object_pace_speed )
 	{
 		text = locale_object_texts[ st->state_object_difficulty + 8 ];

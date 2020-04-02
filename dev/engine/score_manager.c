@@ -36,6 +36,7 @@ void engine_score_manager_text()
 	const unsigned char *text;
 	unsigned char index;
 
+	devkit_SMS_mapROMBank( FIXED_BANK );
 	for( index = 0; index < SCORE_VALUES; index++ )
 	{
 		text = locale_object_texts[ index + 3 ];
