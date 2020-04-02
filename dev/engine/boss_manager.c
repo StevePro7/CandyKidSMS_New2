@@ -398,7 +398,7 @@ unsigned char engine_boss_manager_scatter_direction( unsigned char bossX )
 		tileZ = bo->scatter[ bo->paths ];
 		engine_function_manager_convertZtoXY( MAZE_ROWS, tileZ, &targetX, &targetY );
 
-		engine_font_manager_draw_data( tileZ, 30, 0 );
+		//engine_font_manager_draw_data( tileZ, 30, 0 );
 	}
 
 	bossX_direction = engine_move_manager_what_direction( bo->tileX, bo->tileY, bo->prev_move, targetX, targetY );
@@ -407,7 +407,19 @@ unsigned char engine_boss_manager_scatter_direction( unsigned char bossX )
 
 unsigned char engine_boss_manager_gohome_direction( unsigned char bossX )
 {
-	bossX++;
+	struct_boss_object *bo = &global_boss_objects[ bossX ];
+	unsigned char bossX_direction = direction_type_none;
+
+	unsigned char targetX = bo->homeX;
+	unsigned char targetY = bo->homeY;
+
+	// If bossX at home tile then just stop.
+	if( targetX == bo->tileX && targetY == bo->tileY )
+	{
+		return direction_type_none;
+	}
+
+	bossX_direction = engine_move_manager_what_direction( bo->tileX, bo->tileY, bo->prev_move, targetX, targetY );
 	return direction_type_none;
 }
 

@@ -233,7 +233,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 		}
 		if( direction_type_none != eo->direction && lifecycle_type_idle == eo->lifecycle )
 		{
-			// Check collision.
 			engine_enemy_manager_stop( enemy );
 		}
 		// For continuity we want to check if actor can move immediately after stopping.

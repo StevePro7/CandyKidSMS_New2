@@ -185,7 +185,6 @@ void screen_boss_screen_update( unsigned char *screen_type )
 
 
 	// Move boss(es).
-	//bossX = 0;
 	for( bossX = 0; bossX < MAX_BOSSES; bossX++ )
 	{
 		bo = &global_boss_objects[ bossX ];
@@ -204,7 +203,6 @@ void screen_boss_screen_update( unsigned char *screen_type )
 		}
 		if( direction_type_none != bo->direction && lifecycle_type_idle == bo->lifecycle )
 		{
-			// Check collision.
 			engine_boss_manager_stop( bossX );
 		}
 		// For continuity we want to check if actor can move immediately after stopping.

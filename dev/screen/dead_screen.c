@@ -93,10 +93,13 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	struct_frame_object *fo = &global_frame_object;
 	struct_state_object *st = &global_state_object;
 	struct_enemy_object *eo;
+	struct_boss_object *bo;
 
 	unsigned char enemy_direction = direction_type_none;
+	unsigned char bossX_direction = direction_type_none;
 	unsigned char input;
 	unsigned char enemy;
+	unsigned char bossX;
 	unsigned char delay;
 	unsigned int frame = fo->frame_count;
 
@@ -226,6 +229,42 @@ void screen_dead_screen_update( unsigned char *screen_type )
 				{
 					//				engine_command_manager_add( frame, command_type_enemy_mover, ( enemy | ( enemy_direction << 4 ) ) );
 					engine_enemy_manager_move( enemy, enemy_direction );
+				}
+			}
+		}
+	}
+	else if ( fight_type_enemy != st->state_object_fight_type )
+	{
+		for( bossX = 0; bossX < MAX_BOSSES; bossX++ )
+		{
+			bo = &global_boss_objects[ bossX ];
+
+			// If boss not moving then skip all movement code.
+			if( !bo->mover )
+			{
+				continue;
+			}
+
+			//engine_font_manager_draw_text( "BOSS DEAD", 10, 0 );
+
+			// Move boss.
+			if( direction_type_none != bo->direction && lifecycle_type_move == bo->lifecycle )
+			{
+				//  warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
+				engine_boss_manager_update( bossX );
+			}
+			if( direction_type_none != bo->direction && lifecycle_type_idle == bo->lifecycle )
+			{
+				engine_boss_manager_stop( bossX );
+			}
+			// For continuity we want to check if actor can move immediately after stopping.
+			if( direction_type_none == bo->direction && lifecycle_type_idle == bo->lifecycle )
+			{
+				bossX_direction = engine_boss_manager_gohome_direction( bossX );
+				if( direction_type_none != bossX_direction )
+				{
+					//				engine_command_manager_add( frame, command_type_enemy_mover, ( enemy | ( enemy_direction << 4 ) ) );
+					engine_boss_manager_move( bossX, bossX_direction );
 				}
 			}
 		}
