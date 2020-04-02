@@ -245,8 +245,6 @@ void screen_dead_screen_update( unsigned char *screen_type )
 				continue;
 			}
 
-			//engine_font_manager_draw_text( "BOSS DEAD", 10, 0 );
-
 			// Move boss.
 			if( direction_type_none != bo->direction && lifecycle_type_move == bo->lifecycle )
 			{

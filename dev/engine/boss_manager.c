@@ -413,6 +413,7 @@ unsigned char engine_boss_manager_gohome_direction( unsigned char bossX )
 	unsigned char targetX = bo->homeX;
 	unsigned char targetY = bo->homeY;
 
+
 	// If bossX at home tile then just stop.
 	if( targetX == bo->tileX && targetY == bo->tileY )
 	{
@@ -420,7 +421,7 @@ unsigned char engine_boss_manager_gohome_direction( unsigned char bossX )
 	}
 
 	bossX_direction = engine_move_manager_what_direction( bo->tileX, bo->tileY, bo->prev_move, targetX, targetY );
-	return direction_type_none;
+	return bossX_direction;
 }
 
 //void engine_boss_manager_content( unsigned char index )
