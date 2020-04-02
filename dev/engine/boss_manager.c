@@ -191,10 +191,9 @@ void engine_boss_manager_load()
 
 
 			// TODO delete
-			
 			if( 1 == bossX )
 			{
-				bo->drawr = 0;
+				//bo->drawr = 0;
 			//	bo->mover = 0;
 			//	bo->drawr = 0;
 			}
@@ -215,9 +214,7 @@ void engine_boss_manager_load()
 
 		calcd_spots( bossX );
 
-
-		// TODO stevepro Adriana correct
-		//bo->action = enemymove_type_wait;
+		// Bosses will NOT wait.
 		bo->action = enemymove_type_tour;
 		bo->speed = 1;
 		bo->delay = 4;
@@ -260,7 +257,6 @@ void engine_boss_manager_load()
 		//bo->scatter[ 7 ] = 136;
 
 		// TODO stevepro Adriana correct
-		index = 8;
 	}
 }
 
@@ -365,6 +361,11 @@ void engine_boss_manager_hide()
 		{
 			if( boss_type_large == bo->sizer )
 			{
+				if( bo->posnX > 30 && bo->posnX < 146 && bo->posnY > 16 && bo->posnY < 112 )
+				{
+					continue;
+				}
+
 				engine_sprite_manager_draw_boss1( bo->posnX, bo->posnY );
 			}
 			else if( boss_type_small == bo->sizer )

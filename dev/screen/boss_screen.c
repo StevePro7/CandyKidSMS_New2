@@ -218,12 +218,14 @@ void screen_boss_screen_update( unsigned char *screen_type )
 			//	//}
 			//}
 
-			if( enemymove_type_tour == bo->action )
-			{
+			// Bosses will NOT wait.
+			// Bosses will only scatter OR go home.
+			//if( enemymove_type_tour == bo->action )
+			//{
 				bossX_direction = engine_boss_manager_scatter_direction( bossX );
 				//engine_font_manager_draw_data( bossX_direction, 10, 10 );
 				//bossX_direction = direction_type_upxx;
-			}
+			//}
 			//else if( enemymove_type_kill == bo->action )
 			//{
 			//	bossX_direction = engine_enemy_manager_attack_direction( bossX, go->tileX, go->tileY );
