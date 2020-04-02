@@ -44,8 +44,8 @@ void screen_prep_screen_load()
 
 
 	st->state_object_curr_screen = screen_type_prep;
-	st->state_object_next_screen = screen_type_prep;
-	//st->state_object_next_screen = screen_type_fight;
+	//st->state_object_next_screen = screen_type_prep;
+	st->state_object_next_screen = screen_type_fight;
 
 	engine_delay_manager_load( PREP_SCREEN_DELAY );
 
@@ -108,7 +108,7 @@ void screen_prep_screen_update( unsigned char *screen_type )
 	{
 		//index = rand() % MAX_MUSIC;
 		index = engine_boss_manager_index() / MAX_ENEMIES;
-		//engine_level_manager_draw_middle();
+		engine_level_manager_draw_middle();
 		engine_audio_manager_music_play( index + 8 );
 		*screen_type = st->state_object_next_screen;
 		return;
