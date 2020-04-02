@@ -227,7 +227,19 @@ void screen_dead_screen_update( unsigned char *screen_type )
 			// For continuity we want to check if actor can move immediately after stopping.
 			if( direction_type_none == eo->direction && lifecycle_type_idle == eo->lifecycle )
 			{
-				enemy_direction = engine_enemy_manager_gohome_direction( enemy );
+				// First time around to in the opposite direction.
+				if( 1 == first_times )
+				{
+					first_times = 0;
+					enemy_direction = engine_move_manager_opposite_direction( eo->prev_move );
+				}
+				else
+				{
+					//bossX_direction = engine_boss_manager_gohome_direction( bossX );
+					enemy_direction = engine_enemy_manager_gohome_direction( enemy );
+				}
+
+				//enemy_direction = engine_enemy_manager_gohome_direction( enemy );
 				if( direction_type_none != enemy_direction )
 				{
 					//				engine_command_manager_add( frame, command_type_enemy_mover, ( enemy | ( enemy_direction << 4 ) ) );
