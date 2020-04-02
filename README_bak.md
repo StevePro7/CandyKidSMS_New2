@@ -1,5 +1,12 @@
 # CandyKidSMS_New2
 
+02/04/2020
+Boss delay + speed parameterized
+Boss collision detection
+Boss hide on dead + cont
+Boss to drop cross
+Algorthm to determine how many oneup
+
 01/04/2020
 Pass + Cont screen	hide boss(es) if they are in the middle section
 
