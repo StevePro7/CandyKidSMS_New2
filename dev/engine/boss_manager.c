@@ -373,6 +373,30 @@ void engine_boss_manager_dead( unsigned char bossX )
 	bo->direction = direction_type_none;
 }
 
+void engine_boss_manager_reset_home()
+{
+	struct_boss_object *bo;
+	unsigned char bossX;
+
+	for( bossX = 0; bossX < MAX_BOSSES; bossX++ )
+	{
+		bo = &global_boss_objects[ bossX ];
+		if( !bo->mover )
+		{
+			continue;
+		}
+
+		// Reset at home.
+		bo->tileX = bo->homeX;
+		bo->tileY = bo->homeY;
+		calcd_spots( bossX );
+
+		bo->lifecycle = lifecycle_type_idle;
+		bo->direction = direction_type_none;
+		bo->total = 0;
+	}
+}
+
 unsigned char engine_boss_manager_scatter_direction( unsigned char bossX )
 {
 	struct_boss_object *bo = &global_boss_objects[ bossX ];

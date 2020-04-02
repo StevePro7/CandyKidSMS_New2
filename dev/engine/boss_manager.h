@@ -19,6 +19,7 @@ void engine_boss_manager_draw();
 void engine_boss_manager_move( unsigned char bossX, unsigned char direction );
 void engine_boss_manager_stop( unsigned char bossX );
 void engine_boss_manager_dead( unsigned char bossX );
+void engine_boss_manager_reset_home();
 unsigned char engine_boss_manager_scatter_direction( unsigned char bossX );
 unsigned char engine_boss_manager_gohome_direction( unsigned char bossX );
 void engine_boss_manager_content();
