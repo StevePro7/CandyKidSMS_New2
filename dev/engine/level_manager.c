@@ -8,6 +8,7 @@
 #include "tile_manager.h"
 #include "..\object\board_object.h"
 #include "..\devkit\_sms_manager.h"
+#include "..\banks\fixedbank.h"
 #include <stdlib.h>
 
 #define CRLF	2				// char
@@ -59,6 +60,7 @@ void engine_level_manager_load_level( const unsigned char world, const unsigned 
 		index = level;
 	}
 
+	devkit_SMS_mapROMBank( FIXED_BANK );
 	if( level < halve )
 	{
 		const unsigned char *data = level_object_AAdata[ index ];

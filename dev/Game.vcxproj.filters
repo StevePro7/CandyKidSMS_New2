@@ -301,7 +301,7 @@
       <Filter>Header Files\object</Filter>
     </ClInclude>
     <ClInclude Include="banks\fixedbank.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
