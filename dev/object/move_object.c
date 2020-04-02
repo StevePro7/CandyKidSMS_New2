@@ -1,7 +1,7 @@
 #include "move_object.h"
 #include "..\engine\enum_manager.h"
 
-// FIXED bank.
+// DATA bank.
 // Move Manager.
 extern const unsigned char move_object_directions[] =
 {

@@ -1,7 +1,7 @@
 #ifndef _MOVE_OBJECT_H_
 #define _MOVE_OBJECT_H_
 
-// FIXED bank.
+// DATA bank.
 // Move Manager.
 extern const unsigned char move_object_directions[];
 
