@@ -44,5 +44,5 @@ const unsigned char boss_object_bank[] =
 	boss64_05__tiles__psgcompr_bank,
 };
 
-extern const unsigned char boss_object_tileX[] = { 0, 0, 4, 4 };
-extern const unsigned char boss_object_tileY[] = { 0, 3, 0, 3 };
+//extern const unsigned char boss_object_tileX[] = { 0, 0, 4, 4 };
+//extern const unsigned char boss_object_tileY[] = { 0, 3, 0, 3 };

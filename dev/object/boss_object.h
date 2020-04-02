@@ -45,7 +45,7 @@ extern const unsigned char *boss_object_tiles[];
 extern const unsigned char *boss_object_color[];
 extern const unsigned char boss_object_bank[];
 
-extern const unsigned char boss_object_tileX[];
-extern const unsigned char boss_object_tileY[];
+//extern const unsigned char boss_object_tileX[];
+//extern const unsigned char boss_object_tileY[];
 
 #endif//_GAMER_OBJECT_H_

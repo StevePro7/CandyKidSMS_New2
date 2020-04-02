@@ -31,13 +31,11 @@ void engine_sprite_manager_draw_boss2( unsigned char wide, unsigned char high, u
 	unsigned int tile;
 	unsigned char row, col;
 	unsigned char top, lft;
+
 	// TL	(t, l) = (0, 0)
 	// TR	(t, l) = (0, 3)
 	// BL	(t, l) = (4, 0)
 	// BR	(t, l) = (4, 3)
-	//t = boss_object_tileX[ index ];
-	//l = boss_object_tileY[ index ];
-
 	top = high * 4;
 	lft = wide * 3;
 	for( row = 0; row < TILE_HALF / 2; row++ )
