@@ -30,11 +30,11 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000000  s__HEADER4                      
      00000000  s__HEADER5                      
      00000001  l__GSFINAL                      
+     00000003  l__BANK15                       
      00000003  l__HEADER3                      
      00000003  l__HEADER4                      
      00000005  l__BANK3                        
      00000006  l__BANK14                       
-     00000006  l__BANK15                       
      00000006  l__HEADER0                      
      00000009  l__HEADER1                      
      0000000A  l__CABS2                        
@@ -1139,11 +1139,11 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK15                             00008000    00000006 =           6. bytes (REL,CON)
+_BANK15                             00008000    00000003 =           3. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  _bank15_txt                        bank15
+     00008000  _foo_object_text                   fixedbank
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 39.
 Hexadecimal  [32-Bits]
@@ -1222,7 +1222,7 @@ banks\bank11.rel                          [ bank11 ]
 banks\bank12.rel                          [ bank12 ]
 banks\bank13.rel                          [ bank13 ]
 banks\bank14.rel                          [ bank14 ]
-banks\bank15.rel                          [ bank15 ]
+banks\fixedbank.rel                       [ fixedbank ]
 devkit\_sms_manager.rel                   [ _sms_manager ]
 devkit\_snd_manager.rel                   [ _snd_manager ]
 engine\actor_manager.rel                  [ actor_manager ]

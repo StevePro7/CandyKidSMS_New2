@@ -1,0 +1,1 @@
+const unsigned char foo_object_text[] = { 1, 2, 3 };
