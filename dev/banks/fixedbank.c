@@ -83,6 +83,31 @@ const unsigned char boss_object_bank[] =
 	boss64_05__tiles__psgcompr_bank,
 };
 
+const unsigned char boss_object_speed[] =
+{
+//Pro: ES,EF,HS,HF.
+		2, 3, 1, 3, 		// Boss1
+		2, 3, 1, 3, 		// Boss2
+//Adi: ES,EF,HS,HF.
+		1, 1, 2, 3, 		// Boss1
+		1, 1, 2, 3, 		// Boss2
+//Suz: ES,EF,HS,HF.
+		1, 1, 1, 2, 		// Boss1
+		1, 1, 1, 2, 		// Boss2
+};
+const unsigned char boss_object_delay[] =
+{
+//Pro: ES,EF,HS,HF.
+		3, 3, 1, 2, 		// Boss1
+		3, 3, 1, 2, 		// Boss2
+//Adi: ES,EF,HS,HF.
+		2, 2, 3, 3, 		// Boss1
+		2, 2, 3, 3, 		// Boss2
+//Suz: ES,EF,HS,HF.
+		3, 3, 2, 3, 		// Boss1
+		3, 3, 2, 3, 		// Boss2
+};
+
 
 // FIXED bank.
 // Enemy Manager
@@ -95,25 +120,25 @@ const unsigned char enemy_object_image[] =
 
 const unsigned char enemy_object_speed[] =
 {
-	//Pro: ES,EF,HS,HF.
+//Pro: ES,EF,HS,HF.
 	2, 3, 1, 3, 		// Normal
 	2, 1, 3, 2, 		// Boost!
-	//Adi: ES,EF,HS,HF.
+//Adi: ES,EF,HS,HF.
 	1, 1, 2, 3, 		// Normal
 	1, 2, 3, 1, 		// Boost!
-	//Suz: ES,EF,HS,HF.
+//Suz: ES,EF,HS,HF.
 	1, 1, 1, 2, 		// Normal
 	1, 1, 2, 3, 		// Boost!
 };
 const unsigned char enemy_object_delay[] =
 {
-	//Pro: ES,EF,HS,HF.
+//Pro: ES,EF,HS,HF.
 	3, 3, 1, 2, 		// Normal
 	3, 1, 2, 1, 		// Boost!
-	//Adi: ES,EF,HS,HF.
+//Adi: ES,EF,HS,HF.
 	2, 2, 3, 3, 		// Normal
 	2, 3, 3, 1, 		// Boost!
-	//Suz: ES,EF,HS,HF.
+//Suz: ES,EF,HS,HF.
 	3, 3, 2, 3, 		// Normal
 	3, 2, 3, 3, 		// Boost!
 };

@@ -87,7 +87,7 @@ void engine_hack_manager_invert()
 	ho->hack_object_trees_type = 1 + 1;
 	ho->hack_object_exits_type = 0 + 1;
 	ho->hack_object_difficulty = 0 + 1;
-	//ho->hack_object_pace_speed = 0;
+	ho->hack_object_pace_speed = 0 + 1;
 
 
 	// Enable enemy movement via ROM hack = 0.

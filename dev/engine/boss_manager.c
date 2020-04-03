@@ -76,7 +76,7 @@ void engine_boss_manager_setup( unsigned char round )
 
 	// Randomize the first boss.
 	enemy = rand() % MAX_ENEMIES;
-	//enemy = 0;	// todo delete
+	enemy = 1;	// todo delete
 
 	boss_index[ 0 ] = enemy;
 	boss_one = enemy;
@@ -132,6 +132,7 @@ void engine_boss_manager_load()
 	
 	struct_boss_object *bo;
 	unsigned char bossX;
+	unsigned char enemy;
 	unsigned char index;
 
 	unsigned char minX, minY;
@@ -222,8 +223,14 @@ void engine_boss_manager_load()
 
 		// Bosses will NOT wait.
 		bo->action = enemymove_type_tour;
-		bo->speed = 1;
-		bo->delay = 4;
+
+		enemy = bo->actor;
+		index = ( 8 * enemy ) + ( 4 * ( st->state_object_fight_type - 1 ) ) + ( st->state_object_difficulty * 2 ) + st->state_object_pace_speed;
+		//bo->speed = 1;
+		//bo->delay = 4;
+
+		bo->speed = boss_object_speed[ index ];
+		bo->delay = boss_object_delay[ index ];
 
 
 		//tileX = go->tileX;

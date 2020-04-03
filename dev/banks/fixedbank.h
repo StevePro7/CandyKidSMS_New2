@@ -13,7 +13,8 @@ extern const unsigned char music_object_bank[];
 extern const unsigned char *boss_object_tiles[];
 extern const unsigned char *boss_object_color[];
 extern const unsigned char boss_object_bank[];
-
+extern const unsigned char boss_object_speed[];
+extern const unsigned char boss_object_delay[];
 
 // FIXED bank.
 // Enemy Manager
