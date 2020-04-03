@@ -47,7 +47,8 @@ void screen_prep_screen_load()
 	// boss 2
 	// easy		min=10	max = 15
 	// hard		min=25 max = 35
-	unsigned char oneup_count = 35;
+	//unsigned char oneup_count = 35;
+	unsigned char oneup_count = 3;
 
 
 	st->state_object_curr_screen = screen_type_prep;
@@ -79,6 +80,7 @@ void screen_prep_screen_load()
 	engine_boss_manager_setup( st->state_object_round_data );
 	engine_boss_manager_content();
 	engine_boss_manager_load();
+	engine_collision_manager_load();
 
 	// load oneup
 	engine_level_manager_clear();

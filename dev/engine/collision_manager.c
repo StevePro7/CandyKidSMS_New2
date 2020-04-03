@@ -16,6 +16,15 @@
 #define DIST_ENEMY_EASY		8
 #define DIST_ENEMY_HARD		10
 static unsigned char coll_enemy_distance[] = { DIST_ENEMY_EASY, DIST_ENEMY_HARD };
+static unsigned char coll_boss_distanceX;
+static unsigned char coll_boss_distanceY;
+
+void engine_collision_manager_load()
+{
+	struct_state_object *st = &global_state_object;
+	coll_boss_distanceX = 3 * TILE_WIDE / st->state_object_fight_type;
+	coll_boss_distanceY = 4 * TILE_HIGH / st->state_object_fight_type;
+}
 
 unsigned char engine_collision_manager_enemy_collision()
 {
@@ -63,37 +72,35 @@ unsigned char engine_collision_manager_enemy_collision()
 	return gamer_collision;
 }
 
-//unsigned char engine_collision_manager_boss_collision()
-//{
-//	//struct_gamer_object *go = &global_gamer_object;
-//	//struct_state_object *st = &global_state_object;
-//	//struct_boss_object *bo;
-//	unsigned char gamer_collision = actor_type_kid;
-//	//unsigned char bossX;
-//
-//	//for( bossX = 0; bossX < MAX_BOSSES; bossX++ )
-//	//{
-//	//	bo = &global_boss_objects[ bossX ];
-//	//	if( !bo->drawr )
-//	//	{
-//	//		continue;
-//	//	}
-//	//	if( fight_type_boss1 == st->state_object_fight_type )
-//	//	{
-//
-//	//	}
-//	//	else if( fight_type_boss2 == st->state_object_fight_type )
-//	//	{
-//	//		if( go->posnY + 16 > bo->posnY )
-//	//		{
-//	//			gamer_collision = bossX + 5;		// 5 offset actor
-//	//			break;
-//	//		}
-//	//	}
-//	//}
-//
-//	return gamer_collision;
-//}
+unsigned char engine_collision_manager_boss_collision()
+{
+	struct_gamer_object *go = &global_gamer_object;
+	struct_state_object *st = &global_state_object;
+	struct_boss_object *bo;
+	unsigned char gamer_collision = actor_type_kid;
+	unsigned char bossX;
+
+	for( bossX = 0; bossX < MAX_BOSSES; bossX++ )
+	{
+		bo = &global_boss_objects[ bossX ];
+		if( !bo->drawr )
+		{
+			continue;
+		}
+
+		if( go->posnX + TILE_WIDE > bo->posnX &&
+			go->posnY + TILE_HIGH > bo->posnY &&
+			go->posnX < bo->posnX + coll_boss_distanceX &&
+			go->posnY < bo->posnY + coll_boss_distanceY )
+		{
+			// Add five to offset for enum.
+			gamer_collision = bossX + 5;
+			break;
+		}
+	}
+
+	return gamer_collision;
+}
 
 unsigned char engine_collision_manager_tile_collision( unsigned char tile_type )
 {

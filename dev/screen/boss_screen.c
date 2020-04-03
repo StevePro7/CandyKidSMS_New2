@@ -21,7 +21,7 @@
 //#pragma disable_warning 110
 //#endif
 
-static unsigned char first_time;
+//static unsigned char first_time;
 //static unsigned char frame_spot;
 static unsigned char nextr_direction;
 
@@ -31,7 +31,7 @@ void screen_boss_screen_load()
 	struct_state_object *st = &global_state_object;
 
 	//struct_boss_object *bo;
-	engine_delay_manager_load( 0 );
+	//engine_delay_manager_load( 0 );
 
 	//	engine_command_manager_load();
 	engine_frame_manager_load();
@@ -40,7 +40,7 @@ void screen_boss_screen_load()
 	//engine_delay_manager_draw();
 
 
-	first_time = 1;
+	//first_time = 1;
 	nextr_direction = direction_type_none;
 
 	engine_reset_manager_load( QUIT_SCREEN_DELAY );
@@ -64,7 +64,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 	unsigned char gamer_tile_type = tile_type_blank;
 	unsigned char oneup_count = 0;
 
-	unsigned char proceed;
+	//unsigned char proceed;
 	unsigned char input;
 	unsigned char bossX;
 	unsigned char check;
@@ -81,20 +81,21 @@ void screen_boss_screen_update( unsigned char *screen_type )
 
 	//engine_frame_manager_draw();
 	//engine_delay_manager_draw();
-	if( !first_time )
-	{
-		proceed = engine_delay_manager_update();
-		if( !proceed )
-		{
-			return;
-		}
+	//if( !first_time )
+	//{
+	//	proceed = engine_delay_manager_update();
+	//	if( !proceed )
+	//	{
+	//		return;
+	//	}
 
-		engine_frame_manager_update();
-		first_time = 1;
-	}
+	//	engine_frame_manager_update();
+	//	first_time = 1;
+	//}
 
 	// Continue...
 	frame = fo->frame_count;
+	engine_frame_manager_update();
 
 
 	// Does player want to quit out?
@@ -242,7 +243,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 
 	// Execute all commands for this frame.
 	//engine_command_manager_execute( frame );
-	first_time = 0;
+	//first_time = 0;
 
 
 	// Check oneup collision before sprite collision as we want to test if all oneup eaten = boss complete.
@@ -280,6 +281,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 	// Kid can only collide with Candy Mama;
 	// i.e. Candy Mamas will NOT overlap...!
 	gamer_collision = devkit_isCollisionDetected();
+	//engine_font_manager_draw_data( gamer_collision, 20, 0 );
 	if( 0 != gamer_collision )
 	{
 		st->state_object_actor_kill = actor_type_boss1;

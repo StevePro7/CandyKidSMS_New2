@@ -76,7 +76,7 @@ void engine_boss_manager_setup( unsigned char round )
 
 	// Randomize the first boss.
 	enemy = rand() % MAX_ENEMIES;
-	//enemy = 0;	// todo delete
+	enemy = 1;	// todo delete
 
 	boss_index[ 0 ] = enemy;
 	boss_one = enemy;
