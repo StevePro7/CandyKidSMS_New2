@@ -48,7 +48,7 @@ void screen_prep_screen_load()
 	// easy		min=10	max = 15
 	// hard		min=25 max = 35
 	//unsigned char oneup_count = 35;
-	unsigned char oneup_count = 3;
+	unsigned char oneup_count;
 
 
 	st->state_object_curr_screen = screen_type_prep;
@@ -81,6 +81,9 @@ void screen_prep_screen_load()
 	engine_boss_manager_content();
 	engine_boss_manager_load();
 	engine_collision_manager_load();
+
+	// algorithm to determine oneup count.
+	oneup_count = ( 10 + st->state_object_world_data ) * st->state_object_fight_type + ( st->state_object_difficulty * 5 );
 
 	// load oneup
 	engine_level_manager_clear();

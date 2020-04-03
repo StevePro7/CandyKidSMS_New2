@@ -127,7 +127,7 @@ void engine_score_manager_update_oneup()
 {
 	struct_score_object *so = &global_score_object;
 	so->oneup++;
-	update_score( 5 );
+	update_score( 2 );
 }
 
 void engine_score_manager_update_lives( signed char value )
