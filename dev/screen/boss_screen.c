@@ -278,16 +278,18 @@ void screen_boss_screen_update( unsigned char *screen_type )
 	}
 
 	// Kid collide with Candy Mama?
-	gamer_collision = devkit_isCollisionDetected();
-	if( 0 != gamer_collision )
-	{
-		engine_font_manager_draw_data( gamer_collision, 30, 0 );
-		//st->state_object_actor_kill = engine_collision_manager_boss_collision();
-		//if( actor_type_kid != st->state_object_actor_kill )
-		//{
-		//	engine_boss_manager_dead( st->state_object_actor_kill );
-		//	*screen_type = screen_type_dead;
-		//	return;
-		//}
-	}
+	st->state_object_actor_kill = engine_collision_manager_boss_collision();
+	engine_font_manager_draw_data( st->state_object_actor_kill, 30, 1 );
+	//gamer_collision = devkit_isCollisionDetected();
+	//if( 0 != gamer_collision )
+	//{
+	//	engine_font_manager_draw_data( gamer_collision, 30, 0 );
+	//	//st->state_object_actor_kill = engine_collision_manager_boss_collision();
+	//	//if( actor_type_kid != st->state_object_actor_kill )
+	//	//{
+	//	//	engine_boss_manager_dead( st->state_object_actor_kill );
+	//	//	*screen_type = screen_type_dead;
+	//	//	return;
+	//	//}
+	//}
 }

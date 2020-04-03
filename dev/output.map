@@ -69,11 +69,11 @@ Area                                    Addr        Size        Decimal Bytes (A
      00002EE0  l__BANK4                        
      00002EE0  l__BANK5                        
      00003E1B  l__BANK13                       
-     000078FD  l__CODE                         
-     00007AFD  s__HOME                         
-     00007AFD  s__INITIALIZER                  
-     00007E69  s__GSINIT                       
-     00007E78  s__GSFINAL                      
+     00007991  l__CODE                         
+     00007B91  s__HOME                         
+     00007B91  s__INITIALIZER                  
+     00007EFD  s__GSINIT                       
+     00007F0C  s__GSFINAL                      
      00008000  _SMS_SRAM                          SMSlib_PSGaiden
      00008000  s__BANK10                       
      00008000  s__BANK11                       
@@ -102,7 +102,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    000078FD =       30973. bytes (REL,CON)
+_CODE                               00000200    00007991 =       31121. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -161,7 +161,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    000078FD =       30973. bytes (REL,CON)
+_CODE                               00000200    00007991 =       31121. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -199,355 +199,355 @@ _CODE                               00000200    000078FD =       30973. bytes (R
      00000E2B  _engine_boss_manager_load          boss_manager
      00001108  _engine_boss_manager_update        boss_manager
      00001246  _engine_boss_manager_draw          boss_manager
-     000012BD  _engine_boss_manager_hide          boss_manager
-     0000136B  _engine_boss_manager_move          boss_manager
-     00001394  _engine_boss_manager_stop          boss_manager
-     000013BE  _engine_boss_manager_dead          boss_manager
-     000013EE  _engine_boss_manager_reset_home    boss_manager
-     00001449  _engine_boss_manager_scatter_dir   boss_manager
-     00001553  _engine_boss_manager_gohome_dire   boss_manager
-     000015BC  _engine_boss_manager_content       boss_manager
-     00001607  _engine_boss_manager_index         boss_manager
-     000016A7  _engine_collision_manager_enemy_   collision_manager
-     00001755  _engine_collision_manager_boss_c   collision_manager
-     00001758  _engine_collision_manager_tile_c   collision_manager
-     0000185C  _engine_collision_manager_reset_   collision_manager
-     000018C1  _engine_content_manager_load_til   content_manager
-     000018D7  _engine_content_manager_load_til   content_manager
-     000018ED  _engine_content_manager_load_til   content_manager
-     0000190B  _engine_content_manager_load_til   content_manager
+     000012F4  _engine_boss_manager_hide          boss_manager
+     000013A2  _engine_boss_manager_move          boss_manager
+     000013CB  _engine_boss_manager_stop          boss_manager
+     000013F5  _engine_boss_manager_dead          boss_manager
+     00001425  _engine_boss_manager_reset_home    boss_manager
+     00001480  _engine_boss_manager_scatter_dir   boss_manager
+     0000158A  _engine_boss_manager_gohome_dire   boss_manager
+     000015F3  _engine_boss_manager_content       boss_manager
+     0000163E  _engine_boss_manager_index         boss_manager
+     000016E8  _engine_collision_manager_enemy_   collision_manager
+     00001796  _engine_collision_manager_boss_c   collision_manager
+     00001799  _engine_collision_manager_tile_c   collision_manager
+     0000189D  _engine_collision_manager_reset_   collision_manager
+     00001902  _engine_content_manager_load_til   content_manager
+     00001918  _engine_content_manager_load_til   content_manager
+     0000192E  _engine_content_manager_load_til   content_manager
+     0000194C  _engine_content_manager_load_til   content_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 5.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    000078FD =       30973. bytes (REL,CON)
+_CODE                               00000200    00007991 =       31121. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00001936  _engine_content_manager_load_spr   content_manager
-     0000194C  _engine_enemy_manager_init         enemy_manager
-     00001A79  _engine_enemy_manager_load         enemy_manager
-     00001D9B  _engine_enemy_manager_stance       enemy_manager
-     00001DC2  _engine_enemy_manager_dohand       enemy_manager
-     00001E0D  _engine_enemy_manager_update       enemy_manager
-     00001F35  _engine_enemy_manager_draw         enemy_manager
-     00001F6E  _engine_enemy_manager_draws        enemy_manager
-     00001F9F  _engine_enemy_manager_hide         enemy_manager
-     00001FE9  _engine_enemy_manager_move         enemy_manager
-     00002016  _engine_enemy_manager_pace         enemy_manager
-     0000205C  _engine_enemy_manager_stop         enemy_manager
-     000020B1  _engine_enemy_manager_dead         enemy_manager
-     000020E5  _engine_enemy_manager_reset_home   enemy_manager
-     0000214E  _engine_enemy_manager_reset_mode   enemy_manager
-     000021DB  _engine_enemy_manager_frame        enemy_manager
-     0000220A  _engine_enemy_manager_image        enemy_manager
-     00002239  _engine_enemy_manager_images       enemy_manager
-     00002260  _engine_enemy_manager_debug        enemy_manager
-     0000228B  _engine_enemy_manager_scatter_di   enemy_manager
-     000023BB  _engine_enemy_manager_gohome_dir   enemy_manager
-     00002429  _engine_enemy_manager_attack_dir   enemy_manager
-     00002571  _engine_enemy_manager_input_boos   enemy_manager
-     00002751  _engine_font_manager_draw_char     font_manager
-     0000277D  _engine_font_manager_draw_text     font_manager
-     000027CF  _engine_font_manager_draw_data     font_manager
-     0000285A  _engine_function_manager_convert   function_manager
-     00002884  _engine_function_manager_convert   function_manager
-     000028B9  _engine_function_manager_convert   function_manager
-     000028DE  _engine_function_manager_convert   function_manager
-     000028F7  _engine_gamer_manager_init         gamer_manager
-     00002968  _engine_gamer_manager_stance       gamer_manager
-     00002970  _engine_gamer_manager_load         gamer_manager
-     000029BA  _engine_gamer_manager_update       gamer_manager
-     00002AA0  _engine_gamer_manager_draw         gamer_manager
-     00002ABF  _engine_gamer_manager_draws        gamer_manager
-     00002AD7  _engine_gamer_manager_hide         gamer_manager
-     00002B04  _engine_gamer_manager_draw_death   gamer_manager
-     00002B32  _engine_gamer_manager_hide_death   gamer_manager
-     00002B53  _engine_gamer_manager_move         gamer_manager
-     00002B86  _engine_gamer_manager_wrap         gamer_manager
-     00002BC4  _engine_gamer_manager_pace         gamer_manager
-     00002C02  _engine_gamer_manager_stop         gamer_manager
-     00002C50  _engine_gamer_manager_dead         gamer_manager
-     00002C67  _engine_gamer_manager_reset        gamer_manager
-     00002CA3  _engine_gamer_manager_frame        gamer_manager
-     00002CAF  _engine_gamer_manager_image        gamer_manager
-     00002CBB  _engine_gamer_manager_images       gamer_manager
-     00002CCB  _engine_gamer_manager_find_direc   gamer_manager
-     00002D83  _engine_gamer_manager_input_boos   gamer_manager
-     00002E5D  _engine_hack_manager_init          hack_manager
+     00001977  _engine_content_manager_load_spr   content_manager
+     0000198D  _engine_enemy_manager_init         enemy_manager
+     00001ABA  _engine_enemy_manager_load         enemy_manager
+     00001DDC  _engine_enemy_manager_stance       enemy_manager
+     00001E03  _engine_enemy_manager_dohand       enemy_manager
+     00001E4E  _engine_enemy_manager_update       enemy_manager
+     00001F76  _engine_enemy_manager_draw         enemy_manager
+     00001FAF  _engine_enemy_manager_draws        enemy_manager
+     00001FE0  _engine_enemy_manager_hide         enemy_manager
+     0000202A  _engine_enemy_manager_move         enemy_manager
+     00002057  _engine_enemy_manager_pace         enemy_manager
+     0000209D  _engine_enemy_manager_stop         enemy_manager
+     000020F2  _engine_enemy_manager_dead         enemy_manager
+     00002126  _engine_enemy_manager_reset_home   enemy_manager
+     0000218F  _engine_enemy_manager_reset_mode   enemy_manager
+     0000221C  _engine_enemy_manager_frame        enemy_manager
+     0000224B  _engine_enemy_manager_image        enemy_manager
+     0000227A  _engine_enemy_manager_images       enemy_manager
+     000022A1  _engine_enemy_manager_debug        enemy_manager
+     000022CC  _engine_enemy_manager_scatter_di   enemy_manager
+     000023FC  _engine_enemy_manager_gohome_dir   enemy_manager
+     0000246A  _engine_enemy_manager_attack_dir   enemy_manager
+     000025B2  _engine_enemy_manager_input_boos   enemy_manager
+     00002792  _engine_font_manager_draw_char     font_manager
+     000027BE  _engine_font_manager_draw_text     font_manager
+     00002810  _engine_font_manager_draw_data     font_manager
+     0000289B  _engine_function_manager_convert   function_manager
+     000028C5  _engine_function_manager_convert   function_manager
+     000028FA  _engine_function_manager_convert   function_manager
+     0000291F  _engine_function_manager_convert   function_manager
+     00002938  _engine_gamer_manager_init         gamer_manager
+     000029A9  _engine_gamer_manager_stance       gamer_manager
+     000029B1  _engine_gamer_manager_load         gamer_manager
+     000029FB  _engine_gamer_manager_update       gamer_manager
+     00002AE1  _engine_gamer_manager_draw         gamer_manager
+     00002B1D  _engine_gamer_manager_draws        gamer_manager
+     00002B35  _engine_gamer_manager_hide         gamer_manager
+     00002B62  _engine_gamer_manager_draw_death   gamer_manager
+     00002B90  _engine_gamer_manager_hide_death   gamer_manager
+     00002BB1  _engine_gamer_manager_move         gamer_manager
+     00002BE4  _engine_gamer_manager_wrap         gamer_manager
+     00002C22  _engine_gamer_manager_pace         gamer_manager
+     00002C60  _engine_gamer_manager_stop         gamer_manager
+     00002CAE  _engine_gamer_manager_dead         gamer_manager
+     00002CC5  _engine_gamer_manager_reset        gamer_manager
+     00002D01  _engine_gamer_manager_frame        gamer_manager
+     00002D0D  _engine_gamer_manager_image        gamer_manager
+     00002D19  _engine_gamer_manager_images       gamer_manager
+     00002D29  _engine_gamer_manager_find_direc   gamer_manager
+     00002DE1  _engine_gamer_manager_input_boos   gamer_manager
+     00002EBB  _engine_hack_manager_init          hack_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 6.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    000078FD =       30973. bytes (REL,CON)
+_CODE                               00000200    00007991 =       31121. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00002EA9  _engine_hack_manager_load          hack_manager
-     00002F14  _engine_hack_manager_invert        hack_manager
-     00002FD4  _engine_input_manager_update       input_manager
-     00002FE1  _engine_input_manager_hold         input_manager
-     0000300E  _engine_input_manager_move         input_manager
-     00003019  _engine_input_manager_direction    input_manager
-     0000308B  _engine_level_manager_clear        level_manager
-     000030B5  _engine_level_manager_load_level   level_manager
-     00003155  _engine_level_manager_temp_level   level_manager
-     0000318E  _engine_level_manager_load_oneup   level_manager
-     000031E9  _engine_level_manager_directions   level_manager
-     00003256  _engine_level_manager_draw_level   level_manager
-     00003290  _engine_level_manager_draw_middl   level_manager
-     000032AC  _engine_level_manager_beat_level   level_manager
-     000032CD  _engine_level_manager_blank_tile   level_manager
-     00003329  _engine_level_manager_get_collis   level_manager
-     0000336D  _engine_level_manager_get_direct   level_manager
-     000033A5  _engine_level_manager_get_tile_t   level_manager
-     000033E8  _engine_level_manager_get_next_t   level_manager
-     0000345A  _engine_level_manager_get_next_i   level_manager
-     000034B2  _engine_level_manager_test_direc   level_manager
-     000036BA  _engine_locale_manager_draw_text   locale_manager
-     000036E7  _engine_main_manager_init          main_manager
-     000036F0  _engine_main_manager_load          main_manager
-     00003709  _engine_main_manager_save          main_manager
-     0000370C  _engine_memo_manager_draw          memo_manager
-     0000372F  _engine_memo_manager_pass          memo_manager
-     00003746  _engine_memo_manager_levels        memo_manager
-     00003796  _engine_memo_manager_option        memo_manager
-     0000383F  _engine_memo_manager_debugging     memo_manager
-     0000387F  _engine_move_manager_get_directi   move_manager
-     00003911  _engine_move_manager_what_direct   move_manager
-     00003A20  _engine_move_manager_gothru_exit   move_manager
-     00003AA2  _engine_move_manager_border_exit   move_manager
-     00003AEA  _engine_move_manager_inside_exit   move_manager
-     00003B3C  _engine_move_manager_opposite_di   move_manager
-     00003B6E  _engine_option_manager_init        option_manager
-     00003B9B  _engine_option_manager_update      option_manager
-     00003C25  _engine_option_manager_clear       option_manager
-     00003C57  _engine_option_manager_draw_acto   option_manager
-     00003CBF  _engine_option_manager_text_kid    option_manager
-     00003CEF  _engine_option_manager_text_kid_   option_manager
-     00003D13  _engine_option_manager_text_enem   option_manager
-     00003D5E  _engine_option_manager_text_enem   option_manager
-     00003D95  _engine_option_manager_text_star   option_manager
-     00003DCC  _engine_option_manager_draw_bonu   option_manager
-     00003E4D  _engine_option_manager_draw_cand   option_manager
-     00003E99  _engine_option_manager_text_tree   option_manager
-     00003ED7  _engine_option_manager_text_exit   option_manager
-     00003F0F  _engine_option_manager_option_tr   option_manager
-     00003F25  _engine_option_manager_option_ex   option_manager
+     00002F07  _engine_hack_manager_load          hack_manager
+     00002F72  _engine_hack_manager_invert        hack_manager
+     00003033  _engine_input_manager_update       input_manager
+     00003040  _engine_input_manager_hold         input_manager
+     0000306D  _engine_input_manager_move         input_manager
+     00003078  _engine_input_manager_direction    input_manager
+     000030EA  _engine_level_manager_clear        level_manager
+     00003114  _engine_level_manager_load_level   level_manager
+     000031B4  _engine_level_manager_temp_level   level_manager
+     000031ED  _engine_level_manager_load_oneup   level_manager
+     00003248  _engine_level_manager_directions   level_manager
+     000032B5  _engine_level_manager_draw_level   level_manager
+     000032EF  _engine_level_manager_draw_middl   level_manager
+     0000330B  _engine_level_manager_beat_level   level_manager
+     0000332C  _engine_level_manager_blank_tile   level_manager
+     00003388  _engine_level_manager_get_collis   level_manager
+     000033CC  _engine_level_manager_get_direct   level_manager
+     00003404  _engine_level_manager_get_tile_t   level_manager
+     00003447  _engine_level_manager_get_next_t   level_manager
+     000034B9  _engine_level_manager_get_next_i   level_manager
+     00003511  _engine_level_manager_test_direc   level_manager
+     00003719  _engine_locale_manager_draw_text   locale_manager
+     00003746  _engine_main_manager_init          main_manager
+     0000374F  _engine_main_manager_load          main_manager
+     00003768  _engine_main_manager_save          main_manager
+     0000376B  _engine_memo_manager_draw          memo_manager
+     0000378E  _engine_memo_manager_pass          memo_manager
+     000037A5  _engine_memo_manager_levels        memo_manager
+     000037F5  _engine_memo_manager_option        memo_manager
+     0000389E  _engine_memo_manager_debugging     memo_manager
+     000038DE  _engine_move_manager_get_directi   move_manager
+     00003970  _engine_move_manager_what_direct   move_manager
+     00003A7F  _engine_move_manager_gothru_exit   move_manager
+     00003B01  _engine_move_manager_border_exit   move_manager
+     00003B49  _engine_move_manager_inside_exit   move_manager
+     00003B9B  _engine_move_manager_opposite_di   move_manager
+     00003BCD  _engine_option_manager_init        option_manager
+     00003BFA  _engine_option_manager_update      option_manager
+     00003C84  _engine_option_manager_clear       option_manager
+     00003CB6  _engine_option_manager_draw_acto   option_manager
+     00003D1E  _engine_option_manager_text_kid    option_manager
+     00003D4E  _engine_option_manager_text_kid_   option_manager
+     00003D72  _engine_option_manager_text_enem   option_manager
+     00003DBD  _engine_option_manager_text_enem   option_manager
+     00003DF4  _engine_option_manager_text_star   option_manager
+     00003E2B  _engine_option_manager_draw_bonu   option_manager
+     00003EAC  _engine_option_manager_draw_cand   option_manager
+     00003EF8  _engine_option_manager_text_tree   option_manager
+     00003F36  _engine_option_manager_text_exit   option_manager
+     00003F6E  _engine_option_manager_option_tr   option_manager
+     00003F84  _engine_option_manager_option_ex   option_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 7.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    000078FD =       30973. bytes (REL,CON)
+_CODE                               00000200    00007991 =       31121. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00003F51  _engine_option_manager_text_othe   option_manager
-     00003F93  _engine_option_manager_option_wo   option_manager
-     00003FBD  _engine_option_manager_option_ro   option_manager
-     00003FE8  _engine_option_manager_option_di   option_manager
-     00004003  _engine_score_manager_text         score_manager
-     00004037  _engine_score_manager_init         score_manager
-     00004065  _engine_score_manager_load         score_manager
-     000040AF  _engine_score_manager_get_candy    score_manager
-     000040B4  _engine_score_manager_get_oneup    score_manager
-     000040B9  _engine_score_manager_get_bonus    score_manager
-     000040C9  _engine_score_manager_get_value    score_manager
-     000040D6  _engine_score_manager_finish_bon   score_manager
-     000040E1  _engine_score_manager_update_bon   score_manager
-     00004115  _engine_score_manager_update_can   score_manager
-     00004124  _engine_score_manager_update_one   score_manager
-     00004133  _engine_score_manager_update_liv   score_manager
-     0000413F  _engine_score_manager_update_boo   score_manager
-     0000416F  _engine_score_manager_draw_init    score_manager
-     0000418C  _engine_score_manager_draw_load    score_manager
-     0000419D  _engine_score_manager_update_lev   score_manager
-     000041CD  _engine_score_manager_reset_live   score_manager
-     000041E0  _engine_score_manager_reset_boos   score_manager
-     000042FE  _engine_screen_manager_init        screen_manager
-     000043E4  _engine_screen_manager_update      screen_manager
-     00004427  _engine_sprite_manager_draw_enti   sprite_manager
-     00004498  _engine_sprite_manager_draw_boss   sprite_manager
-     000044F3  _engine_sprite_manager_draw_boss   sprite_manager
-     00004573  _engine_state_manager_init         state_manager
-     000045B6  _engine_state_manager_fight        state_manager
-     000045C4  _engine_storage_manager_availabl   storage_manager
-     000045F3  _engine_storage_manager_read       storage_manager
-     00004677  _engine_storage_manager_write      storage_manager
-     0000470D  _engine_storage_manager_erase      storage_manager
-     00004773  _engine_delay_manager_load         timer_manager
-     0000479B  _engine_delay_manager_update       timer_manager
-     000047BD  _engine_delay_manager_draw         timer_manager
-     000047CB  _engine_frame_manager_load         timer_manager
-     000047D2  _engine_frame_manager_update       timer_manager
-     000047E9  _engine_frame_manager_draw         timer_manager
-     000047F7  _engine_reset_manager_load         timer_manager
-     00004807  _engine_reset_manager_update       timer_manager
-     00004822  _engine_reset_manager_reset        timer_manager
-     00004828  _engine_tile_manager_load_tile     tile_manager
-     0000487D  _engine_tile_manager_load_coll     tile_manager
-     00004894  _engine_tile_manager_draw_tile     tile_manager
-     0000492E  _engine_tile_manager_draw_blank    tile_manager
-     00004961  _engine_tile_manager_draw_candy    tile_manager
-     00004989  _engine_tile_manager_draw_trees    tile_manager
-     000049A6  _engine_tile_manager_draw_bonus    tile_manager
-     000049DB  _engine_tile_manager_draw_oneup    tile_manager
-     000049F0  _engine_tile_manager_draw_cross    tile_manager
+     00003FB0  _engine_option_manager_text_othe   option_manager
+     00003FF2  _engine_option_manager_option_wo   option_manager
+     0000401C  _engine_option_manager_option_ro   option_manager
+     00004047  _engine_option_manager_option_di   option_manager
+     00004062  _engine_score_manager_text         score_manager
+     00004096  _engine_score_manager_init         score_manager
+     000040C4  _engine_score_manager_load         score_manager
+     0000410E  _engine_score_manager_get_candy    score_manager
+     00004113  _engine_score_manager_get_oneup    score_manager
+     00004118  _engine_score_manager_get_bonus    score_manager
+     00004128  _engine_score_manager_get_value    score_manager
+     00004135  _engine_score_manager_finish_bon   score_manager
+     00004140  _engine_score_manager_update_bon   score_manager
+     00004174  _engine_score_manager_update_can   score_manager
+     00004183  _engine_score_manager_update_one   score_manager
+     00004192  _engine_score_manager_update_liv   score_manager
+     0000419E  _engine_score_manager_update_boo   score_manager
+     000041CE  _engine_score_manager_draw_init    score_manager
+     000041EB  _engine_score_manager_draw_load    score_manager
+     000041FC  _engine_score_manager_update_lev   score_manager
+     0000422C  _engine_score_manager_reset_live   score_manager
+     0000423F  _engine_score_manager_reset_boos   score_manager
+     0000435D  _engine_screen_manager_init        screen_manager
+     00004443  _engine_screen_manager_update      screen_manager
+     00004486  _engine_sprite_manager_draw_enti   sprite_manager
+     000044F7  _engine_sprite_manager_draw_boss   sprite_manager
+     00004552  _engine_sprite_manager_draw_boss   sprite_manager
+     000045D2  _engine_state_manager_init         state_manager
+     00004615  _engine_state_manager_fight        state_manager
+     00004623  _engine_storage_manager_availabl   storage_manager
+     00004652  _engine_storage_manager_read       storage_manager
+     000046D6  _engine_storage_manager_write      storage_manager
+     0000476C  _engine_storage_manager_erase      storage_manager
+     000047D2  _engine_delay_manager_load         timer_manager
+     000047FA  _engine_delay_manager_update       timer_manager
+     0000481C  _engine_delay_manager_draw         timer_manager
+     0000482A  _engine_frame_manager_load         timer_manager
+     00004831  _engine_frame_manager_update       timer_manager
+     00004848  _engine_frame_manager_draw         timer_manager
+     00004856  _engine_reset_manager_load         timer_manager
+     00004866  _engine_reset_manager_update       timer_manager
+     00004881  _engine_reset_manager_reset        timer_manager
+     00004887  _engine_tile_manager_load_tile     tile_manager
+     000048DC  _engine_tile_manager_load_coll     tile_manager
+     000048F3  _engine_tile_manager_draw_tile     tile_manager
+     0000498D  _engine_tile_manager_draw_blank    tile_manager
+     000049C0  _engine_tile_manager_draw_candy    tile_manager
+     000049E8  _engine_tile_manager_draw_trees    tile_manager
+     00004A05  _engine_tile_manager_draw_bonus    tile_manager
+     00004A3A  _engine_tile_manager_draw_oneup    tile_manager
+     00004A4F  _engine_tile_manager_draw_cross    tile_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    000078FD =       30973. bytes (REL,CON)
+_CODE                               00000200    00007991 =       31121. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00004A0F  _engine_tile_manager_draw_sides    tile_manager
-     00004A24  _engine_tile_manager_main_title    tile_manager
-     00004AA9  _engine_tile_manager_main_candy    tile_manager
-     00004AD1  _engine_tile_manager_main_gamer    tile_manager
-     00004AE6  _engine_tile_manager_funk_trees    tile_manager
-     00004C33  _board_object_posnX                board_object
-     00004C41  _board_object_posnY                board_object
-     00004C4F  _board_object_homeX                board_object
-     00004C53  _board_object_homeY                board_object
-     00004C57  _board_object_wide                 board_object
-     00004C59  _board_object_rght                 board_object
-     00004C5B  _board_object_left                 board_object
-     00004C5D  _board_object_midd                 board_object
-     00004C5F  _board_object_exitX                board_object
-     00004C67  _board_object_exitY                board_object
-     00004C6F  _move_object_directions            move_object
-     00004C8F  _locale_object_blank14             locale_object
-     00004CDA  _screen_none_screen_load           none_screen
-     00004CDB  _screen_none_screen_update         none_screen
-     00004CE2  _screen_splash_screen_load         splash_screen
-     00004CFD  _screen_splash_screen_update       splash_screen
-     00004D73  _screen_begin_screen_load          begin_screen
-     00004DBB  _screen_begin_screen_update        begin_screen
-     00004DCD  _screen_title_screen_load          title_screen
-     00004E48  _screen_title_screen_update        title_screen
-     00004F23  _screen_start_screen_init          start_screen
-     00004F29  _screen_start_screen_load          start_screen
-     00004F77  _screen_start_screen_update        start_screen
-     000050D2  _screen_init_screen_load           init_screen
-     000050FA  _screen_init_screen_update         init_screen
-     00005101  _screen_load_screen_load           load_screen
-     00005142  _screen_load_screen_update         load_screen
-     000051C8  _screen_ready_screen_load          ready_screen
-     000051CE  _screen_ready_screen_update        ready_screen
-     000051DB  _screen_play_screen_load           play_screen
-     00005222  _screen_play_screen_update         play_screen
-     00005505  _screen_pass_screen_load           pass_screen
-     00005566  _screen_pass_screen_update         pass_screen
-     0000564D  _screen_dead_screen_load           dead_screen
-     000056C0  _screen_dead_screen_update         dead_screen
-     00005945  _screen_cont_screen_load           cont_screen
-     00005965  _screen_cont_screen_update         cont_screen
-     00005B03  _screen_over_screen_load           over_screen
-     00005B32  _screen_over_screen_update         over_screen
-     00005B7A  _screen_prep_screen_load           prep_screen
-     00005BCD  _screen_prep_screen_update         prep_screen
-     00005CD3  _screen_fight_screen_load          fight_screen
-     00005CD9  _screen_fight_screen_update        fight_screen
-     00005CE6  _screen_boss_screen_load           boss_screen
-     00005D09  _screen_boss_screen_update         boss_screen
-     00005F31  _screen_beat_screen_load           beat_screen
+     00004A6E  _engine_tile_manager_draw_sides    tile_manager
+     00004A83  _engine_tile_manager_main_title    tile_manager
+     00004B08  _engine_tile_manager_main_candy    tile_manager
+     00004B30  _engine_tile_manager_main_gamer    tile_manager
+     00004B45  _engine_tile_manager_funk_trees    tile_manager
+     00004C92  _board_object_posnX                board_object
+     00004CA0  _board_object_posnY                board_object
+     00004CAE  _board_object_homeX                board_object
+     00004CB2  _board_object_homeY                board_object
+     00004CB6  _board_object_wide                 board_object
+     00004CB8  _board_object_rght                 board_object
+     00004CBA  _board_object_left                 board_object
+     00004CBC  _board_object_midd                 board_object
+     00004CBE  _board_object_exitX                board_object
+     00004CC6  _board_object_exitY                board_object
+     00004CCE  _move_object_directions            move_object
+     00004CEE  _locale_object_blank14             locale_object
+     00004D39  _screen_none_screen_load           none_screen
+     00004D3A  _screen_none_screen_update         none_screen
+     00004D41  _screen_splash_screen_load         splash_screen
+     00004D5C  _screen_splash_screen_update       splash_screen
+     00004DD2  _screen_begin_screen_load          begin_screen
+     00004E1A  _screen_begin_screen_update        begin_screen
+     00004E2C  _screen_title_screen_load          title_screen
+     00004EA7  _screen_title_screen_update        title_screen
+     00004F82  _screen_start_screen_init          start_screen
+     00004F88  _screen_start_screen_load          start_screen
+     00004FD6  _screen_start_screen_update        start_screen
+     00005131  _screen_init_screen_load           init_screen
+     00005159  _screen_init_screen_update         init_screen
+     00005160  _screen_load_screen_load           load_screen
+     000051A1  _screen_load_screen_update         load_screen
+     00005227  _screen_ready_screen_load          ready_screen
+     0000522D  _screen_ready_screen_update        ready_screen
+     0000523A  _screen_play_screen_load           play_screen
+     00005281  _screen_play_screen_update         play_screen
+     00005564  _screen_pass_screen_load           pass_screen
+     000055C5  _screen_pass_screen_update         pass_screen
+     000056AC  _screen_dead_screen_load           dead_screen
+     0000571F  _screen_dead_screen_update         dead_screen
+     000059A4  _screen_cont_screen_load           cont_screen
+     000059C4  _screen_cont_screen_update         cont_screen
+     00005B62  _screen_over_screen_load           over_screen
+     00005B91  _screen_over_screen_update         over_screen
+     00005BD9  _screen_prep_screen_load           prep_screen
+     00005C2C  _screen_prep_screen_update         prep_screen
+     00005D66  _screen_fight_screen_load          fight_screen
+     00005D6C  _screen_fight_screen_update        fight_screen
+     00005D79  _screen_boss_screen_load           boss_screen
+     00005D9C  _screen_boss_screen_update         boss_screen
+     00005FC5  _screen_beat_screen_load           beat_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 9.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    000078FD =       30973. bytes (REL,CON)
+_CODE                               00000200    00007991 =       31121. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00005F80  _screen_beat_screen_update         beat_screen
-     00006062  _screen_option_screen_init         option_screen
-     00006072  _screen_option_screen_load         option_screen
-     00006124  _screen_option_screen_update       option_screen
-     000064A5  _font_tiles__palette__bin          gfx
-     000064B5  _font_tiles__tilemap__bin          gfx
-     00006535  _font_tiles__tiles__psgcompr       gfx
-     000067CC  _game_tiles__palette__bin          gfx
-     000067DC  _game_tiles__tilemap__bin          gfx
-     000068AC  _game_tiles__tiles__psgcompr       gfx
-     00006E0C  _sprites__palette__bin             gfx
-     00006E1C  _sprites__tiles__psgcompr          gfx
-     0000725E  _sfx_accept_psg                    psg
-     0000727E  _sfx_death01_psg                   psg
-     0000729C  _sfx_death02_psg                   psg
-     000072BA  _sfx_death03_psg                   psg
-     000072D8  _sfx_over_psg                      psg
-     00007318  _sfx_power_psg                     psg
-     0000733B  _sfx_reset_psg                     psg
-     0000735E  __divuint                          
-     00007366  __divuchar                         
-     0000736D  __divu8                            
-     00007370  __divu16                           
-     0000739F  _UNSAFE_SMS_copySpritestoSAT       SMSlib_UNSAFE
-     000073B7  _UNSAFE_SMS_VRAMmemcpy32           SMSlib_UNSAFE
-     000073D4  _UNSAFE_SMS_VRAMmemcpy64           SMSlib_UNSAFE
-     000073F1  _UNSAFE_SMS_VRAMmemcpy128          SMSlib_UNSAFE
-     0000740E  _SMS_init                          SMSlib
-     00007462  _VDPReg_init                       SMSlib
-     0000746D  _SMS_VDPType                       SMSlib
-     00007475  _SMS_VDPturnOnFeature              SMSlib
-     0000748C  _SMS_VDPturnOffFeature             SMSlib
-     000074A5  _SMS_setBGScrollX                  SMSlib
-     000074AF  _SMS_setBGScrollY                  SMSlib
-     000074B9  _SMS_setBackdropColor              SMSlib
-     000074C3  _SMS_useFirstHalfTilesforSprites   SMSlib
-     000074D7  _SMS_setSpriteMode                 SMSlib
-     0000751C  _SMS_setBGPaletteColor             SMSlib
-     00007530  _SMS_setSpritePaletteColor         SMSlib
-     00007544  _SMS_loadBGPalette                 SMSlib
-     00007558  _SMS_loadSpritePalette             SMSlib
-     0000756C  _SMS_setColor                      SMSlib
-     00007570  _SMS_initSprites                   SMSlib
-     00007576  _SMS_addSprite                     SMSlib
-     000075CB  _SMS_finalizeSprites               SMSlib
-     000075DD  _SMS_copySpritestoSAT              SMSlib
-     00007606  _SMS_waitForVBlank                 SMSlib
-     00007613  _SMS_getKeysStatus                 SMSlib
-     00007617  _SMS_getKeysPressed                SMSlib
-     00007634  _SMS_getKeysHeld                   SMSlib
-     0000764B  _SMS_getKeysReleased               SMSlib
+     00006014  _screen_beat_screen_update         beat_screen
+     000060F6  _screen_option_screen_init         option_screen
+     00006106  _screen_option_screen_load         option_screen
+     000061B8  _screen_option_screen_update       option_screen
+     00006539  _font_tiles__palette__bin          gfx
+     00006549  _font_tiles__tilemap__bin          gfx
+     000065C9  _font_tiles__tiles__psgcompr       gfx
+     00006860  _game_tiles__palette__bin          gfx
+     00006870  _game_tiles__tilemap__bin          gfx
+     00006940  _game_tiles__tiles__psgcompr       gfx
+     00006EA0  _sprites__palette__bin             gfx
+     00006EB0  _sprites__tiles__psgcompr          gfx
+     000072F2  _sfx_accept_psg                    psg
+     00007312  _sfx_death01_psg                   psg
+     00007330  _sfx_death02_psg                   psg
+     0000734E  _sfx_death03_psg                   psg
+     0000736C  _sfx_over_psg                      psg
+     000073AC  _sfx_power_psg                     psg
+     000073CF  _sfx_reset_psg                     psg
+     000073F2  __divuint                          
+     000073FA  __divuchar                         
+     00007401  __divu8                            
+     00007404  __divu16                           
+     00007433  _UNSAFE_SMS_copySpritestoSAT       SMSlib_UNSAFE
+     0000744B  _UNSAFE_SMS_VRAMmemcpy32           SMSlib_UNSAFE
+     00007468  _UNSAFE_SMS_VRAMmemcpy64           SMSlib_UNSAFE
+     00007485  _UNSAFE_SMS_VRAMmemcpy128          SMSlib_UNSAFE
+     000074A2  _SMS_init                          SMSlib
+     000074F6  _VDPReg_init                       SMSlib
+     00007501  _SMS_VDPType                       SMSlib
+     00007509  _SMS_VDPturnOnFeature              SMSlib
+     00007520  _SMS_VDPturnOffFeature             SMSlib
+     00007539  _SMS_setBGScrollX                  SMSlib
+     00007543  _SMS_setBGScrollY                  SMSlib
+     0000754D  _SMS_setBackdropColor              SMSlib
+     00007557  _SMS_useFirstHalfTilesforSprites   SMSlib
+     0000756B  _SMS_setSpriteMode                 SMSlib
+     000075B0  _SMS_setBGPaletteColor             SMSlib
+     000075C4  _SMS_setSpritePaletteColor         SMSlib
+     000075D8  _SMS_loadBGPalette                 SMSlib
+     000075EC  _SMS_loadSpritePalette             SMSlib
+     00007600  _SMS_setColor                      SMSlib
+     00007604  _SMS_initSprites                   SMSlib
+     0000760A  _SMS_addSprite                     SMSlib
+     0000765F  _SMS_finalizeSprites               SMSlib
+     00007671  _SMS_copySpritestoSAT              SMSlib
+     0000769A  _SMS_waitForVBlank                 SMSlib
+     000076A7  _SMS_getKeysStatus                 SMSlib
+     000076AB  _SMS_getKeysPressed                SMSlib
+     000076C8  _SMS_getKeysHeld                   SMSlib
+     000076DF  _SMS_getKeysReleased               SMSlib
 ASxxxx Linker V03.00 + NoICE + sdld,  page 10.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    000078FD =       30973. bytes (REL,CON)
+_CODE                               00000200    00007991 =       31121. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00007668  _SMS_queryPauseRequested           SMSlib
-     00007670  _SMS_resetPauseRequest             SMSlib
-     00007676  _SMS_setLineInterruptHandler       SMSlib
-     00007687  _SMS_setLineCounter                SMSlib
-     00007696  _SMS_getVCount                     SMSlib
-     0000769A  _SMS_getHCount                     SMSlib
-     0000769E  _SMS_isr                           SMSlib
-     000076D4  _SMS_nmi_isr                       SMSlib
-     000076E7  _rand                              rand
-     000077A3  _srand                             rand
-     000077C1  __moduchar                         
-     000077CD  __moduint                          
-     000077D8  _SMS_loadSTMcompressedTileMapAre   SMSlib_STMcomp
-     000079B9  ___sdcc_call_hl                    
-     000079BA  _SMS_loadPSGaidencompressedTiles   SMSlib_PSGaiden
-     00007A9C  __modschar                         
-     00007AA9  __modsint                          
-     00007AB5  __divsint                          
-     00007ABE  __divschar                         
-     00007AC5  __div8                             
-     00007AC9  __div_signexte                     
-     00007ACD  __div16                            
-     00007AF3  __get_remainder                    
+     000076FC  _SMS_queryPauseRequested           SMSlib
+     00007704  _SMS_resetPauseRequest             SMSlib
+     0000770A  _SMS_setLineInterruptHandler       SMSlib
+     0000771B  _SMS_setLineCounter                SMSlib
+     0000772A  _SMS_getVCount                     SMSlib
+     0000772E  _SMS_getHCount                     SMSlib
+     00007732  _SMS_isr                           SMSlib
+     00007768  _SMS_nmi_isr                       SMSlib
+     0000777B  _rand                              rand
+     00007837  _srand                             rand
+     00007855  __moduchar                         
+     00007861  __moduint                          
+     0000786C  _SMS_loadSTMcompressedTileMapAre   SMSlib_STMcomp
+     00007A4D  ___sdcc_call_hl                    
+     00007A4E  _SMS_loadPSGaidencompressedTiles   SMSlib_PSGaiden
+     00007B30  __modschar                         
+     00007B3D  __modsint                          
+     00007B49  __divsint                          
+     00007B52  __divschar                         
+     00007B59  __div8                             
+     00007B5D  __div_signexte                     
+     00007B61  __div16                            
+     00007B87  __get_remainder                    
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 11.
 Hexadecimal  [32-Bits]
@@ -617,7 +617,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZER                        00007AFD    0000036C =         876. bytes (REL,CON)
+_INITIALIZER                        00007B91    0000036C =         876. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -626,18 +626,18 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             00007E69    0000000F =          15. bytes (REL,CON)
+_GSINIT                             00007EFD    0000000F =          15. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00007E69  gsinit                             crt0
+     00007EFD  gsinit                             crt0
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 19.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            00007E78    00000001 =           1. bytes (REL,CON)
+_GSFINAL                            00007F0C    00000001 =           1. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------

@@ -344,6 +344,9 @@ void engine_boss_manager_draw()
 			else if( boss_type_small == bo->sizer )
 			{
 				engine_sprite_manager_draw_boss2( bo->wide, bo->high, bo->posnX, bo->posnY );
+
+				engine_font_manager_draw_data( bo->posnX, 10, 15 );
+				engine_font_manager_draw_data( bo->posnY, 10, 16 );
 			}
 		}
 	}
