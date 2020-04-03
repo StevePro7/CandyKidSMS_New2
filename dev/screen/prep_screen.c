@@ -84,6 +84,10 @@ void screen_prep_screen_load()
 
 	// algorithm to determine oneup count.
 	oneup_count = ( 10 + st->state_object_world_data ) * st->state_object_fight_type + ( st->state_object_difficulty * 5 );
+	if( oneup_count > 45 )
+	{
+		oneup_count = 45;
+	}
 
 	// load oneup
 	engine_level_manager_clear();
