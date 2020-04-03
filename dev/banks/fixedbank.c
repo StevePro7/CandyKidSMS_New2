@@ -1,13 +1,13 @@
-#include "..\banks\bank4.h"
-#include "..\banks\bank5.h"
-#include "..\banks\bank6.h"
-#include "..\banks\bank7.h"
-#include "..\banks\bank8.h"
-#include "..\banks\bank9.h"
-#include "..\banks\bank10.h"
-#include "..\banks\bank11.h"
-#include "..\banks\bank12.h"
-#include "..\banks\bank13.h"
+#include "bank4.h"
+#include "bank5.h"
+#include "bank6.h"
+#include "bank7.h"
+#include "bank8.h"
+#include "bank9.h"
+#include "bank10.h"
+#include "bank11.h"
+#include "bank12.h"
+#include "bank13.h"
 
 
 // FIXED bank.
@@ -866,3 +866,20 @@ extern const unsigned char level_object_BBbank[] =
 	level2009_txt_bank,
 	level2010_txt_bank,
 };
+
+
+
+//void engine_option_manager_clear()
+//{
+//	//unsigned char x[ NUM_DIRECTIONS ] = { 2, 14, 2, 14 };
+//	//unsigned char y[ NUM_DIRECTIONS ] = { 0, 0, 1, 1 };
+//	//unsigned char idx;
+//	//for( idx = 0; idx < NUM_DIRECTIONS; idx++ )
+//	//{
+//	//	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + x[ idx ], TEXT4_Y + y[ idx ] );
+//	//}
+//	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + 2, TEXT4_Y + 0 );
+//	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + 14, TEXT4_Y + 0 );
+//	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + 2, TEXT4_Y + 1 );
+//	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + 14, TEXT4_Y + 1 );
+//}
