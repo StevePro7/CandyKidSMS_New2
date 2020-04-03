@@ -193,7 +193,7 @@ void engine_boss_manager_load()
 			// TODO delete
 			if( 1 == bossX )
 			{
-				//bo->drawr = 0;
+				bo->drawr = 0;
 			//	bo->mover = 0;
 			//	bo->drawr = 0;
 			}
