@@ -87,25 +87,25 @@ const unsigned char boss_object_speed[] =
 {
 //Pro: ES,EF,HS,HF.
 		1, 1, 2, 1, 		// Boss1
-		2, 3, 1, 3, 		// Boss2
+		1, 1, 3, 3, 		// Boss2
 //Adi: ES,EF,HS,HF.
 		1, 1, 1, 1, 		// Boss1
-		1, 1, 2, 3, 		// Boss2
+		2, 2, 3, 3, 		// Boss2
 //Suz: ES,EF,HS,HF.
 		1, 1, 1, 1, 		// Boss1
-		1, 1, 1, 1, 		// Boss2
+		1, 1, 2, 2, 		// Boss2
 };
 const unsigned char boss_object_delay[] =
 {
 //Pro: ES,EF,HS,HF.
 		2, 2, 3, 1, 		// Boss1
-		3, 3, 1, 2, 		// Boss2
+		1, 1, 2, 2, 		// Boss2
 //Adi: ES,EF,HS,HF.
 		3, 3, 2, 2, 		// Boss1
-		2, 2, 3, 3, 		// Boss2
+		3, 3, 3, 3, 		// Boss2
 //Suz: ES,EF,HS,HF.
 		4, 4, 3, 3, 		// Boss1
-		4, 4, 4, 4, 		// Boss2
+		2, 2, 3, 3, 		// Boss2
 };
 
 

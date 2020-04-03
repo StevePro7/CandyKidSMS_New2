@@ -99,7 +99,7 @@ void engine_boss_manager_setup( unsigned char round )
 		while( 1 )
 		{
 			enemy = rand() % MAX_ENEMIES;
-			enemy = 1;		// todo delete
+			//enemy = 1;		// todo delete
 
 			if( boss_one != enemy )
 			{
