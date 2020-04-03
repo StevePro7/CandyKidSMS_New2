@@ -110,7 +110,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 	// Continue...
 	frame = fo->frame_count;
-
+	engine_frame_manager_update();
 
 	// Does player want to quit out?
 	input = engine_input_manager_move( input_type_fire2 );
