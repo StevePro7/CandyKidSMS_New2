@@ -88,15 +88,15 @@ unsigned char engine_collision_manager_boss_collision()
 			continue;
 		}
 
-		//if( go->posnX + TILE_WIDE > bo->posnX &&
-		//	go->posnY + TILE_HIGH > bo->posnY &&
-		//	go->posnX < bo->posnX + coll_boss_distanceX &&
-		//	go->posnY < bo->posnY + coll_boss_distanceY )
-		//{
-		//	// Add five to offset for enum.
+		if( go->posnX + TILE_WIDE > bo->posnX &&
+			go->posnY + TILE_HIGH > bo->posnY &&
+			go->posnX < bo->posnX + coll_boss_distanceX &&
+			go->posnY < bo->posnY + coll_boss_distanceY )
+		{
+			// Add five to offset for enum.
 			gamer_collision = bossX + 5;
 			break;
-		//}
+		}
 	}
 
 	return gamer_collision;

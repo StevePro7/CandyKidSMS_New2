@@ -157,18 +157,18 @@ static void next_level()
 	struct_state_object *st = &global_state_object;
 
 	// Boss levels.
-	//unsigned char boss1, boss2;
-	//if( fight_type_enemy == st->state_object_fight_type )
-	//{
-	//	boss1 = ( 0 == ( st->state_object_round_data + 1 ) % ( MAX_ROUNDS ) );
-	//	boss2 = ( 0 == ( st->state_object_round_data + 1 ) % ( MAX_ROUNDS / 2 ) );
-	//	if( boss1 || boss2 )
-	//	{
-	//		// TODO uncomment this line to integrate boss fights.
-	//		st->state_object_next_screen = screen_type_prep;
-	//		return;
-	//	}
-	//}
+	unsigned char boss1, boss2;
+	if( fight_type_enemy == st->state_object_fight_type )
+	{
+		boss1 = ( 0 == ( st->state_object_round_data + 1 ) % ( MAX_ROUNDS ) );
+		boss2 = ( 0 == ( st->state_object_round_data + 1 ) % ( MAX_ROUNDS / 2 ) );
+		if( boss1 || boss2 )
+		{
+			// TODO uncomment this line to integrate boss fights.
+			st->state_object_next_screen = screen_type_prep;
+			return;
+		}
+	}
 
 	// Clocked game!
 	if( MAX_WORLDS - 1 == st->state_object_world_data  && MAX_ROUNDS - 1 == st->state_object_round_data )
