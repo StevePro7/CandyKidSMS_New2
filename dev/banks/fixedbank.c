@@ -98,24 +98,24 @@ const unsigned char enemy_object_speed[] =
 	//Pro: ES,EF,HS,HF.
 	2, 3, 1, 3, 		// Normal
 	2, 1, 3, 2, 		// Boost!
-						//Adi: ES,EF,HS,HF.
-						1, 1, 2, 3, 		// Normal
-						1, 2, 3, 1, 		// Boost!
-											//Suz: ES,EF,HS,HF.
-											1, 1, 1, 2, 		// Normal
-											1, 1, 2, 3, 		// Boost!
+	//Adi: ES,EF,HS,HF.
+	1, 1, 2, 3, 		// Normal
+	1, 2, 3, 1, 		// Boost!
+	//Suz: ES,EF,HS,HF.
+	1, 1, 1, 2, 		// Normal
+	1, 1, 2, 3, 		// Boost!
 };
 const unsigned char enemy_object_delay[] =
 {
 	//Pro: ES,EF,HS,HF.
 	3, 3, 1, 2, 		// Normal
 	3, 1, 2, 1, 		// Boost!
-						//Adi: ES,EF,HS,HF.
-						2, 2, 3, 3, 		// Normal
-						2, 3, 3, 1, 		// Boost!
-											//Suz: ES,EF,HS,HF.
-											3, 3, 2, 3, 		// Normal
-											3, 2, 3, 3, 		// Boost!
+	//Adi: ES,EF,HS,HF.
+	2, 2, 3, 3, 		// Normal
+	2, 3, 3, 1, 		// Boost!
+	//Suz: ES,EF,HS,HF.
+	3, 3, 2, 3, 		// Normal
+	3, 2, 3, 3, 		// Boost!
 };
 
 
@@ -148,6 +148,13 @@ const unsigned char enemy_object_kills[] =
 	69, 77, 85, 93,		// Adi
 	73, 81, 89, 97,		// Suz
 };
+
+
+// FIXED bank.
+// Gamer Manager.
+const unsigned char gamer_object_image[] = { 0, 2, 4, 12, 14, 16 };
+const unsigned char gamer_object_speed[] = { 1, 2, 3, 3 };
+const unsigned char gamer_object_delay[] = { 1, 1, 2, 1 };
 
 
 // FIXED bank.

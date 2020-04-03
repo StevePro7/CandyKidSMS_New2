@@ -27,6 +27,13 @@ extern const unsigned char enemy_object_kills[];
 
 
 // FIXED bank.
+// Gamer Manager.
+extern const unsigned char gamer_object_image[];
+extern const unsigned char gamer_object_speed[];
+extern const unsigned char gamer_object_delay[];
+
+
+// FIXED bank.
 // Locale Manager.
 extern const unsigned char *locale_object_texts[];
 
