@@ -277,19 +277,15 @@ void screen_boss_screen_update( unsigned char *screen_type )
 		}
 	}
 
-	// Kid collide with Candy Mama?
-	st->state_object_actor_kill = engine_collision_manager_boss_collision();
-	engine_font_manager_draw_data( st->state_object_actor_kill, 30, 1 );
-	//gamer_collision = devkit_isCollisionDetected();
-	//if( 0 != gamer_collision )
-	//{
-	//	engine_font_manager_draw_data( gamer_collision, 30, 0 );
-	//	//st->state_object_actor_kill = engine_collision_manager_boss_collision();
-	//	//if( actor_type_kid != st->state_object_actor_kill )
-	//	//{
-	//	//	engine_boss_manager_dead( st->state_object_actor_kill );
-	//	//	*screen_type = screen_type_dead;
-	//	//	return;
-	//	//}
-	//}
+	// Kid can only collide with Candy Mama;
+	// i.e. Candy Mamas will NOT overlap...!
+	gamer_collision = devkit_isCollisionDetected();
+	if( 0 != gamer_collision )
+	{
+		st->state_object_actor_kill = actor_type_boss1;
+
+		// Offset of five for the enumeration.
+		engine_boss_manager_dead( 5 - st->state_object_actor_kill );
+		*screen_type = screen_type_dead;
+	}
 }

@@ -63,37 +63,37 @@ unsigned char engine_collision_manager_enemy_collision()
 	return gamer_collision;
 }
 
-unsigned char engine_collision_manager_boss_collision()
-{
-	//struct_gamer_object *go = &global_gamer_object;
-	//struct_state_object *st = &global_state_object;
-	//struct_boss_object *bo;
-	unsigned char gamer_collision = actor_type_kid;
-	//unsigned char bossX;
-
-	//for( bossX = 0; bossX < MAX_BOSSES; bossX++ )
-	//{
-	//	bo = &global_boss_objects[ bossX ];
-	//	if( !bo->drawr )
-	//	{
-	//		continue;
-	//	}
-	//	if( fight_type_boss1 == st->state_object_fight_type )
-	//	{
-
-	//	}
-	//	else if( fight_type_boss2 == st->state_object_fight_type )
-	//	{
-	//		if( go->posnY + 16 > bo->posnY )
-	//		{
-	//			gamer_collision = bossX + 5;		// 5 offset actor
-	//			break;
-	//		}
-	//	}
-	//}
-
-	return gamer_collision;
-}
+//unsigned char engine_collision_manager_boss_collision()
+//{
+//	//struct_gamer_object *go = &global_gamer_object;
+//	//struct_state_object *st = &global_state_object;
+//	//struct_boss_object *bo;
+//	unsigned char gamer_collision = actor_type_kid;
+//	//unsigned char bossX;
+//
+//	//for( bossX = 0; bossX < MAX_BOSSES; bossX++ )
+//	//{
+//	//	bo = &global_boss_objects[ bossX ];
+//	//	if( !bo->drawr )
+//	//	{
+//	//		continue;
+//	//	}
+//	//	if( fight_type_boss1 == st->state_object_fight_type )
+//	//	{
+//
+//	//	}
+//	//	else if( fight_type_boss2 == st->state_object_fight_type )
+//	//	{
+//	//		if( go->posnY + 16 > bo->posnY )
+//	//		{
+//	//			gamer_collision = bossX + 5;		// 5 offset actor
+//	//			break;
+//	//		}
+//	//	}
+//	//}
+//
+//	return gamer_collision;
+//}
 
 unsigned char engine_collision_manager_tile_collision( unsigned char tile_type )
 {
