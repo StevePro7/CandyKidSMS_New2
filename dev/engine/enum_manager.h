@@ -102,8 +102,7 @@ typedef enum tag_enum_tile_type
 	tile_type_bonusC = 5,
 	tile_type_bonusD = 6,
 	tile_type_oneup = 7,
-	tile_type_cross1 = 8,
-	tile_type_cross2 = 9,
+	tile_type_cross = 8,
 
 } enum_tile_type;
 

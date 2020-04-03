@@ -104,6 +104,10 @@ void engine_tile_manager_draw_tile( unsigned char tile, unsigned char x, unsigne
 	{
 		engine_tile_manager_draw_oneup( x, y );
 	}
+	else if( tile_type_cross == tile_type )
+	{
+		engine_tile_manager_draw_cross( cross_type_open, x, y );
+	}
 }
 
 void engine_tile_manager_draw_blank( unsigned char x, unsigned char y )

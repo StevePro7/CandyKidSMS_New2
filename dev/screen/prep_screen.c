@@ -83,16 +83,18 @@ void screen_prep_screen_load()
 	engine_collision_manager_load();
 
 	// algorithm to determine oneup count.
-	oneup_count = ( 10 + st->state_object_world_data ) * st->state_object_fight_type + ( st->state_object_difficulty * 5 );
-	if( oneup_count > 45 )
-	{
-		oneup_count = 45;
-	}
+	oneup_count = 2;
+	//oneup_count = ( 10 + st->state_object_world_data ) * st->state_object_fight_type + ( st->state_object_difficulty * 5 );
+	//if( oneup_count > 45 )
+	//{
+	//	oneup_count = 45;
+	//}
 
 	// load oneup
 	engine_level_manager_clear();
 	setup_level( tile_type_trees );
-	engine_level_manager_load_oneup( oneup_count );		// TODO revert stevepro
+	engine_level_manager_load_extra( 4, tile_type_cross );
+	engine_level_manager_load_extra( oneup_count, tile_type_oneup );		// TODO revert stevepro
 	setup_level( tile_type_blank );
 	engine_level_manager_directions();
 
