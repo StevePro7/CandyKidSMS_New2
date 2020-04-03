@@ -34,7 +34,7 @@ cd engine
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 function_manager.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 gamer_manager.c
 ::::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 global_manager.c
-::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 hack_manager.c
+sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 hack_manager.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 input_manager.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 level_manager.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 locale_manager.c
