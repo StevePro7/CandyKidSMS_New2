@@ -156,15 +156,7 @@ void engine_gamer_manager_update()
 void engine_gamer_manager_draw()
 {
 	struct_gamer_object *go = &global_gamer_object;
-
-	//go->posnX = 166 - 16;
-	//go->posnY = 127+32;
 	engine_sprite_manager_draw_entity( go->posnX, go->posnY, go->calcd );
-
-	//if (go->posnY + 16 > bo->posnY )
-	//if (go->posnY + 32 < bo->posnY )
-	engine_font_manager_draw_data( go->posnX, 10, 10 );
-	engine_font_manager_draw_data( go->posnY, 10, 11 );
 }
 
 void engine_gamer_manager_draws( unsigned char x, unsigned char y )

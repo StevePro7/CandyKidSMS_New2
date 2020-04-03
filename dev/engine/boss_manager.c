@@ -182,21 +182,27 @@ void engine_boss_manager_load()
 		else if( fight_type_boss2 == st->state_object_fight_type )
 		{
 			bo->sizer = boss_type_small;
-			if( diff_type_easy == st->state_object_difficulty && 1 == bossX )
+
+			// Temporary only 1x small boss
+			if( 1 == bossX )
 			{
 				bo->mover = 0;
-				bo->drawr = 1;
-				
+				bo->drawr = 0;
 			}
+			//if( diff_type_easy == st->state_object_difficulty && 1 == bossX )
+			//{
+			//	bo->mover = 0;
+			//	bo->drawr = 1;
+			//}
 
 
 			// TODO delete
-			if( 1 == bossX )
-			{
-				bo->drawr = 0;
+			//if( 1 == bossX )
+			//{
+			//	bo->drawr = 0;
 			//	bo->mover = 0;
 			//	bo->drawr = 0;
-			}
+			//}
 			// TODO delete
 
 
@@ -344,9 +350,6 @@ void engine_boss_manager_draw()
 			else if( boss_type_small == bo->sizer )
 			{
 				engine_sprite_manager_draw_boss2( bo->wide, bo->high, bo->posnX, bo->posnY );
-
-				engine_font_manager_draw_data( bo->posnX, 10, 15 );
-				engine_font_manager_draw_data( bo->posnY, 10, 16 );
 			}
 		}
 	}

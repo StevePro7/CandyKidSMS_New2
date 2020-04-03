@@ -44,8 +44,8 @@ void screen_prep_screen_load()
 
 
 	st->state_object_curr_screen = screen_type_prep;
-	st->state_object_next_screen = screen_type_prep;
-	//st->state_object_next_screen = screen_type_fight;
+	//st->state_object_next_screen = screen_type_prep;
+	st->state_object_next_screen = screen_type_fight;
 
 	engine_delay_manager_load( PREP_SCREEN_DELAY );
 
@@ -103,18 +103,6 @@ void screen_prep_screen_update( unsigned char *screen_type )
 	// Draw sprites first.
 	engine_boss_manager_draw();
 	engine_gamer_manager_draw();
-
-
-	gamer_collision = devkit_isCollisionDetected();
-	//if( 0 != gamer_collision )
-	//{
-	engine_font_manager_draw_data( gamer_collision, 10, 0 );
-	engine_font_manager_draw_text( "TEST", 20, 0 );
-	//}
-
-	st->state_object_actor_kill = engine_collision_manager_boss_collision();
-	engine_font_manager_draw_data( st->state_object_actor_kill, 10, 1 );
-
 
 	delay = engine_delay_manager_update();
 	input = devkit_SMS_getKeysStatus();
