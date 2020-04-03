@@ -85,7 +85,7 @@ sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 pass_scree
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 over_screen.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 prep_screen.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 fight_screen.c
-::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 boss_screen.c
+sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 boss_screen.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 beat_screen.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 option_screen.c
 ::::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 credit_screen.c

@@ -94,7 +94,7 @@ unsigned char engine_collision_manager_boss_collision()
 			go->posnY < bo->posnY + coll_boss_distanceY )
 		{
 			// Add five to offset for enum.
-			gamer_collision = bossX + 5;
+			gamer_collision = bossX + BOSS_OFFSET;
 			break;
 		}
 	}
