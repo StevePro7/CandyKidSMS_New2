@@ -1,5 +1,14 @@
 # CandyKidSMS_New2
 
+03/04/2020
+two bugs:
+01.
+enemies don't move unless you bump into them	it's like their wait is forever
+
+02.
+boss kill cont and Kid dies again
+
+
 02/04/2020
 Boss delay + speed parameterized
 Boss collision detection

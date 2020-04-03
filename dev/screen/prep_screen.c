@@ -40,6 +40,13 @@ void screen_prep_screen_load()
 
 	// TODO calc how many oneup
 	//unsigned char oneup_count = 25;
+
+	// boss1
+	// Eash		min 5 max =  10
+	// hard		mix 10 max 15
+	// boss 2
+	// easy		min=10	max = 15
+	// hard		min=25 max = 35
 	unsigned char oneup_count = 35;
 
 
