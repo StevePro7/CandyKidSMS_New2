@@ -75,7 +75,7 @@ cd screen
 ::::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 intro_screen.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 title_screen.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 start_screen.c
-::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 init_screen.c
+sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 init_screen.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 load_screen.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 ready_screen.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 play_screen.c
@@ -94,7 +94,7 @@ cd ..
 
 
 :: echo Build main
-::sdcc -c -mz80 --opt-code-size --peep-file peep-rules.txt --std-c99 main.c
+sdcc -c -mz80 --opt-code-size --peep-file peep-rules.txt --std-c99 main.c
 
 
 :: Time build -END-
