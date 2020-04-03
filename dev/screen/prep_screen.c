@@ -40,7 +40,7 @@ void screen_prep_screen_load()
 
 	// TODO calc how many oneup
 	//unsigned char oneup_count = 25;
-	unsigned char oneup_count = 2;
+	unsigned char oneup_count = 35;
 
 
 	st->state_object_curr_screen = screen_type_prep;

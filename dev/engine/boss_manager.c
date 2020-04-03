@@ -76,7 +76,7 @@ void engine_boss_manager_setup( unsigned char round )
 
 	// Randomize the first boss.
 	enemy = rand() % MAX_ENEMIES;
-	enemy = 0;	// todo delete
+	//enemy = 0;	// todo delete
 
 	boss_index[ 0 ] = enemy;
 	boss_one = enemy;
@@ -233,12 +233,12 @@ void engine_boss_manager_load()
 		bo->speed = boss_object_speed[ index ];
 		bo->delay = boss_object_delay[ index ];
 
-		if( 0 == bossX )
-		{
-			engine_font_manager_draw_data( index, 10, 0 );
-			engine_font_manager_draw_data( bo->speed, 20, 0 );
-			engine_font_manager_draw_data( bo->delay, 20, 1 );
-		}
+		//if( 0 == bossX )
+		//{
+		//	engine_font_manager_draw_data( index, 10, 0 );
+		//	engine_font_manager_draw_data( bo->speed, 20, 0 );
+		//	engine_font_manager_draw_data( bo->delay, 20, 1 );
+		//}
 
 
 		//eo = &global_enemy_objects[ 1 ];
