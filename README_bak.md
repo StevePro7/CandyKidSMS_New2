@@ -1,5 +1,14 @@
 # CandyKidSMS_New2
 
+04/04/2020
+Blog ideas
+SRAM
+Sprite Clipping Window
+Command Pattern
+Fixed bank ROM bank switching to save bytes
+Hack vs. State mgt
+
+
 03/04/2020
 two bugs:
 01.
